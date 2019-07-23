@@ -1,0 +1,30 @@
+# MongoTrialLocations
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **String** |  |  [optional]
+**street** | **String** |  |  [optional]
+**country** | **String** |  |  [optional]
+**name** | **String** |  |  [optional]
+**poBox** | **String** |  |  [optional]
+**city** | **String** |  |  [optional]
+**state** | **String** |  |  [optional]
+**zip** | **String** |  |  [optional]
+**lat** | **Float** |  |  [optional]
+**lon** | **Float** |  |  [optional]
+**status** | **String** |  |  [optional]
+**firstName** | **String** |  |  [optional]
+**middleName** | **String** |  |  [optional]
+**lastName** | **String** |  |  [optional]
+**degrees** | **String** |  |  [optional]
+**phone** | **String** |  |  [optional]
+**phoneExt** | **String** |  |  [optional]
+**email** | **String** |  |  [optional]
+**firstNameBackup** | **String** |  |  [optional]
+**middleNameBackup** | **String** |  |  [optional]
+**lastNameBackup** | **String** |  |  [optional]
+**degreesBackup** | **String** |  |  [optional]
+**phoneBackup** | **String** |  |  [optional]
+**phoneExtBackup** | **String** |  |  [optional]
+**emailBackup** | **String** |  |  [optional]

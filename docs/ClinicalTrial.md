@@ -1,0 +1,52 @@
+# ClinicalTrial
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**mboost** | **Float** | intrinsic boost to the record. |  [optional]
+**importDate** | [**OffsetDateTime**](OffsetDateTime.md) | date this record was imported into the MolecularMatch database. |  [optional]
+**id** | **String** | unique identifier. | 
+**source** | **String** | native data source of this record | 
+**briefTitle** | **String** | A short title of the clinical study written in language intended for the lay public. The title should include, where possible, information on the participants, condition being evaluated, and intervention(s) studied. |  [optional]
+**patientTitle** | **String** | Patient friendly title for the clinical trial. |  [optional]
+**title** | **String** | Official title for the clinical trial. |  [optional]
+**briefSummary** | **String** | A short description of the clinical study, including a brief statement of the clinical study&#x27;s hypothesis, written in language intended for the lay public. |  [optional]
+**briefSummaryPreserved** | **String** | Formatted rendition of the briefSummary. |  [optional]
+**summary** | **String** | Extended description of the protocol, including more technical information (as compared to the Brief Summary), if desired. Do not include the entire protocol; do not duplicate information recorded in other data elements, such as Eligibility Criteria or outcome measures. |  [optional]
+**summaryPreserved** | **String** | Formatted rendition of the summary. |  [optional]
+**status** | **String** |  |  [optional]
+**phase** | **String** | For a clinical trial of a drug product (including a biological product), the numerical phase of such clinical trial, consistent with terminology in 21 CFR 312.21 and in 21 CFR 312.85 for phase 4 studies. |  [optional]
+**studyType** | **String** | The nature of the investigation or investigational use for which clinical study information is being submitted. |  [optional]
+**studyDesign** | [**ClinicalTrialStudyDesign**](ClinicalTrialStudyDesign.md) |  |  [optional]
+**startDate** | [**OffsetDateTime**](OffsetDateTime.md) | The estimated date on which the clinical study will be open for recruitment of participants, or the actual date on which the first participant was enrolled. |  [optional]
+**completionDate** | [**OffsetDateTime**](OffsetDateTime.md) | The date the final participant was examined or received an intervention for purposes of final collection of data for the primary and secondary outcome measures and adverse events (for example, last participant’s last visit), whether the clinical study concluded according to the pre-specified protocol or was terminated |  [optional]
+**firstReceivedDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**lastChangedDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**verificationDate** | [**OffsetDateTime**](OffsetDateTime.md) | The date on which the responsible party last verified the clinical study information in the entire ClinicalTrials.gov record for the clinical study, even if no additional or updated information is being submitted. |  [optional]
+**sponsors** | [**List&lt;ClinicalTrialSponsors&gt;**](ClinicalTrialSponsors.md) |  |  [optional]
+**conditions** | **List&lt;String&gt;** |  |  [optional]
+**interventions** | [**List&lt;ClinicalTrialInterventions&gt;**](ClinicalTrialInterventions.md) | Specifies the intervention(s) associated with each arm or group. |  [optional]
+**keywords** | **List&lt;String&gt;** | Words or phrases that best describe the protocol. Keywords help users find studies in the database. Use NLM&#x27;s Medical Subject Heading (MeSH)-controlled vocabulary terms where appropriate. Be as specific and precise as possible. |  [optional]
+**armGroups** | [**List&lt;ClinicalTrialArmGroups&gt;**](ClinicalTrialArmGroups.md) | Pre-specified groups of participants in a clinical trial assigned to receive specific interventions (or no intervention) according to a protocol. |  [optional]
+**primaryOutcomes** | [**List&lt;ClinicalTrialPrimaryOutcomes&gt;**](ClinicalTrialPrimaryOutcomes.md) |  |  [optional]
+**secondaryOutcomes** | [**List&lt;ClinicalTrialPrimaryOutcomes&gt;**](ClinicalTrialPrimaryOutcomes.md) |  |  [optional]
+**otherOutcomes** | [**List&lt;ClinicalTrialPrimaryOutcomes&gt;**](ClinicalTrialPrimaryOutcomes.md) |  |  [optional]
+**eligibility** | [**ClinicalTrialEligibility**](ClinicalTrialEligibility.md) |  |  [optional]
+**enrollment** | **Integer** | The estimated total number of participants to be enrolled (target number) or the actual total number of participants that are enrolled in the clinical study. |  [optional]
+**minAge** | **Float** | The numerical value, if any, for the minimum age a potential participant must meet to be eligible for the clinical study. | 
+**maxAge** | **Float** | The numerical value, if any, for the maximum age a potential participant can be to be eligible for the clinical study. | 
+**gender** | **List&lt;String&gt;** | The sex and, if applicable, gender of the participants eligible to participate in the clinical study. |  [optional]
+**overallOfficial** | [**List&lt;ClinicalTrialOverallOfficial&gt;**](ClinicalTrialOverallOfficial.md) | Person responsible for the overall scientific leadership of the protocol, including study principal investigator. |  [optional]
+**overallContact** | [**ClinicalTrialOverallContact**](ClinicalTrialOverallContact.md) |  |  [optional]
+**overallContactBackup** | [**ClinicalTrialOverallContactBackup**](ClinicalTrialOverallContactBackup.md) |  |  [optional]
+**locations** | [**List&lt;ClinicalTrialLocations&gt;**](ClinicalTrialLocations.md) |  |  [optional]
+**countries** | [**List&lt;ClinicalTrialCountries&gt;**](ClinicalTrialCountries.md) | Countries with locations offering this trial. |  [optional]
+**inclusionCriteria** | **String** | A limited list of criteria for selection of participants in the clinical study, provided in terms of inclusion criteria and suitable for assisting potential participants in identifying clinical studies of interest. |  [optional]
+**inclusionCriteriaPreserved** | **String** | Formatted rendition of the inclusionCriteria. |  [optional]
+**exclusionCriteria** | **String** | A limited list of criteria for selection of participants in the clinical study, provided in terms of exclusion criteria and suitable for assisting potential participants in identifying clinical studies of interest. |  [optional]
+**exclusionCriteriaPreserved** | **String** | Formatted rendition of the exclusionCriteria. |  [optional]
+**synonyms** | [**List&lt;ClinicalTrialSynonyms&gt;**](ClinicalTrialSynonyms.md) | Any identifier other than the organization&#x27;s Unique Protocol Identification Number or the NCT number that is assigned to the clinical study. |  [optional]
+**acronym** | **String** | An acronym or abbreviation used publicly to identify the clinical study. |  [optional]
+**link** | **String** | URL to registry listing of this trial. |  [optional]
+**tags** | [**List&lt;ClinicalTrialTags&gt;**](ClinicalTrialTags.md) | Concept associations established for this trial. |  [optional]
+**molecularAlterations** | [**List&lt;ClinicalTrialMolecularAlterations&gt;**](ClinicalTrialMolecularAlterations.md) | Molecular concept associations established for this trial. |  [optional]

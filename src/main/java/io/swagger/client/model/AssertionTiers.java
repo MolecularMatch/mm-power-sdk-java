@@ -19,54 +19,55 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.AssertionTier;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Site geopoint.
+ * AssertionTiers
  */
-@Schema(description = "Site geopoint.")
 
-public class ClinicalTrialGeo {
-  @SerializedName("lat")
-  private Float lat = null;
 
-  @SerializedName("lon")
-  private Float lon = null;
+public class AssertionTiers {
+  @SerializedName("name")
+  private String name = null;
 
-  public ClinicalTrialGeo lat(Float lat) {
-    this.lat = lat;
+  @SerializedName("tier")
+  private AssertionTier tier = null;
+
+  public AssertionTiers name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get lat
-   * @return lat
+   * Get name
+   * @return name
   **/
   @Schema(required = true, description = "")
-  public Float getLat() {
-    return lat;
+  public String getName() {
+    return name;
   }
 
-  public void setLat(Float lat) {
-    this.lat = lat;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public ClinicalTrialGeo lon(Float lon) {
-    this.lon = lon;
+  public AssertionTiers tier(AssertionTier tier) {
+    this.tier = tier;
     return this;
   }
 
    /**
-   * Get lon
-   * @return lon
+   * Get tier
+   * @return tier
   **/
-  @Schema(required = true, description = "")
-  public Float getLon() {
-    return lon;
+  @Schema(description = "")
+  public AssertionTier getTier() {
+    return tier;
   }
 
-  public void setLon(Float lon) {
-    this.lon = lon;
+  public void setTier(AssertionTier tier) {
+    this.tier = tier;
   }
 
 
@@ -78,24 +79,24 @@ public class ClinicalTrialGeo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ClinicalTrialGeo clinicalTrialGeo = (ClinicalTrialGeo) o;
-    return Objects.equals(this.lat, clinicalTrialGeo.lat) &&
-        Objects.equals(this.lon, clinicalTrialGeo.lon);
+    AssertionTiers assertionTiers = (AssertionTiers) o;
+    return Objects.equals(this.name, assertionTiers.name) &&
+        Objects.equals(this.tier, assertionTiers.tier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lat, lon);
+    return Objects.hash(name, tier);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ClinicalTrialGeo {\n");
+    sb.append("class AssertionTiers {\n");
     
-    sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
-    sb.append("    lon: ").append(toIndentedString(lon)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("}");
     return sb.toString();
   }

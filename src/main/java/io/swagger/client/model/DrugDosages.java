@@ -42,10 +42,10 @@ public class DrugDosages {
   }
 
    /**
-   * Get form
+   * The pharmaceutical formulation by which the drug is introduced into the body.
    * @return form
   **/
-  @Schema(description = "")
+  @Schema(description = "The pharmaceutical formulation by which the drug is introduced into the body.")
   public String getForm() {
     return form;
   }
@@ -60,10 +60,10 @@ public class DrugDosages {
   }
 
    /**
-   * Get route
+   * The path by which the drug or product is taken into the body.
    * @return route
   **/
-  @Schema(description = "")
+  @Schema(description = "The path by which the drug or product is taken into the body.")
   public String getRoute() {
     return route;
   }
@@ -78,10 +78,10 @@ public class DrugDosages {
   }
 
    /**
-   * Get strength
+   * The amount of active drug ingredient provided in the dosage.
    * @return strength
   **/
-  @Schema(description = "")
+  @Schema(description = "The amount of active drug ingredient provided in the dosage.")
   public String getStrength() {
     return strength;
   }

@@ -22,9 +22,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * ClinicalTrialEligibility
+ * The key requirements that people who want to participate in a clinical study must meet or the characteristics they must have.
  */
-
+@Schema(description = "The key requirements that people who want to participate in a clinical study must meet or the characteristics they must have.")
 
 public class ClinicalTrialEligibility {
   @SerializedName("gender")

@@ -42,79 +42,20 @@ public class SearchResponseDrugRows {
   @SerializedName("mboost")
   private Float mboost = null;
 
-  /**
-   * Gets or Sets analyzer
-   */
-  @JsonAdapter(AnalyzerEnum.Adapter.class)
-  public enum AnalyzerEnum {
-    DEFAULT("DEFAULT"),
-    CASE_SENSITIVE("CASE_SENSITIVE");
-
-    private String value;
-
-    AnalyzerEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static AnalyzerEnum fromValue(String text) {
-      for (AnalyzerEnum b : AnalyzerEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<AnalyzerEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final AnalyzerEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public AnalyzerEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return AnalyzerEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }  @SerializedName("analyzer")
-  private AnalyzerEnum analyzer = AnalyzerEnum.DEFAULT;
-
   @SerializedName("id")
   private String id = null;
-
-  @SerializedName("source")
-  private String source = null;
 
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("name_lower")
-  private String nameLower = null;
-
   @SerializedName("alias")
   private String alias = null;
-
-  @SerializedName("exclude")
-  private Boolean exclude = null;
-
-  @SerializedName("custom")
-  private Boolean custom = null;
 
   @SerializedName("description")
   private String description = null;
 
   @SerializedName("composite")
   private Boolean composite = null;
-
-  @SerializedName("suppressResistance")
-  private Boolean suppressResistance = null;
 
   @SerializedName("approved")
   private Boolean approved = null;
@@ -167,22 +108,16 @@ public class SearchResponseDrugRows {
   @SerializedName("phaseAndTrialsScore")
   private Float phaseAndTrialsScore = null;
 
-  @SerializedName("_valid")
-  private Object _valid = null;
-
-  @SerializedName("_validMessage")
-  private String _validMessage = null;
-
   public SearchResponseDrugRows mboost(Float mboost) {
     this.mboost = mboost;
     return this;
   }
 
    /**
-   * Get mboost
+   * intrinsic boost to the record.
    * @return mboost
   **/
-  @Schema(description = "")
+  @Schema(description = "intrinsic boost to the record.")
   public Float getMboost() {
     return mboost;
   }
@@ -191,34 +126,16 @@ public class SearchResponseDrugRows {
     this.mboost = mboost;
   }
 
-  public SearchResponseDrugRows analyzer(AnalyzerEnum analyzer) {
-    this.analyzer = analyzer;
-    return this;
-  }
-
-   /**
-   * Get analyzer
-   * @return analyzer
-  **/
-  @Schema(description = "")
-  public AnalyzerEnum getAnalyzer() {
-    return analyzer;
-  }
-
-  public void setAnalyzer(AnalyzerEnum analyzer) {
-    this.analyzer = analyzer;
-  }
-
   public SearchResponseDrugRows id(String id) {
     this.id = id;
     return this;
   }
 
    /**
-   * Get id
+   * unique identifier.
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "unique identifier.")
   public String getId() {
     return id;
   }
@@ -227,34 +144,16 @@ public class SearchResponseDrugRows {
     this.id = id;
   }
 
-  public SearchResponseDrugRows source(String source) {
-    this.source = source;
-    return this;
-  }
-
-   /**
-   * Get source
-   * @return source
-  **/
-  @Schema(required = true, description = "")
-  public String getSource() {
-    return source;
-  }
-
-  public void setSource(String source) {
-    this.source = source;
-  }
-
   public SearchResponseDrugRows name(String name) {
     this.name = name;
     return this;
   }
 
    /**
-   * Get name
+   * The name of the drug.
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "The name of the drug.")
   public String getName() {
     return name;
   }
@@ -263,34 +162,16 @@ public class SearchResponseDrugRows {
     this.name = name;
   }
 
-  public SearchResponseDrugRows nameLower(String nameLower) {
-    this.nameLower = nameLower;
-    return this;
-  }
-
-   /**
-   * Get nameLower
-   * @return nameLower
-  **/
-  @Schema(required = true, description = "")
-  public String getNameLower() {
-    return nameLower;
-  }
-
-  public void setNameLower(String nameLower) {
-    this.nameLower = nameLower;
-  }
-
   public SearchResponseDrugRows alias(String alias) {
     this.alias = alias;
     return this;
   }
 
    /**
-   * Get alias
+   * The most common name for the drug.
    * @return alias
   **/
-  @Schema(description = "")
+  @Schema(description = "The most common name for the drug.")
   public String getAlias() {
     return alias;
   }
@@ -299,52 +180,16 @@ public class SearchResponseDrugRows {
     this.alias = alias;
   }
 
-  public SearchResponseDrugRows exclude(Boolean exclude) {
-    this.exclude = exclude;
-    return this;
-  }
-
-   /**
-   * Get exclude
-   * @return exclude
-  **/
-  @Schema(description = "")
-  public Boolean isExclude() {
-    return exclude;
-  }
-
-  public void setExclude(Boolean exclude) {
-    this.exclude = exclude;
-  }
-
-  public SearchResponseDrugRows custom(Boolean custom) {
-    this.custom = custom;
-    return this;
-  }
-
-   /**
-   * Get custom
-   * @return custom
-  **/
-  @Schema(description = "")
-  public Boolean isCustom() {
-    return custom;
-  }
-
-  public void setCustom(Boolean custom) {
-    this.custom = custom;
-  }
-
   public SearchResponseDrugRows description(String description) {
     this.description = description;
     return this;
   }
 
    /**
-   * Get description
+   * Descriptions of drug chemical properties, history and regulatory status.
    * @return description
   **/
-  @Schema(description = "")
+  @Schema(description = "Descriptions of drug chemical properties, history and regulatory status.")
   public String getDescription() {
     return description;
   }
@@ -371,34 +216,16 @@ public class SearchResponseDrugRows {
     this.composite = composite;
   }
 
-  public SearchResponseDrugRows suppressResistance(Boolean suppressResistance) {
-    this.suppressResistance = suppressResistance;
-    return this;
-  }
-
-   /**
-   * Get suppressResistance
-   * @return suppressResistance
-  **/
-  @Schema(description = "")
-  public Boolean isSuppressResistance() {
-    return suppressResistance;
-  }
-
-  public void setSuppressResistance(Boolean suppressResistance) {
-    this.suppressResistance = suppressResistance;
-  }
-
   public SearchResponseDrugRows approved(Boolean approved) {
     this.approved = approved;
     return this;
   }
 
    /**
-   * Get approved
+   * Indicates whether this drug has been approved by any regulating government.
    * @return approved
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Indicates whether this drug has been approved by any regulating government.")
   public Boolean isApproved() {
     return approved;
   }
@@ -421,10 +248,10 @@ public class SearchResponseDrugRows {
   }
 
    /**
-   * Get availability
+   * Countries or jurisdictions where this drug is available.
    * @return availability
   **/
-  @Schema(description = "")
+  @Schema(description = "Countries or jurisdictions where this drug is available.")
   public List<DrugAvailability> getAvailability() {
     return availability;
   }
@@ -447,10 +274,10 @@ public class SearchResponseDrugRows {
   }
 
    /**
-   * Get synonyms
+   * Other names or identifiers that are associated with this drug.
    * @return synonyms
   **/
-  @Schema(description = "")
+  @Schema(description = "Other names or identifiers that are associated with this drug.")
   public List<DrugSynonyms> getSynonyms() {
     return synonyms;
   }
@@ -657,10 +484,10 @@ public class SearchResponseDrugRows {
   }
 
    /**
-   * Get externalIds
+   * Identifiers used in other websites or databases providing information about this drug.
    * @return externalIds
   **/
-  @Schema(description = "")
+  @Schema(description = "Identifiers used in other websites or databases providing information about this drug.")
   public List<DrugExternalIds> getExternalIds() {
     return externalIds;
   }
@@ -701,10 +528,10 @@ public class SearchResponseDrugRows {
   }
 
    /**
-   * Get prices
+   * Unit drug prices.
    * @return prices
   **/
-  @Schema(description = "")
+  @Schema(description = "Unit drug prices.")
   public List<DrugPrices> getPrices() {
     return prices;
   }
@@ -727,10 +554,10 @@ public class SearchResponseDrugRows {
   }
 
    /**
-   * Get dosages
+   * A list of the commercially available dosages of the drug.
    * @return dosages
   **/
-  @Schema(description = "")
+  @Schema(description = "A list of the commercially available dosages of the drug.")
   public List<DrugDosages> getDosages() {
     return dosages;
   }
@@ -775,42 +602,6 @@ public class SearchResponseDrugRows {
     this.phaseAndTrialsScore = phaseAndTrialsScore;
   }
 
-  public SearchResponseDrugRows _valid(Object _valid) {
-    this._valid = _valid;
-    return this;
-  }
-
-   /**
-   * Get _valid
-   * @return _valid
-  **/
-  @Schema(description = "")
-  public Object getValid() {
-    return _valid;
-  }
-
-  public void setValid(Object _valid) {
-    this._valid = _valid;
-  }
-
-  public SearchResponseDrugRows _validMessage(String _validMessage) {
-    this._validMessage = _validMessage;
-    return this;
-  }
-
-   /**
-   * Get _validMessage
-   * @return _validMessage
-  **/
-  @Schema(description = "")
-  public String getValidMessage() {
-    return _validMessage;
-  }
-
-  public void setValidMessage(String _validMessage) {
-    this._validMessage = _validMessage;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -822,17 +613,11 @@ public class SearchResponseDrugRows {
     }
     SearchResponseDrugRows searchResponseDrugRows = (SearchResponseDrugRows) o;
     return Objects.equals(this.mboost, searchResponseDrugRows.mboost) &&
-        Objects.equals(this.analyzer, searchResponseDrugRows.analyzer) &&
         Objects.equals(this.id, searchResponseDrugRows.id) &&
-        Objects.equals(this.source, searchResponseDrugRows.source) &&
         Objects.equals(this.name, searchResponseDrugRows.name) &&
-        Objects.equals(this.nameLower, searchResponseDrugRows.nameLower) &&
         Objects.equals(this.alias, searchResponseDrugRows.alias) &&
-        Objects.equals(this.exclude, searchResponseDrugRows.exclude) &&
-        Objects.equals(this.custom, searchResponseDrugRows.custom) &&
         Objects.equals(this.description, searchResponseDrugRows.description) &&
         Objects.equals(this.composite, searchResponseDrugRows.composite) &&
-        Objects.equals(this.suppressResistance, searchResponseDrugRows.suppressResistance) &&
         Objects.equals(this.approved, searchResponseDrugRows.approved) &&
         Objects.equals(this.availability, searchResponseDrugRows.availability) &&
         Objects.equals(this.synonyms, searchResponseDrugRows.synonyms) &&
@@ -849,14 +634,12 @@ public class SearchResponseDrugRows {
         Objects.equals(this.prices, searchResponseDrugRows.prices) &&
         Objects.equals(this.dosages, searchResponseDrugRows.dosages) &&
         Objects.equals(this.pharmacology, searchResponseDrugRows.pharmacology) &&
-        Objects.equals(this.phaseAndTrialsScore, searchResponseDrugRows.phaseAndTrialsScore) &&
-        Objects.equals(this._valid, searchResponseDrugRows._valid) &&
-        Objects.equals(this._validMessage, searchResponseDrugRows._validMessage);
+        Objects.equals(this.phaseAndTrialsScore, searchResponseDrugRows.phaseAndTrialsScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mboost, analyzer, id, source, name, nameLower, alias, exclude, custom, description, composite, suppressResistance, approved, availability, synonyms, parents, drugclass, compositeTags, brands, indicationText, contraindicationText, mechanismText, rxcui, externalIds, link, prices, dosages, pharmacology, phaseAndTrialsScore, _valid, _validMessage);
+    return Objects.hash(mboost, id, name, alias, description, composite, approved, availability, synonyms, parents, drugclass, compositeTags, brands, indicationText, contraindicationText, mechanismText, rxcui, externalIds, link, prices, dosages, pharmacology, phaseAndTrialsScore);
   }
 
 
@@ -866,17 +649,11 @@ public class SearchResponseDrugRows {
     sb.append("class SearchResponseDrugRows {\n");
     
     sb.append("    mboost: ").append(toIndentedString(mboost)).append("\n");
-    sb.append("    analyzer: ").append(toIndentedString(analyzer)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    nameLower: ").append(toIndentedString(nameLower)).append("\n");
     sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
-    sb.append("    exclude: ").append(toIndentedString(exclude)).append("\n");
-    sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    composite: ").append(toIndentedString(composite)).append("\n");
-    sb.append("    suppressResistance: ").append(toIndentedString(suppressResistance)).append("\n");
     sb.append("    approved: ").append(toIndentedString(approved)).append("\n");
     sb.append("    availability: ").append(toIndentedString(availability)).append("\n");
     sb.append("    synonyms: ").append(toIndentedString(synonyms)).append("\n");
@@ -894,8 +671,6 @@ public class SearchResponseDrugRows {
     sb.append("    dosages: ").append(toIndentedString(dosages)).append("\n");
     sb.append("    pharmacology: ").append(toIndentedString(pharmacology)).append("\n");
     sb.append("    phaseAndTrialsScore: ").append(toIndentedString(phaseAndTrialsScore)).append("\n");
-    sb.append("    _valid: ").append(toIndentedString(_valid)).append("\n");
-    sb.append("    _validMessage: ").append(toIndentedString(_validMessage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

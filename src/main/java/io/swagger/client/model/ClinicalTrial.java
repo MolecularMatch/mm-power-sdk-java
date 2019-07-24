@@ -23,6 +23,7 @@ import io.swagger.client.model.ClinicalTrialArmGroups;
 import io.swagger.client.model.ClinicalTrialCountries;
 import io.swagger.client.model.ClinicalTrialEligibility;
 import io.swagger.client.model.ClinicalTrialInterventions;
+import io.swagger.client.model.ClinicalTrialLocationSummary;
 import io.swagger.client.model.ClinicalTrialLocations;
 import io.swagger.client.model.ClinicalTrialMolecularAlterations;
 import io.swagger.client.model.ClinicalTrialOverallContact;
@@ -151,6 +152,9 @@ public class ClinicalTrial {
 
   @SerializedName("overallContactBackup")
   private ClinicalTrialOverallContactBackup overallContactBackup = null;
+
+  @SerializedName("locationSummary")
+  private ClinicalTrialLocationSummary locationSummary = null;
 
   @SerializedName("locations")
   private List<ClinicalTrialLocations> locations = null;
@@ -389,10 +393,10 @@ public class ClinicalTrial {
   }
 
    /**
-   * Get status
+   * Trial recruiting status.
    * @return status
   **/
-  @Schema(description = "")
+  @Schema(description = "Trial recruiting status.")
   public String getStatus() {
     return status;
   }
@@ -497,10 +501,10 @@ public class ClinicalTrial {
   }
 
    /**
-   * Get firstReceivedDate
+   * The date on which the study sponsor or investigator first submitted a study record to the trial registry (see source field).
    * @return firstReceivedDate
   **/
-  @Schema(description = "")
+  @Schema(description = "The date on which the study sponsor or investigator first submitted a study record to the trial registry (see source field).")
   public OffsetDateTime getFirstReceivedDate() {
     return firstReceivedDate;
   }
@@ -515,10 +519,10 @@ public class ClinicalTrial {
   }
 
    /**
-   * Get lastChangedDate
+   * The most recent date that any information was updated for this trial.
    * @return lastChangedDate
   **/
-  @Schema(description = "")
+  @Schema(description = "The most recent date that any information was updated for this trial.")
   public OffsetDateTime getLastChangedDate() {
     return lastChangedDate;
   }
@@ -559,10 +563,10 @@ public class ClinicalTrial {
   }
 
    /**
-   * Get sponsors
+   * The list of organizations or persons who initiated the study and who have authority and control over the study.
    * @return sponsors
   **/
-  @Schema(description = "")
+  @Schema(description = "The list of organizations or persons who initiated the study and who have authority and control over the study.")
   public List<ClinicalTrialSponsors> getSponsors() {
     return sponsors;
   }
@@ -585,10 +589,10 @@ public class ClinicalTrial {
   }
 
    /**
-   * Get conditions
+   * Diseases/Conditions related to this trial.
    * @return conditions
   **/
-  @Schema(description = "")
+  @Schema(description = "Diseases/Conditions related to this trial.")
   public List<String> getConditions() {
     return conditions;
   }
@@ -913,6 +917,24 @@ public class ClinicalTrial {
     this.overallContactBackup = overallContactBackup;
   }
 
+  public ClinicalTrial locationSummary(ClinicalTrialLocationSummary locationSummary) {
+    this.locationSummary = locationSummary;
+    return this;
+  }
+
+   /**
+   * Get locationSummary
+   * @return locationSummary
+  **/
+  @Schema(description = "")
+  public ClinicalTrialLocationSummary getLocationSummary() {
+    return locationSummary;
+  }
+
+  public void setLocationSummary(ClinicalTrialLocationSummary locationSummary) {
+    this.locationSummary = locationSummary;
+  }
+
   public ClinicalTrial locations(List<ClinicalTrialLocations> locations) {
     this.locations = locations;
     return this;
@@ -927,10 +949,10 @@ public class ClinicalTrial {
   }
 
    /**
-   * Get locations
+   * Information about the sites offering this trial.
    * @return locations
   **/
-  @Schema(description = "")
+  @Schema(description = "Information about the sites offering this trial.")
   public List<ClinicalTrialLocations> getLocations() {
     return locations;
   }
@@ -953,10 +975,10 @@ public class ClinicalTrial {
   }
 
    /**
-   * Countries with locations offering this trial.
+   * Countries with sites offering this trial.
    * @return countries
   **/
-  @Schema(description = "Countries with locations offering this trial.")
+  @Schema(description = "Countries with sites offering this trial.")
   public List<ClinicalTrialCountries> getCountries() {
     return countries;
   }
@@ -1197,6 +1219,7 @@ public class ClinicalTrial {
         Objects.equals(this.overallOfficial, clinicalTrial.overallOfficial) &&
         Objects.equals(this.overallContact, clinicalTrial.overallContact) &&
         Objects.equals(this.overallContactBackup, clinicalTrial.overallContactBackup) &&
+        Objects.equals(this.locationSummary, clinicalTrial.locationSummary) &&
         Objects.equals(this.locations, clinicalTrial.locations) &&
         Objects.equals(this.countries, clinicalTrial.countries) &&
         Objects.equals(this.inclusionCriteria, clinicalTrial.inclusionCriteria) &&
@@ -1212,7 +1235,7 @@ public class ClinicalTrial {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mboost, importDate, id, source, briefTitle, patientTitle, title, briefSummary, briefSummaryPreserved, summary, summaryPreserved, status, phase, studyType, studyDesign, startDate, completionDate, firstReceivedDate, lastChangedDate, verificationDate, sponsors, conditions, interventions, keywords, armGroups, primaryOutcomes, secondaryOutcomes, otherOutcomes, eligibility, enrollment, minAge, maxAge, gender, overallOfficial, overallContact, overallContactBackup, locations, countries, inclusionCriteria, inclusionCriteriaPreserved, exclusionCriteria, exclusionCriteriaPreserved, synonyms, acronym, link, tags, molecularAlterations);
+    return Objects.hash(mboost, importDate, id, source, briefTitle, patientTitle, title, briefSummary, briefSummaryPreserved, summary, summaryPreserved, status, phase, studyType, studyDesign, startDate, completionDate, firstReceivedDate, lastChangedDate, verificationDate, sponsors, conditions, interventions, keywords, armGroups, primaryOutcomes, secondaryOutcomes, otherOutcomes, eligibility, enrollment, minAge, maxAge, gender, overallOfficial, overallContact, overallContactBackup, locationSummary, locations, countries, inclusionCriteria, inclusionCriteriaPreserved, exclusionCriteria, exclusionCriteriaPreserved, synonyms, acronym, link, tags, molecularAlterations);
   }
 
 
@@ -1257,6 +1280,7 @@ public class ClinicalTrial {
     sb.append("    overallOfficial: ").append(toIndentedString(overallOfficial)).append("\n");
     sb.append("    overallContact: ").append(toIndentedString(overallContact)).append("\n");
     sb.append("    overallContactBackup: ").append(toIndentedString(overallContactBackup)).append("\n");
+    sb.append("    locationSummary: ").append(toIndentedString(locationSummary)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    inclusionCriteria: ").append(toIndentedString(inclusionCriteria)).append("\n");

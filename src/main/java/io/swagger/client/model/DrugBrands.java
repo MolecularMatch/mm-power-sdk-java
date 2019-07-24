@@ -27,12 +27,6 @@ import java.io.IOException;
 
 
 public class DrugBrands {
-  @SerializedName("suppress")
-  private Boolean suppress = null;
-
-  @SerializedName("custom")
-  private Boolean custom = null;
-
   @SerializedName("primary")
   private Boolean primary = null;
 
@@ -50,42 +44,6 @@ public class DrugBrands {
 
   @SerializedName("manufacturer")
   private String manufacturer = null;
-
-  public DrugBrands suppress(Boolean suppress) {
-    this.suppress = suppress;
-    return this;
-  }
-
-   /**
-   * Get suppress
-   * @return suppress
-  **/
-  @Schema(description = "")
-  public Boolean isSuppress() {
-    return suppress;
-  }
-
-  public void setSuppress(Boolean suppress) {
-    this.suppress = suppress;
-  }
-
-  public DrugBrands custom(Boolean custom) {
-    this.custom = custom;
-    return this;
-  }
-
-   /**
-   * Get custom
-   * @return custom
-  **/
-  @Schema(description = "")
-  public Boolean isCustom() {
-    return custom;
-  }
-
-  public void setCustom(Boolean custom) {
-    this.custom = custom;
-  }
 
   public DrugBrands primary(Boolean primary) {
     this.primary = primary;
@@ -205,9 +163,7 @@ public class DrugBrands {
       return false;
     }
     DrugBrands drugBrands = (DrugBrands) o;
-    return Objects.equals(this.suppress, drugBrands.suppress) &&
-        Objects.equals(this.custom, drugBrands.custom) &&
-        Objects.equals(this.primary, drugBrands.primary) &&
+    return Objects.equals(this.primary, drugBrands.primary) &&
         Objects.equals(this.compositeKey, drugBrands.compositeKey) &&
         Objects.equals(this.indications, drugBrands.indications) &&
         Objects.equals(this.mechanism, drugBrands.mechanism) &&
@@ -217,7 +173,7 @@ public class DrugBrands {
 
   @Override
   public int hashCode() {
-    return Objects.hash(suppress, custom, primary, compositeKey, indications, mechanism, name, manufacturer);
+    return Objects.hash(primary, compositeKey, indications, mechanism, name, manufacturer);
   }
 
 
@@ -226,8 +182,6 @@ public class DrugBrands {
     StringBuilder sb = new StringBuilder();
     sb.append("class DrugBrands {\n");
     
-    sb.append("    suppress: ").append(toIndentedString(suppress)).append("\n");
-    sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
     sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
     sb.append("    compositeKey: ").append(toIndentedString(compositeKey)).append("\n");
     sb.append("    indications: ").append(toIndentedString(indications)).append("\n");

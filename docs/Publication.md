@@ -3,16 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mboost** | **Float** |  |  [optional]
-**id** | **String** |  | 
-**pmid** | **String** |  |  [optional]
-**doi** | **String** |  |  [optional]
-**exclude** | **Boolean** |  |  [optional]
-**custom** | **Boolean** |  |  [optional]
-**source** | **String** |  | 
+**mboost** | **Float** | intrinsic boost to the record. |  [optional]
+**id** | **String** | unique identifier. | 
+**pmid** | **String** | PubMed identifier. |  [optional]
+**doi** | **String** | digital object identifier. |  [optional]
+**source** | **String** | native data source of this record | 
 **journalName** | **String** |  | 
 **journalISOAbbreviation** | **String** |  |  [optional]
-**title** | **String** |  | 
+**title** | **String** | Official title for the publication. | 
 **purpose** | **String** |  |  [optional]
 **background** | **String** |  |  [optional]
 **methods** | **String** |  |  [optional]
@@ -27,6 +25,6 @@ Name | Type | Description | Notes
 **keywords** | **List&lt;String&gt;** |  |  [optional]
 **extendedKeywords** | **List&lt;String&gt;** |  |  [optional]
 **publicationType** | **List&lt;String&gt;** |  |  [optional]
-**authors** | [**List&lt;MongoPublicationAuthors&gt;**](MongoPublicationAuthors.md) |  |  [optional]
-**_valid** | **Object** |  |  [optional]
-**_validMessage** | **String** |  |  [optional]
+**authors** | [**List&lt;PublicationAuthors&gt;**](PublicationAuthors.md) |  |  [optional]
+**tags** | [**List&lt;ClinicalTrialTags&gt;**](ClinicalTrialTags.md) | Concept associations established for this publication. |  [optional]
+**molecularAlterations** | [**List&lt;ClinicalTrialMolecularAlterations&gt;**](ClinicalTrialMolecularAlterations.md) | Molecular concept associations established for this publication. |  [optional]

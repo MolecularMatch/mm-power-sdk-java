@@ -3,21 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mboost** | **Float** |  |  [optional]
-**analyzer** | [**AnalyzerEnum**](#AnalyzerEnum) |  |  [optional]
-**id** | **String** |  | 
-**source** | **String** |  | 
-**name** | **String** |  | 
-**nameLower** | **String** |  | 
-**alias** | **String** |  |  [optional]
-**exclude** | **Boolean** |  |  [optional]
-**custom** | **Boolean** |  |  [optional]
-**description** | **String** |  |  [optional]
+**mboost** | **Float** | intrinsic boost to the record. |  [optional]
+**id** | **String** | unique identifier. | 
+**name** | **String** | The name of the drug. | 
+**alias** | **String** | The most common name for the drug. |  [optional]
+**description** | **String** | Descriptions of drug chemical properties, history and regulatory status. |  [optional]
 **composite** | **Boolean** |  |  [optional]
-**suppressResistance** | **Boolean** |  |  [optional]
-**approved** | **Boolean** |  | 
-**availability** | [**List&lt;DrugAvailability&gt;**](DrugAvailability.md) |  |  [optional]
-**synonyms** | [**List&lt;DrugSynonyms&gt;**](DrugSynonyms.md) |  |  [optional]
+**approved** | **Boolean** | Indicates whether this drug has been approved by any regulating government. | 
+**availability** | [**List&lt;DrugAvailability&gt;**](DrugAvailability.md) | Countries or jurisdictions where this drug is available. |  [optional]
+**synonyms** | [**List&lt;DrugSynonyms&gt;**](DrugSynonyms.md) | Other names or identifiers that are associated with this drug. |  [optional]
 **parents** | [**List&lt;DrugParents&gt;**](DrugParents.md) |  |  [optional]
 **drugclass** | [**List&lt;DrugDrugclass&gt;**](DrugDrugclass.md) |  |  [optional]
 **compositeTags** | [**List&lt;DrugCompositeTags&gt;**](DrugCompositeTags.md) |  |  [optional]
@@ -26,18 +20,9 @@ Name | Type | Description | Notes
 **contraindicationText** | **String** |  |  [optional]
 **mechanismText** | **String** |  |  [optional]
 **rxcui** | **List&lt;String&gt;** |  |  [optional]
-**externalIds** | [**List&lt;DrugExternalIds&gt;**](DrugExternalIds.md) |  |  [optional]
+**externalIds** | [**List&lt;DrugExternalIds&gt;**](DrugExternalIds.md) | Identifiers used in other websites or databases providing information about this drug. |  [optional]
 **link** | **String** |  |  [optional]
-**prices** | [**List&lt;DrugPrices&gt;**](DrugPrices.md) |  |  [optional]
-**dosages** | [**List&lt;DrugDosages&gt;**](DrugDosages.md) |  |  [optional]
+**prices** | [**List&lt;DrugPrices&gt;**](DrugPrices.md) | Unit drug prices. |  [optional]
+**dosages** | [**List&lt;DrugDosages&gt;**](DrugDosages.md) | A list of the commercially available dosages of the drug. |  [optional]
 **pharmacology** | [**DrugPharmacology**](DrugPharmacology.md) |  |  [optional]
 **phaseAndTrialsScore** | **Float** |  |  [optional]
-**_valid** | **Object** |  |  [optional]
-**_validMessage** | **String** |  |  [optional]
-
-<a name="AnalyzerEnum"></a>
-## Enum: AnalyzerEnum
-Name | Value
----- | -----
-DEFAULT | &quot;DEFAULT&quot;
-CASE_SENSITIVE | &quot;CASE_SENSITIVE&quot;

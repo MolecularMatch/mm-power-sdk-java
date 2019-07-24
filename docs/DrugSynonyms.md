@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **suppress** | **Boolean** |  |  [optional]
 **custom** | **Boolean** |  |  [optional]
-**name** | **String** |  | 
+**name** | **String** | Alternative name. | 
 **nameLower** | **String** |  | 
 **analyzer** | [**AnalyzerEnum**](#AnalyzerEnum) |  |  [optional]
 

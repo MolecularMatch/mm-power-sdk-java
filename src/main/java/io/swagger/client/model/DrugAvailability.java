@@ -51,10 +51,10 @@ public class DrugAvailability {
   }
 
    /**
-   * Get region
+   * A country or other jurisdiction.
    * @return region
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "A country or other jurisdiction.")
   public String getRegion() {
     return region;
   }
@@ -69,10 +69,10 @@ public class DrugAvailability {
   }
 
    /**
-   * Get maxPhase
+   * Maximum phase achieved during development.
    * @return maxPhase
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Maximum phase achieved during development.")
   public Integer getMaxPhase() {
     return maxPhase;
   }
@@ -87,10 +87,10 @@ public class DrugAvailability {
   }
 
    /**
-   * Get marketedPrescription
+   * Whether the drug has been marketed for prescription use.
    * @return marketedPrescription
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Whether the drug has been marketed for prescription use.")
   public Boolean isMarketedPrescription() {
     return marketedPrescription;
   }
@@ -105,10 +105,10 @@ public class DrugAvailability {
   }
 
    /**
-   * Get genericAvailable
+   * Whether the drug has been available as a generic
    * @return genericAvailable
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Whether the drug has been available as a generic")
   public Boolean isGenericAvailable() {
     return genericAvailable;
   }
@@ -123,10 +123,10 @@ public class DrugAvailability {
   }
 
    /**
-   * Get preMarketCancelled
+   * Whether the drug was cancelled before market-availability.
    * @return preMarketCancelled
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Whether the drug was cancelled before market-availability.")
   public Boolean isPreMarketCancelled() {
     return preMarketCancelled;
   }
@@ -141,10 +141,10 @@ public class DrugAvailability {
   }
 
    /**
-   * Get postMarketCancelled
+   * Whether the drug was cancelled after market-availability.
    * @return postMarketCancelled
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Whether the drug was cancelled after market-availability.")
   public Boolean isPostMarketCancelled() {
     return postMarketCancelled;
   }

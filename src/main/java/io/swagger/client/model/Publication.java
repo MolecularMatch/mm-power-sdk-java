@@ -19,7 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.MongoPublicationAuthors;
+import io.swagger.client.model.ClinicalTrialMolecularAlterations;
+import io.swagger.client.model.ClinicalTrialTags;
+import io.swagger.client.model.PublicationAuthors;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,12 +44,6 @@ public class Publication {
 
   @SerializedName("doi")
   private String doi = null;
-
-  @SerializedName("exclude")
-  private Boolean exclude = null;
-
-  @SerializedName("custom")
-  private Boolean custom = null;
 
   @SerializedName("source")
   private String source = null;
@@ -104,13 +100,13 @@ public class Publication {
   private List<String> publicationType = null;
 
   @SerializedName("authors")
-  private List<MongoPublicationAuthors> authors = null;
+  private List<PublicationAuthors> authors = null;
 
-  @SerializedName("_valid")
-  private Object _valid = null;
+  @SerializedName("tags")
+  private List<ClinicalTrialTags> tags = null;
 
-  @SerializedName("_validMessage")
-  private String _validMessage = null;
+  @SerializedName("molecularAlterations")
+  private List<ClinicalTrialMolecularAlterations> molecularAlterations = null;
 
   public Publication mboost(Float mboost) {
     this.mboost = mboost;
@@ -118,10 +114,10 @@ public class Publication {
   }
 
    /**
-   * Get mboost
+   * intrinsic boost to the record.
    * @return mboost
   **/
-  @Schema(description = "")
+  @Schema(description = "intrinsic boost to the record.")
   public Float getMboost() {
     return mboost;
   }
@@ -136,10 +132,10 @@ public class Publication {
   }
 
    /**
-   * Get id
+   * unique identifier.
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "unique identifier.")
   public String getId() {
     return id;
   }
@@ -154,10 +150,10 @@ public class Publication {
   }
 
    /**
-   * Get pmid
+   * PubMed identifier.
    * @return pmid
   **/
-  @Schema(description = "")
+  @Schema(description = "PubMed identifier.")
   public String getPmid() {
     return pmid;
   }
@@ -172,10 +168,10 @@ public class Publication {
   }
 
    /**
-   * Get doi
+   * digital object identifier.
    * @return doi
   **/
-  @Schema(description = "")
+  @Schema(description = "digital object identifier.")
   public String getDoi() {
     return doi;
   }
@@ -184,52 +180,16 @@ public class Publication {
     this.doi = doi;
   }
 
-  public Publication exclude(Boolean exclude) {
-    this.exclude = exclude;
-    return this;
-  }
-
-   /**
-   * Get exclude
-   * @return exclude
-  **/
-  @Schema(description = "")
-  public Boolean isExclude() {
-    return exclude;
-  }
-
-  public void setExclude(Boolean exclude) {
-    this.exclude = exclude;
-  }
-
-  public Publication custom(Boolean custom) {
-    this.custom = custom;
-    return this;
-  }
-
-   /**
-   * Get custom
-   * @return custom
-  **/
-  @Schema(description = "")
-  public Boolean isCustom() {
-    return custom;
-  }
-
-  public void setCustom(Boolean custom) {
-    this.custom = custom;
-  }
-
   public Publication source(String source) {
     this.source = source;
     return this;
   }
 
    /**
-   * Get source
+   * native data source of this record
    * @return source
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "native data source of this record")
   public String getSource() {
     return source;
   }
@@ -280,10 +240,10 @@ public class Publication {
   }
 
    /**
-   * Get title
+   * Official title for the publication.
    * @return title
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Official title for the publication.")
   public String getTitle() {
     return title;
   }
@@ -576,14 +536,14 @@ public class Publication {
     this.publicationType = publicationType;
   }
 
-  public Publication authors(List<MongoPublicationAuthors> authors) {
+  public Publication authors(List<PublicationAuthors> authors) {
     this.authors = authors;
     return this;
   }
 
-  public Publication addAuthorsItem(MongoPublicationAuthors authorsItem) {
+  public Publication addAuthorsItem(PublicationAuthors authorsItem) {
     if (this.authors == null) {
-      this.authors = new ArrayList<MongoPublicationAuthors>();
+      this.authors = new ArrayList<PublicationAuthors>();
     }
     this.authors.add(authorsItem);
     return this;
@@ -594,48 +554,64 @@ public class Publication {
    * @return authors
   **/
   @Schema(description = "")
-  public List<MongoPublicationAuthors> getAuthors() {
+  public List<PublicationAuthors> getAuthors() {
     return authors;
   }
 
-  public void setAuthors(List<MongoPublicationAuthors> authors) {
+  public void setAuthors(List<PublicationAuthors> authors) {
     this.authors = authors;
   }
 
-  public Publication _valid(Object _valid) {
-    this._valid = _valid;
+  public Publication tags(List<ClinicalTrialTags> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public Publication addTagsItem(ClinicalTrialTags tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<ClinicalTrialTags>();
+    }
+    this.tags.add(tagsItem);
     return this;
   }
 
    /**
-   * Get _valid
-   * @return _valid
+   * Concept associations established for this publication.
+   * @return tags
   **/
-  @Schema(description = "")
-  public Object getValid() {
-    return _valid;
+  @Schema(description = "Concept associations established for this publication.")
+  public List<ClinicalTrialTags> getTags() {
+    return tags;
   }
 
-  public void setValid(Object _valid) {
-    this._valid = _valid;
+  public void setTags(List<ClinicalTrialTags> tags) {
+    this.tags = tags;
   }
 
-  public Publication _validMessage(String _validMessage) {
-    this._validMessage = _validMessage;
+  public Publication molecularAlterations(List<ClinicalTrialMolecularAlterations> molecularAlterations) {
+    this.molecularAlterations = molecularAlterations;
+    return this;
+  }
+
+  public Publication addMolecularAlterationsItem(ClinicalTrialMolecularAlterations molecularAlterationsItem) {
+    if (this.molecularAlterations == null) {
+      this.molecularAlterations = new ArrayList<ClinicalTrialMolecularAlterations>();
+    }
+    this.molecularAlterations.add(molecularAlterationsItem);
     return this;
   }
 
    /**
-   * Get _validMessage
-   * @return _validMessage
+   * Molecular concept associations established for this publication.
+   * @return molecularAlterations
   **/
-  @Schema(description = "")
-  public String getValidMessage() {
-    return _validMessage;
+  @Schema(description = "Molecular concept associations established for this publication.")
+  public List<ClinicalTrialMolecularAlterations> getMolecularAlterations() {
+    return molecularAlterations;
   }
 
-  public void setValidMessage(String _validMessage) {
-    this._validMessage = _validMessage;
+  public void setMolecularAlterations(List<ClinicalTrialMolecularAlterations> molecularAlterations) {
+    this.molecularAlterations = molecularAlterations;
   }
 
 
@@ -652,8 +628,6 @@ public class Publication {
         Objects.equals(this.id, publication.id) &&
         Objects.equals(this.pmid, publication.pmid) &&
         Objects.equals(this.doi, publication.doi) &&
-        Objects.equals(this.exclude, publication.exclude) &&
-        Objects.equals(this.custom, publication.custom) &&
         Objects.equals(this.source, publication.source) &&
         Objects.equals(this.journalName, publication.journalName) &&
         Objects.equals(this.journalISOAbbreviation, publication.journalISOAbbreviation) &&
@@ -673,13 +647,13 @@ public class Publication {
         Objects.equals(this.extendedKeywords, publication.extendedKeywords) &&
         Objects.equals(this.publicationType, publication.publicationType) &&
         Objects.equals(this.authors, publication.authors) &&
-        Objects.equals(this._valid, publication._valid) &&
-        Objects.equals(this._validMessage, publication._validMessage);
+        Objects.equals(this.tags, publication.tags) &&
+        Objects.equals(this.molecularAlterations, publication.molecularAlterations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mboost, id, pmid, doi, exclude, custom, source, journalName, journalISOAbbreviation, title, purpose, background, methods, results, conclusion, conflicts, fulltext, citation, citationDate, link, chemicals, keywords, extendedKeywords, publicationType, authors, _valid, _validMessage);
+    return Objects.hash(mboost, id, pmid, doi, source, journalName, journalISOAbbreviation, title, purpose, background, methods, results, conclusion, conflicts, fulltext, citation, citationDate, link, chemicals, keywords, extendedKeywords, publicationType, authors, tags, molecularAlterations);
   }
 
 
@@ -692,8 +666,6 @@ public class Publication {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    pmid: ").append(toIndentedString(pmid)).append("\n");
     sb.append("    doi: ").append(toIndentedString(doi)).append("\n");
-    sb.append("    exclude: ").append(toIndentedString(exclude)).append("\n");
-    sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    journalName: ").append(toIndentedString(journalName)).append("\n");
     sb.append("    journalISOAbbreviation: ").append(toIndentedString(journalISOAbbreviation)).append("\n");
@@ -713,8 +685,8 @@ public class Publication {
     sb.append("    extendedKeywords: ").append(toIndentedString(extendedKeywords)).append("\n");
     sb.append("    publicationType: ").append(toIndentedString(publicationType)).append("\n");
     sb.append("    authors: ").append(toIndentedString(authors)).append("\n");
-    sb.append("    _valid: ").append(toIndentedString(_valid)).append("\n");
-    sb.append("    _validMessage: ").append(toIndentedString(_validMessage)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    molecularAlterations: ").append(toIndentedString(molecularAlterations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

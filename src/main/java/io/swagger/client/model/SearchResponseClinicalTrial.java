@@ -19,8 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ClinicalTrial;
 import io.swagger.client.model.Filter;
-import io.swagger.client.model.Publication;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import java.util.List;
  */
 @Schema(description = "The search response schema.")
 
-public class SearchResponsePublication {
+public class SearchResponseClinicalTrial {
   @SerializedName("searchKey")
   private String searchKey = null;
 
@@ -50,7 +50,7 @@ public class SearchResponsePublication {
   private Integer page = null;
 
   @SerializedName("rows")
-  private List<Publication> rows = null;
+  private List<ClinicalTrial> rows = null;
 
   @SerializedName("rationalized")
   private List<Filter> rationalized = null;
@@ -61,7 +61,7 @@ public class SearchResponsePublication {
   @SerializedName("ambiguousNarrative")
   private List<String> ambiguousNarrative = null;
 
-  public SearchResponsePublication searchKey(String searchKey) {
+  public SearchResponseClinicalTrial searchKey(String searchKey) {
     this.searchKey = searchKey;
     return this;
   }
@@ -79,7 +79,7 @@ public class SearchResponsePublication {
     this.searchKey = searchKey;
   }
 
-  public SearchResponsePublication institutionId(String institutionId) {
+  public SearchResponseClinicalTrial institutionId(String institutionId) {
     this.institutionId = institutionId;
     return this;
   }
@@ -97,7 +97,7 @@ public class SearchResponsePublication {
     this.institutionId = institutionId;
   }
 
-  public SearchResponsePublication caseId(String caseId) {
+  public SearchResponseClinicalTrial caseId(String caseId) {
     this.caseId = caseId;
     return this;
   }
@@ -115,7 +115,7 @@ public class SearchResponsePublication {
     this.caseId = caseId;
   }
 
-  public SearchResponsePublication total(Integer total) {
+  public SearchResponseClinicalTrial total(Integer total) {
     this.total = total;
     return this;
   }
@@ -133,7 +133,7 @@ public class SearchResponsePublication {
     this.total = total;
   }
 
-  public SearchResponsePublication totalPages(Integer totalPages) {
+  public SearchResponseClinicalTrial totalPages(Integer totalPages) {
     this.totalPages = totalPages;
     return this;
   }
@@ -151,7 +151,7 @@ public class SearchResponsePublication {
     this.totalPages = totalPages;
   }
 
-  public SearchResponsePublication page(Integer page) {
+  public SearchResponseClinicalTrial page(Integer page) {
     this.page = page;
     return this;
   }
@@ -169,38 +169,38 @@ public class SearchResponsePublication {
     this.page = page;
   }
 
-  public SearchResponsePublication rows(List<Publication> rows) {
+  public SearchResponseClinicalTrial rows(List<ClinicalTrial> rows) {
     this.rows = rows;
     return this;
   }
 
-  public SearchResponsePublication addRowsItem(Publication rowsItem) {
+  public SearchResponseClinicalTrial addRowsItem(ClinicalTrial rowsItem) {
     if (this.rows == null) {
-      this.rows = new ArrayList<Publication>();
+      this.rows = new ArrayList<ClinicalTrial>();
     }
     this.rows.add(rowsItem);
     return this;
   }
 
    /**
-   * The array of publications that match the search criteria.
+   * The array of clinical trials that match the search criteria.
    * @return rows
   **/
-  @Schema(description = "The array of publications that match the search criteria.")
-  public List<Publication> getRows() {
+  @Schema(description = "The array of clinical trials that match the search criteria.")
+  public List<ClinicalTrial> getRows() {
     return rows;
   }
 
-  public void setRows(List<Publication> rows) {
+  public void setRows(List<ClinicalTrial> rows) {
     this.rows = rows;
   }
 
-  public SearchResponsePublication rationalized(List<Filter> rationalized) {
+  public SearchResponseClinicalTrial rationalized(List<Filter> rationalized) {
     this.rationalized = rationalized;
     return this;
   }
 
-  public SearchResponsePublication addRationalizedItem(Filter rationalizedItem) {
+  public SearchResponseClinicalTrial addRationalizedItem(Filter rationalizedItem) {
     if (this.rationalized == null) {
       this.rationalized = new ArrayList<Filter>();
     }
@@ -221,12 +221,12 @@ public class SearchResponsePublication {
     this.rationalized = rationalized;
   }
 
-  public SearchResponsePublication unrecognized(List<Filter> unrecognized) {
+  public SearchResponseClinicalTrial unrecognized(List<Filter> unrecognized) {
     this.unrecognized = unrecognized;
     return this;
   }
 
-  public SearchResponsePublication addUnrecognizedItem(Filter unrecognizedItem) {
+  public SearchResponseClinicalTrial addUnrecognizedItem(Filter unrecognizedItem) {
     if (this.unrecognized == null) {
       this.unrecognized = new ArrayList<Filter>();
     }
@@ -247,12 +247,12 @@ public class SearchResponsePublication {
     this.unrecognized = unrecognized;
   }
 
-  public SearchResponsePublication ambiguousNarrative(List<String> ambiguousNarrative) {
+  public SearchResponseClinicalTrial ambiguousNarrative(List<String> ambiguousNarrative) {
     this.ambiguousNarrative = ambiguousNarrative;
     return this;
   }
 
-  public SearchResponsePublication addAmbiguousNarrativeItem(String ambiguousNarrativeItem) {
+  public SearchResponseClinicalTrial addAmbiguousNarrativeItem(String ambiguousNarrativeItem) {
     if (this.ambiguousNarrative == null) {
       this.ambiguousNarrative = new ArrayList<String>();
     }
@@ -282,17 +282,17 @@ public class SearchResponsePublication {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SearchResponsePublication searchResponsePublication = (SearchResponsePublication) o;
-    return Objects.equals(this.searchKey, searchResponsePublication.searchKey) &&
-        Objects.equals(this.institutionId, searchResponsePublication.institutionId) &&
-        Objects.equals(this.caseId, searchResponsePublication.caseId) &&
-        Objects.equals(this.total, searchResponsePublication.total) &&
-        Objects.equals(this.totalPages, searchResponsePublication.totalPages) &&
-        Objects.equals(this.page, searchResponsePublication.page) &&
-        Objects.equals(this.rows, searchResponsePublication.rows) &&
-        Objects.equals(this.rationalized, searchResponsePublication.rationalized) &&
-        Objects.equals(this.unrecognized, searchResponsePublication.unrecognized) &&
-        Objects.equals(this.ambiguousNarrative, searchResponsePublication.ambiguousNarrative);
+    SearchResponseClinicalTrial searchResponseClinicalTrial = (SearchResponseClinicalTrial) o;
+    return Objects.equals(this.searchKey, searchResponseClinicalTrial.searchKey) &&
+        Objects.equals(this.institutionId, searchResponseClinicalTrial.institutionId) &&
+        Objects.equals(this.caseId, searchResponseClinicalTrial.caseId) &&
+        Objects.equals(this.total, searchResponseClinicalTrial.total) &&
+        Objects.equals(this.totalPages, searchResponseClinicalTrial.totalPages) &&
+        Objects.equals(this.page, searchResponseClinicalTrial.page) &&
+        Objects.equals(this.rows, searchResponseClinicalTrial.rows) &&
+        Objects.equals(this.rationalized, searchResponseClinicalTrial.rationalized) &&
+        Objects.equals(this.unrecognized, searchResponseClinicalTrial.unrecognized) &&
+        Objects.equals(this.ambiguousNarrative, searchResponseClinicalTrial.ambiguousNarrative);
   }
 
   @Override
@@ -304,7 +304,7 @@ public class SearchResponsePublication {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SearchResponsePublication {\n");
+    sb.append("class SearchResponseClinicalTrial {\n");
     
     sb.append("    searchKey: ").append(toIndentedString(searchKey)).append("\n");
     sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");

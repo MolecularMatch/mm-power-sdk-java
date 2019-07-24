@@ -63,10 +63,10 @@ public class DrugPrices {
   }
 
    /**
-   * Get cost
+   * Drug price per unit.
    * @return cost
   **/
-  @Schema(description = "")
+  @Schema(description = "Drug price per unit.")
   public String getCost() {
     return cost;
   }
@@ -81,10 +81,10 @@ public class DrugPrices {
   }
 
    /**
-   * Get currency
+   * Currency of price, example: USD.
    * @return currency
   **/
-  @Schema(description = "")
+  @Schema(description = "Currency of price, example: USD.")
   public String getCurrency() {
     return currency;
   }
@@ -99,10 +99,10 @@ public class DrugPrices {
   }
 
    /**
-   * Get unit
+   * The dosage form, example: tablet.
    * @return unit
   **/
-  @Schema(description = "")
+  @Schema(description = "The dosage form, example: tablet.")
   public String getUnit() {
     return unit;
   }

@@ -183,10 +183,10 @@ public class SearchResponseDrug {
   }
 
    /**
-   * The array of results records.  Rows must be cast accordingly to ct, drug, publication, etc.
+   * The array of drugs that match the search criteria.
    * @return rows
   **/
-  @Schema(description = "The array of results records.  Rows must be cast accordingly to ct, drug, publication, etc.")
+  @Schema(description = "The array of drugs that match the search criteria.")
   public List<SearchResponseDrugRows> getRows() {
     return rows;
   }

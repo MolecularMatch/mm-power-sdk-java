@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**armGroupLabel** | **String** |  | 
-**armGroupType** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
+**armGroupLabel** | **String** | A label describing a group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial&#x27;s protocol. | 
+**armGroupType** | **String** | A general description of the clinical trial arm. It identifies the role of the intervention that participants receive. Types of arms include experimental arm, active comparator arm, placebo comparator arm, sham comparator arm, and no intervention arm. |  [optional]
+**description** | **String** | A description of a group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial&#x27;s protocol. |  [optional]

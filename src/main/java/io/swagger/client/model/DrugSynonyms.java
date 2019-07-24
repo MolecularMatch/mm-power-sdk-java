@@ -125,10 +125,10 @@ public class DrugSynonyms {
   }
 
    /**
-   * Get name
+   * Alternative name.
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Alternative name.")
   public String getName() {
     return name;
   }

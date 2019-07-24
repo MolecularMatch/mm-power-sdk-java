@@ -36,19 +36,16 @@ public class DrugExternalIds {
   @SerializedName("url")
   private String url = null;
 
-  @SerializedName("custom")
-  private Object custom = null;
-
   public DrugExternalIds resource(String resource) {
     this.resource = resource;
     return this;
   }
 
    /**
-   * Get resource
+   * Name of the source database.
    * @return resource
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Name of the source database.")
   public String getResource() {
     return resource;
   }
@@ -63,10 +60,10 @@ public class DrugExternalIds {
   }
 
    /**
-   * Get identifier
+   * Identifier for this drug in the given resource.
    * @return identifier
   **/
-  @Schema(description = "")
+  @Schema(description = "Identifier for this drug in the given resource.")
   public String getIdentifier() {
     return identifier;
   }
@@ -81,34 +78,16 @@ public class DrugExternalIds {
   }
 
    /**
-   * Get url
+   * The URL for this drug in the given resource.
    * @return url
   **/
-  @Schema(description = "")
+  @Schema(description = "The URL for this drug in the given resource.")
   public String getUrl() {
     return url;
   }
 
   public void setUrl(String url) {
     this.url = url;
-  }
-
-  public DrugExternalIds custom(Object custom) {
-    this.custom = custom;
-    return this;
-  }
-
-   /**
-   * Get custom
-   * @return custom
-  **/
-  @Schema(description = "")
-  public Object getCustom() {
-    return custom;
-  }
-
-  public void setCustom(Object custom) {
-    this.custom = custom;
   }
 
 
@@ -123,13 +102,12 @@ public class DrugExternalIds {
     DrugExternalIds drugExternalIds = (DrugExternalIds) o;
     return Objects.equals(this.resource, drugExternalIds.resource) &&
         Objects.equals(this.identifier, drugExternalIds.identifier) &&
-        Objects.equals(this.url, drugExternalIds.url) &&
-        Objects.equals(this.custom, drugExternalIds.custom);
+        Objects.equals(this.url, drugExternalIds.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(resource, identifier, url, custom);
+    return Objects.hash(resource, identifier, url);
   }
 
 
@@ -141,7 +119,6 @@ public class DrugExternalIds {
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
     sb.append("}");
     return sb.toString();
   }

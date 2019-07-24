@@ -1,4 +1,4 @@
-# SearchResponseDrug
+# SearchResponseClinicalTrial
 
 ## Properties
 Name | Type | Description | Notes
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **total** | **Integer** | The total number of records that match this search. | 
 **totalPages** | **Integer** | The number of results pages for this search based on the limit provided in the request. | 
 **page** | **Integer** | The results page number this response corresponds to. | 
-**rows** | [**List&lt;SearchResponseDrugRows&gt;**](SearchResponseDrugRows.md) | The array of drugs that match the search criteria. |  [optional]
+**rows** | [**List&lt;ClinicalTrial&gt;**](ClinicalTrial.md) | The array of clinical trials that match the search criteria. |  [optional]
 **rationalized** | [**List&lt;Filter&gt;**](Filter.md) | The array of filters and how they were interpreted by the MolecularMatch search engine. |  [optional]
 **unrecognized** | [**List&lt;Filter&gt;**](Filter.md) | The array of filters that were not recognized by the MolecularMatch search engine. |  [optional]
 **ambiguousNarrative** | **List&lt;String&gt;** | if true include a human readable ambiguous narrative.  This enables the consumer to activate \&quot;did you mean\&quot; search capability. |  [optional]

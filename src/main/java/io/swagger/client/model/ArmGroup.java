@@ -42,10 +42,10 @@ public class ArmGroup {
   }
 
    /**
-   * Get armGroupLabel
+   * A label describing a group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial&#x27;s protocol.
    * @return armGroupLabel
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "A label describing a group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial's protocol.")
   public String getArmGroupLabel() {
     return armGroupLabel;
   }
@@ -60,10 +60,10 @@ public class ArmGroup {
   }
 
    /**
-   * Get armGroupType
+   * A general description of the clinical trial arm. It identifies the role of the intervention that participants receive. Types of arms include experimental arm, active comparator arm, placebo comparator arm, sham comparator arm, and no intervention arm.
    * @return armGroupType
   **/
-  @Schema(description = "")
+  @Schema(description = "A general description of the clinical trial arm. It identifies the role of the intervention that participants receive. Types of arms include experimental arm, active comparator arm, placebo comparator arm, sham comparator arm, and no intervention arm.")
   public String getArmGroupType() {
     return armGroupType;
   }
@@ -78,10 +78,10 @@ public class ArmGroup {
   }
 
    /**
-   * Get description
+   * A description of a group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial&#x27;s protocol.
    * @return description
   **/
-  @Schema(description = "")
+  @Schema(description = "A description of a group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial's protocol.")
   public String getDescription() {
     return description;
   }

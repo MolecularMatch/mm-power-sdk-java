@@ -100,6 +100,9 @@ public class ClinicalTrialLocations {
   @SerializedName("email_backup")
   private String emailBackup = null;
 
+  @SerializedName("isInInstitution")
+  private Boolean isInInstitution = null;
+
   public ClinicalTrialLocations id(String id) {
     this.id = id;
     return this;
@@ -124,10 +127,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get street
+   * Site street address.
    * @return street
   **/
-  @Schema(description = "")
+  @Schema(description = "Site street address.")
   public String getStreet() {
     return street;
   }
@@ -142,10 +145,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get country
+   * Site country.
    * @return country
   **/
-  @Schema(description = "")
+  @Schema(description = "Site country.")
   public String getCountry() {
     return country;
   }
@@ -160,10 +163,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get name
+   * Site name.
    * @return name
   **/
-  @Schema(description = "")
+  @Schema(description = "Site name.")
   public String getName() {
     return name;
   }
@@ -178,10 +181,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get poBox
+   * Site P.O. Box.
    * @return poBox
   **/
-  @Schema(description = "")
+  @Schema(description = "Site P.O. Box.")
   public String getPoBox() {
     return poBox;
   }
@@ -196,10 +199,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get city
+   * Site city.
    * @return city
   **/
-  @Schema(description = "")
+  @Schema(description = "Site city.")
   public String getCity() {
     return city;
   }
@@ -214,10 +217,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get state
+   * Site state or sub division.
    * @return state
   **/
-  @Schema(description = "")
+  @Schema(description = "Site state or sub division.")
   public String getState() {
     return state;
   }
@@ -232,10 +235,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get zip
+   * Site postal code.
    * @return zip
   **/
-  @Schema(description = "")
+  @Schema(description = "Site postal code.")
   public String getZip() {
     return zip;
   }
@@ -268,10 +271,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get status
+   * Site specific recruiting status.
    * @return status
   **/
-  @Schema(description = "")
+  @Schema(description = "Site specific recruiting status.")
   public String getStatus() {
     return status;
   }
@@ -286,10 +289,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get firstName
+   * Site primary contact first name.
    * @return firstName
   **/
-  @Schema(description = "")
+  @Schema(description = "Site primary contact first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -304,10 +307,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get middleName
+   * Site primary contact middle name.
    * @return middleName
   **/
-  @Schema(description = "")
+  @Schema(description = "Site primary contact middle name.")
   public String getMiddleName() {
     return middleName;
   }
@@ -322,10 +325,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get lastName
+   * Site primary contact last name.
    * @return lastName
   **/
-  @Schema(description = "")
+  @Schema(description = "Site primary contact last name.")
   public String getLastName() {
     return lastName;
   }
@@ -340,10 +343,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get degrees
+   * Site primary contact degrees.
    * @return degrees
   **/
-  @Schema(description = "")
+  @Schema(description = "Site primary contact degrees.")
   public String getDegrees() {
     return degrees;
   }
@@ -358,10 +361,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get phone
+   * Site primary contact phone number.
    * @return phone
   **/
-  @Schema(description = "")
+  @Schema(description = "Site primary contact phone number.")
   public String getPhone() {
     return phone;
   }
@@ -376,10 +379,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get phoneExt
+   * Site primary contact phone number extension.
    * @return phoneExt
   **/
-  @Schema(description = "")
+  @Schema(description = "Site primary contact phone number extension.")
   public String getPhoneExt() {
     return phoneExt;
   }
@@ -394,10 +397,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get email
+   * Site primary contact email address.
    * @return email
   **/
-  @Schema(description = "")
+  @Schema(description = "Site primary contact email address.")
   public String getEmail() {
     return email;
   }
@@ -412,10 +415,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get firstNameBackup
+   * Site backup contact first name.
    * @return firstNameBackup
   **/
-  @Schema(description = "")
+  @Schema(description = "Site backup contact first name.")
   public String getFirstNameBackup() {
     return firstNameBackup;
   }
@@ -430,10 +433,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get middleNameBackup
+   * Site backup contact middle name.
    * @return middleNameBackup
   **/
-  @Schema(description = "")
+  @Schema(description = "Site backup contact middle name.")
   public String getMiddleNameBackup() {
     return middleNameBackup;
   }
@@ -448,10 +451,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get lastNameBackup
+   * Site backup contact last name.
    * @return lastNameBackup
   **/
-  @Schema(description = "")
+  @Schema(description = "Site backup contact last name.")
   public String getLastNameBackup() {
     return lastNameBackup;
   }
@@ -466,10 +469,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get degreesBackup
+   * Site backup contact degrees.
    * @return degreesBackup
   **/
-  @Schema(description = "")
+  @Schema(description = "Site backup contact degrees.")
   public String getDegreesBackup() {
     return degreesBackup;
   }
@@ -484,10 +487,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get phoneBackup
+   * Site backup contact phone number.
    * @return phoneBackup
   **/
-  @Schema(description = "")
+  @Schema(description = "Site backup contact phone number.")
   public String getPhoneBackup() {
     return phoneBackup;
   }
@@ -502,10 +505,10 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get phoneExtBackup
+   * Site backup contact phone number extension.
    * @return phoneExtBackup
   **/
-  @Schema(description = "")
+  @Schema(description = "Site backup contact phone number extension.")
   public String getPhoneExtBackup() {
     return phoneExtBackup;
   }
@@ -520,16 +523,34 @@ public class ClinicalTrialLocations {
   }
 
    /**
-   * Get emailBackup
+   * Site backup contact email address.
    * @return emailBackup
   **/
-  @Schema(description = "")
+  @Schema(description = "Site backup contact email address.")
   public String getEmailBackup() {
     return emailBackup;
   }
 
   public void setEmailBackup(String emailBackup) {
     this.emailBackup = emailBackup;
+  }
+
+  public ClinicalTrialLocations isInInstitution(Boolean isInInstitution) {
+    this.isInInstitution = isInInstitution;
+    return this;
+  }
+
+   /**
+   * If an institutionId was provided for search, indicates if this site is associated with the institution.
+   * @return isInInstitution
+  **/
+  @Schema(description = "If an institutionId was provided for search, indicates if this site is associated with the institution.")
+  public Boolean isIsInInstitution() {
+    return isInInstitution;
+  }
+
+  public void setIsInInstitution(Boolean isInInstitution) {
+    this.isInInstitution = isInInstitution;
   }
 
 
@@ -565,12 +586,13 @@ public class ClinicalTrialLocations {
         Objects.equals(this.degreesBackup, clinicalTrialLocations.degreesBackup) &&
         Objects.equals(this.phoneBackup, clinicalTrialLocations.phoneBackup) &&
         Objects.equals(this.phoneExtBackup, clinicalTrialLocations.phoneExtBackup) &&
-        Objects.equals(this.emailBackup, clinicalTrialLocations.emailBackup);
+        Objects.equals(this.emailBackup, clinicalTrialLocations.emailBackup) &&
+        Objects.equals(this.isInInstitution, clinicalTrialLocations.isInInstitution);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, street, country, name, poBox, city, state, zip, geo, status, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup);
+    return Objects.hash(id, street, country, name, poBox, city, state, zip, geo, status, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, isInInstitution);
   }
 
 
@@ -603,6 +625,7 @@ public class ClinicalTrialLocations {
     sb.append("    phoneBackup: ").append(toIndentedString(phoneBackup)).append("\n");
     sb.append("    phoneExtBackup: ").append(toIndentedString(phoneExtBackup)).append("\n");
     sb.append("    emailBackup: ").append(toIndentedString(emailBackup)).append("\n");
+    sb.append("    isInInstitution: ").append(toIndentedString(isInInstitution)).append("\n");
     sb.append("}");
     return sb.toString();
   }

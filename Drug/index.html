@@ -60,6 +60,51 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../Assertion/">Assertion</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionClassifications/">AssertionClassifications</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionPrevalence/">AssertionPrevalence</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionSources/">AssertionSources</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTags/">AssertionTags</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTherapeuticContext/">AssertionTherapeuticContext</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTier/">AssertionTier</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTierExplanation/">AssertionTierExplanation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTiers/">AssertionTiers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../AssertionsApi/">AssertionsApi</a>
 	    </li>
           
@@ -96,6 +141,16 @@
             <li class="toctree-l1">
 		
     <a class="" href="../ClinicalTrialLeadSponsor/">ClinicalTrialLeadSponsor</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ClinicalTrialLocationSummary/">ClinicalTrialLocationSummary</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ClinicalTrialLocationSummaryCountries/">ClinicalTrialLocationSummaryCountries</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -163,8 +218,6 @@
         <ul>
         
             <li><a class="toctree-l3" href="#properties">Properties</a></li>
-        
-            <li><a class="toctree-l3" href="#enum-analyzerenum">Enum: AnalyzerEnum</a></li>
         
         </ul>
     
@@ -284,6 +337,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../PublicationAuthors/">PublicationAuthors</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../SearchRequest/">SearchRequest</a>
 	    </li>
           
@@ -309,6 +367,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../SearchResponseClinicalTrial/">SearchResponseClinicalTrial</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../SearchResponseDrug/">SearchResponseDrug</a>
 	    </li>
           
@@ -325,6 +388,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../Sponsor/">Sponsor</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../StandardizedTier/">StandardizedTier</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -384,61 +452,31 @@
 <tr>
 <td><strong>mboost</strong></td>
 <td><strong>Float</strong></td>
-<td></td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>analyzer</strong></td>
-<td><a href="#AnalyzerEnum"><strong>AnalyzerEnum</strong></a></td>
-<td></td>
+<td>intrinsic boost to the record.</td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>id</strong></td>
 <td><strong>String</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>source</strong></td>
-<td><strong>String</strong></td>
-<td></td>
+<td>unique identifier.</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>name</strong></td>
 <td><strong>String</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>nameLower</strong></td>
-<td><strong>String</strong></td>
-<td></td>
+<td>The name of the drug.</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>alias</strong></td>
 <td><strong>String</strong></td>
-<td></td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>exclude</strong></td>
-<td><strong>Boolean</strong></td>
-<td></td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>custom</strong></td>
-<td><strong>Boolean</strong></td>
-<td></td>
+<td>The most common name for the drug.</td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>description</strong></td>
 <td><strong>String</strong></td>
-<td></td>
+<td>Descriptions of drug chemical properties, history and regulatory status.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -448,27 +486,21 @@
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>suppressResistance</strong></td>
-<td><strong>Boolean</strong></td>
-<td></td>
-<td>[optional]</td>
-</tr>
-<tr>
 <td><strong>approved</strong></td>
 <td><strong>Boolean</strong></td>
-<td></td>
+<td>Indicates whether this drug has been approved by any regulating government.</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>availability</strong></td>
 <td><a href="../DrugAvailability/"><strong>List&lt;DrugAvailability&gt;</strong></a></td>
-<td></td>
+<td>Countries or jurisdictions where this drug is available.</td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>synonyms</strong></td>
 <td><a href="../DrugSynonyms/"><strong>List&lt;DrugSynonyms&gt;</strong></a></td>
-<td></td>
+<td>Other names or identifiers that are associated with this drug.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -522,7 +554,7 @@
 <tr>
 <td><strong>externalIds</strong></td>
 <td><a href="../DrugExternalIds/"><strong>List&lt;DrugExternalIds&gt;</strong></a></td>
-<td></td>
+<td>Identifiers used in other websites or databases providing information about this drug.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -534,13 +566,13 @@
 <tr>
 <td><strong>prices</strong></td>
 <td><a href="../DrugPrices/"><strong>List&lt;DrugPrices&gt;</strong></a></td>
-<td></td>
+<td>Unit drug prices.</td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>dosages</strong></td>
 <td><a href="../DrugDosages/"><strong>List&lt;DrugDosages&gt;</strong></a></td>
-<td></td>
+<td>A list of the commercially available dosages of the drug.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -554,38 +586,6 @@
 <td><strong>Float</strong></td>
 <td></td>
 <td>[optional]</td>
-</tr>
-<tr>
-<td><strong>_valid</strong></td>
-<td><strong>Object</strong></td>
-<td></td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>_validMessage</strong></td>
-<td><strong>String</strong></td>
-<td></td>
-<td>[optional]</td>
-</tr>
-</tbody>
-</table>
-<p><a name="AnalyzerEnum"></a></p>
-<h2 id="enum-analyzerenum">Enum: AnalyzerEnum</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DEFAULT</td>
-<td>&quot;DEFAULT&quot;</td>
-</tr>
-<tr>
-<td>CASE_SENSITIVE</td>
-<td>&quot;CASE_SENSITIVE&quot;</td>
 </tr>
 </tbody>
 </table>

@@ -60,6 +60,51 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../Assertion/">Assertion</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionClassifications/">AssertionClassifications</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionPrevalence/">AssertionPrevalence</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionSources/">AssertionSources</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTags/">AssertionTags</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTherapeuticContext/">AssertionTherapeuticContext</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTier/">AssertionTier</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTierExplanation/">AssertionTierExplanation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssertionTiers/">AssertionTiers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../AssertionsApi/">AssertionsApi</a>
 	    </li>
           
@@ -108,6 +153,16 @@
             <li class="toctree-l1">
 		
     <a class="" href="../ClinicalTrialLeadSponsor/">ClinicalTrialLeadSponsor</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ClinicalTrialLocationSummary/">ClinicalTrialLocationSummary</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ClinicalTrialLocationSummaryCountries/">ClinicalTrialLocationSummaryCountries</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -282,6 +337,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../PublicationAuthors/">PublicationAuthors</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../SearchRequest/">SearchRequest</a>
 	    </li>
           
@@ -307,6 +367,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../SearchResponseClinicalTrial/">SearchResponseClinicalTrial</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../SearchResponseDrug/">SearchResponseDrug</a>
 	    </li>
           
@@ -323,6 +388,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../Sponsor/">Sponsor</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../StandardizedTier/">StandardizedTier</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -448,7 +518,7 @@
 <tr>
 <td><strong>status</strong></td>
 <td><strong>String</strong></td>
-<td></td>
+<td>Trial recruiting status.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -484,13 +554,13 @@
 <tr>
 <td><strong>firstReceivedDate</strong></td>
 <td><a href="OffsetDateTime.md"><strong>OffsetDateTime</strong></a></td>
-<td></td>
+<td>The date on which the study sponsor or investigator first submitted a study record to the trial registry (see source field).</td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>lastChangedDate</strong></td>
 <td><a href="OffsetDateTime.md"><strong>OffsetDateTime</strong></a></td>
-<td></td>
+<td>The most recent date that any information was updated for this trial.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -502,13 +572,13 @@
 <tr>
 <td><strong>sponsors</strong></td>
 <td><a href="../ClinicalTrialSponsors/"><strong>List&lt;ClinicalTrialSponsors&gt;</strong></a></td>
-<td></td>
+<td>The list of organizations or persons who initiated the study and who have authority and control over the study.</td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>conditions</strong></td>
 <td><strong>List&lt;String&gt;</strong></td>
-<td></td>
+<td>Diseases/Conditions related to this trial.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -596,15 +666,21 @@
 <td>[optional]</td>
 </tr>
 <tr>
+<td><strong>locationSummary</strong></td>
+<td><a href="../ClinicalTrialLocationSummary/"><strong>ClinicalTrialLocationSummary</strong></a></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
 <td><strong>locations</strong></td>
 <td><a href="../ClinicalTrialLocations/"><strong>List&lt;ClinicalTrialLocations&gt;</strong></a></td>
-<td></td>
+<td>Information about the sites offering this trial.</td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>countries</strong></td>
 <td><a href="../ClinicalTrialCountries/"><strong>List&lt;ClinicalTrialCountries&gt;</strong></a></td>
-<td>Countries with locations offering this trial.</td>
+<td>Countries with sites offering this trial.</td>
 <td>[optional]</td>
 </tr>
 <tr>

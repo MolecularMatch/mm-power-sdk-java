@@ -19,12 +19,12 @@ Name | Type | Description | Notes
 **conflicts** | **String** |  |  [optional]
 **fulltext** | **String** |  |  [optional]
 **citation** | **String** |  | 
-**citationDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
+**citationDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) |  | 
 **link** | **String** |  |  [optional]
-**chemicals** | **List&lt;String&gt;** |  |  [optional]
-**keywords** | **List&lt;String&gt;** |  |  [optional]
-**extendedKeywords** | **List&lt;String&gt;** |  |  [optional]
-**publicationType** | **List&lt;String&gt;** |  |  [optional]
-**authors** | [**List&lt;PublicationAuthors&gt;**](PublicationAuthors.md) |  |  [optional]
-**tags** | [**List&lt;ClinicalTrialTags&gt;**](ClinicalTrialTags.md) | Concept associations established for this publication. |  [optional]
-**molecularAlterations** | [**List&lt;ClinicalTrialMolecularAlterations&gt;**](ClinicalTrialMolecularAlterations.md) | Molecular concept associations established for this publication. |  [optional]
+**chemicals** | **java.util.List&lt;String&gt;** |  |  [optional]
+**keywords** | **java.util.List&lt;String&gt;** |  |  [optional]
+**extendedKeywords** | **java.util.List&lt;String&gt;** |  |  [optional]
+**publicationType** | **java.util.List&lt;String&gt;** |  |  [optional]
+**authors** | [**java.util.List&lt;PublicationAuthors&gt;**](PublicationAuthors.md) |  |  [optional]
+**tags** | [**java.util.List&lt;ClinicalTrialTags&gt;**](ClinicalTrialTags.md) | Concept associations established for this publication. |  [optional]
+**molecularAlterations** | [**java.util.List&lt;ClinicalTrialMolecularAlterations&gt;**](ClinicalTrialMolecularAlterations.md) | Molecular concept associations established for this publication. |  [optional]

@@ -30,10 +30,6 @@ import io.swagger.client.model.SearchRequest;
 import io.swagger.client.model.SearchResponseDrug;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class AssertionsApi {
     private ApiClient apiClient;
@@ -68,12 +64,12 @@ public class AssertionsApi {
         // create path and map variables
         String localVarPath = "/assertion/search";
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
 
         final String[] localVarAccepts = {
             "application/json"

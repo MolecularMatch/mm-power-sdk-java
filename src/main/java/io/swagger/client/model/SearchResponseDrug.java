@@ -23,8 +23,6 @@ import io.swagger.client.model.Filter;
 import io.swagger.client.model.SearchResponseDrugRows;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * The search response schema.
  */
@@ -50,16 +48,16 @@ public class SearchResponseDrug {
   private Integer page = null;
 
   @SerializedName("rows")
-  private List<SearchResponseDrugRows> rows = null;
+  private java.util.List<SearchResponseDrugRows> rows = null;
 
   @SerializedName("rationalized")
-  private List<Filter> rationalized = null;
+  private java.util.List<Filter> rationalized = null;
 
   @SerializedName("unrecognized")
-  private List<Filter> unrecognized = null;
+  private java.util.List<Filter> unrecognized = null;
 
   @SerializedName("ambiguousNarrative")
-  private List<String> ambiguousNarrative = null;
+  private java.util.List<String> ambiguousNarrative = null;
 
   public SearchResponseDrug searchKey(String searchKey) {
     this.searchKey = searchKey;
@@ -169,14 +167,14 @@ public class SearchResponseDrug {
     this.page = page;
   }
 
-  public SearchResponseDrug rows(List<SearchResponseDrugRows> rows) {
+  public SearchResponseDrug rows(java.util.List<SearchResponseDrugRows> rows) {
     this.rows = rows;
     return this;
   }
 
   public SearchResponseDrug addRowsItem(SearchResponseDrugRows rowsItem) {
     if (this.rows == null) {
-      this.rows = new ArrayList<SearchResponseDrugRows>();
+      this.rows = new java.util.ArrayList<>();
     }
     this.rows.add(rowsItem);
     return this;
@@ -187,22 +185,22 @@ public class SearchResponseDrug {
    * @return rows
   **/
   @Schema(description = "The array of drugs that match the search criteria.")
-  public List<SearchResponseDrugRows> getRows() {
+  public java.util.List<SearchResponseDrugRows> getRows() {
     return rows;
   }
 
-  public void setRows(List<SearchResponseDrugRows> rows) {
+  public void setRows(java.util.List<SearchResponseDrugRows> rows) {
     this.rows = rows;
   }
 
-  public SearchResponseDrug rationalized(List<Filter> rationalized) {
+  public SearchResponseDrug rationalized(java.util.List<Filter> rationalized) {
     this.rationalized = rationalized;
     return this;
   }
 
   public SearchResponseDrug addRationalizedItem(Filter rationalizedItem) {
     if (this.rationalized == null) {
-      this.rationalized = new ArrayList<Filter>();
+      this.rationalized = new java.util.ArrayList<>();
     }
     this.rationalized.add(rationalizedItem);
     return this;
@@ -213,22 +211,22 @@ public class SearchResponseDrug {
    * @return rationalized
   **/
   @Schema(description = "The array of filters and how they were interpreted by the MolecularMatch search engine.")
-  public List<Filter> getRationalized() {
+  public java.util.List<Filter> getRationalized() {
     return rationalized;
   }
 
-  public void setRationalized(List<Filter> rationalized) {
+  public void setRationalized(java.util.List<Filter> rationalized) {
     this.rationalized = rationalized;
   }
 
-  public SearchResponseDrug unrecognized(List<Filter> unrecognized) {
+  public SearchResponseDrug unrecognized(java.util.List<Filter> unrecognized) {
     this.unrecognized = unrecognized;
     return this;
   }
 
   public SearchResponseDrug addUnrecognizedItem(Filter unrecognizedItem) {
     if (this.unrecognized == null) {
-      this.unrecognized = new ArrayList<Filter>();
+      this.unrecognized = new java.util.ArrayList<>();
     }
     this.unrecognized.add(unrecognizedItem);
     return this;
@@ -239,22 +237,22 @@ public class SearchResponseDrug {
    * @return unrecognized
   **/
   @Schema(description = "The array of filters that were not recognized by the MolecularMatch search engine.")
-  public List<Filter> getUnrecognized() {
+  public java.util.List<Filter> getUnrecognized() {
     return unrecognized;
   }
 
-  public void setUnrecognized(List<Filter> unrecognized) {
+  public void setUnrecognized(java.util.List<Filter> unrecognized) {
     this.unrecognized = unrecognized;
   }
 
-  public SearchResponseDrug ambiguousNarrative(List<String> ambiguousNarrative) {
+  public SearchResponseDrug ambiguousNarrative(java.util.List<String> ambiguousNarrative) {
     this.ambiguousNarrative = ambiguousNarrative;
     return this;
   }
 
   public SearchResponseDrug addAmbiguousNarrativeItem(String ambiguousNarrativeItem) {
     if (this.ambiguousNarrative == null) {
-      this.ambiguousNarrative = new ArrayList<String>();
+      this.ambiguousNarrative = new java.util.ArrayList<>();
     }
     this.ambiguousNarrative.add(ambiguousNarrativeItem);
     return this;
@@ -265,11 +263,11 @@ public class SearchResponseDrug {
    * @return ambiguousNarrative
   **/
   @Schema(description = "if true include a human readable ambiguous narrative.  This enables the consumer to activate \"did you mean\" search capability.")
-  public List<String> getAmbiguousNarrative() {
+  public java.util.List<String> getAmbiguousNarrative() {
     return ambiguousNarrative;
   }
 
-  public void setAmbiguousNarrative(List<String> ambiguousNarrative) {
+  public void setAmbiguousNarrative(java.util.List<String> ambiguousNarrative) {
     this.ambiguousNarrative = ambiguousNarrative;
   }
 

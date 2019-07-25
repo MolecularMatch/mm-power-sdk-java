@@ -22,8 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.ClinicalTrialLocationSummaryCountries;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Summary information about the sites offering this trial.
  */
@@ -43,7 +41,7 @@ public class ClinicalTrialLocationSummary {
   private Float recruitingCount = null;
 
   @SerializedName("countries")
-  private List<ClinicalTrialLocationSummaryCountries> countries = null;
+  private java.util.List<ClinicalTrialLocationSummaryCountries> countries = null;
 
   public ClinicalTrialLocationSummary us(Boolean us) {
     this.us = us;
@@ -117,14 +115,14 @@ public class ClinicalTrialLocationSummary {
     this.recruitingCount = recruitingCount;
   }
 
-  public ClinicalTrialLocationSummary countries(List<ClinicalTrialLocationSummaryCountries> countries) {
+  public ClinicalTrialLocationSummary countries(java.util.List<ClinicalTrialLocationSummaryCountries> countries) {
     this.countries = countries;
     return this;
   }
 
   public ClinicalTrialLocationSummary addCountriesItem(ClinicalTrialLocationSummaryCountries countriesItem) {
     if (this.countries == null) {
-      this.countries = new ArrayList<ClinicalTrialLocationSummaryCountries>();
+      this.countries = new java.util.ArrayList<>();
     }
     this.countries.add(countriesItem);
     return this;
@@ -135,11 +133,11 @@ public class ClinicalTrialLocationSummary {
    * @return countries
   **/
   @Schema(description = "Countries with locations offering this trial.")
-  public List<ClinicalTrialLocationSummaryCountries> getCountries() {
+  public java.util.List<ClinicalTrialLocationSummaryCountries> getCountries() {
     return countries;
   }
 
-  public void setCountries(List<ClinicalTrialLocationSummaryCountries> countries) {
+  public void setCountries(java.util.List<ClinicalTrialLocationSummaryCountries> countries) {
     this.countries = countries;
   }
 

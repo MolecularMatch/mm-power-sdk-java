@@ -4,4 +4,4 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agency** | **String** |  | 
-**agencyClass** | **List&lt;String&gt;** |  |  [optional]
+**agencyClass** | **java.util.List&lt;String&gt;** |  |  [optional]

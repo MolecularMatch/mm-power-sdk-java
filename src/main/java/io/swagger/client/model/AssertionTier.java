@@ -22,9 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.AssertionTierExplanation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 /**
  * AssertionTier
  */
@@ -38,7 +36,7 @@ public class AssertionTier {
   private OffsetDateTime calculatedAt = null;
 
   @SerializedName("explanation")
-  private List<AssertionTierExplanation> explanation = null;
+  private java.util.List<AssertionTierExplanation> explanation = null;
 
   public AssertionTier value(String value) {
     this.value = value;
@@ -76,14 +74,14 @@ public class AssertionTier {
     this.calculatedAt = calculatedAt;
   }
 
-  public AssertionTier explanation(List<AssertionTierExplanation> explanation) {
+  public AssertionTier explanation(java.util.List<AssertionTierExplanation> explanation) {
     this.explanation = explanation;
     return this;
   }
 
   public AssertionTier addExplanationItem(AssertionTierExplanation explanationItem) {
     if (this.explanation == null) {
-      this.explanation = new ArrayList<AssertionTierExplanation>();
+      this.explanation = new java.util.ArrayList<>();
     }
     this.explanation.add(explanationItem);
     return this;
@@ -94,11 +92,11 @@ public class AssertionTier {
    * @return explanation
   **/
   @Schema(description = "")
-  public List<AssertionTierExplanation> getExplanation() {
+  public java.util.List<AssertionTierExplanation> getExplanation() {
     return explanation;
   }
 
-  public void setExplanation(List<AssertionTierExplanation> explanation) {
+  public void setExplanation(java.util.List<AssertionTierExplanation> explanation) {
     this.explanation = explanation;
   }
 

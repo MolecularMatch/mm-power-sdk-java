@@ -22,8 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.ClinicalTrialLeadSponsor;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * ClinicalTrialSponsors
  */
@@ -34,7 +32,7 @@ public class ClinicalTrialSponsors {
   private ClinicalTrialLeadSponsor leadSponsor = null;
 
   @SerializedName("collaborator")
-  private List<ClinicalTrialLeadSponsor> collaborator = null;
+  private java.util.List<ClinicalTrialLeadSponsor> collaborator = null;
 
   public ClinicalTrialSponsors leadSponsor(ClinicalTrialLeadSponsor leadSponsor) {
     this.leadSponsor = leadSponsor;
@@ -54,14 +52,14 @@ public class ClinicalTrialSponsors {
     this.leadSponsor = leadSponsor;
   }
 
-  public ClinicalTrialSponsors collaborator(List<ClinicalTrialLeadSponsor> collaborator) {
+  public ClinicalTrialSponsors collaborator(java.util.List<ClinicalTrialLeadSponsor> collaborator) {
     this.collaborator = collaborator;
     return this;
   }
 
   public ClinicalTrialSponsors addCollaboratorItem(ClinicalTrialLeadSponsor collaboratorItem) {
     if (this.collaborator == null) {
-      this.collaborator = new ArrayList<ClinicalTrialLeadSponsor>();
+      this.collaborator = new java.util.ArrayList<>();
     }
     this.collaborator.add(collaboratorItem);
     return this;
@@ -72,11 +70,11 @@ public class ClinicalTrialSponsors {
    * @return collaborator
   **/
   @Schema(description = "")
-  public List<ClinicalTrialLeadSponsor> getCollaborator() {
+  public java.util.List<ClinicalTrialLeadSponsor> getCollaborator() {
     return collaborator;
   }
 
-  public void setCollaborator(List<ClinicalTrialLeadSponsor> collaborator) {
+  public void setCollaborator(java.util.List<ClinicalTrialLeadSponsor> collaborator) {
     this.collaborator = collaborator;
   }
 

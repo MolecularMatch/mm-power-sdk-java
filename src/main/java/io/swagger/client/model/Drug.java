@@ -31,8 +31,6 @@ import io.swagger.client.model.DrugPrices;
 import io.swagger.client.model.DrugSynonyms;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Drug
  */
@@ -61,22 +59,22 @@ public class Drug {
   private Boolean approved = null;
 
   @SerializedName("availability")
-  private List<DrugAvailability> availability = null;
+  private java.util.List<DrugAvailability> availability = null;
 
   @SerializedName("synonyms")
-  private List<DrugSynonyms> synonyms = null;
+  private java.util.List<DrugSynonyms> synonyms = null;
 
   @SerializedName("parents")
-  private List<DrugParents> parents = null;
+  private java.util.List<DrugParents> parents = null;
 
   @SerializedName("drugclass")
-  private List<DrugDrugclass> drugclass = null;
+  private java.util.List<DrugDrugclass> drugclass = null;
 
   @SerializedName("compositeTags")
-  private List<DrugCompositeTags> compositeTags = null;
+  private java.util.List<DrugCompositeTags> compositeTags = null;
 
   @SerializedName("brands")
-  private List<DrugBrands> brands = null;
+  private java.util.List<DrugBrands> brands = null;
 
   @SerializedName("indicationText")
   private String indicationText = null;
@@ -88,19 +86,19 @@ public class Drug {
   private String mechanismText = null;
 
   @SerializedName("rxcui")
-  private List<String> rxcui = null;
+  private java.util.List<String> rxcui = null;
 
   @SerializedName("externalIds")
-  private List<DrugExternalIds> externalIds = null;
+  private java.util.List<DrugExternalIds> externalIds = null;
 
   @SerializedName("link")
   private String link = null;
 
   @SerializedName("prices")
-  private List<DrugPrices> prices = null;
+  private java.util.List<DrugPrices> prices = null;
 
   @SerializedName("dosages")
-  private List<DrugDosages> dosages = null;
+  private java.util.List<DrugDosages> dosages = null;
 
   @SerializedName("pharmacology")
   private DrugPharmacology pharmacology = null;
@@ -234,14 +232,14 @@ public class Drug {
     this.approved = approved;
   }
 
-  public Drug availability(List<DrugAvailability> availability) {
+  public Drug availability(java.util.List<DrugAvailability> availability) {
     this.availability = availability;
     return this;
   }
 
   public Drug addAvailabilityItem(DrugAvailability availabilityItem) {
     if (this.availability == null) {
-      this.availability = new ArrayList<DrugAvailability>();
+      this.availability = new java.util.ArrayList<>();
     }
     this.availability.add(availabilityItem);
     return this;
@@ -252,22 +250,22 @@ public class Drug {
    * @return availability
   **/
   @Schema(description = "Countries or jurisdictions where this drug is available.")
-  public List<DrugAvailability> getAvailability() {
+  public java.util.List<DrugAvailability> getAvailability() {
     return availability;
   }
 
-  public void setAvailability(List<DrugAvailability> availability) {
+  public void setAvailability(java.util.List<DrugAvailability> availability) {
     this.availability = availability;
   }
 
-  public Drug synonyms(List<DrugSynonyms> synonyms) {
+  public Drug synonyms(java.util.List<DrugSynonyms> synonyms) {
     this.synonyms = synonyms;
     return this;
   }
 
   public Drug addSynonymsItem(DrugSynonyms synonymsItem) {
     if (this.synonyms == null) {
-      this.synonyms = new ArrayList<DrugSynonyms>();
+      this.synonyms = new java.util.ArrayList<>();
     }
     this.synonyms.add(synonymsItem);
     return this;
@@ -278,22 +276,22 @@ public class Drug {
    * @return synonyms
   **/
   @Schema(description = "Other names or identifiers that are associated with this drug.")
-  public List<DrugSynonyms> getSynonyms() {
+  public java.util.List<DrugSynonyms> getSynonyms() {
     return synonyms;
   }
 
-  public void setSynonyms(List<DrugSynonyms> synonyms) {
+  public void setSynonyms(java.util.List<DrugSynonyms> synonyms) {
     this.synonyms = synonyms;
   }
 
-  public Drug parents(List<DrugParents> parents) {
+  public Drug parents(java.util.List<DrugParents> parents) {
     this.parents = parents;
     return this;
   }
 
   public Drug addParentsItem(DrugParents parentsItem) {
     if (this.parents == null) {
-      this.parents = new ArrayList<DrugParents>();
+      this.parents = new java.util.ArrayList<>();
     }
     this.parents.add(parentsItem);
     return this;
@@ -304,22 +302,22 @@ public class Drug {
    * @return parents
   **/
   @Schema(description = "")
-  public List<DrugParents> getParents() {
+  public java.util.List<DrugParents> getParents() {
     return parents;
   }
 
-  public void setParents(List<DrugParents> parents) {
+  public void setParents(java.util.List<DrugParents> parents) {
     this.parents = parents;
   }
 
-  public Drug drugclass(List<DrugDrugclass> drugclass) {
+  public Drug drugclass(java.util.List<DrugDrugclass> drugclass) {
     this.drugclass = drugclass;
     return this;
   }
 
   public Drug addDrugclassItem(DrugDrugclass drugclassItem) {
     if (this.drugclass == null) {
-      this.drugclass = new ArrayList<DrugDrugclass>();
+      this.drugclass = new java.util.ArrayList<>();
     }
     this.drugclass.add(drugclassItem);
     return this;
@@ -330,22 +328,22 @@ public class Drug {
    * @return drugclass
   **/
   @Schema(description = "")
-  public List<DrugDrugclass> getDrugclass() {
+  public java.util.List<DrugDrugclass> getDrugclass() {
     return drugclass;
   }
 
-  public void setDrugclass(List<DrugDrugclass> drugclass) {
+  public void setDrugclass(java.util.List<DrugDrugclass> drugclass) {
     this.drugclass = drugclass;
   }
 
-  public Drug compositeTags(List<DrugCompositeTags> compositeTags) {
+  public Drug compositeTags(java.util.List<DrugCompositeTags> compositeTags) {
     this.compositeTags = compositeTags;
     return this;
   }
 
   public Drug addCompositeTagsItem(DrugCompositeTags compositeTagsItem) {
     if (this.compositeTags == null) {
-      this.compositeTags = new ArrayList<DrugCompositeTags>();
+      this.compositeTags = new java.util.ArrayList<>();
     }
     this.compositeTags.add(compositeTagsItem);
     return this;
@@ -356,22 +354,22 @@ public class Drug {
    * @return compositeTags
   **/
   @Schema(description = "")
-  public List<DrugCompositeTags> getCompositeTags() {
+  public java.util.List<DrugCompositeTags> getCompositeTags() {
     return compositeTags;
   }
 
-  public void setCompositeTags(List<DrugCompositeTags> compositeTags) {
+  public void setCompositeTags(java.util.List<DrugCompositeTags> compositeTags) {
     this.compositeTags = compositeTags;
   }
 
-  public Drug brands(List<DrugBrands> brands) {
+  public Drug brands(java.util.List<DrugBrands> brands) {
     this.brands = brands;
     return this;
   }
 
   public Drug addBrandsItem(DrugBrands brandsItem) {
     if (this.brands == null) {
-      this.brands = new ArrayList<DrugBrands>();
+      this.brands = new java.util.ArrayList<>();
     }
     this.brands.add(brandsItem);
     return this;
@@ -382,11 +380,11 @@ public class Drug {
    * @return brands
   **/
   @Schema(description = "")
-  public List<DrugBrands> getBrands() {
+  public java.util.List<DrugBrands> getBrands() {
     return brands;
   }
 
-  public void setBrands(List<DrugBrands> brands) {
+  public void setBrands(java.util.List<DrugBrands> brands) {
     this.brands = brands;
   }
 
@@ -444,14 +442,14 @@ public class Drug {
     this.mechanismText = mechanismText;
   }
 
-  public Drug rxcui(List<String> rxcui) {
+  public Drug rxcui(java.util.List<String> rxcui) {
     this.rxcui = rxcui;
     return this;
   }
 
   public Drug addRxcuiItem(String rxcuiItem) {
     if (this.rxcui == null) {
-      this.rxcui = new ArrayList<String>();
+      this.rxcui = new java.util.ArrayList<>();
     }
     this.rxcui.add(rxcuiItem);
     return this;
@@ -462,22 +460,22 @@ public class Drug {
    * @return rxcui
   **/
   @Schema(description = "")
-  public List<String> getRxcui() {
+  public java.util.List<String> getRxcui() {
     return rxcui;
   }
 
-  public void setRxcui(List<String> rxcui) {
+  public void setRxcui(java.util.List<String> rxcui) {
     this.rxcui = rxcui;
   }
 
-  public Drug externalIds(List<DrugExternalIds> externalIds) {
+  public Drug externalIds(java.util.List<DrugExternalIds> externalIds) {
     this.externalIds = externalIds;
     return this;
   }
 
   public Drug addExternalIdsItem(DrugExternalIds externalIdsItem) {
     if (this.externalIds == null) {
-      this.externalIds = new ArrayList<DrugExternalIds>();
+      this.externalIds = new java.util.ArrayList<>();
     }
     this.externalIds.add(externalIdsItem);
     return this;
@@ -488,11 +486,11 @@ public class Drug {
    * @return externalIds
   **/
   @Schema(description = "Identifiers used in other websites or databases providing information about this drug.")
-  public List<DrugExternalIds> getExternalIds() {
+  public java.util.List<DrugExternalIds> getExternalIds() {
     return externalIds;
   }
 
-  public void setExternalIds(List<DrugExternalIds> externalIds) {
+  public void setExternalIds(java.util.List<DrugExternalIds> externalIds) {
     this.externalIds = externalIds;
   }
 
@@ -514,14 +512,14 @@ public class Drug {
     this.link = link;
   }
 
-  public Drug prices(List<DrugPrices> prices) {
+  public Drug prices(java.util.List<DrugPrices> prices) {
     this.prices = prices;
     return this;
   }
 
   public Drug addPricesItem(DrugPrices pricesItem) {
     if (this.prices == null) {
-      this.prices = new ArrayList<DrugPrices>();
+      this.prices = new java.util.ArrayList<>();
     }
     this.prices.add(pricesItem);
     return this;
@@ -532,22 +530,22 @@ public class Drug {
    * @return prices
   **/
   @Schema(description = "Unit drug prices.")
-  public List<DrugPrices> getPrices() {
+  public java.util.List<DrugPrices> getPrices() {
     return prices;
   }
 
-  public void setPrices(List<DrugPrices> prices) {
+  public void setPrices(java.util.List<DrugPrices> prices) {
     this.prices = prices;
   }
 
-  public Drug dosages(List<DrugDosages> dosages) {
+  public Drug dosages(java.util.List<DrugDosages> dosages) {
     this.dosages = dosages;
     return this;
   }
 
   public Drug addDosagesItem(DrugDosages dosagesItem) {
     if (this.dosages == null) {
-      this.dosages = new ArrayList<DrugDosages>();
+      this.dosages = new java.util.ArrayList<>();
     }
     this.dosages.add(dosagesItem);
     return this;
@@ -558,11 +556,11 @@ public class Drug {
    * @return dosages
   **/
   @Schema(description = "A list of the commercially available dosages of the drug.")
-  public List<DrugDosages> getDosages() {
+  public java.util.List<DrugDosages> getDosages() {
     return dosages;
   }
 
-  public void setDosages(List<DrugDosages> dosages) {
+  public void setDosages(java.util.List<DrugDosages> dosages) {
     this.dosages = dosages;
   }
 

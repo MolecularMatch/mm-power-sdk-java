@@ -27,8 +27,6 @@ import io.swagger.client.model.AssertionTherapeuticContext;
 import io.swagger.client.model.AssertionTiers;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Assertion
  */
@@ -39,7 +37,7 @@ public class Assertion {
   private String id = null;
 
   @SerializedName("external_id")
-  private List<String> externalId = null;
+  private java.util.List<String> externalId = null;
 
   @SerializedName("uniqueKey")
   private String uniqueKey = null;
@@ -87,28 +85,28 @@ public class Assertion {
   private String expression = null;
 
   @SerializedName("tags")
-  private List<AssertionTags> tags = null;
+  private java.util.List<AssertionTags> tags = null;
 
   @SerializedName("sources")
-  private List<AssertionSources> sources = null;
+  private java.util.List<AssertionSources> sources = null;
 
   @SerializedName("noTherapyAvailable")
   private Boolean noTherapyAvailable = null;
 
   @SerializedName("therapeuticContext")
-  private List<AssertionTherapeuticContext> therapeuticContext = null;
+  private java.util.List<AssertionTherapeuticContext> therapeuticContext = null;
 
   @SerializedName("tiers")
-  private List<AssertionTiers> tiers = null;
+  private java.util.List<AssertionTiers> tiers = null;
 
   @SerializedName("releasedTiers")
-  private List<AssertionTiers> releasedTiers = null;
+  private java.util.List<AssertionTiers> releasedTiers = null;
 
   @SerializedName("classifications")
-  private List<AssertionClassifications> classifications = null;
+  private java.util.List<AssertionClassifications> classifications = null;
 
   @SerializedName("prevalence")
-  private List<AssertionPrevalence> prevalence = null;
+  private java.util.List<AssertionPrevalence> prevalence = null;
 
   public Assertion id(String id) {
     this.id = id;
@@ -128,14 +126,14 @@ public class Assertion {
     this.id = id;
   }
 
-  public Assertion externalId(List<String> externalId) {
+  public Assertion externalId(java.util.List<String> externalId) {
     this.externalId = externalId;
     return this;
   }
 
   public Assertion addExternalIdItem(String externalIdItem) {
     if (this.externalId == null) {
-      this.externalId = new ArrayList<String>();
+      this.externalId = new java.util.ArrayList<>();
     }
     this.externalId.add(externalIdItem);
     return this;
@@ -146,11 +144,11 @@ public class Assertion {
    * @return externalId
   **/
   @Schema(description = "")
-  public List<String> getExternalId() {
+  public java.util.List<String> getExternalId() {
     return externalId;
   }
 
-  public void setExternalId(List<String> externalId) {
+  public void setExternalId(java.util.List<String> externalId) {
     this.externalId = externalId;
   }
 
@@ -424,14 +422,14 @@ public class Assertion {
     this.expression = expression;
   }
 
-  public Assertion tags(List<AssertionTags> tags) {
+  public Assertion tags(java.util.List<AssertionTags> tags) {
     this.tags = tags;
     return this;
   }
 
   public Assertion addTagsItem(AssertionTags tagsItem) {
     if (this.tags == null) {
-      this.tags = new ArrayList<AssertionTags>();
+      this.tags = new java.util.ArrayList<>();
     }
     this.tags.add(tagsItem);
     return this;
@@ -442,22 +440,22 @@ public class Assertion {
    * @return tags
   **/
   @Schema(description = "")
-  public List<AssertionTags> getTags() {
+  public java.util.List<AssertionTags> getTags() {
     return tags;
   }
 
-  public void setTags(List<AssertionTags> tags) {
+  public void setTags(java.util.List<AssertionTags> tags) {
     this.tags = tags;
   }
 
-  public Assertion sources(List<AssertionSources> sources) {
+  public Assertion sources(java.util.List<AssertionSources> sources) {
     this.sources = sources;
     return this;
   }
 
   public Assertion addSourcesItem(AssertionSources sourcesItem) {
     if (this.sources == null) {
-      this.sources = new ArrayList<AssertionSources>();
+      this.sources = new java.util.ArrayList<>();
     }
     this.sources.add(sourcesItem);
     return this;
@@ -468,11 +466,11 @@ public class Assertion {
    * @return sources
   **/
   @Schema(description = "The supporting evidence for this assertion.")
-  public List<AssertionSources> getSources() {
+  public java.util.List<AssertionSources> getSources() {
     return sources;
   }
 
-  public void setSources(List<AssertionSources> sources) {
+  public void setSources(java.util.List<AssertionSources> sources) {
     this.sources = sources;
   }
 
@@ -494,14 +492,14 @@ public class Assertion {
     this.noTherapyAvailable = noTherapyAvailable;
   }
 
-  public Assertion therapeuticContext(List<AssertionTherapeuticContext> therapeuticContext) {
+  public Assertion therapeuticContext(java.util.List<AssertionTherapeuticContext> therapeuticContext) {
     this.therapeuticContext = therapeuticContext;
     return this;
   }
 
   public Assertion addTherapeuticContextItem(AssertionTherapeuticContext therapeuticContextItem) {
     if (this.therapeuticContext == null) {
-      this.therapeuticContext = new ArrayList<AssertionTherapeuticContext>();
+      this.therapeuticContext = new java.util.ArrayList<>();
     }
     this.therapeuticContext.add(therapeuticContextItem);
     return this;
@@ -512,22 +510,22 @@ public class Assertion {
    * @return therapeuticContext
   **/
   @Schema(description = "The therapies associated with this assertion.")
-  public List<AssertionTherapeuticContext> getTherapeuticContext() {
+  public java.util.List<AssertionTherapeuticContext> getTherapeuticContext() {
     return therapeuticContext;
   }
 
-  public void setTherapeuticContext(List<AssertionTherapeuticContext> therapeuticContext) {
+  public void setTherapeuticContext(java.util.List<AssertionTherapeuticContext> therapeuticContext) {
     this.therapeuticContext = therapeuticContext;
   }
 
-  public Assertion tiers(List<AssertionTiers> tiers) {
+  public Assertion tiers(java.util.List<AssertionTiers> tiers) {
     this.tiers = tiers;
     return this;
   }
 
   public Assertion addTiersItem(AssertionTiers tiersItem) {
     if (this.tiers == null) {
-      this.tiers = new ArrayList<AssertionTiers>();
+      this.tiers = new java.util.ArrayList<>();
     }
     this.tiers.add(tiersItem);
     return this;
@@ -538,22 +536,22 @@ public class Assertion {
    * @return tiers
   **/
   @Schema(description = "")
-  public List<AssertionTiers> getTiers() {
+  public java.util.List<AssertionTiers> getTiers() {
     return tiers;
   }
 
-  public void setTiers(List<AssertionTiers> tiers) {
+  public void setTiers(java.util.List<AssertionTiers> tiers) {
     this.tiers = tiers;
   }
 
-  public Assertion releasedTiers(List<AssertionTiers> releasedTiers) {
+  public Assertion releasedTiers(java.util.List<AssertionTiers> releasedTiers) {
     this.releasedTiers = releasedTiers;
     return this;
   }
 
   public Assertion addReleasedTiersItem(AssertionTiers releasedTiersItem) {
     if (this.releasedTiers == null) {
-      this.releasedTiers = new ArrayList<AssertionTiers>();
+      this.releasedTiers = new java.util.ArrayList<>();
     }
     this.releasedTiers.add(releasedTiersItem);
     return this;
@@ -564,22 +562,22 @@ public class Assertion {
    * @return releasedTiers
   **/
   @Schema(description = "")
-  public List<AssertionTiers> getReleasedTiers() {
+  public java.util.List<AssertionTiers> getReleasedTiers() {
     return releasedTiers;
   }
 
-  public void setReleasedTiers(List<AssertionTiers> releasedTiers) {
+  public void setReleasedTiers(java.util.List<AssertionTiers> releasedTiers) {
     this.releasedTiers = releasedTiers;
   }
 
-  public Assertion classifications(List<AssertionClassifications> classifications) {
+  public Assertion classifications(java.util.List<AssertionClassifications> classifications) {
     this.classifications = classifications;
     return this;
   }
 
   public Assertion addClassificationsItem(AssertionClassifications classificationsItem) {
     if (this.classifications == null) {
-      this.classifications = new ArrayList<AssertionClassifications>();
+      this.classifications = new java.util.ArrayList<>();
     }
     this.classifications.add(classificationsItem);
     return this;
@@ -590,22 +588,22 @@ public class Assertion {
    * @return classifications
   **/
   @Schema(description = "")
-  public List<AssertionClassifications> getClassifications() {
+  public java.util.List<AssertionClassifications> getClassifications() {
     return classifications;
   }
 
-  public void setClassifications(List<AssertionClassifications> classifications) {
+  public void setClassifications(java.util.List<AssertionClassifications> classifications) {
     this.classifications = classifications;
   }
 
-  public Assertion prevalence(List<AssertionPrevalence> prevalence) {
+  public Assertion prevalence(java.util.List<AssertionPrevalence> prevalence) {
     this.prevalence = prevalence;
     return this;
   }
 
   public Assertion addPrevalenceItem(AssertionPrevalence prevalenceItem) {
     if (this.prevalence == null) {
-      this.prevalence = new ArrayList<AssertionPrevalence>();
+      this.prevalence = new java.util.ArrayList<>();
     }
     this.prevalence.add(prevalenceItem);
     return this;
@@ -616,11 +614,11 @@ public class Assertion {
    * @return prevalence
   **/
   @Schema(description = "")
-  public List<AssertionPrevalence> getPrevalence() {
+  public java.util.List<AssertionPrevalence> getPrevalence() {
     return prevalence;
   }
 
-  public void setPrevalence(List<AssertionPrevalence> prevalence) {
+  public void setPrevalence(java.util.List<AssertionPrevalence> prevalence) {
     this.prevalence = prevalence;
   }
 

@@ -4,5 +4,5 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | **String** |  | 
-**calculatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**explanation** | [**List&lt;AssertionTierExplanation&gt;**](AssertionTierExplanation.md) |  |  [optional]
+**calculatedAt** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) |  |  [optional]
+**explanation** | [**java.util.List&lt;AssertionTierExplanation&gt;**](AssertionTierExplanation.md) |  |  [optional]

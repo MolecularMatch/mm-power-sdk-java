@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * ClinicalTrialLocationSummaryCountries
  */
@@ -33,10 +31,10 @@ public class ClinicalTrialLocationSummaryCountries {
   private String name = null;
 
   @SerializedName("regions")
-  private List<String> regions = null;
+  private java.util.List<String> regions = null;
 
   @SerializedName("regionCodes")
-  private List<String> regionCodes = null;
+  private java.util.List<String> regionCodes = null;
 
   public ClinicalTrialLocationSummaryCountries name(String name) {
     this.name = name;
@@ -56,14 +54,14 @@ public class ClinicalTrialLocationSummaryCountries {
     this.name = name;
   }
 
-  public ClinicalTrialLocationSummaryCountries regions(List<String> regions) {
+  public ClinicalTrialLocationSummaryCountries regions(java.util.List<String> regions) {
     this.regions = regions;
     return this;
   }
 
   public ClinicalTrialLocationSummaryCountries addRegionsItem(String regionsItem) {
     if (this.regions == null) {
-      this.regions = new ArrayList<String>();
+      this.regions = new java.util.ArrayList<>();
     }
     this.regions.add(regionsItem);
     return this;
@@ -74,22 +72,22 @@ public class ClinicalTrialLocationSummaryCountries {
    * @return regions
   **/
   @Schema(description = "Sub divisions within the country with a trial site.")
-  public List<String> getRegions() {
+  public java.util.List<String> getRegions() {
     return regions;
   }
 
-  public void setRegions(List<String> regions) {
+  public void setRegions(java.util.List<String> regions) {
     this.regions = regions;
   }
 
-  public ClinicalTrialLocationSummaryCountries regionCodes(List<String> regionCodes) {
+  public ClinicalTrialLocationSummaryCountries regionCodes(java.util.List<String> regionCodes) {
     this.regionCodes = regionCodes;
     return this;
   }
 
   public ClinicalTrialLocationSummaryCountries addRegionCodesItem(String regionCodesItem) {
     if (this.regionCodes == null) {
-      this.regionCodes = new ArrayList<String>();
+      this.regionCodes = new java.util.ArrayList<>();
     }
     this.regionCodes.add(regionCodesItem);
     return this;
@@ -100,11 +98,11 @@ public class ClinicalTrialLocationSummaryCountries {
    * @return regionCodes
   **/
   @Schema(description = "Sub division codes within the country with a trial site.")
-  public List<String> getRegionCodes() {
+  public java.util.List<String> getRegionCodes() {
     return regionCodes;
   }
 
-  public void setRegionCodes(List<String> regionCodes) {
+  public void setRegionCodes(java.util.List<String> regionCodes) {
     this.regionCodes = regionCodes;
   }
 

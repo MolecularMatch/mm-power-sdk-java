@@ -24,9 +24,7 @@ import io.swagger.client.model.ClinicalTrialTags;
 import io.swagger.client.model.PublicationAuthors;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 /**
  * Publication
  */
@@ -88,25 +86,25 @@ public class Publication {
   private String link = null;
 
   @SerializedName("chemicals")
-  private List<String> chemicals = null;
+  private java.util.List<String> chemicals = null;
 
   @SerializedName("keywords")
-  private List<String> keywords = null;
+  private java.util.List<String> keywords = null;
 
   @SerializedName("extendedKeywords")
-  private List<String> extendedKeywords = null;
+  private java.util.List<String> extendedKeywords = null;
 
   @SerializedName("publicationType")
-  private List<String> publicationType = null;
+  private java.util.List<String> publicationType = null;
 
   @SerializedName("authors")
-  private List<PublicationAuthors> authors = null;
+  private java.util.List<PublicationAuthors> authors = null;
 
   @SerializedName("tags")
-  private List<ClinicalTrialTags> tags = null;
+  private java.util.List<ClinicalTrialTags> tags = null;
 
   @SerializedName("molecularAlterations")
-  private List<ClinicalTrialMolecularAlterations> molecularAlterations = null;
+  private java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations = null;
 
   public Publication mboost(Float mboost) {
     this.mboost = mboost;
@@ -432,14 +430,14 @@ public class Publication {
     this.link = link;
   }
 
-  public Publication chemicals(List<String> chemicals) {
+  public Publication chemicals(java.util.List<String> chemicals) {
     this.chemicals = chemicals;
     return this;
   }
 
   public Publication addChemicalsItem(String chemicalsItem) {
     if (this.chemicals == null) {
-      this.chemicals = new ArrayList<String>();
+      this.chemicals = new java.util.ArrayList<>();
     }
     this.chemicals.add(chemicalsItem);
     return this;
@@ -450,22 +448,22 @@ public class Publication {
    * @return chemicals
   **/
   @Schema(description = "")
-  public List<String> getChemicals() {
+  public java.util.List<String> getChemicals() {
     return chemicals;
   }
 
-  public void setChemicals(List<String> chemicals) {
+  public void setChemicals(java.util.List<String> chemicals) {
     this.chemicals = chemicals;
   }
 
-  public Publication keywords(List<String> keywords) {
+  public Publication keywords(java.util.List<String> keywords) {
     this.keywords = keywords;
     return this;
   }
 
   public Publication addKeywordsItem(String keywordsItem) {
     if (this.keywords == null) {
-      this.keywords = new ArrayList<String>();
+      this.keywords = new java.util.ArrayList<>();
     }
     this.keywords.add(keywordsItem);
     return this;
@@ -476,22 +474,22 @@ public class Publication {
    * @return keywords
   **/
   @Schema(description = "")
-  public List<String> getKeywords() {
+  public java.util.List<String> getKeywords() {
     return keywords;
   }
 
-  public void setKeywords(List<String> keywords) {
+  public void setKeywords(java.util.List<String> keywords) {
     this.keywords = keywords;
   }
 
-  public Publication extendedKeywords(List<String> extendedKeywords) {
+  public Publication extendedKeywords(java.util.List<String> extendedKeywords) {
     this.extendedKeywords = extendedKeywords;
     return this;
   }
 
   public Publication addExtendedKeywordsItem(String extendedKeywordsItem) {
     if (this.extendedKeywords == null) {
-      this.extendedKeywords = new ArrayList<String>();
+      this.extendedKeywords = new java.util.ArrayList<>();
     }
     this.extendedKeywords.add(extendedKeywordsItem);
     return this;
@@ -502,22 +500,22 @@ public class Publication {
    * @return extendedKeywords
   **/
   @Schema(description = "")
-  public List<String> getExtendedKeywords() {
+  public java.util.List<String> getExtendedKeywords() {
     return extendedKeywords;
   }
 
-  public void setExtendedKeywords(List<String> extendedKeywords) {
+  public void setExtendedKeywords(java.util.List<String> extendedKeywords) {
     this.extendedKeywords = extendedKeywords;
   }
 
-  public Publication publicationType(List<String> publicationType) {
+  public Publication publicationType(java.util.List<String> publicationType) {
     this.publicationType = publicationType;
     return this;
   }
 
   public Publication addPublicationTypeItem(String publicationTypeItem) {
     if (this.publicationType == null) {
-      this.publicationType = new ArrayList<String>();
+      this.publicationType = new java.util.ArrayList<>();
     }
     this.publicationType.add(publicationTypeItem);
     return this;
@@ -528,22 +526,22 @@ public class Publication {
    * @return publicationType
   **/
   @Schema(description = "")
-  public List<String> getPublicationType() {
+  public java.util.List<String> getPublicationType() {
     return publicationType;
   }
 
-  public void setPublicationType(List<String> publicationType) {
+  public void setPublicationType(java.util.List<String> publicationType) {
     this.publicationType = publicationType;
   }
 
-  public Publication authors(List<PublicationAuthors> authors) {
+  public Publication authors(java.util.List<PublicationAuthors> authors) {
     this.authors = authors;
     return this;
   }
 
   public Publication addAuthorsItem(PublicationAuthors authorsItem) {
     if (this.authors == null) {
-      this.authors = new ArrayList<PublicationAuthors>();
+      this.authors = new java.util.ArrayList<>();
     }
     this.authors.add(authorsItem);
     return this;
@@ -554,22 +552,22 @@ public class Publication {
    * @return authors
   **/
   @Schema(description = "")
-  public List<PublicationAuthors> getAuthors() {
+  public java.util.List<PublicationAuthors> getAuthors() {
     return authors;
   }
 
-  public void setAuthors(List<PublicationAuthors> authors) {
+  public void setAuthors(java.util.List<PublicationAuthors> authors) {
     this.authors = authors;
   }
 
-  public Publication tags(List<ClinicalTrialTags> tags) {
+  public Publication tags(java.util.List<ClinicalTrialTags> tags) {
     this.tags = tags;
     return this;
   }
 
   public Publication addTagsItem(ClinicalTrialTags tagsItem) {
     if (this.tags == null) {
-      this.tags = new ArrayList<ClinicalTrialTags>();
+      this.tags = new java.util.ArrayList<>();
     }
     this.tags.add(tagsItem);
     return this;
@@ -580,22 +578,22 @@ public class Publication {
    * @return tags
   **/
   @Schema(description = "Concept associations established for this publication.")
-  public List<ClinicalTrialTags> getTags() {
+  public java.util.List<ClinicalTrialTags> getTags() {
     return tags;
   }
 
-  public void setTags(List<ClinicalTrialTags> tags) {
+  public void setTags(java.util.List<ClinicalTrialTags> tags) {
     this.tags = tags;
   }
 
-  public Publication molecularAlterations(List<ClinicalTrialMolecularAlterations> molecularAlterations) {
+  public Publication molecularAlterations(java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
     return this;
   }
 
   public Publication addMolecularAlterationsItem(ClinicalTrialMolecularAlterations molecularAlterationsItem) {
     if (this.molecularAlterations == null) {
-      this.molecularAlterations = new ArrayList<ClinicalTrialMolecularAlterations>();
+      this.molecularAlterations = new java.util.ArrayList<>();
     }
     this.molecularAlterations.add(molecularAlterationsItem);
     return this;
@@ -606,11 +604,11 @@ public class Publication {
    * @return molecularAlterations
   **/
   @Schema(description = "Molecular concept associations established for this publication.")
-  public List<ClinicalTrialMolecularAlterations> getMolecularAlterations() {
+  public java.util.List<ClinicalTrialMolecularAlterations> getMolecularAlterations() {
     return molecularAlterations;
   }
 
-  public void setMolecularAlterations(List<ClinicalTrialMolecularAlterations> molecularAlterations) {
+  public void setMolecularAlterations(java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
   }
 

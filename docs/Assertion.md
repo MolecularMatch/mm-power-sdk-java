@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**externalId** | **List&lt;String&gt;** |  |  [optional]
+**externalId** | **java.util.List&lt;String&gt;** |  |  [optional]
 **uniqueKey** | **String** |  | 
 **hashKey** | **String** |  | 
 **description** | **String** |  |  [optional]
@@ -20,11 +20,11 @@ Name | Type | Description | Notes
 **clinicalSignificance** | **String** |  |  [optional]
 **biomarkerClass** | **String** |  |  [optional]
 **expression** | **String** |  |  [optional]
-**tags** | [**List&lt;AssertionTags&gt;**](AssertionTags.md) |  |  [optional]
-**sources** | [**List&lt;AssertionSources&gt;**](AssertionSources.md) | The supporting evidence for this assertion. |  [optional]
+**tags** | [**java.util.List&lt;AssertionTags&gt;**](AssertionTags.md) |  |  [optional]
+**sources** | [**java.util.List&lt;AssertionSources&gt;**](AssertionSources.md) | The supporting evidence for this assertion. |  [optional]
 **noTherapyAvailable** | **Boolean** | If true, there is no therapy related to this assertion. |  [optional]
-**therapeuticContext** | [**List&lt;AssertionTherapeuticContext&gt;**](AssertionTherapeuticContext.md) | The therapies associated with this assertion. |  [optional]
-**tiers** | [**List&lt;AssertionTiers&gt;**](AssertionTiers.md) |  |  [optional]
-**releasedTiers** | [**List&lt;AssertionTiers&gt;**](AssertionTiers.md) |  |  [optional]
-**classifications** | [**List&lt;AssertionClassifications&gt;**](AssertionClassifications.md) |  |  [optional]
-**prevalence** | [**List&lt;AssertionPrevalence&gt;**](AssertionPrevalence.md) |  |  [optional]
+**therapeuticContext** | [**java.util.List&lt;AssertionTherapeuticContext&gt;**](AssertionTherapeuticContext.md) | The therapies associated with this assertion. |  [optional]
+**tiers** | [**java.util.List&lt;AssertionTiers&gt;**](AssertionTiers.md) |  |  [optional]
+**releasedTiers** | [**java.util.List&lt;AssertionTiers&gt;**](AssertionTiers.md) |  |  [optional]
+**classifications** | [**java.util.List&lt;AssertionClassifications&gt;**](AssertionClassifications.md) |  |  [optional]
+**prevalence** | [**java.util.List&lt;AssertionPrevalence&gt;**](AssertionPrevalence.md) |  |  [optional]

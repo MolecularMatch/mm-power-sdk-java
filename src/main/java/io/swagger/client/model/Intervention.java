@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Intervention
  */
@@ -39,10 +37,10 @@ public class Intervention {
   private String description = null;
 
   @SerializedName("arm_group_label")
-  private List<String> armGroupLabel = null;
+  private java.util.List<String> armGroupLabel = null;
 
   @SerializedName("other_name")
-  private List<String> otherName = null;
+  private java.util.List<String> otherName = null;
 
   public Intervention interventionType(String interventionType) {
     this.interventionType = interventionType;
@@ -98,14 +96,14 @@ public class Intervention {
     this.description = description;
   }
 
-  public Intervention armGroupLabel(List<String> armGroupLabel) {
+  public Intervention armGroupLabel(java.util.List<String> armGroupLabel) {
     this.armGroupLabel = armGroupLabel;
     return this;
   }
 
   public Intervention addArmGroupLabelItem(String armGroupLabelItem) {
     if (this.armGroupLabel == null) {
-      this.armGroupLabel = new ArrayList<String>();
+      this.armGroupLabel = new java.util.ArrayList<>();
     }
     this.armGroupLabel.add(armGroupLabelItem);
     return this;
@@ -116,22 +114,22 @@ public class Intervention {
    * @return armGroupLabel
   **/
   @Schema(description = "If multiple Arms or Groups have been specified, indicate which Arm Groups this intervention applies to.")
-  public List<String> getArmGroupLabel() {
+  public java.util.List<String> getArmGroupLabel() {
     return armGroupLabel;
   }
 
-  public void setArmGroupLabel(List<String> armGroupLabel) {
+  public void setArmGroupLabel(java.util.List<String> armGroupLabel) {
     this.armGroupLabel = armGroupLabel;
   }
 
-  public Intervention otherName(List<String> otherName) {
+  public Intervention otherName(java.util.List<String> otherName) {
     this.otherName = otherName;
     return this;
   }
 
   public Intervention addOtherNameItem(String otherNameItem) {
     if (this.otherName == null) {
-      this.otherName = new ArrayList<String>();
+      this.otherName = new java.util.ArrayList<>();
     }
     this.otherName.add(otherNameItem);
     return this;
@@ -142,11 +140,11 @@ public class Intervention {
    * @return otherName
   **/
   @Schema(description = "")
-  public List<String> getOtherName() {
+  public java.util.List<String> getOtherName() {
     return otherName;
   }
 
-  public void setOtherName(List<String> otherName) {
+  public void setOtherName(java.util.List<String> otherName) {
     this.otherName = otherName;
   }
 

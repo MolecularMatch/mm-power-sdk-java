@@ -25,8 +25,6 @@ import io.swagger.client.model.SearchRequestLocation;
 import io.swagger.client.model.SearchRequestMinShouldMatch;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * The search request schema.
  */
@@ -55,10 +53,10 @@ public class SearchRequest {
   private Boolean filterNarrative = null;
 
   @SerializedName("fields")
-  private List<String> fields = null;
+  private java.util.List<String> fields = null;
 
   @SerializedName("filters")
-  private List<Filter> filters = null;
+  private java.util.List<Filter> filters = null;
 
   @SerializedName("geopoint")
   private SearchRequestGeopoint geopoint = null;
@@ -195,14 +193,14 @@ public class SearchRequest {
     this.filterNarrative = filterNarrative;
   }
 
-  public SearchRequest fields(List<String> fields) {
+  public SearchRequest fields(java.util.List<String> fields) {
     this.fields = fields;
     return this;
   }
 
   public SearchRequest addFieldsItem(String fieldsItem) {
     if (this.fields == null) {
-      this.fields = new ArrayList<String>();
+      this.fields = new java.util.ArrayList<>();
     }
     this.fields.add(fieldsItem);
     return this;
@@ -213,22 +211,22 @@ public class SearchRequest {
    * @return fields
   **/
   @Schema(description = "Provide a field list to customize the return records fields.")
-  public List<String> getFields() {
+  public java.util.List<String> getFields() {
     return fields;
   }
 
-  public void setFields(List<String> fields) {
+  public void setFields(java.util.List<String> fields) {
     this.fields = fields;
   }
 
-  public SearchRequest filters(List<Filter> filters) {
+  public SearchRequest filters(java.util.List<Filter> filters) {
     this.filters = filters;
     return this;
   }
 
   public SearchRequest addFiltersItem(Filter filtersItem) {
     if (this.filters == null) {
-      this.filters = new ArrayList<Filter>();
+      this.filters = new java.util.ArrayList<>();
     }
     this.filters.add(filtersItem);
     return this;
@@ -239,11 +237,11 @@ public class SearchRequest {
    * @return filters
   **/
   @Schema(description = "")
-  public List<Filter> getFilters() {
+  public java.util.List<Filter> getFilters() {
     return filters;
   }
 
-  public void setFilters(List<Filter> filters) {
+  public void setFilters(java.util.List<Filter> filters) {
     this.filters = filters;
   }
 

@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **intl** | **Boolean** | Indicates if there are locations outside of the United States. |  [optional]
 **count** | **Float** | The number of trial sites. |  [optional]
 **recruitingCount** | **Float** | The number of trial sites that are recruiting patients. |  [optional]
-**countries** | [**List&lt;ClinicalTrialLocationSummaryCountries&gt;**](ClinicalTrialLocationSummaryCountries.md) | Countries with locations offering this trial. |  [optional]
+**countries** | [**java.util.List&lt;ClinicalTrialLocationSummaryCountries&gt;**](ClinicalTrialLocationSummaryCountries.md) | Countries with locations offering this trial. |  [optional]

@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Sponsor
  */
@@ -33,7 +31,7 @@ public class Sponsor {
   private String agency = null;
 
   @SerializedName("agency_class")
-  private List<String> agencyClass = null;
+  private java.util.List<String> agencyClass = null;
 
   public Sponsor agency(String agency) {
     this.agency = agency;
@@ -53,14 +51,14 @@ public class Sponsor {
     this.agency = agency;
   }
 
-  public Sponsor agencyClass(List<String> agencyClass) {
+  public Sponsor agencyClass(java.util.List<String> agencyClass) {
     this.agencyClass = agencyClass;
     return this;
   }
 
   public Sponsor addAgencyClassItem(String agencyClassItem) {
     if (this.agencyClass == null) {
-      this.agencyClass = new ArrayList<String>();
+      this.agencyClass = new java.util.ArrayList<>();
     }
     this.agencyClass.add(agencyClassItem);
     return this;
@@ -71,11 +69,11 @@ public class Sponsor {
    * @return agencyClass
   **/
   @Schema(description = "")
-  public List<String> getAgencyClass() {
+  public java.util.List<String> getAgencyClass() {
     return agencyClass;
   }
 
-  public void setAgencyClass(List<String> agencyClass) {
+  public void setAgencyClass(java.util.List<String> agencyClass) {
     this.agencyClass = agencyClass;
   }
 

@@ -26,20 +26,19 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.Assertion;
 import io.swagger.client.model.SearchRequest;
-import io.swagger.client.model.SearchResponseDrug;
+import io.swagger.client.model.SearchResponse;
 
 import java.lang.reflect.Type;
 
-public class AssertionsApi {
+public class ClinicalTrialsApi {
     private ApiClient apiClient;
 
-    public AssertionsApi() {
+    public ClinicalTrialsApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public AssertionsApi(ApiClient apiClient) {
+    public ClinicalTrialsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -52,143 +51,18 @@ public class AssertionsApi {
     }
 
     /**
-     * Build call for getAssertion
-     * @param :Id ID of the Assertion to return (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getAssertionCall(String :Id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/assertion/:id"
-            .replaceAll("\\{" + ":id" + "\\}", apiClient.escapeString(:Id.toString()));
-
-        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
-        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
-
-        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
-
-        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "bearerAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAssertionValidateBeforeCall(String :Id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter ':Id' is set
-        if (:Id == null) {
-            throw new ApiException("Missing the required parameter ':Id' when calling getAssertion(Async)");
-        }
-        
-        com.squareup.okhttp.Call call = getAssertionCall(:Id, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Get an Assertion
-     * Get an evidence backed assertion
-     * @param :Id ID of the Assertion to return (required)
-     * @return Assertion
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public Assertion getAssertion(String :Id) throws ApiException {
-        ApiResponse<Assertion> resp = getAssertionWithHttpInfo(:Id);
-        return resp.getData();
-    }
-
-    /**
-     * Get an Assertion
-     * Get an evidence backed assertion
-     * @param :Id ID of the Assertion to return (required)
-     * @return ApiResponse&lt;Assertion&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Assertion> getAssertionWithHttpInfo(String :Id) throws ApiException {
-        com.squareup.okhttp.Call call = getAssertionValidateBeforeCall(:Id, null, null);
-        Type localVarReturnType = new TypeToken<Assertion>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get an Assertion (asynchronously)
-     * Get an evidence backed assertion
-     * @param :Id ID of the Assertion to return (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getAssertionAsync(String :Id, final ApiCallback<Assertion> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getAssertionValidateBeforeCall(:Id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Assertion>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for searchAssertions
+     * Build call for countTrials
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call searchAssertionsCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call countTrialsCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/assertion/search";
+        String localVarPath = "/trial/count";
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
@@ -226,13 +100,13 @@ public class AssertionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchAssertionsValidateBeforeCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call countTrialsValidateBeforeCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling searchAssertions(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling countTrials(Async)");
         }
         
-        com.squareup.okhttp.Call call = searchAssertionsCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = countTrialsCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -242,39 +116,39 @@ public class AssertionsApi {
     }
 
     /**
-     * Search for assertions
-     * Search for evidence backed assertions
+     * Get the count of Clinical Trials matching a searchRequest
+     * Get the count of Clinical Trials matching a searchRequest
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
-     * @return SearchResponseDrug
+     * @return SearchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchResponseDrug searchAssertions(SearchRequest body) throws ApiException {
-        ApiResponse<SearchResponseDrug> resp = searchAssertionsWithHttpInfo(body);
+    public SearchResponse countTrials(SearchRequest body) throws ApiException {
+        ApiResponse<SearchResponse> resp = countTrialsWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
-     * Search for assertions
-     * Search for evidence backed assertions
+     * Get the count of Clinical Trials matching a searchRequest
+     * Get the count of Clinical Trials matching a searchRequest
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
-     * @return ApiResponse&lt;SearchResponseDrug&gt;
+     * @return ApiResponse&lt;SearchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchResponseDrug> searchAssertionsWithHttpInfo(SearchRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = searchAssertionsValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<SearchResponseDrug>(){}.getType();
+    public ApiResponse<SearchResponse> countTrialsWithHttpInfo(SearchRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = countTrialsValidateBeforeCall(body, null, null);
+        Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Search for assertions (asynchronously)
-     * Search for evidence backed assertions
+     * Get the count of Clinical Trials matching a searchRequest (asynchronously)
+     * Get the count of Clinical Trials matching a searchRequest
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchAssertionsAsync(SearchRequest body, final ApiCallback<SearchResponseDrug> callback) throws ApiException {
+    public com.squareup.okhttp.Call countTrialsAsync(SearchRequest body, final ApiCallback<SearchResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -295,8 +169,132 @@ public class AssertionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = searchAssertionsValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchResponseDrug>(){}.getType();
+        com.squareup.okhttp.Call call = countTrialsValidateBeforeCall(body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for searchTrials
+     * @param body SearchRequest object to send to MolecularMatch for processing (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call searchTrialsCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/trial/search";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call searchTrialsValidateBeforeCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling searchTrials(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = searchTrialsCall(body, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Search for clinical trials
+     * Search for clinical trials
+     * @param body SearchRequest object to send to MolecularMatch for processing (required)
+     * @return SearchResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SearchResponse searchTrials(SearchRequest body) throws ApiException {
+        ApiResponse<SearchResponse> resp = searchTrialsWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * Search for clinical trials
+     * Search for clinical trials
+     * @param body SearchRequest object to send to MolecularMatch for processing (required)
+     * @return ApiResponse&lt;SearchResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SearchResponse> searchTrialsWithHttpInfo(SearchRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = searchTrialsValidateBeforeCall(body, null, null);
+        Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Search for clinical trials (asynchronously)
+     * Search for clinical trials
+     * @param body SearchRequest object to send to MolecularMatch for processing (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call searchTrialsAsync(SearchRequest body, final ApiCallback<SearchResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = searchTrialsValidateBeforeCall(body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

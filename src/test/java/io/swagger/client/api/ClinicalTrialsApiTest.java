@@ -13,48 +13,47 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.Assertion;
 import io.swagger.client.model.SearchRequest;
-import io.swagger.client.model.SearchResponseDrug;
+import io.swagger.client.model.SearchResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
 
 /**
- * API tests for AssertionsApi
+ * API tests for ClinicalTrialsApi
  */
 @Ignore
-public class AssertionsApiTest {
+public class ClinicalTrialsApiTest {
 
-    private final AssertionsApi api = new AssertionsApi();
+    private final ClinicalTrialsApi api = new ClinicalTrialsApi();
 
     /**
-     * Get an Assertion
+     * Get the count of Clinical Trials matching a searchRequest
      *
-     * Get an evidence backed assertion
+     * Get the count of Clinical Trials matching a searchRequest
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getAssertionTest() throws ApiException {
-        String :Id = null;
-        Assertion response = api.getAssertion(:Id);
+    public void countTrialsTest() throws ApiException {
+        SearchRequest body = null;
+        SearchResponse response = api.countTrials(body);
 
         // TODO: test validations
     }
     /**
-     * Search for assertions
+     * Search for clinical trials
      *
-     * Search for evidence backed assertions
+     * Search for clinical trials
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void searchAssertionsTest() throws ApiException {
+    public void searchTrialsTest() throws ApiException {
         SearchRequest body = null;
-        SearchResponseDrug response = api.searchAssertions(body);
+        SearchResponse response = api.searchTrials(body);
 
         // TODO: test validations
     }

@@ -86,6 +86,31 @@ public class AssertionsApiExample {
 
 
         AssertionsApi apiInstance = new AssertionsApi();
+        String :Id = ":Id_example"; // String | ID of the Assertion to return
+        try {
+            Assertion result = apiInstance.getAssertion(:Id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AssertionsApi#getAssertion");
+            e.printStackTrace();
+        }
+    }
+}
+import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.AssertionsApi;
+
+import java.io.File;
+import java.util.*;
+
+public class AssertionsApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+        AssertionsApi apiInstance = new AssertionsApi();
         SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
         try {
             SearchResponseDrug result = apiInstance.searchAssertions(body);
@@ -104,7 +129,14 @@ All URIs are relative to *https://api.molecularmatch.com/v4*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AssertionsApi* | [**getAssertion**](docs/AssertionsApi.md#getAssertion) | **GET** /assertion/:id | Get an Assertion
 *AssertionsApi* | [**searchAssertions**](docs/AssertionsApi.md#searchAssertions) | **POST** /assertion/search | Search for assertions
+*ClinicalTrialApi* | [**getTrial**](docs/ClinicalTrialApi.md#getTrial) | **GET** /trial/:id | Get a Clinical Trial
+*ClinicalTrialsApi* | [**countTrials**](docs/ClinicalTrialsApi.md#countTrials) | **POST** /trial/count | Get the count of Clinical Trials matching a searchRequest
+*ClinicalTrialsApi* | [**searchTrials**](docs/ClinicalTrialsApi.md#searchTrials) | **POST** /trial/search | Search for clinical trials
+*PublicationApi* | [**countPublications**](docs/PublicationApi.md#countPublications) | **POST** /publication/count | Get the count of Publications matching a searchRequest
+*PublicationApi* | [**getPublication**](docs/PublicationApi.md#getPublication) | **GET** /publication/:id* | Get a Publication
+*PublicationApi* | [**searchPublications**](docs/PublicationApi.md#searchPublications) | **POST** /publication/search | Search for Publications
 
 ## Documentation for Models
 

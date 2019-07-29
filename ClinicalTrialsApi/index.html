@@ -115,11 +115,6 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../ClinicalTrialApi/">ClinicalTrialApi</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../ClinicalTrialArmGroups/">ClinicalTrialArmGroups</a>
 	    </li>
           
@@ -231,7 +226,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#searchtrials">searchTrials</a></li>
+    <li class="toctree-l2"><a href="#gettrial">getTrial</a></li>
     
         <ul>
         
@@ -242,6 +237,21 @@
             <li><a class="toctree-l3" href="#return-type_1">Return type</a></li>
         
             <li><a class="toctree-l3" href="#http-request-headers_1">HTTP request headers</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#searchtrials">searchTrials</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#example_2">Example</a></li>
+        
+            <li><a class="toctree-l3" href="#parameters_2">Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#return-type_2">Return type</a></li>
+        
+            <li><a class="toctree-l3" href="#http-request-headers_2">HTTP request headers</a></li>
         
         </ul>
     
@@ -458,6 +468,11 @@
 <td>Get the count of Clinical Trials matching a searchRequest</td>
 </tr>
 <tr>
+<td><a href="./#getTrial"><strong>getTrial</strong></a></td>
+<td><strong>GET</strong> /trial/:id</td>
+<td>Get a Clinical Trial</td>
+</tr>
+<tr>
 <td><a href="./#searchTrials"><strong>searchTrials</strong></a></td>
 <td><strong>POST</strong> /trial/search</td>
 <td>Search for clinical trials</td>
@@ -467,7 +482,7 @@
 <p><a name="countTrials"></a></p>
 <h1 id="counttrials"><strong>countTrials</strong></h1>
 <blockquote>
-<p>SearchResponse countTrials(body)</p>
+<p>SearchResponseClinicalTrial countTrials(body)</p>
 </blockquote>
 <p>Get the count of Clinical Trials matching a searchRequest</p>
 <p>Get the count of Clinical Trials matching a searchRequest</p>
@@ -485,7 +500,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 ClinicalTrialsApi apiInstance = new ClinicalTrialsApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponse result = apiInstance.countTrials(body);
+    SearchResponseClinicalTrial result = apiInstance.countTrials(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println(&quot;Exception when calling ClinicalTrialsApi#countTrials&quot;);
@@ -513,20 +528,75 @@ try {
 </tbody>
 </table>
 <h3 id="return-type">Return type</h3>
-<p><a href="SearchResponse.md"><strong>SearchResponse</strong></a></p>
+<p><a href="../SearchResponseClinicalTrial/"><strong>SearchResponseClinicalTrial</strong></a></p>
 <h3 id="http-request-headers">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: application/json</li>
 <li><strong>Accept</strong>: application/json</li>
 </ul>
+<p><a name="getTrial"></a></p>
+<h1 id="gettrial"><strong>getTrial</strong></h1>
+<blockquote>
+<p>ClinicalTrial getTrial(:Id)</p>
+</blockquote>
+<p>Get a Clinical Trial</p>
+<p>Get a Clinical Trial</p>
+<h3 id="example_1">Example</h3>
+<pre><code class="java">// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.ClinicalTrialsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+ClinicalTrialsApi apiInstance = new ClinicalTrialsApi();
+String :Id = &quot;:Id_example&quot;; // String | ID of the Clinical Trial to return
+try {
+    ClinicalTrial result = apiInstance.getTrial(:Id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println(&quot;Exception when calling ClinicalTrialsApi#getTrial&quot;);
+    e.printStackTrace();
+}
+</code></pre>
+
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>:Id</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the Clinical Trial to return</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_1">Return type</h3>
+<p><a href="../ClinicalTrial/"><strong>ClinicalTrial</strong></a></p>
+<h3 id="http-request-headers_1">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
 <p><a name="searchTrials"></a></p>
 <h1 id="searchtrials"><strong>searchTrials</strong></h1>
 <blockquote>
-<p>SearchResponse searchTrials(body)</p>
+<p>SearchResponseClinicalTrial searchTrials(body)</p>
 </blockquote>
 <p>Search for clinical trials</p>
 <p>Search for clinical trials</p>
-<h3 id="example_1">Example</h3>
+<h3 id="example_2">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -540,7 +610,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 ClinicalTrialsApi apiInstance = new ClinicalTrialsApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponse result = apiInstance.searchTrials(body);
+    SearchResponseClinicalTrial result = apiInstance.searchTrials(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println(&quot;Exception when calling ClinicalTrialsApi#searchTrials&quot;);
@@ -548,7 +618,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_1">Parameters</h3>
+<h3 id="parameters_2">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -567,9 +637,9 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_1">Return type</h3>
-<p><a href="SearchResponse.md"><strong>SearchResponse</strong></a></p>
-<h3 id="http-request-headers_1">HTTP request headers</h3>
+<h3 id="return-type_2">Return type</h3>
+<p><a href="../SearchResponseClinicalTrial/"><strong>SearchResponseClinicalTrial</strong></a></p>
+<h3 id="http-request-headers_2">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: application/json</li>
 <li><strong>Accept</strong>: application/json</li>

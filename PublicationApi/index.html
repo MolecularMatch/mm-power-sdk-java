@@ -115,11 +115,6 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../ClinicalTrialApi/">ClinicalTrialApi</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../ClinicalTrialArmGroups/">ClinicalTrialArmGroups</a>
 	    </li>
           
@@ -487,7 +482,7 @@
 <p><a name="countPublications"></a></p>
 <h1 id="countpublications"><strong>countPublications</strong></h1>
 <blockquote>
-<p>SearchResponse countPublications(body)</p>
+<p>SearchResponsePublication countPublications(body)</p>
 </blockquote>
 <p>Get the count of Publications matching a searchRequest</p>
 <p>Get the count of Publications matching a searchRequest</p>
@@ -505,7 +500,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 PublicationApi apiInstance = new PublicationApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponse result = apiInstance.countPublications(body);
+    SearchResponsePublication result = apiInstance.countPublications(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println(&quot;Exception when calling PublicationApi#countPublications&quot;);
@@ -533,7 +528,7 @@ try {
 </tbody>
 </table>
 <h3 id="return-type">Return type</h3>
-<p><a href="SearchResponse.md"><strong>SearchResponse</strong></a></p>
+<p><a href="../SearchResponsePublication/"><strong>SearchResponsePublication</strong></a></p>
 <h3 id="http-request-headers">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: application/json</li>
@@ -597,7 +592,7 @@ try {
 <p><a name="searchPublications"></a></p>
 <h1 id="searchpublications"><strong>searchPublications</strong></h1>
 <blockquote>
-<p>SearchResponse searchPublications(body)</p>
+<p>SearchResponsePublication searchPublications(body)</p>
 </blockquote>
 <p>Search for Publications</p>
 <p>Search for Publications</p>
@@ -615,7 +610,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 PublicationApi apiInstance = new PublicationApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponse result = apiInstance.searchPublications(body);
+    SearchResponsePublication result = apiInstance.searchPublications(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println(&quot;Exception when calling PublicationApi#searchPublications&quot;);
@@ -643,7 +638,7 @@ try {
 </tbody>
 </table>
 <h3 id="return-type_2">Return type</h3>
-<p><a href="SearchResponse.md"><strong>SearchResponse</strong></a></p>
+<p><a href="../SearchResponsePublication/"><strong>SearchResponsePublication</strong></a></p>
 <h3 id="http-request-headers_2">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: application/json</li>

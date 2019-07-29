@@ -28,7 +28,7 @@ import java.io.IOException;
 
 import io.swagger.client.model.Publication;
 import io.swagger.client.model.SearchRequest;
-import io.swagger.client.model.SearchResponse;
+import io.swagger.client.model.SearchResponsePublication;
 
 import java.lang.reflect.Type;
 
@@ -120,11 +120,11 @@ public class PublicationApi {
      * Get the count of Publications matching a searchRequest
      * Get the count of Publications matching a searchRequest
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
-     * @return SearchResponse
+     * @return SearchResponsePublication
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchResponse countPublications(SearchRequest body) throws ApiException {
-        ApiResponse<SearchResponse> resp = countPublicationsWithHttpInfo(body);
+    public SearchResponsePublication countPublications(SearchRequest body) throws ApiException {
+        ApiResponse<SearchResponsePublication> resp = countPublicationsWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -132,12 +132,12 @@ public class PublicationApi {
      * Get the count of Publications matching a searchRequest
      * Get the count of Publications matching a searchRequest
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
-     * @return ApiResponse&lt;SearchResponse&gt;
+     * @return ApiResponse&lt;SearchResponsePublication&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchResponse> countPublicationsWithHttpInfo(SearchRequest body) throws ApiException {
+    public ApiResponse<SearchResponsePublication> countPublicationsWithHttpInfo(SearchRequest body) throws ApiException {
         com.squareup.okhttp.Call call = countPublicationsValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchResponsePublication>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -149,7 +149,7 @@ public class PublicationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call countPublicationsAsync(SearchRequest body, final ApiCallback<SearchResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call countPublicationsAsync(SearchRequest body, final ApiCallback<SearchResponsePublication> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -171,7 +171,7 @@ public class PublicationApi {
         }
 
         com.squareup.okhttp.Call call = countPublicationsValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchResponsePublication>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -369,11 +369,11 @@ public class PublicationApi {
      * Search for Publications
      * Search for Publications
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
-     * @return SearchResponse
+     * @return SearchResponsePublication
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchResponse searchPublications(SearchRequest body) throws ApiException {
-        ApiResponse<SearchResponse> resp = searchPublicationsWithHttpInfo(body);
+    public SearchResponsePublication searchPublications(SearchRequest body) throws ApiException {
+        ApiResponse<SearchResponsePublication> resp = searchPublicationsWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -381,12 +381,12 @@ public class PublicationApi {
      * Search for Publications
      * Search for Publications
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
-     * @return ApiResponse&lt;SearchResponse&gt;
+     * @return ApiResponse&lt;SearchResponsePublication&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchResponse> searchPublicationsWithHttpInfo(SearchRequest body) throws ApiException {
+    public ApiResponse<SearchResponsePublication> searchPublicationsWithHttpInfo(SearchRequest body) throws ApiException {
         com.squareup.okhttp.Call call = searchPublicationsValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchResponsePublication>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -398,7 +398,7 @@ public class PublicationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchPublicationsAsync(SearchRequest body, final ApiCallback<SearchResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchPublicationsAsync(SearchRequest body, final ApiCallback<SearchResponsePublication> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -420,7 +420,7 @@ public class PublicationApi {
         }
 
         com.squareup.okhttp.Call call = searchPublicationsValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchResponsePublication>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

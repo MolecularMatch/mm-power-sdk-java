@@ -13,8 +13,9 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
+import io.swagger.client.model.ClinicalTrial;
 import io.swagger.client.model.SearchRequest;
-import io.swagger.client.model.SearchResponse;
+import io.swagger.client.model.SearchResponseClinicalTrial;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -38,7 +39,22 @@ public class ClinicalTrialsApiTest {
     @Test
     public void countTrialsTest() throws ApiException {
         SearchRequest body = null;
-        SearchResponse response = api.countTrials(body);
+        SearchResponseClinicalTrial response = api.countTrials(body);
+
+        // TODO: test validations
+    }
+    /**
+     * Get a Clinical Trial
+     *
+     * Get a Clinical Trial
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTrialTest() throws ApiException {
+        String :Id = null;
+        ClinicalTrial response = api.getTrial(:Id);
 
         // TODO: test validations
     }
@@ -53,7 +69,7 @@ public class ClinicalTrialsApiTest {
     @Test
     public void searchTrialsTest() throws ApiException {
         SearchRequest body = null;
-        SearchResponse response = api.searchTrials(body);
+        SearchResponseClinicalTrial response = api.searchTrials(body);
 
         // TODO: test validations
     }

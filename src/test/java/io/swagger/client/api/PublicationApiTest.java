@@ -15,7 +15,7 @@ package io.swagger.client.api;
 import io.swagger.client.ApiException;
 import io.swagger.client.model.Publication;
 import io.swagger.client.model.SearchRequest;
-import io.swagger.client.model.SearchResponse;
+import io.swagger.client.model.SearchResponsePublication;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -39,7 +39,7 @@ public class PublicationApiTest {
     @Test
     public void countPublicationsTest() throws ApiException {
         SearchRequest body = null;
-        SearchResponse response = api.countPublications(body);
+        SearchResponsePublication response = api.countPublications(body);
 
         // TODO: test validations
     }
@@ -69,7 +69,7 @@ public class PublicationApiTest {
     @Test
     public void searchPublicationsTest() throws ApiException {
         SearchRequest body = null;
-        SearchResponse response = api.searchPublications(body);
+        SearchResponsePublication response = api.searchPublications(body);
 
         // TODO: test validations
     }

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="countPublications"></a>
 # **countPublications**
-> SearchResponse countPublications(body)
+> SearchResponsePublication countPublications(body)
 
 Get the count of Publications matching a searchRequest
 
@@ -31,7 +31,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 PublicationApi apiInstance = new PublicationApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponse result = apiInstance.countPublications(body);
+    SearchResponsePublication result = apiInstance.countPublications(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicationApi#countPublications");
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchResponse**](SearchResponse.md)
+[**SearchResponsePublication**](SearchResponsePublication.md)
 
 
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 <a name="searchPublications"></a>
 # **searchPublications**
-> SearchResponse searchPublications(body)
+> SearchResponsePublication searchPublications(body)
 
 Search for Publications
 
@@ -131,7 +131,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 PublicationApi apiInstance = new PublicationApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponse result = apiInstance.searchPublications(body);
+    SearchResponsePublication result = apiInstance.searchPublications(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicationApi#searchPublications");
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchResponse**](SearchResponse.md)
+[**SearchResponsePublication**](SearchResponsePublication.md)
 
 
 

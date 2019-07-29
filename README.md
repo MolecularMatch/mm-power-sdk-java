@@ -131,8 +131,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AssertionsApi* | [**getAssertion**](docs/AssertionsApi.md#getAssertion) | **GET** /assertion/:id | Get an Assertion
 *AssertionsApi* | [**searchAssertions**](docs/AssertionsApi.md#searchAssertions) | **POST** /assertion/search | Search for assertions
-*ClinicalTrialApi* | [**getTrial**](docs/ClinicalTrialApi.md#getTrial) | **GET** /trial/:id | Get a Clinical Trial
 *ClinicalTrialsApi* | [**countTrials**](docs/ClinicalTrialsApi.md#countTrials) | **POST** /trial/count | Get the count of Clinical Trials matching a searchRequest
+*ClinicalTrialsApi* | [**getTrial**](docs/ClinicalTrialsApi.md#getTrial) | **GET** /trial/:id | Get a Clinical Trial
 *ClinicalTrialsApi* | [**searchTrials**](docs/ClinicalTrialsApi.md#searchTrials) | **POST** /trial/search | Search for clinical trials
 *PublicationApi* | [**countPublications**](docs/PublicationApi.md#countPublications) | **POST** /publication/count | Get the count of Publications matching a searchRequest
 *PublicationApi* | [**getPublication**](docs/PublicationApi.md#getPublication) | **GET** /publication/:id* | Get a Publication

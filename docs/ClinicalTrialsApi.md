@@ -5,11 +5,12 @@ All URIs are relative to *https://api.molecularmatch.com/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**countTrials**](ClinicalTrialsApi.md#countTrials) | **POST** /trial/count | Get the count of Clinical Trials matching a searchRequest
+[**getTrial**](ClinicalTrialsApi.md#getTrial) | **GET** /trial/:id | Get a Clinical Trial
 [**searchTrials**](ClinicalTrialsApi.md#searchTrials) | **POST** /trial/search | Search for clinical trials
 
 <a name="countTrials"></a>
 # **countTrials**
-> SearchResponse countTrials(body)
+> SearchResponseClinicalTrial countTrials(body)
 
 Get the count of Clinical Trials matching a searchRequest
 
@@ -30,7 +31,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 ClinicalTrialsApi apiInstance = new ClinicalTrialsApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponse result = apiInstance.countTrials(body);
+    SearchResponseClinicalTrial result = apiInstance.countTrials(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClinicalTrialsApi#countTrials");
@@ -46,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchResponse**](SearchResponse.md)
+[**SearchResponseClinicalTrial**](SearchResponseClinicalTrial.md)
 
 
 
@@ -57,9 +58,59 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getTrial"></a>
+# **getTrial**
+> ClinicalTrial getTrial(:Id)
+
+Get a Clinical Trial
+
+Get a Clinical Trial
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.ClinicalTrialsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+ClinicalTrialsApi apiInstance = new ClinicalTrialsApi();
+String :Id = ":Id_example"; // String | ID of the Clinical Trial to return
+try {
+    ClinicalTrial result = apiInstance.getTrial(:Id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ClinicalTrialsApi#getTrial");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **:Id** | **String**| ID of the Clinical Trial to return |
+
+### Return type
+
+[**ClinicalTrial**](ClinicalTrial.md)
+
+
+
+
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="searchTrials"></a>
 # **searchTrials**
-> SearchResponse searchTrials(body)
+> SearchResponseClinicalTrial searchTrials(body)
 
 Search for clinical trials
 
@@ -80,7 +131,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 ClinicalTrialsApi apiInstance = new ClinicalTrialsApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponse result = apiInstance.searchTrials(body);
+    SearchResponseClinicalTrial result = apiInstance.searchTrials(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClinicalTrialsApi#searchTrials");
@@ -96,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchResponse**](SearchResponse.md)
+[**SearchResponseClinicalTrial**](SearchResponseClinicalTrial.md)
 
 
 

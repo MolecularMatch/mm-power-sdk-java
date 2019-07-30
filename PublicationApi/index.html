@@ -469,7 +469,7 @@
 </tr>
 <tr>
 <td><a href="./#getPublication"><strong>getPublication</strong></a></td>
-<td><strong>GET</strong> /publication/:id*</td>
+<td><strong>GET</strong> /publication/{id}</td>
 <td>Get a Publication</td>
 </tr>
 <tr>
@@ -537,7 +537,7 @@ try {
 <p><a name="getPublication"></a></p>
 <h1 id="getpublication"><strong>getPublication</strong></h1>
 <blockquote>
-<p>Publication getPublication(:Id)</p>
+<p>Publication getPublication(id)</p>
 </blockquote>
 <p>Get a Publication</p>
 <p>Get a Publication</p>
@@ -553,9 +553,9 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 PublicationApi apiInstance = new PublicationApi();
-String :Id = &quot;:Id_example&quot;; // String | ID of the Publication to return
+String id = &quot;id_example&quot;; // String | ID of the Publication to return
 try {
-    Publication result = apiInstance.getPublication(:Id);
+    Publication result = apiInstance.getPublication(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println(&quot;Exception when calling PublicationApi#getPublication&quot;);
@@ -575,7 +575,7 @@ try {
 </thead>
 <tbody>
 <tr>
-<td><strong>:Id</strong></td>
+<td><strong>id</strong></td>
 <td><strong>String</strong></td>
 <td>ID of the Publication to return</td>
 <td></td>

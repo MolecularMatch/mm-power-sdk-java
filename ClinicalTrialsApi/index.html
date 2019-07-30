@@ -469,7 +469,7 @@
 </tr>
 <tr>
 <td><a href="./#getTrial"><strong>getTrial</strong></a></td>
-<td><strong>GET</strong> /trial/:id</td>
+<td><strong>GET</strong> /trial/{id}</td>
 <td>Get a Clinical Trial</td>
 </tr>
 <tr>
@@ -537,7 +537,7 @@ try {
 <p><a name="getTrial"></a></p>
 <h1 id="gettrial"><strong>getTrial</strong></h1>
 <blockquote>
-<p>ClinicalTrial getTrial(:Id)</p>
+<p>ClinicalTrial getTrial(id)</p>
 </blockquote>
 <p>Get a Clinical Trial</p>
 <p>Get a Clinical Trial</p>
@@ -553,9 +553,9 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 ClinicalTrialsApi apiInstance = new ClinicalTrialsApi();
-String :Id = &quot;:Id_example&quot;; // String | ID of the Clinical Trial to return
+String id = &quot;id_example&quot;; // String | ID of the Clinical Trial to return
 try {
-    ClinicalTrial result = apiInstance.getTrial(:Id);
+    ClinicalTrial result = apiInstance.getTrial(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println(&quot;Exception when calling ClinicalTrialsApi#getTrial&quot;);
@@ -575,7 +575,7 @@ try {
 </thead>
 <tbody>
 <tr>
-<td><strong>:Id</strong></td>
+<td><strong>id</strong></td>
 <td><strong>String</strong></td>
 <td>ID of the Clinical Trial to return</td>
 <td></td>

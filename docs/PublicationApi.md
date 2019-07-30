@@ -5,7 +5,7 @@ All URIs are relative to *https://api.molecularmatch.com/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**countPublications**](PublicationApi.md#countPublications) | **POST** /publication/count | Get the count of Publications matching a searchRequest
-[**getPublication**](PublicationApi.md#getPublication) | **GET** /publication/:id* | Get a Publication
+[**getPublication**](PublicationApi.md#getPublication) | **GET** /publication/{id} | Get a Publication
 [**searchPublications**](PublicationApi.md#searchPublications) | **POST** /publication/search | Search for Publications
 
 <a name="countPublications"></a>
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 <a name="getPublication"></a>
 # **getPublication**
-> Publication getPublication(:Id)
+> Publication getPublication(id)
 
 Get a Publication
 
@@ -79,9 +79,9 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 PublicationApi apiInstance = new PublicationApi();
-String :Id = ":Id_example"; // String | ID of the Publication to return
+String id = "id_example"; // String | ID of the Publication to return
 try {
-    Publication result = apiInstance.getPublication(:Id);
+    Publication result = apiInstance.getPublication(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicationApi#getPublication");
@@ -93,7 +93,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **:Id** | **String**| ID of the Publication to return |
+ **id** | **String**| ID of the Publication to return |
 
 ### Return type
 

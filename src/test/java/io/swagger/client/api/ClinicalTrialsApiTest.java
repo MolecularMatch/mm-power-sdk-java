@@ -53,8 +53,8 @@ public class ClinicalTrialsApiTest {
      */
     @Test
     public void getTrialTest() throws ApiException {
-        String :Id = null;
-        ClinicalTrial response = api.getTrial(:Id);
+        String id = null;
+        ClinicalTrial response = api.getTrial(id);
 
         // TODO: test validations
     }

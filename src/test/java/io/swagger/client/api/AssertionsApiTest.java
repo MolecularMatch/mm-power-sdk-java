@@ -38,8 +38,8 @@ public class AssertionsApiTest {
      */
     @Test
     public void getAssertionTest() throws ApiException {
-        String :Id = null;
-        Assertion response = api.getAssertion(:Id);
+        String id = null;
+        Assertion response = api.getAssertion(id);
 
         // TODO: test validations
     }

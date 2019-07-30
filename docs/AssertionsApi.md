@@ -4,12 +4,12 @@ All URIs are relative to *https://api.molecularmatch.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAssertion**](AssertionsApi.md#getAssertion) | **GET** /assertion/:id | Get an Assertion
+[**getAssertion**](AssertionsApi.md#getAssertion) | **GET** /assertion/{id} | Get an Assertion
 [**searchAssertions**](AssertionsApi.md#searchAssertions) | **POST** /assertion/search | Search for assertions
 
 <a name="getAssertion"></a>
 # **getAssertion**
-> Assertion getAssertion(:Id)
+> Assertion getAssertion(id)
 
 Get an Assertion
 
@@ -28,9 +28,9 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 AssertionsApi apiInstance = new AssertionsApi();
-String :Id = ":Id_example"; // String | ID of the Assertion to return
+String id = "id_example"; // String | ID of the Assertion to return
 try {
-    Assertion result = apiInstance.getAssertion(:Id);
+    Assertion result = apiInstance.getAssertion(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AssertionsApi#getAssertion");
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **:Id** | **String**| ID of the Assertion to return |
+ **id** | **String**| ID of the Assertion to return |
 
 ### Return type
 

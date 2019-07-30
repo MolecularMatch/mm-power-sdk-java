@@ -5,7 +5,7 @@ All URIs are relative to *https://api.molecularmatch.com/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**countTrials**](ClinicalTrialsApi.md#countTrials) | **POST** /trial/count | Get the count of Clinical Trials matching a searchRequest
-[**getTrial**](ClinicalTrialsApi.md#getTrial) | **GET** /trial/:id | Get a Clinical Trial
+[**getTrial**](ClinicalTrialsApi.md#getTrial) | **GET** /trial/{id} | Get a Clinical Trial
 [**searchTrials**](ClinicalTrialsApi.md#searchTrials) | **POST** /trial/search | Search for clinical trials
 
 <a name="countTrials"></a>
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 <a name="getTrial"></a>
 # **getTrial**
-> ClinicalTrial getTrial(:Id)
+> ClinicalTrial getTrial(id)
 
 Get a Clinical Trial
 
@@ -79,9 +79,9 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 ClinicalTrialsApi apiInstance = new ClinicalTrialsApi();
-String :Id = ":Id_example"; // String | ID of the Clinical Trial to return
+String id = "id_example"; // String | ID of the Clinical Trial to return
 try {
-    ClinicalTrial result = apiInstance.getTrial(:Id);
+    ClinicalTrial result = apiInstance.getTrial(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClinicalTrialsApi#getTrial");
@@ -93,7 +93,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **:Id** | **String**| ID of the Clinical Trial to return |
+ **id** | **String**| ID of the Clinical Trial to return |
 
 ### Return type
 

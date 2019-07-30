@@ -53,8 +53,8 @@ public class PublicationApiTest {
      */
     @Test
     public void getPublicationTest() throws ApiException {
-        String :Id = null;
-        Publication response = api.getPublication(:Id);
+        String id = null;
+        Publication response = api.getPublication(id);
 
         // TODO: test validations
     }

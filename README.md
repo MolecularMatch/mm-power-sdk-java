@@ -86,9 +86,9 @@ public class AssertionsApiExample {
 
 
         AssertionsApi apiInstance = new AssertionsApi();
-        String :Id = ":Id_example"; // String | ID of the Assertion to return
+        String id = "id_example"; // String | ID of the Assertion to return
         try {
-            Assertion result = apiInstance.getAssertion(:Id);
+            Assertion result = apiInstance.getAssertion(id);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AssertionsApi#getAssertion");
@@ -129,13 +129,13 @@ All URIs are relative to *https://api.molecularmatch.com/v4*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AssertionsApi* | [**getAssertion**](docs/AssertionsApi.md#getAssertion) | **GET** /assertion/:id | Get an Assertion
+*AssertionsApi* | [**getAssertion**](docs/AssertionsApi.md#getAssertion) | **GET** /assertion/{id} | Get an Assertion
 *AssertionsApi* | [**searchAssertions**](docs/AssertionsApi.md#searchAssertions) | **POST** /assertion/search | Search for assertions
 *ClinicalTrialsApi* | [**countTrials**](docs/ClinicalTrialsApi.md#countTrials) | **POST** /trial/count | Get the count of Clinical Trials matching a searchRequest
-*ClinicalTrialsApi* | [**getTrial**](docs/ClinicalTrialsApi.md#getTrial) | **GET** /trial/:id | Get a Clinical Trial
+*ClinicalTrialsApi* | [**getTrial**](docs/ClinicalTrialsApi.md#getTrial) | **GET** /trial/{id} | Get a Clinical Trial
 *ClinicalTrialsApi* | [**searchTrials**](docs/ClinicalTrialsApi.md#searchTrials) | **POST** /trial/search | Search for clinical trials
 *PublicationApi* | [**countPublications**](docs/PublicationApi.md#countPublications) | **POST** /publication/count | Get the count of Publications matching a searchRequest
-*PublicationApi* | [**getPublication**](docs/PublicationApi.md#getPublication) | **GET** /publication/:id* | Get a Publication
+*PublicationApi* | [**getPublication**](docs/PublicationApi.md#getPublication) | **GET** /publication/{id} | Get a Publication
 *PublicationApi* | [**searchPublications**](docs/PublicationApi.md#searchPublications) | **POST** /publication/search | Search for Publications
 
 ## Documentation for Models

@@ -177,18 +177,18 @@ public class ClinicalTrialsApi {
     }
     /**
      * Build call for getTrial
-     * @param :Id ID of the Clinical Trial to return (required)
+     * @param id ID of the Clinical Trial to return (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getTrialCall(String :Id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTrialCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/trial/:id"
-            .replaceAll("\\{" + ":id" + "\\}", apiClient.escapeString(:Id.toString()));
+        String localVarPath = "/trial/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
@@ -226,13 +226,13 @@ public class ClinicalTrialsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTrialValidateBeforeCall(String :Id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter ':Id' is set
-        if (:Id == null) {
-            throw new ApiException("Missing the required parameter ':Id' when calling getTrial(Async)");
+    private com.squareup.okhttp.Call getTrialValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getTrial(Async)");
         }
         
-        com.squareup.okhttp.Call call = getTrialCall(:Id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTrialCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -244,24 +244,24 @@ public class ClinicalTrialsApi {
     /**
      * Get a Clinical Trial
      * Get a Clinical Trial
-     * @param :Id ID of the Clinical Trial to return (required)
+     * @param id ID of the Clinical Trial to return (required)
      * @return ClinicalTrial
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ClinicalTrial getTrial(String :Id) throws ApiException {
-        ApiResponse<ClinicalTrial> resp = getTrialWithHttpInfo(:Id);
+    public ClinicalTrial getTrial(String id) throws ApiException {
+        ApiResponse<ClinicalTrial> resp = getTrialWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
      * Get a Clinical Trial
      * Get a Clinical Trial
-     * @param :Id ID of the Clinical Trial to return (required)
+     * @param id ID of the Clinical Trial to return (required)
      * @return ApiResponse&lt;ClinicalTrial&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ClinicalTrial> getTrialWithHttpInfo(String :Id) throws ApiException {
-        com.squareup.okhttp.Call call = getTrialValidateBeforeCall(:Id, null, null);
+    public ApiResponse<ClinicalTrial> getTrialWithHttpInfo(String id) throws ApiException {
+        com.squareup.okhttp.Call call = getTrialValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<ClinicalTrial>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -269,12 +269,12 @@ public class ClinicalTrialsApi {
     /**
      * Get a Clinical Trial (asynchronously)
      * Get a Clinical Trial
-     * @param :Id ID of the Clinical Trial to return (required)
+     * @param id ID of the Clinical Trial to return (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getTrialAsync(String :Id, final ApiCallback<ClinicalTrial> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTrialAsync(String id, final ApiCallback<ClinicalTrial> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -295,7 +295,7 @@ public class ClinicalTrialsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTrialValidateBeforeCall(:Id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTrialValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ClinicalTrial>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

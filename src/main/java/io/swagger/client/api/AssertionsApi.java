@@ -53,18 +53,18 @@ public class AssertionsApi {
 
     /**
      * Build call for getAssertion
-     * @param :Id ID of the Assertion to return (required)
+     * @param id ID of the Assertion to return (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAssertionCall(String :Id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAssertionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/assertion/:id"
-            .replaceAll("\\{" + ":id" + "\\}", apiClient.escapeString(:Id.toString()));
+        String localVarPath = "/assertion/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
@@ -102,13 +102,13 @@ public class AssertionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAssertionValidateBeforeCall(String :Id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter ':Id' is set
-        if (:Id == null) {
-            throw new ApiException("Missing the required parameter ':Id' when calling getAssertion(Async)");
+    private com.squareup.okhttp.Call getAssertionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getAssertion(Async)");
         }
         
-        com.squareup.okhttp.Call call = getAssertionCall(:Id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAssertionCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -120,24 +120,24 @@ public class AssertionsApi {
     /**
      * Get an Assertion
      * Get an evidence backed assertion
-     * @param :Id ID of the Assertion to return (required)
+     * @param id ID of the Assertion to return (required)
      * @return Assertion
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Assertion getAssertion(String :Id) throws ApiException {
-        ApiResponse<Assertion> resp = getAssertionWithHttpInfo(:Id);
+    public Assertion getAssertion(String id) throws ApiException {
+        ApiResponse<Assertion> resp = getAssertionWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
      * Get an Assertion
      * Get an evidence backed assertion
-     * @param :Id ID of the Assertion to return (required)
+     * @param id ID of the Assertion to return (required)
      * @return ApiResponse&lt;Assertion&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Assertion> getAssertionWithHttpInfo(String :Id) throws ApiException {
-        com.squareup.okhttp.Call call = getAssertionValidateBeforeCall(:Id, null, null);
+    public ApiResponse<Assertion> getAssertionWithHttpInfo(String id) throws ApiException {
+        com.squareup.okhttp.Call call = getAssertionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<Assertion>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -145,12 +145,12 @@ public class AssertionsApi {
     /**
      * Get an Assertion (asynchronously)
      * Get an evidence backed assertion
-     * @param :Id ID of the Assertion to return (required)
+     * @param id ID of the Assertion to return (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAssertionAsync(String :Id, final ApiCallback<Assertion> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAssertionAsync(String id, final ApiCallback<Assertion> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -171,7 +171,7 @@ public class AssertionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAssertionValidateBeforeCall(:Id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAssertionValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Assertion>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

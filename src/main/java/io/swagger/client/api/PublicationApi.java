@@ -177,18 +177,18 @@ public class PublicationApi {
     }
     /**
      * Build call for getPublication
-     * @param :Id ID of the Publication to return (required)
+     * @param id ID of the Publication to return (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getPublicationCall(String :Id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getPublicationCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/publication/:id*"
-            .replaceAll("\\{" + ":id" + "\\}", apiClient.escapeString(:Id.toString()));
+        String localVarPath = "/publication/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
@@ -226,13 +226,13 @@ public class PublicationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPublicationValidateBeforeCall(String :Id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter ':Id' is set
-        if (:Id == null) {
-            throw new ApiException("Missing the required parameter ':Id' when calling getPublication(Async)");
+    private com.squareup.okhttp.Call getPublicationValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getPublication(Async)");
         }
         
-        com.squareup.okhttp.Call call = getPublicationCall(:Id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPublicationCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -244,24 +244,24 @@ public class PublicationApi {
     /**
      * Get a Publication
      * Get a Publication
-     * @param :Id ID of the Publication to return (required)
+     * @param id ID of the Publication to return (required)
      * @return Publication
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Publication getPublication(String :Id) throws ApiException {
-        ApiResponse<Publication> resp = getPublicationWithHttpInfo(:Id);
+    public Publication getPublication(String id) throws ApiException {
+        ApiResponse<Publication> resp = getPublicationWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
      * Get a Publication
      * Get a Publication
-     * @param :Id ID of the Publication to return (required)
+     * @param id ID of the Publication to return (required)
      * @return ApiResponse&lt;Publication&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Publication> getPublicationWithHttpInfo(String :Id) throws ApiException {
-        com.squareup.okhttp.Call call = getPublicationValidateBeforeCall(:Id, null, null);
+    public ApiResponse<Publication> getPublicationWithHttpInfo(String id) throws ApiException {
+        com.squareup.okhttp.Call call = getPublicationValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<Publication>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -269,12 +269,12 @@ public class PublicationApi {
     /**
      * Get a Publication (asynchronously)
      * Get a Publication
-     * @param :Id ID of the Publication to return (required)
+     * @param id ID of the Publication to return (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPublicationAsync(String :Id, final ApiCallback<Publication> callback) throws ApiException {
+    public com.squareup.okhttp.Call getPublicationAsync(String id, final ApiCallback<Publication> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -295,7 +295,7 @@ public class PublicationApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getPublicationValidateBeforeCall(:Id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPublicationValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Publication>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

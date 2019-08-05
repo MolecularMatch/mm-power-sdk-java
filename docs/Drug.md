@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **description** | **String** | Descriptions of drug chemical properties, history and regulatory status. |  [optional]
 **composite** | **Boolean** |  |  [optional]
 **approved** | **Boolean** | Indicates whether this drug has been approved by any regulating government. | 
+**suppressResistance** | **Boolean** |  |  [optional]
+**suppressSynonymResistance** | **Boolean** |  |  [optional]
 **availability** | [**java.util.List&lt;DrugAvailability&gt;**](DrugAvailability.md) | Countries or jurisdictions where this drug is available. |  [optional]
 **synonyms** | [**java.util.List&lt;DrugSynonyms&gt;**](DrugSynonyms.md) | Other names or identifiers that are associated with this drug. |  [optional]
 **parents** | [**java.util.List&lt;DrugParents&gt;**](DrugParents.md) |  |  [optional]
@@ -20,6 +22,7 @@ Name | Type | Description | Notes
 **contraindicationText** | **String** |  |  [optional]
 **mechanismText** | **String** |  |  [optional]
 **rxcui** | **java.util.List&lt;String&gt;** |  |  [optional]
+**drugclassCausedSuppress** | **java.util.List&lt;String&gt;** |  |  [optional]
 **externalIds** | [**java.util.List&lt;DrugExternalIds&gt;**](DrugExternalIds.md) | Identifiers used in other websites or databases providing information about this drug. |  [optional]
 **link** | **String** |  |  [optional]
 **prices** | [**java.util.List&lt;DrugPrices&gt;**](DrugPrices.md) | Unit drug prices. |  [optional]

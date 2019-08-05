@@ -39,6 +39,12 @@ public class AssertionPrevalence {
   @SerializedName("count")
   private Integer count = null;
 
+  @SerializedName("condition")
+  private String condition = null;
+
+  @SerializedName("molecular")
+  private String molecular = null;
+
   public AssertionPrevalence studyId(String studyId) {
     this.studyId = studyId;
     return this;
@@ -111,6 +117,42 @@ public class AssertionPrevalence {
     this.count = count;
   }
 
+  public AssertionPrevalence condition(String condition) {
+    this.condition = condition;
+    return this;
+  }
+
+   /**
+   * Get condition
+   * @return condition
+  **/
+  @Schema(description = "")
+  public String getCondition() {
+    return condition;
+  }
+
+  public void setCondition(String condition) {
+    this.condition = condition;
+  }
+
+  public AssertionPrevalence molecular(String molecular) {
+    this.molecular = molecular;
+    return this;
+  }
+
+   /**
+   * Get molecular
+   * @return molecular
+  **/
+  @Schema(description = "")
+  public String getMolecular() {
+    return molecular;
+  }
+
+  public void setMolecular(String molecular) {
+    this.molecular = molecular;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,12 +166,14 @@ public class AssertionPrevalence {
     return Objects.equals(this.studyId, assertionPrevalence.studyId) &&
         Objects.equals(this.percent, assertionPrevalence.percent) &&
         Objects.equals(this.samples, assertionPrevalence.samples) &&
-        Objects.equals(this.count, assertionPrevalence.count);
+        Objects.equals(this.count, assertionPrevalence.count) &&
+        Objects.equals(this.condition, assertionPrevalence.condition) &&
+        Objects.equals(this.molecular, assertionPrevalence.molecular);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(studyId, percent, samples, count);
+    return Objects.hash(studyId, percent, samples, count, condition, molecular);
   }
 
 
@@ -142,6 +186,8 @@ public class AssertionPrevalence {
     sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
     sb.append("    samples: ").append(toIndentedString(samples)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
+    sb.append("    molecular: ").append(toIndentedString(molecular)).append("\n");
     sb.append("}");
     return sb.toString();
   }

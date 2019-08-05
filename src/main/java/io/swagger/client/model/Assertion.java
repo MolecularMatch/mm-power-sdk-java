@@ -24,7 +24,8 @@ import io.swagger.client.model.AssertionPrevalence;
 import io.swagger.client.model.AssertionSources;
 import io.swagger.client.model.AssertionTags;
 import io.swagger.client.model.AssertionTherapeuticContext;
-import io.swagger.client.model.AssertionTiers;
+import io.swagger.client.model.AssertionVariantInfo;
+import io.swagger.client.model.StandardizedTier;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -97,16 +98,19 @@ public class Assertion {
   private java.util.List<AssertionTherapeuticContext> therapeuticContext = null;
 
   @SerializedName("tiers")
-  private java.util.List<AssertionTiers> tiers = null;
+  private java.util.List<StandardizedTier> tiers = null;
 
   @SerializedName("releasedTiers")
-  private java.util.List<AssertionTiers> releasedTiers = null;
+  private java.util.List<StandardizedTier> releasedTiers = null;
 
   @SerializedName("classifications")
   private java.util.List<AssertionClassifications> classifications = null;
 
   @SerializedName("prevalence")
   private java.util.List<AssertionPrevalence> prevalence = null;
+
+  @SerializedName("variantInfo")
+  private java.util.List<AssertionVariantInfo> variantInfo = null;
 
   public Assertion id(String id) {
     this.id = id;
@@ -179,7 +183,7 @@ public class Assertion {
    * Get hashKey
    * @return hashKey
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getHashKey() {
     return hashKey;
   }
@@ -518,12 +522,12 @@ public class Assertion {
     this.therapeuticContext = therapeuticContext;
   }
 
-  public Assertion tiers(java.util.List<AssertionTiers> tiers) {
+  public Assertion tiers(java.util.List<StandardizedTier> tiers) {
     this.tiers = tiers;
     return this;
   }
 
-  public Assertion addTiersItem(AssertionTiers tiersItem) {
+  public Assertion addTiersItem(StandardizedTier tiersItem) {
     if (this.tiers == null) {
       this.tiers = new java.util.ArrayList<>();
     }
@@ -536,20 +540,20 @@ public class Assertion {
    * @return tiers
   **/
   @Schema(description = "")
-  public java.util.List<AssertionTiers> getTiers() {
+  public java.util.List<StandardizedTier> getTiers() {
     return tiers;
   }
 
-  public void setTiers(java.util.List<AssertionTiers> tiers) {
+  public void setTiers(java.util.List<StandardizedTier> tiers) {
     this.tiers = tiers;
   }
 
-  public Assertion releasedTiers(java.util.List<AssertionTiers> releasedTiers) {
+  public Assertion releasedTiers(java.util.List<StandardizedTier> releasedTiers) {
     this.releasedTiers = releasedTiers;
     return this;
   }
 
-  public Assertion addReleasedTiersItem(AssertionTiers releasedTiersItem) {
+  public Assertion addReleasedTiersItem(StandardizedTier releasedTiersItem) {
     if (this.releasedTiers == null) {
       this.releasedTiers = new java.util.ArrayList<>();
     }
@@ -562,11 +566,11 @@ public class Assertion {
    * @return releasedTiers
   **/
   @Schema(description = "")
-  public java.util.List<AssertionTiers> getReleasedTiers() {
+  public java.util.List<StandardizedTier> getReleasedTiers() {
     return releasedTiers;
   }
 
-  public void setReleasedTiers(java.util.List<AssertionTiers> releasedTiers) {
+  public void setReleasedTiers(java.util.List<StandardizedTier> releasedTiers) {
     this.releasedTiers = releasedTiers;
   }
 
@@ -622,6 +626,32 @@ public class Assertion {
     this.prevalence = prevalence;
   }
 
+  public Assertion variantInfo(java.util.List<AssertionVariantInfo> variantInfo) {
+    this.variantInfo = variantInfo;
+    return this;
+  }
+
+  public Assertion addVariantInfoItem(AssertionVariantInfo variantInfoItem) {
+    if (this.variantInfo == null) {
+      this.variantInfo = new java.util.ArrayList<>();
+    }
+    this.variantInfo.add(variantInfoItem);
+    return this;
+  }
+
+   /**
+   * Get variantInfo
+   * @return variantInfo
+  **/
+  @Schema(description = "")
+  public java.util.List<AssertionVariantInfo> getVariantInfo() {
+    return variantInfo;
+  }
+
+  public void setVariantInfo(java.util.List<AssertionVariantInfo> variantInfo) {
+    this.variantInfo = variantInfo;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -656,12 +686,13 @@ public class Assertion {
         Objects.equals(this.tiers, assertion.tiers) &&
         Objects.equals(this.releasedTiers, assertion.releasedTiers) &&
         Objects.equals(this.classifications, assertion.classifications) &&
-        Objects.equals(this.prevalence, assertion.prevalence);
+        Objects.equals(this.prevalence, assertion.prevalence) &&
+        Objects.equals(this.variantInfo, assertion.variantInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalId, uniqueKey, hashKey, description, narrative, regulatoryBody, customer, version, regulatoryBodyApproved, regulatoryBodyApprovedBy, direction, guidelineBody, guidelineVersion, clinicalSignificance, biomarkerClass, expression, tags, sources, noTherapyAvailable, therapeuticContext, tiers, releasedTiers, classifications, prevalence);
+    return Objects.hash(id, externalId, uniqueKey, hashKey, description, narrative, regulatoryBody, customer, version, regulatoryBodyApproved, regulatoryBodyApprovedBy, direction, guidelineBody, guidelineVersion, clinicalSignificance, biomarkerClass, expression, tags, sources, noTherapyAvailable, therapeuticContext, tiers, releasedTiers, classifications, prevalence, variantInfo);
   }
 
 
@@ -695,6 +726,7 @@ public class Assertion {
     sb.append("    releasedTiers: ").append(toIndentedString(releasedTiers)).append("\n");
     sb.append("    classifications: ").append(toIndentedString(classifications)).append("\n");
     sb.append("    prevalence: ").append(toIndentedString(prevalence)).append("\n");
+    sb.append("    variantInfo: ").append(toIndentedString(variantInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

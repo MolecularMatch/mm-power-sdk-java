@@ -4,4 +4,4 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
-**tier** | [**AssertionTier**](AssertionTier.md) |  |  [optional]
+**tier** | [**StandardizedTierTier**](StandardizedTierTier.md) |  |  [optional]

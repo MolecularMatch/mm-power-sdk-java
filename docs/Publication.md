@@ -26,5 +26,5 @@ Name | Type | Description | Notes
 **extendedKeywords** | **java.util.List&lt;String&gt;** |  |  [optional]
 **publicationType** | **java.util.List&lt;String&gt;** |  |  [optional]
 **authors** | [**java.util.List&lt;PublicationAuthors&gt;**](PublicationAuthors.md) |  |  [optional]
-**tags** | [**java.util.List&lt;ClinicalTrialTags&gt;**](ClinicalTrialTags.md) | Concept associations established for this publication. |  [optional]
-**molecularAlterations** | [**java.util.List&lt;ClinicalTrialMolecularAlterations&gt;**](ClinicalTrialMolecularAlterations.md) | Molecular concept associations established for this publication. |  [optional]
+**tags** | [**java.util.List&lt;Tag&gt;**](Tag.md) | Concept associations established for this publication. |  [optional]
+**molecularAlterations** | [**java.util.List&lt;MolecularAlteration&gt;**](MolecularAlteration.md) | Molecular concept associations established for this publication. |  [optional]

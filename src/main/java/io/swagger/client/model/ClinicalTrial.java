@@ -19,21 +19,19 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.ClinicalTrialArmGroups;
+import io.swagger.client.model.ArmGroup;
 import io.swagger.client.model.ClinicalTrialCountries;
-import io.swagger.client.model.ClinicalTrialEligibility;
-import io.swagger.client.model.ClinicalTrialInterventions;
 import io.swagger.client.model.ClinicalTrialLocationSummary;
 import io.swagger.client.model.ClinicalTrialLocations;
-import io.swagger.client.model.ClinicalTrialMolecularAlterations;
-import io.swagger.client.model.ClinicalTrialOverallContact;
-import io.swagger.client.model.ClinicalTrialOverallContactBackup;
-import io.swagger.client.model.ClinicalTrialOverallOfficial;
-import io.swagger.client.model.ClinicalTrialPrimaryOutcomes;
 import io.swagger.client.model.ClinicalTrialSponsors;
-import io.swagger.client.model.ClinicalTrialStudyDesign;
 import io.swagger.client.model.ClinicalTrialSynonyms;
-import io.swagger.client.model.ClinicalTrialTags;
+import io.swagger.client.model.Contact;
+import io.swagger.client.model.Eligibility;
+import io.swagger.client.model.Intervention;
+import io.swagger.client.model.MolecularAlteration;
+import io.swagger.client.model.Outcome;
+import io.swagger.client.model.StudyDesign;
+import io.swagger.client.model.Tag;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -86,7 +84,7 @@ public class ClinicalTrial {
   private String studyType = null;
 
   @SerializedName("studyDesign")
-  private ClinicalTrialStudyDesign studyDesign = null;
+  private StudyDesign studyDesign = null;
 
   @SerializedName("startDate")
   private OffsetDateTime startDate = null;
@@ -110,25 +108,25 @@ public class ClinicalTrial {
   private java.util.List<String> conditions = null;
 
   @SerializedName("interventions")
-  private java.util.List<ClinicalTrialInterventions> interventions = null;
+  private java.util.List<Intervention> interventions = null;
 
   @SerializedName("keywords")
   private java.util.List<String> keywords = null;
 
   @SerializedName("armGroups")
-  private java.util.List<ClinicalTrialArmGroups> armGroups = null;
+  private java.util.List<ArmGroup> armGroups = null;
 
   @SerializedName("primaryOutcomes")
-  private java.util.List<ClinicalTrialPrimaryOutcomes> primaryOutcomes = null;
+  private java.util.List<Outcome> primaryOutcomes = null;
 
   @SerializedName("secondaryOutcomes")
-  private java.util.List<ClinicalTrialPrimaryOutcomes> secondaryOutcomes = null;
+  private java.util.List<Outcome> secondaryOutcomes = null;
 
   @SerializedName("otherOutcomes")
-  private java.util.List<ClinicalTrialPrimaryOutcomes> otherOutcomes = null;
+  private java.util.List<Outcome> otherOutcomes = null;
 
   @SerializedName("eligibility")
-  private ClinicalTrialEligibility eligibility = null;
+  private Eligibility eligibility = null;
 
   @SerializedName("enrollment")
   private Integer enrollment = null;
@@ -143,13 +141,13 @@ public class ClinicalTrial {
   private java.util.List<String> gender = null;
 
   @SerializedName("overallOfficial")
-  private java.util.List<ClinicalTrialOverallOfficial> overallOfficial = null;
+  private java.util.List<Contact> overallOfficial = null;
 
   @SerializedName("overallContact")
-  private ClinicalTrialOverallContact overallContact = null;
+  private Contact overallContact = null;
 
   @SerializedName("overallContactBackup")
-  private ClinicalTrialOverallContactBackup overallContactBackup = null;
+  private Contact overallContactBackup = null;
 
   @SerializedName("locationSummary")
   private ClinicalTrialLocationSummary locationSummary = null;
@@ -182,10 +180,10 @@ public class ClinicalTrial {
   private String link = null;
 
   @SerializedName("tags")
-  private java.util.List<ClinicalTrialTags> tags = null;
+  private java.util.List<Tag> tags = null;
 
   @SerializedName("molecularAlterations")
-  private java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations = null;
+  private java.util.List<MolecularAlteration> molecularAlterations = null;
 
   public ClinicalTrial mboost(Float mboost) {
     this.mboost = mboost;
@@ -439,7 +437,7 @@ public class ClinicalTrial {
     this.studyType = studyType;
   }
 
-  public ClinicalTrial studyDesign(ClinicalTrialStudyDesign studyDesign) {
+  public ClinicalTrial studyDesign(StudyDesign studyDesign) {
     this.studyDesign = studyDesign;
     return this;
   }
@@ -449,11 +447,11 @@ public class ClinicalTrial {
    * @return studyDesign
   **/
   @Schema(description = "")
-  public ClinicalTrialStudyDesign getStudyDesign() {
+  public StudyDesign getStudyDesign() {
     return studyDesign;
   }
 
-  public void setStudyDesign(ClinicalTrialStudyDesign studyDesign) {
+  public void setStudyDesign(StudyDesign studyDesign) {
     this.studyDesign = studyDesign;
   }
 
@@ -599,12 +597,12 @@ public class ClinicalTrial {
     this.conditions = conditions;
   }
 
-  public ClinicalTrial interventions(java.util.List<ClinicalTrialInterventions> interventions) {
+  public ClinicalTrial interventions(java.util.List<Intervention> interventions) {
     this.interventions = interventions;
     return this;
   }
 
-  public ClinicalTrial addInterventionsItem(ClinicalTrialInterventions interventionsItem) {
+  public ClinicalTrial addInterventionsItem(Intervention interventionsItem) {
     if (this.interventions == null) {
       this.interventions = new java.util.ArrayList<>();
     }
@@ -617,11 +615,11 @@ public class ClinicalTrial {
    * @return interventions
   **/
   @Schema(description = "Specifies the intervention(s) associated with each arm or group.")
-  public java.util.List<ClinicalTrialInterventions> getInterventions() {
+  public java.util.List<Intervention> getInterventions() {
     return interventions;
   }
 
-  public void setInterventions(java.util.List<ClinicalTrialInterventions> interventions) {
+  public void setInterventions(java.util.List<Intervention> interventions) {
     this.interventions = interventions;
   }
 
@@ -651,12 +649,12 @@ public class ClinicalTrial {
     this.keywords = keywords;
   }
 
-  public ClinicalTrial armGroups(java.util.List<ClinicalTrialArmGroups> armGroups) {
+  public ClinicalTrial armGroups(java.util.List<ArmGroup> armGroups) {
     this.armGroups = armGroups;
     return this;
   }
 
-  public ClinicalTrial addArmGroupsItem(ClinicalTrialArmGroups armGroupsItem) {
+  public ClinicalTrial addArmGroupsItem(ArmGroup armGroupsItem) {
     if (this.armGroups == null) {
       this.armGroups = new java.util.ArrayList<>();
     }
@@ -669,20 +667,20 @@ public class ClinicalTrial {
    * @return armGroups
   **/
   @Schema(description = "Pre-specified groups of participants in a clinical trial assigned to receive specific interventions (or no intervention) according to a protocol.")
-  public java.util.List<ClinicalTrialArmGroups> getArmGroups() {
+  public java.util.List<ArmGroup> getArmGroups() {
     return armGroups;
   }
 
-  public void setArmGroups(java.util.List<ClinicalTrialArmGroups> armGroups) {
+  public void setArmGroups(java.util.List<ArmGroup> armGroups) {
     this.armGroups = armGroups;
   }
 
-  public ClinicalTrial primaryOutcomes(java.util.List<ClinicalTrialPrimaryOutcomes> primaryOutcomes) {
+  public ClinicalTrial primaryOutcomes(java.util.List<Outcome> primaryOutcomes) {
     this.primaryOutcomes = primaryOutcomes;
     return this;
   }
 
-  public ClinicalTrial addPrimaryOutcomesItem(ClinicalTrialPrimaryOutcomes primaryOutcomesItem) {
+  public ClinicalTrial addPrimaryOutcomesItem(Outcome primaryOutcomesItem) {
     if (this.primaryOutcomes == null) {
       this.primaryOutcomes = new java.util.ArrayList<>();
     }
@@ -695,20 +693,20 @@ public class ClinicalTrial {
    * @return primaryOutcomes
   **/
   @Schema(description = "")
-  public java.util.List<ClinicalTrialPrimaryOutcomes> getPrimaryOutcomes() {
+  public java.util.List<Outcome> getPrimaryOutcomes() {
     return primaryOutcomes;
   }
 
-  public void setPrimaryOutcomes(java.util.List<ClinicalTrialPrimaryOutcomes> primaryOutcomes) {
+  public void setPrimaryOutcomes(java.util.List<Outcome> primaryOutcomes) {
     this.primaryOutcomes = primaryOutcomes;
   }
 
-  public ClinicalTrial secondaryOutcomes(java.util.List<ClinicalTrialPrimaryOutcomes> secondaryOutcomes) {
+  public ClinicalTrial secondaryOutcomes(java.util.List<Outcome> secondaryOutcomes) {
     this.secondaryOutcomes = secondaryOutcomes;
     return this;
   }
 
-  public ClinicalTrial addSecondaryOutcomesItem(ClinicalTrialPrimaryOutcomes secondaryOutcomesItem) {
+  public ClinicalTrial addSecondaryOutcomesItem(Outcome secondaryOutcomesItem) {
     if (this.secondaryOutcomes == null) {
       this.secondaryOutcomes = new java.util.ArrayList<>();
     }
@@ -721,20 +719,20 @@ public class ClinicalTrial {
    * @return secondaryOutcomes
   **/
   @Schema(description = "")
-  public java.util.List<ClinicalTrialPrimaryOutcomes> getSecondaryOutcomes() {
+  public java.util.List<Outcome> getSecondaryOutcomes() {
     return secondaryOutcomes;
   }
 
-  public void setSecondaryOutcomes(java.util.List<ClinicalTrialPrimaryOutcomes> secondaryOutcomes) {
+  public void setSecondaryOutcomes(java.util.List<Outcome> secondaryOutcomes) {
     this.secondaryOutcomes = secondaryOutcomes;
   }
 
-  public ClinicalTrial otherOutcomes(java.util.List<ClinicalTrialPrimaryOutcomes> otherOutcomes) {
+  public ClinicalTrial otherOutcomes(java.util.List<Outcome> otherOutcomes) {
     this.otherOutcomes = otherOutcomes;
     return this;
   }
 
-  public ClinicalTrial addOtherOutcomesItem(ClinicalTrialPrimaryOutcomes otherOutcomesItem) {
+  public ClinicalTrial addOtherOutcomesItem(Outcome otherOutcomesItem) {
     if (this.otherOutcomes == null) {
       this.otherOutcomes = new java.util.ArrayList<>();
     }
@@ -747,15 +745,15 @@ public class ClinicalTrial {
    * @return otherOutcomes
   **/
   @Schema(description = "")
-  public java.util.List<ClinicalTrialPrimaryOutcomes> getOtherOutcomes() {
+  public java.util.List<Outcome> getOtherOutcomes() {
     return otherOutcomes;
   }
 
-  public void setOtherOutcomes(java.util.List<ClinicalTrialPrimaryOutcomes> otherOutcomes) {
+  public void setOtherOutcomes(java.util.List<Outcome> otherOutcomes) {
     this.otherOutcomes = otherOutcomes;
   }
 
-  public ClinicalTrial eligibility(ClinicalTrialEligibility eligibility) {
+  public ClinicalTrial eligibility(Eligibility eligibility) {
     this.eligibility = eligibility;
     return this;
   }
@@ -765,11 +763,11 @@ public class ClinicalTrial {
    * @return eligibility
   **/
   @Schema(description = "")
-  public ClinicalTrialEligibility getEligibility() {
+  public Eligibility getEligibility() {
     return eligibility;
   }
 
-  public void setEligibility(ClinicalTrialEligibility eligibility) {
+  public void setEligibility(Eligibility eligibility) {
     this.eligibility = eligibility;
   }
 
@@ -853,12 +851,12 @@ public class ClinicalTrial {
     this.gender = gender;
   }
 
-  public ClinicalTrial overallOfficial(java.util.List<ClinicalTrialOverallOfficial> overallOfficial) {
+  public ClinicalTrial overallOfficial(java.util.List<Contact> overallOfficial) {
     this.overallOfficial = overallOfficial;
     return this;
   }
 
-  public ClinicalTrial addOverallOfficialItem(ClinicalTrialOverallOfficial overallOfficialItem) {
+  public ClinicalTrial addOverallOfficialItem(Contact overallOfficialItem) {
     if (this.overallOfficial == null) {
       this.overallOfficial = new java.util.ArrayList<>();
     }
@@ -871,15 +869,15 @@ public class ClinicalTrial {
    * @return overallOfficial
   **/
   @Schema(description = "Person responsible for the overall scientific leadership of the protocol, including study principal investigator.")
-  public java.util.List<ClinicalTrialOverallOfficial> getOverallOfficial() {
+  public java.util.List<Contact> getOverallOfficial() {
     return overallOfficial;
   }
 
-  public void setOverallOfficial(java.util.List<ClinicalTrialOverallOfficial> overallOfficial) {
+  public void setOverallOfficial(java.util.List<Contact> overallOfficial) {
     this.overallOfficial = overallOfficial;
   }
 
-  public ClinicalTrial overallContact(ClinicalTrialOverallContact overallContact) {
+  public ClinicalTrial overallContact(Contact overallContact) {
     this.overallContact = overallContact;
     return this;
   }
@@ -889,15 +887,15 @@ public class ClinicalTrial {
    * @return overallContact
   **/
   @Schema(description = "")
-  public ClinicalTrialOverallContact getOverallContact() {
+  public Contact getOverallContact() {
     return overallContact;
   }
 
-  public void setOverallContact(ClinicalTrialOverallContact overallContact) {
+  public void setOverallContact(Contact overallContact) {
     this.overallContact = overallContact;
   }
 
-  public ClinicalTrial overallContactBackup(ClinicalTrialOverallContactBackup overallContactBackup) {
+  public ClinicalTrial overallContactBackup(Contact overallContactBackup) {
     this.overallContactBackup = overallContactBackup;
     return this;
   }
@@ -907,11 +905,11 @@ public class ClinicalTrial {
    * @return overallContactBackup
   **/
   @Schema(description = "")
-  public ClinicalTrialOverallContactBackup getOverallContactBackup() {
+  public Contact getOverallContactBackup() {
     return overallContactBackup;
   }
 
-  public void setOverallContactBackup(ClinicalTrialOverallContactBackup overallContactBackup) {
+  public void setOverallContactBackup(Contact overallContactBackup) {
     this.overallContactBackup = overallContactBackup;
   }
 
@@ -1119,12 +1117,12 @@ public class ClinicalTrial {
     this.link = link;
   }
 
-  public ClinicalTrial tags(java.util.List<ClinicalTrialTags> tags) {
+  public ClinicalTrial tags(java.util.List<Tag> tags) {
     this.tags = tags;
     return this;
   }
 
-  public ClinicalTrial addTagsItem(ClinicalTrialTags tagsItem) {
+  public ClinicalTrial addTagsItem(Tag tagsItem) {
     if (this.tags == null) {
       this.tags = new java.util.ArrayList<>();
     }
@@ -1137,20 +1135,20 @@ public class ClinicalTrial {
    * @return tags
   **/
   @Schema(description = "Concept associations established for this trial.")
-  public java.util.List<ClinicalTrialTags> getTags() {
+  public java.util.List<Tag> getTags() {
     return tags;
   }
 
-  public void setTags(java.util.List<ClinicalTrialTags> tags) {
+  public void setTags(java.util.List<Tag> tags) {
     this.tags = tags;
   }
 
-  public ClinicalTrial molecularAlterations(java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations) {
+  public ClinicalTrial molecularAlterations(java.util.List<MolecularAlteration> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
     return this;
   }
 
-  public ClinicalTrial addMolecularAlterationsItem(ClinicalTrialMolecularAlterations molecularAlterationsItem) {
+  public ClinicalTrial addMolecularAlterationsItem(MolecularAlteration molecularAlterationsItem) {
     if (this.molecularAlterations == null) {
       this.molecularAlterations = new java.util.ArrayList<>();
     }
@@ -1163,11 +1161,11 @@ public class ClinicalTrial {
    * @return molecularAlterations
   **/
   @Schema(description = "Molecular concept associations established for this trial.")
-  public java.util.List<ClinicalTrialMolecularAlterations> getMolecularAlterations() {
+  public java.util.List<MolecularAlteration> getMolecularAlterations() {
     return molecularAlterations;
   }
 
-  public void setMolecularAlterations(java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations) {
+  public void setMolecularAlterations(java.util.List<MolecularAlteration> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
   }
 

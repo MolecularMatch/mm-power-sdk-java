@@ -58,6 +58,12 @@ public class Drug {
   @SerializedName("approved")
   private Boolean approved = null;
 
+  @SerializedName("suppressResistance")
+  private Boolean suppressResistance = null;
+
+  @SerializedName("suppressSynonymResistance")
+  private Boolean suppressSynonymResistance = null;
+
   @SerializedName("availability")
   private java.util.List<DrugAvailability> availability = null;
 
@@ -87,6 +93,9 @@ public class Drug {
 
   @SerializedName("rxcui")
   private java.util.List<String> rxcui = null;
+
+  @SerializedName("drugclassCausedSuppress")
+  private java.util.List<String> drugclassCausedSuppress = null;
 
   @SerializedName("externalIds")
   private java.util.List<DrugExternalIds> externalIds = null;
@@ -230,6 +239,42 @@ public class Drug {
 
   public void setApproved(Boolean approved) {
     this.approved = approved;
+  }
+
+  public Drug suppressResistance(Boolean suppressResistance) {
+    this.suppressResistance = suppressResistance;
+    return this;
+  }
+
+   /**
+   * Get suppressResistance
+   * @return suppressResistance
+  **/
+  @Schema(description = "")
+  public Boolean isSuppressResistance() {
+    return suppressResistance;
+  }
+
+  public void setSuppressResistance(Boolean suppressResistance) {
+    this.suppressResistance = suppressResistance;
+  }
+
+  public Drug suppressSynonymResistance(Boolean suppressSynonymResistance) {
+    this.suppressSynonymResistance = suppressSynonymResistance;
+    return this;
+  }
+
+   /**
+   * Get suppressSynonymResistance
+   * @return suppressSynonymResistance
+  **/
+  @Schema(description = "")
+  public Boolean isSuppressSynonymResistance() {
+    return suppressSynonymResistance;
+  }
+
+  public void setSuppressSynonymResistance(Boolean suppressSynonymResistance) {
+    this.suppressSynonymResistance = suppressSynonymResistance;
   }
 
   public Drug availability(java.util.List<DrugAvailability> availability) {
@@ -468,6 +513,32 @@ public class Drug {
     this.rxcui = rxcui;
   }
 
+  public Drug drugclassCausedSuppress(java.util.List<String> drugclassCausedSuppress) {
+    this.drugclassCausedSuppress = drugclassCausedSuppress;
+    return this;
+  }
+
+  public Drug addDrugclassCausedSuppressItem(String drugclassCausedSuppressItem) {
+    if (this.drugclassCausedSuppress == null) {
+      this.drugclassCausedSuppress = new java.util.ArrayList<>();
+    }
+    this.drugclassCausedSuppress.add(drugclassCausedSuppressItem);
+    return this;
+  }
+
+   /**
+   * Get drugclassCausedSuppress
+   * @return drugclassCausedSuppress
+  **/
+  @Schema(description = "")
+  public java.util.List<String> getDrugclassCausedSuppress() {
+    return drugclassCausedSuppress;
+  }
+
+  public void setDrugclassCausedSuppress(java.util.List<String> drugclassCausedSuppress) {
+    this.drugclassCausedSuppress = drugclassCausedSuppress;
+  }
+
   public Drug externalIds(java.util.List<DrugExternalIds> externalIds) {
     this.externalIds = externalIds;
     return this;
@@ -617,6 +688,8 @@ public class Drug {
         Objects.equals(this.description, drug.description) &&
         Objects.equals(this.composite, drug.composite) &&
         Objects.equals(this.approved, drug.approved) &&
+        Objects.equals(this.suppressResistance, drug.suppressResistance) &&
+        Objects.equals(this.suppressSynonymResistance, drug.suppressSynonymResistance) &&
         Objects.equals(this.availability, drug.availability) &&
         Objects.equals(this.synonyms, drug.synonyms) &&
         Objects.equals(this.parents, drug.parents) &&
@@ -627,6 +700,7 @@ public class Drug {
         Objects.equals(this.contraindicationText, drug.contraindicationText) &&
         Objects.equals(this.mechanismText, drug.mechanismText) &&
         Objects.equals(this.rxcui, drug.rxcui) &&
+        Objects.equals(this.drugclassCausedSuppress, drug.drugclassCausedSuppress) &&
         Objects.equals(this.externalIds, drug.externalIds) &&
         Objects.equals(this.link, drug.link) &&
         Objects.equals(this.prices, drug.prices) &&
@@ -637,7 +711,7 @@ public class Drug {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mboost, id, name, alias, description, composite, approved, availability, synonyms, parents, drugclass, compositeTags, brands, indicationText, contraindicationText, mechanismText, rxcui, externalIds, link, prices, dosages, pharmacology, phaseAndTrialsScore);
+    return Objects.hash(mboost, id, name, alias, description, composite, approved, suppressResistance, suppressSynonymResistance, availability, synonyms, parents, drugclass, compositeTags, brands, indicationText, contraindicationText, mechanismText, rxcui, drugclassCausedSuppress, externalIds, link, prices, dosages, pharmacology, phaseAndTrialsScore);
   }
 
 
@@ -653,6 +727,8 @@ public class Drug {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    composite: ").append(toIndentedString(composite)).append("\n");
     sb.append("    approved: ").append(toIndentedString(approved)).append("\n");
+    sb.append("    suppressResistance: ").append(toIndentedString(suppressResistance)).append("\n");
+    sb.append("    suppressSynonymResistance: ").append(toIndentedString(suppressSynonymResistance)).append("\n");
     sb.append("    availability: ").append(toIndentedString(availability)).append("\n");
     sb.append("    synonyms: ").append(toIndentedString(synonyms)).append("\n");
     sb.append("    parents: ").append(toIndentedString(parents)).append("\n");
@@ -663,6 +739,7 @@ public class Drug {
     sb.append("    contraindicationText: ").append(toIndentedString(contraindicationText)).append("\n");
     sb.append("    mechanismText: ").append(toIndentedString(mechanismText)).append("\n");
     sb.append("    rxcui: ").append(toIndentedString(rxcui)).append("\n");
+    sb.append("    drugclassCausedSuppress: ").append(toIndentedString(drugclassCausedSuppress)).append("\n");
     sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    prices: ").append(toIndentedString(prices)).append("\n");

@@ -19,8 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.Drug;
 import io.swagger.client.model.Filter;
-import io.swagger.client.model.SearchResponseDrugRows;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -48,7 +48,7 @@ public class SearchResponseDrug {
   private Integer page = null;
 
   @SerializedName("rows")
-  private java.util.List<SearchResponseDrugRows> rows = null;
+  private java.util.List<Drug> rows = null;
 
   @SerializedName("rationalized")
   private java.util.List<Filter> rationalized = null;
@@ -167,12 +167,12 @@ public class SearchResponseDrug {
     this.page = page;
   }
 
-  public SearchResponseDrug rows(java.util.List<SearchResponseDrugRows> rows) {
+  public SearchResponseDrug rows(java.util.List<Drug> rows) {
     this.rows = rows;
     return this;
   }
 
-  public SearchResponseDrug addRowsItem(SearchResponseDrugRows rowsItem) {
+  public SearchResponseDrug addRowsItem(Drug rowsItem) {
     if (this.rows == null) {
       this.rows = new java.util.ArrayList<>();
     }
@@ -185,11 +185,11 @@ public class SearchResponseDrug {
    * @return rows
   **/
   @Schema(description = "The array of drugs that match the search criteria.")
-  public java.util.List<SearchResponseDrugRows> getRows() {
+  public java.util.List<Drug> getRows() {
     return rows;
   }
 
-  public void setRows(java.util.List<SearchResponseDrugRows> rows) {
+  public void setRows(java.util.List<Drug> rows) {
     this.rows = rows;
   }
 

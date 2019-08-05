@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.ClinicalTrialLeadSponsor;
+import io.swagger.client.model.Sponsor;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -29,12 +29,12 @@ import java.io.IOException;
 
 public class ClinicalTrialSponsors {
   @SerializedName("lead_sponsor")
-  private ClinicalTrialLeadSponsor leadSponsor = null;
+  private Sponsor leadSponsor = null;
 
   @SerializedName("collaborator")
-  private java.util.List<ClinicalTrialLeadSponsor> collaborator = null;
+  private java.util.List<Sponsor> collaborator = null;
 
-  public ClinicalTrialSponsors leadSponsor(ClinicalTrialLeadSponsor leadSponsor) {
+  public ClinicalTrialSponsors leadSponsor(Sponsor leadSponsor) {
     this.leadSponsor = leadSponsor;
     return this;
   }
@@ -44,20 +44,20 @@ public class ClinicalTrialSponsors {
    * @return leadSponsor
   **/
   @Schema(description = "")
-  public ClinicalTrialLeadSponsor getLeadSponsor() {
+  public Sponsor getLeadSponsor() {
     return leadSponsor;
   }
 
-  public void setLeadSponsor(ClinicalTrialLeadSponsor leadSponsor) {
+  public void setLeadSponsor(Sponsor leadSponsor) {
     this.leadSponsor = leadSponsor;
   }
 
-  public ClinicalTrialSponsors collaborator(java.util.List<ClinicalTrialLeadSponsor> collaborator) {
+  public ClinicalTrialSponsors collaborator(java.util.List<Sponsor> collaborator) {
     this.collaborator = collaborator;
     return this;
   }
 
-  public ClinicalTrialSponsors addCollaboratorItem(ClinicalTrialLeadSponsor collaboratorItem) {
+  public ClinicalTrialSponsors addCollaboratorItem(Sponsor collaboratorItem) {
     if (this.collaborator == null) {
       this.collaborator = new java.util.ArrayList<>();
     }
@@ -70,11 +70,11 @@ public class ClinicalTrialSponsors {
    * @return collaborator
   **/
   @Schema(description = "")
-  public java.util.List<ClinicalTrialLeadSponsor> getCollaborator() {
+  public java.util.List<Sponsor> getCollaborator() {
     return collaborator;
   }
 
-  public void setCollaborator(java.util.List<ClinicalTrialLeadSponsor> collaborator) {
+  public void setCollaborator(java.util.List<Sponsor> collaborator) {
     this.collaborator = collaborator;
   }
 

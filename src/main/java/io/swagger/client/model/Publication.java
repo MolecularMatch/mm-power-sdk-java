@@ -19,9 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.ClinicalTrialMolecularAlterations;
-import io.swagger.client.model.ClinicalTrialTags;
+import io.swagger.client.model.MolecularAlteration;
 import io.swagger.client.model.PublicationAuthors;
+import io.swagger.client.model.Tag;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -101,10 +101,10 @@ public class Publication {
   private java.util.List<PublicationAuthors> authors = null;
 
   @SerializedName("tags")
-  private java.util.List<ClinicalTrialTags> tags = null;
+  private java.util.List<Tag> tags = null;
 
   @SerializedName("molecularAlterations")
-  private java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations = null;
+  private java.util.List<MolecularAlteration> molecularAlterations = null;
 
   public Publication mboost(Float mboost) {
     this.mboost = mboost;
@@ -560,12 +560,12 @@ public class Publication {
     this.authors = authors;
   }
 
-  public Publication tags(java.util.List<ClinicalTrialTags> tags) {
+  public Publication tags(java.util.List<Tag> tags) {
     this.tags = tags;
     return this;
   }
 
-  public Publication addTagsItem(ClinicalTrialTags tagsItem) {
+  public Publication addTagsItem(Tag tagsItem) {
     if (this.tags == null) {
       this.tags = new java.util.ArrayList<>();
     }
@@ -578,20 +578,20 @@ public class Publication {
    * @return tags
   **/
   @Schema(description = "Concept associations established for this publication.")
-  public java.util.List<ClinicalTrialTags> getTags() {
+  public java.util.List<Tag> getTags() {
     return tags;
   }
 
-  public void setTags(java.util.List<ClinicalTrialTags> tags) {
+  public void setTags(java.util.List<Tag> tags) {
     this.tags = tags;
   }
 
-  public Publication molecularAlterations(java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations) {
+  public Publication molecularAlterations(java.util.List<MolecularAlteration> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
     return this;
   }
 
-  public Publication addMolecularAlterationsItem(ClinicalTrialMolecularAlterations molecularAlterationsItem) {
+  public Publication addMolecularAlterationsItem(MolecularAlteration molecularAlterationsItem) {
     if (this.molecularAlterations == null) {
       this.molecularAlterations = new java.util.ArrayList<>();
     }
@@ -604,11 +604,11 @@ public class Publication {
    * @return molecularAlterations
   **/
   @Schema(description = "Molecular concept associations established for this publication.")
-  public java.util.List<ClinicalTrialMolecularAlterations> getMolecularAlterations() {
+  public java.util.List<MolecularAlteration> getMolecularAlterations() {
     return molecularAlterations;
   }
 
-  public void setMolecularAlterations(java.util.List<ClinicalTrialMolecularAlterations> molecularAlterations) {
+  public void setMolecularAlterations(java.util.List<MolecularAlteration> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
   }
 

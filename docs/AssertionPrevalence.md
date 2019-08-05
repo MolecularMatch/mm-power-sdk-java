@@ -7,3 +7,5 @@ Name | Type | Description | Notes
 **percent** | **Float** |  | 
 **samples** | **Integer** |  | 
 **count** | **Integer** |  | 
+**condition** | **String** |  |  [optional]
+**molecular** | **String** |  |  [optional]

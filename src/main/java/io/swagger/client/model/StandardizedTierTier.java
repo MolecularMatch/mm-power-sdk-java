@@ -19,16 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.AssertionTierExplanation;
+import io.swagger.client.model.StandardizedTierTierExplanation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 /**
- * AssertionTier
+ * StandardizedTierTier
  */
 
 
-public class AssertionTier {
+public class StandardizedTierTier {
   @SerializedName("value")
   private String value = null;
 
@@ -36,9 +36,9 @@ public class AssertionTier {
   private OffsetDateTime calculatedAt = null;
 
   @SerializedName("explanation")
-  private java.util.List<AssertionTierExplanation> explanation = null;
+  private java.util.List<StandardizedTierTierExplanation> explanation = null;
 
-  public AssertionTier value(String value) {
+  public StandardizedTierTier value(String value) {
     this.value = value;
     return this;
   }
@@ -56,7 +56,7 @@ public class AssertionTier {
     this.value = value;
   }
 
-  public AssertionTier calculatedAt(OffsetDateTime calculatedAt) {
+  public StandardizedTierTier calculatedAt(OffsetDateTime calculatedAt) {
     this.calculatedAt = calculatedAt;
     return this;
   }
@@ -74,12 +74,12 @@ public class AssertionTier {
     this.calculatedAt = calculatedAt;
   }
 
-  public AssertionTier explanation(java.util.List<AssertionTierExplanation> explanation) {
+  public StandardizedTierTier explanation(java.util.List<StandardizedTierTierExplanation> explanation) {
     this.explanation = explanation;
     return this;
   }
 
-  public AssertionTier addExplanationItem(AssertionTierExplanation explanationItem) {
+  public StandardizedTierTier addExplanationItem(StandardizedTierTierExplanation explanationItem) {
     if (this.explanation == null) {
       this.explanation = new java.util.ArrayList<>();
     }
@@ -92,11 +92,11 @@ public class AssertionTier {
    * @return explanation
   **/
   @Schema(description = "")
-  public java.util.List<AssertionTierExplanation> getExplanation() {
+  public java.util.List<StandardizedTierTierExplanation> getExplanation() {
     return explanation;
   }
 
-  public void setExplanation(java.util.List<AssertionTierExplanation> explanation) {
+  public void setExplanation(java.util.List<StandardizedTierTierExplanation> explanation) {
     this.explanation = explanation;
   }
 
@@ -109,10 +109,10 @@ public class AssertionTier {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AssertionTier assertionTier = (AssertionTier) o;
-    return Objects.equals(this.value, assertionTier.value) &&
-        Objects.equals(this.calculatedAt, assertionTier.calculatedAt) &&
-        Objects.equals(this.explanation, assertionTier.explanation);
+    StandardizedTierTier standardizedTierTier = (StandardizedTierTier) o;
+    return Objects.equals(this.value, standardizedTierTier.value) &&
+        Objects.equals(this.calculatedAt, standardizedTierTier.calculatedAt) &&
+        Objects.equals(this.explanation, standardizedTierTier.explanation);
   }
 
   @Override
@@ -124,7 +124,7 @@ public class AssertionTier {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AssertionTier {\n");
+    sb.append("class StandardizedTierTier {\n");
     
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    calculatedAt: ").append(toIndentedString(calculatedAt)).append("\n");

@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.AssertionTier;
+import io.swagger.client.model.StandardizedTierTier;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -32,7 +32,7 @@ public class StandardizedTier {
   private String name = null;
 
   @SerializedName("tier")
-  private AssertionTier tier = null;
+  private StandardizedTierTier tier = null;
 
   public StandardizedTier name(String name) {
     this.name = name;
@@ -52,7 +52,7 @@ public class StandardizedTier {
     this.name = name;
   }
 
-  public StandardizedTier tier(AssertionTier tier) {
+  public StandardizedTier tier(StandardizedTierTier tier) {
     this.tier = tier;
     return this;
   }
@@ -62,11 +62,11 @@ public class StandardizedTier {
    * @return tier
   **/
   @Schema(description = "")
-  public AssertionTier getTier() {
+  public StandardizedTierTier getTier() {
     return tier;
   }
 
-  public void setTier(AssertionTier tier) {
+  public void setTier(StandardizedTierTier tier) {
     this.tier = tier;
   }
 

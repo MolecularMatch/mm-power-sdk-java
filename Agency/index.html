@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>DrugExternalIds - MMPower Java SDK</title>
+  <title>Agency - MMPower Java SDK</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "DrugExternalIds";
-    var mkdocs_page_input_path = "DrugExternalIds.md";
+    var mkdocs_page_name = "Agency";
+    var mkdocs_page_input_path = "Agency.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -51,6 +51,23 @@
             <li class="toctree-l1">
 		
     <a class="" href="..">Welcome to the MMPower Java SDK</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Agency</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#agency">Agency</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#properties">Properties</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -145,11 +162,6 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../ClinicalTrialSynonyms/">ClinicalTrialSynonyms</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../ClinicalTrialsApi/">ClinicalTrialsApi</a>
 	    </li>
           
@@ -188,23 +200,6 @@
     <a class="" href="../DrugDrugclass/">DrugDrugclass</a>
 	    </li>
           
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">DrugExternalIds</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#drugexternalids">DrugExternalIds</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#properties">Properties</a></li>
-        
-        </ul>
-    
-
-    </ul>
-	    </li>
-          
             <li class="toctree-l1">
 		
     <a class="" href="../DrugParents/">DrugParents</a>
@@ -222,12 +217,12 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../DrugSynonyms/">DrugSynonyms</a>
+    <a class="" href="../Eligibility/">Eligibility</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../Eligibility/">Eligibility</a>
+    <a class="" href="../ExternalId/">ExternalId</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -302,11 +297,6 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../Sponsor/">Sponsor</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../StandardizedTier/">StandardizedTier</a>
 	    </li>
           
@@ -323,6 +313,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../StudyDesign/">StudyDesign</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Synonym/">Synonym</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -352,7 +347,7 @@
     
       
     
-    <li>DrugExternalIds</li>
+    <li>Agency</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -362,7 +357,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="drugexternalids">DrugExternalIds</h1>
+                <h1 id="agency">Agency</h1>
 <h2 id="properties">Properties</h2>
 <table>
 <thead>
@@ -375,21 +370,15 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>resource</strong></td>
+<td><strong>agency</strong></td>
 <td><strong>String</strong></td>
-<td>Name of the source database.</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>identifier</strong></td>
-<td><strong>String</strong></td>
-<td>Identifier for this drug in the given resource.</td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>url</strong></td>
-<td><strong>String</strong></td>
-<td>The URL for this drug in the given resource.</td>
+<td><strong>agencyClass</strong></td>
+<td><strong>java.util.List&lt;String&gt;</strong></td>
+<td></td>
 <td>[optional]</td>
 </tr>
 </tbody>
@@ -401,10 +390,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../DrugParents/" class="btn btn-neutral float-right" title="DrugParents">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ArmGroup/" class="btn btn-neutral float-right" title="ArmGroup">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../DrugDrugclass/" class="btn btn-neutral" title="DrugDrugclass"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Welcome to the MMPower Java SDK"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -430,10 +419,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../DrugDrugclass/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../DrugParents/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ArmGroup/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -22,15 +22,15 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * DrugParents
+ * Synonym
  */
 
 
-public class DrugParents {
+public class Synonym {
   @SerializedName("name")
   private String name = null;
 
-  public DrugParents name(String name) {
+  public Synonym name(String name) {
     this.name = name;
     return this;
   }
@@ -57,8 +57,8 @@ public class DrugParents {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DrugParents drugParents = (DrugParents) o;
-    return Objects.equals(this.name, drugParents.name);
+    Synonym synonym = (Synonym) o;
+    return Objects.equals(this.name, synonym.name);
   }
 
   @Override
@@ -70,7 +70,7 @@ public class DrugParents {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DrugParents {\n");
+    sb.append("class Synonym {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");

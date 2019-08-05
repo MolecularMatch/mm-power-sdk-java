@@ -24,13 +24,13 @@ import io.swagger.client.model.ClinicalTrialCountries;
 import io.swagger.client.model.ClinicalTrialLocationSummary;
 import io.swagger.client.model.ClinicalTrialLocations;
 import io.swagger.client.model.ClinicalTrialSponsors;
-import io.swagger.client.model.ClinicalTrialSynonyms;
 import io.swagger.client.model.Contact;
 import io.swagger.client.model.Eligibility;
 import io.swagger.client.model.Intervention;
 import io.swagger.client.model.MolecularAlteration;
 import io.swagger.client.model.Outcome;
 import io.swagger.client.model.StudyDesign;
+import io.swagger.client.model.Synonym;
 import io.swagger.client.model.Tag;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
@@ -171,7 +171,7 @@ public class ClinicalTrial {
   private String exclusionCriteriaPreserved = null;
 
   @SerializedName("synonyms")
-  private java.util.List<ClinicalTrialSynonyms> synonyms = null;
+  private java.util.List<Synonym> synonyms = null;
 
   @SerializedName("acronym")
   private String acronym = null;
@@ -1055,12 +1055,12 @@ public class ClinicalTrial {
     this.exclusionCriteriaPreserved = exclusionCriteriaPreserved;
   }
 
-  public ClinicalTrial synonyms(java.util.List<ClinicalTrialSynonyms> synonyms) {
+  public ClinicalTrial synonyms(java.util.List<Synonym> synonyms) {
     this.synonyms = synonyms;
     return this;
   }
 
-  public ClinicalTrial addSynonymsItem(ClinicalTrialSynonyms synonymsItem) {
+  public ClinicalTrial addSynonymsItem(Synonym synonymsItem) {
     if (this.synonyms == null) {
       this.synonyms = new java.util.ArrayList<>();
     }
@@ -1073,11 +1073,11 @@ public class ClinicalTrial {
    * @return synonyms
   **/
   @Schema(description = "Any identifier other than the organization's Unique Protocol Identification Number or the NCT number that is assigned to the clinical study.")
-  public java.util.List<ClinicalTrialSynonyms> getSynonyms() {
+  public java.util.List<Synonym> getSynonyms() {
     return synonyms;
   }
 
-  public void setSynonyms(java.util.List<ClinicalTrialSynonyms> synonyms) {
+  public void setSynonyms(java.util.List<Synonym> synonyms) {
     this.synonyms = synonyms;
   }
 

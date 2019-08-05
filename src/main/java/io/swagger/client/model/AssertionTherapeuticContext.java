@@ -33,9 +33,6 @@ public class AssertionTherapeuticContext {
   @SerializedName("facet")
   private String facet = null;
 
-  @SerializedName("suppress")
-  private Boolean suppress = null;
-
   public AssertionTherapeuticContext name(String name) {
     this.name = name;
     return this;
@@ -72,24 +69,6 @@ public class AssertionTherapeuticContext {
     this.facet = facet;
   }
 
-  public AssertionTherapeuticContext suppress(Boolean suppress) {
-    this.suppress = suppress;
-    return this;
-  }
-
-   /**
-   * Get suppress
-   * @return suppress
-  **/
-  @Schema(description = "")
-  public Boolean isSuppress() {
-    return suppress;
-  }
-
-  public void setSuppress(Boolean suppress) {
-    this.suppress = suppress;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,13 +80,12 @@ public class AssertionTherapeuticContext {
     }
     AssertionTherapeuticContext assertionTherapeuticContext = (AssertionTherapeuticContext) o;
     return Objects.equals(this.name, assertionTherapeuticContext.name) &&
-        Objects.equals(this.facet, assertionTherapeuticContext.facet) &&
-        Objects.equals(this.suppress, assertionTherapeuticContext.suppress);
+        Objects.equals(this.facet, assertionTherapeuticContext.facet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, facet, suppress);
+    return Objects.hash(name, facet);
   }
 
 
@@ -118,7 +96,6 @@ public class AssertionTherapeuticContext {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    facet: ").append(toIndentedString(facet)).append("\n");
-    sb.append("    suppress: ").append(toIndentedString(suppress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

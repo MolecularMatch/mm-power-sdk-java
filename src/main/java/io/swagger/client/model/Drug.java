@@ -24,11 +24,11 @@ import io.swagger.client.model.DrugBrands;
 import io.swagger.client.model.DrugCompositeTags;
 import io.swagger.client.model.DrugDosages;
 import io.swagger.client.model.DrugDrugclass;
-import io.swagger.client.model.DrugExternalIds;
 import io.swagger.client.model.DrugParents;
 import io.swagger.client.model.DrugPharmacology;
 import io.swagger.client.model.DrugPrices;
-import io.swagger.client.model.DrugSynonyms;
+import io.swagger.client.model.ExternalId;
+import io.swagger.client.model.Synonym;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -68,7 +68,7 @@ public class Drug {
   private java.util.List<DrugAvailability> availability = null;
 
   @SerializedName("synonyms")
-  private java.util.List<DrugSynonyms> synonyms = null;
+  private java.util.List<Synonym> synonyms = null;
 
   @SerializedName("parents")
   private java.util.List<DrugParents> parents = null;
@@ -98,7 +98,7 @@ public class Drug {
   private java.util.List<String> drugclassCausedSuppress = null;
 
   @SerializedName("externalIds")
-  private java.util.List<DrugExternalIds> externalIds = null;
+  private java.util.List<ExternalId> externalIds = null;
 
   @SerializedName("link")
   private String link = null;
@@ -303,12 +303,12 @@ public class Drug {
     this.availability = availability;
   }
 
-  public Drug synonyms(java.util.List<DrugSynonyms> synonyms) {
+  public Drug synonyms(java.util.List<Synonym> synonyms) {
     this.synonyms = synonyms;
     return this;
   }
 
-  public Drug addSynonymsItem(DrugSynonyms synonymsItem) {
+  public Drug addSynonymsItem(Synonym synonymsItem) {
     if (this.synonyms == null) {
       this.synonyms = new java.util.ArrayList<>();
     }
@@ -321,11 +321,11 @@ public class Drug {
    * @return synonyms
   **/
   @Schema(description = "Other names or identifiers that are associated with this drug.")
-  public java.util.List<DrugSynonyms> getSynonyms() {
+  public java.util.List<Synonym> getSynonyms() {
     return synonyms;
   }
 
-  public void setSynonyms(java.util.List<DrugSynonyms> synonyms) {
+  public void setSynonyms(java.util.List<Synonym> synonyms) {
     this.synonyms = synonyms;
   }
 
@@ -539,12 +539,12 @@ public class Drug {
     this.drugclassCausedSuppress = drugclassCausedSuppress;
   }
 
-  public Drug externalIds(java.util.List<DrugExternalIds> externalIds) {
+  public Drug externalIds(java.util.List<ExternalId> externalIds) {
     this.externalIds = externalIds;
     return this;
   }
 
-  public Drug addExternalIdsItem(DrugExternalIds externalIdsItem) {
+  public Drug addExternalIdsItem(ExternalId externalIdsItem) {
     if (this.externalIds == null) {
       this.externalIds = new java.util.ArrayList<>();
     }
@@ -557,11 +557,11 @@ public class Drug {
    * @return externalIds
   **/
   @Schema(description = "Identifiers used in other websites or databases providing information about this drug.")
-  public java.util.List<DrugExternalIds> getExternalIds() {
+  public java.util.List<ExternalId> getExternalIds() {
     return externalIds;
   }
 
-  public void setExternalIds(java.util.List<DrugExternalIds> externalIds) {
+  public void setExternalIds(java.util.List<ExternalId> externalIds) {
     this.externalIds = externalIds;
   }
 

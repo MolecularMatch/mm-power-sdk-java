@@ -60,9 +60,6 @@ public class AssertionSources {
   @SerializedName("trustRating")
   private Float trustRating = null;
 
-  @SerializedName("suppress")
-  private Boolean suppress = null;
-
   @SerializedName("valid")
   private Boolean valid = null;
 
@@ -264,24 +261,6 @@ public class AssertionSources {
     this.trustRating = trustRating;
   }
 
-  public AssertionSources suppress(Boolean suppress) {
-    this.suppress = suppress;
-    return this;
-  }
-
-   /**
-   * Get suppress
-   * @return suppress
-  **/
-  @Schema(description = "")
-  public Boolean isSuppress() {
-    return suppress;
-  }
-
-  public void setSuppress(Boolean suppress) {
-    this.suppress = suppress;
-  }
-
   public AssertionSources valid(Boolean valid) {
     this.valid = valid;
     return this;
@@ -321,13 +300,12 @@ public class AssertionSources {
         Objects.equals(this.link, assertionSources.link) &&
         Objects.equals(this.year, assertionSources.year) &&
         Objects.equals(this.trustRating, assertionSources.trustRating) &&
-        Objects.equals(this.suppress, assertionSources.suppress) &&
         Objects.equals(this.valid, assertionSources.valid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, subType, pubId, trialId, trialPhase, functionalConsequence, name, link, year, trustRating, suppress, valid);
+    return Objects.hash(id, type, subType, pubId, trialId, trialPhase, functionalConsequence, name, link, year, trustRating, valid);
   }
 
 
@@ -347,7 +325,6 @@ public class AssertionSources {
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    year: ").append(toIndentedString(year)).append("\n");
     sb.append("    trustRating: ").append(toIndentedString(trustRating)).append("\n");
-    sb.append("    suppress: ").append(toIndentedString(suppress)).append("\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
     sb.append("}");
     return sb.toString();

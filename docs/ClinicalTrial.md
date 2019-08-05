@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **inclusionCriteriaPreserved** | **String** | Formatted rendition of the inclusionCriteria. |  [optional]
 **exclusionCriteria** | **String** | A limited list of criteria for selection of participants in the clinical study, provided in terms of exclusion criteria and suitable for assisting potential participants in identifying clinical studies of interest. |  [optional]
 **exclusionCriteriaPreserved** | **String** | Formatted rendition of the exclusionCriteria. |  [optional]
-**synonyms** | [**java.util.List&lt;ClinicalTrialSynonyms&gt;**](ClinicalTrialSynonyms.md) | Any identifier other than the organization&#x27;s Unique Protocol Identification Number or the NCT number that is assigned to the clinical study. |  [optional]
+**synonyms** | [**java.util.List&lt;Synonym&gt;**](Synonym.md) | Any identifier other than the organization&#x27;s Unique Protocol Identification Number or the NCT number that is assigned to the clinical study. |  [optional]
 **acronym** | **String** | An acronym or abbreviation used publicly to identify the clinical study. |  [optional]
 **link** | **String** | URL to registry listing of this trial. |  [optional]
 **tags** | [**java.util.List&lt;Tag&gt;**](Tag.md) | Concept associations established for this trial. |  [optional]

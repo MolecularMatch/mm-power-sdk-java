@@ -14,5 +14,4 @@ Name | Type | Description | Notes
 **link** | **String** |  |  [optional]
 **year** | **Integer** |  |  [optional]
 **trustRating** | **Float** |  |  [optional]
-**suppress** | **Boolean** |  |  [optional]
 **valid** | **Boolean** |  |  [optional]

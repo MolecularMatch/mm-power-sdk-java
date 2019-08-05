@@ -22,18 +22,18 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Sponsor
+ * Agency
  */
 
 
-public class Sponsor {
+public class Agency {
   @SerializedName("agency")
   private String agency = null;
 
   @SerializedName("agency_class")
   private java.util.List<String> agencyClass = null;
 
-  public Sponsor agency(String agency) {
+  public Agency agency(String agency) {
     this.agency = agency;
     return this;
   }
@@ -51,12 +51,12 @@ public class Sponsor {
     this.agency = agency;
   }
 
-  public Sponsor agencyClass(java.util.List<String> agencyClass) {
+  public Agency agencyClass(java.util.List<String> agencyClass) {
     this.agencyClass = agencyClass;
     return this;
   }
 
-  public Sponsor addAgencyClassItem(String agencyClassItem) {
+  public Agency addAgencyClassItem(String agencyClassItem) {
     if (this.agencyClass == null) {
       this.agencyClass = new java.util.ArrayList<>();
     }
@@ -86,9 +86,9 @@ public class Sponsor {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Sponsor sponsor = (Sponsor) o;
-    return Objects.equals(this.agency, sponsor.agency) &&
-        Objects.equals(this.agencyClass, sponsor.agencyClass);
+    Agency agency = (Agency) o;
+    return Objects.equals(this.agency, agency.agency) &&
+        Objects.equals(this.agencyClass, agency.agencyClass);
   }
 
   @Override
@@ -100,7 +100,7 @@ public class Sponsor {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Sponsor {\n");
+    sb.append("class Agency {\n");
     
     sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
     sb.append("    agencyClass: ").append(toIndentedString(agencyClass)).append("\n");

@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.Sponsor;
+import io.swagger.client.model.Agency;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -29,12 +29,12 @@ import java.io.IOException;
 
 public class ClinicalTrialSponsors {
   @SerializedName("lead_sponsor")
-  private Sponsor leadSponsor = null;
+  private Agency leadSponsor = null;
 
   @SerializedName("collaborator")
-  private java.util.List<Sponsor> collaborator = null;
+  private java.util.List<Agency> collaborator = null;
 
-  public ClinicalTrialSponsors leadSponsor(Sponsor leadSponsor) {
+  public ClinicalTrialSponsors leadSponsor(Agency leadSponsor) {
     this.leadSponsor = leadSponsor;
     return this;
   }
@@ -44,20 +44,20 @@ public class ClinicalTrialSponsors {
    * @return leadSponsor
   **/
   @Schema(description = "")
-  public Sponsor getLeadSponsor() {
+  public Agency getLeadSponsor() {
     return leadSponsor;
   }
 
-  public void setLeadSponsor(Sponsor leadSponsor) {
+  public void setLeadSponsor(Agency leadSponsor) {
     this.leadSponsor = leadSponsor;
   }
 
-  public ClinicalTrialSponsors collaborator(java.util.List<Sponsor> collaborator) {
+  public ClinicalTrialSponsors collaborator(java.util.List<Agency> collaborator) {
     this.collaborator = collaborator;
     return this;
   }
 
-  public ClinicalTrialSponsors addCollaboratorItem(Sponsor collaboratorItem) {
+  public ClinicalTrialSponsors addCollaboratorItem(Agency collaboratorItem) {
     if (this.collaborator == null) {
       this.collaborator = new java.util.ArrayList<>();
     }
@@ -70,11 +70,11 @@ public class ClinicalTrialSponsors {
    * @return collaborator
   **/
   @Schema(description = "")
-  public java.util.List<Sponsor> getCollaborator() {
+  public java.util.List<Agency> getCollaborator() {
     return collaborator;
   }
 
-  public void setCollaborator(java.util.List<Sponsor> collaborator) {
+  public void setCollaborator(java.util.List<Agency> collaborator) {
     this.collaborator = collaborator;
   }
 

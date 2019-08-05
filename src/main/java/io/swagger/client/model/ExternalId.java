@@ -22,11 +22,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * DrugExternalIds
+ * ExternalId
  */
 
 
-public class DrugExternalIds {
+public class ExternalId {
   @SerializedName("resource")
   private String resource = null;
 
@@ -36,7 +36,7 @@ public class DrugExternalIds {
   @SerializedName("url")
   private String url = null;
 
-  public DrugExternalIds resource(String resource) {
+  public ExternalId resource(String resource) {
     this.resource = resource;
     return this;
   }
@@ -54,7 +54,7 @@ public class DrugExternalIds {
     this.resource = resource;
   }
 
-  public DrugExternalIds identifier(String identifier) {
+  public ExternalId identifier(String identifier) {
     this.identifier = identifier;
     return this;
   }
@@ -72,7 +72,7 @@ public class DrugExternalIds {
     this.identifier = identifier;
   }
 
-  public DrugExternalIds url(String url) {
+  public ExternalId url(String url) {
     this.url = url;
     return this;
   }
@@ -99,10 +99,10 @@ public class DrugExternalIds {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DrugExternalIds drugExternalIds = (DrugExternalIds) o;
-    return Objects.equals(this.resource, drugExternalIds.resource) &&
-        Objects.equals(this.identifier, drugExternalIds.identifier) &&
-        Objects.equals(this.url, drugExternalIds.url);
+    ExternalId externalId = (ExternalId) o;
+    return Objects.equals(this.resource, externalId.resource) &&
+        Objects.equals(this.identifier, externalId.identifier) &&
+        Objects.equals(this.url, externalId.url);
   }
 
   @Override
@@ -114,7 +114,7 @@ public class DrugExternalIds {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DrugExternalIds {\n");
+    sb.append("class ExternalId {\n");
     
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");

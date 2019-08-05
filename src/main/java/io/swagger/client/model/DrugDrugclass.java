@@ -27,53 +27,11 @@ import java.io.IOException;
 
 
 public class DrugDrugclass {
-  @SerializedName("suppress")
-  private Boolean suppress = null;
-
-  @SerializedName("custom")
-  private Boolean custom = null;
-
   @SerializedName("name")
   private String name = null;
 
   @SerializedName("source")
   private String source = null;
-
-  public DrugDrugclass suppress(Boolean suppress) {
-    this.suppress = suppress;
-    return this;
-  }
-
-   /**
-   * Get suppress
-   * @return suppress
-  **/
-  @Schema(description = "")
-  public Boolean isSuppress() {
-    return suppress;
-  }
-
-  public void setSuppress(Boolean suppress) {
-    this.suppress = suppress;
-  }
-
-  public DrugDrugclass custom(Boolean custom) {
-    this.custom = custom;
-    return this;
-  }
-
-   /**
-   * Get custom
-   * @return custom
-  **/
-  @Schema(description = "")
-  public Boolean isCustom() {
-    return custom;
-  }
-
-  public void setCustom(Boolean custom) {
-    this.custom = custom;
-  }
 
   public DrugDrugclass name(String name) {
     this.name = name;
@@ -121,15 +79,13 @@ public class DrugDrugclass {
       return false;
     }
     DrugDrugclass drugDrugclass = (DrugDrugclass) o;
-    return Objects.equals(this.suppress, drugDrugclass.suppress) &&
-        Objects.equals(this.custom, drugDrugclass.custom) &&
-        Objects.equals(this.name, drugDrugclass.name) &&
+    return Objects.equals(this.name, drugDrugclass.name) &&
         Objects.equals(this.source, drugDrugclass.source);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(suppress, custom, name, source);
+    return Objects.hash(name, source);
   }
 
 
@@ -138,8 +94,6 @@ public class DrugDrugclass {
     StringBuilder sb = new StringBuilder();
     sb.append("class DrugDrugclass {\n");
     
-    sb.append("    suppress: ").append(toIndentedString(suppress)).append("\n");
-    sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("}");

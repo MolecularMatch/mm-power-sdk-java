@@ -1,4 +1,4 @@
-# DrugParents
+# Synonym
 
 ## Properties
 Name | Type | Description | Notes

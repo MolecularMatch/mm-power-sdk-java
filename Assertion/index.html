@@ -74,6 +74,16 @@
         
             <li><a class="toctree-l3" href="#properties">Properties</a></li>
         
+            <li><a class="toctree-l3" href="#enum-regulatorybodyenum">Enum: RegulatoryBodyEnum</a></li>
+        
+            <li><a class="toctree-l3" href="#enum-directionenum">Enum: DirectionEnum</a></li>
+        
+            <li><a class="toctree-l3" href="#enum-guidelinebodyenum">Enum: GuidelineBodyEnum</a></li>
+        
+            <li><a class="toctree-l3" href="#enum-clinicalsignificanceenum">Enum: ClinicalSignificanceEnum</a></li>
+        
+            <li><a class="toctree-l3" href="#enum-biomarkerclassenum">Enum: BiomarkerClassEnum</a></li>
+        
         </ul>
     
 
@@ -407,7 +417,7 @@
 </tr>
 <tr>
 <td><strong>regulatoryBody</strong></td>
-<td><strong>String</strong></td>
+<td><a href="#RegulatoryBodyEnum"><strong>RegulatoryBodyEnum</strong></a></td>
 <td>The regulatory body that has governance over this assertion.</td>
 <td></td>
 </tr>
@@ -437,13 +447,13 @@
 </tr>
 <tr>
 <td><strong>direction</strong></td>
-<td><strong>String</strong></td>
+<td><a href="#DirectionEnum"><strong>DirectionEnum</strong></a></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>guidelineBody</strong></td>
-<td><strong>String</strong></td>
+<td><a href="#GuidelineBodyEnum"><strong>GuidelineBodyEnum</strong></a></td>
 <td></td>
 <td>[optional]</td>
 </tr>
@@ -455,13 +465,13 @@
 </tr>
 <tr>
 <td><strong>clinicalSignificance</strong></td>
-<td><strong>String</strong></td>
+<td><a href="#ClinicalSignificanceEnum"><strong>ClinicalSignificanceEnum</strong></a></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>biomarkerClass</strong></td>
-<td><strong>String</strong></td>
+<td><a href="#BiomarkerClassEnum"><strong>BiomarkerClassEnum</strong></a></td>
 <td></td>
 <td>[optional]</td>
 </tr>
@@ -524,6 +534,166 @@
 <td><a href="../AssertionVariantInfo/"><strong>java.util.List&lt;AssertionVariantInfo&gt;</strong></a></td>
 <td></td>
 <td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<p><a name="RegulatoryBodyEnum"></a></p>
+<h2 id="enum-regulatorybodyenum">Enum: RegulatoryBodyEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDA</td>
+<td>&quot;FDA&quot;</td>
+</tr>
+<tr>
+<td>EMA</td>
+<td>&quot;EMA&quot;</td>
+</tr>
+<tr>
+<td>HCA</td>
+<td>&quot;HCA&quot;</td>
+</tr>
+<tr>
+<td>TGA</td>
+<td>&quot;TGA&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><a name="DirectionEnum"></a></p>
+<h2 id="enum-directionenum">Enum: DirectionEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUPPORTS</td>
+<td>&quot;supports&quot;</td>
+</tr>
+<tr>
+<td>DOES_NOT_SUPPORT</td>
+<td>&quot;does_not_support&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><a name="GuidelineBodyEnum"></a></p>
+<h2 id="enum-guidelinebodyenum">Enum: GuidelineBodyEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NCCN</td>
+<td>&quot;NCCN&quot;</td>
+</tr>
+<tr>
+<td>ASCO</td>
+<td>&quot;ASCO&quot;</td>
+</tr>
+<tr>
+<td>ESMO</td>
+<td>&quot;ESMO&quot;</td>
+</tr>
+<tr>
+<td>AJCC</td>
+<td>&quot;AJCC&quot;</td>
+</tr>
+<tr>
+<td>AMP</td>
+<td>&quot;AMP&quot;</td>
+</tr>
+<tr>
+<td>CAP</td>
+<td>&quot;CAP&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><a name="ClinicalSignificanceEnum"></a></p>
+<h2 id="enum-clinicalsignificanceenum">Enum: ClinicalSignificanceEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NO_RESPONSE</td>
+<td>&quot;no_response&quot;</td>
+</tr>
+<tr>
+<td>SENSITIVE</td>
+<td>&quot;sensitive&quot;</td>
+</tr>
+<tr>
+<td>FAVORABLE</td>
+<td>&quot;favorable&quot;</td>
+</tr>
+<tr>
+<td>UNFAVORABLE</td>
+<td>&quot;unfavorable&quot;</td>
+</tr>
+<tr>
+<td>UNKNOWN</td>
+<td>&quot;unknown&quot;</td>
+</tr>
+<tr>
+<td>RESISTANT</td>
+<td>&quot;resistant&quot;</td>
+</tr>
+<tr>
+<td>INTERMEDIATE</td>
+<td>&quot;intermediate&quot;</td>
+</tr>
+<tr>
+<td>ADVERSE_RESPONSE</td>
+<td>&quot;adverse_response&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><a name="BiomarkerClassEnum"></a></p>
+<h2 id="enum-biomarkerclassenum">Enum: BiomarkerClassEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PREDICTIVE</td>
+<td>&quot;predictive&quot;</td>
+</tr>
+<tr>
+<td>DIAGNOSTIC</td>
+<td>&quot;diagnostic&quot;</td>
+</tr>
+<tr>
+<td>PROGNOSTIC</td>
+<td>&quot;prognostic&quot;</td>
+</tr>
+<tr>
+<td>UNKNOWN</td>
+<td>&quot;unknown&quot;</td>
+</tr>
+<tr>
+<td>PREDISPOSING</td>
+<td>&quot;predisposing&quot;</td>
 </tr>
 </tbody>
 </table>

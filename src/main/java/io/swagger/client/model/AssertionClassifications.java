@@ -30,11 +30,99 @@ public class AssertionClassifications {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("classification")
-  private String classification = null;
+  /**
+   * Gets or Sets classification
+   */
+  @JsonAdapter(ClassificationEnum.Adapter.class)
+  public enum ClassificationEnum {
+    ACTIONABLE("actionable"),
+    UNKNOWN("unknown"),
+    COMMON("common"),
+    INFORMATIVE("informative"),
+    GERMLINE("germline");
 
-  @SerializedName("classificationOverride")
-  private String classificationOverride = null;
+    private String value;
+
+    ClassificationEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static ClassificationEnum fromValue(String text) {
+      for (ClassificationEnum b : ClassificationEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<ClassificationEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ClassificationEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ClassificationEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ClassificationEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("classification")
+  private ClassificationEnum classification = null;
+
+  /**
+   * Gets or Sets classificationOverride
+   */
+  @JsonAdapter(ClassificationOverrideEnum.Adapter.class)
+  public enum ClassificationOverrideEnum {
+    ACTIONABLE("actionable"),
+    UNKNOWN("unknown"),
+    COMMON("common"),
+    INFORMATIVE("informative"),
+    GERMLINE("germline");
+
+    private String value;
+
+    ClassificationOverrideEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static ClassificationOverrideEnum fromValue(String text) {
+      for (ClassificationOverrideEnum b : ClassificationOverrideEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<ClassificationOverrideEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ClassificationOverrideEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ClassificationOverrideEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ClassificationOverrideEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("classificationOverride")
+  private ClassificationOverrideEnum classificationOverride = null;
 
   public AssertionClassifications name(String name) {
     this.name = name;
@@ -54,7 +142,7 @@ public class AssertionClassifications {
     this.name = name;
   }
 
-  public AssertionClassifications classification(String classification) {
+  public AssertionClassifications classification(ClassificationEnum classification) {
     this.classification = classification;
     return this;
   }
@@ -64,15 +152,15 @@ public class AssertionClassifications {
    * @return classification
   **/
   @Schema(required = true, description = "")
-  public String getClassification() {
+  public ClassificationEnum getClassification() {
     return classification;
   }
 
-  public void setClassification(String classification) {
+  public void setClassification(ClassificationEnum classification) {
     this.classification = classification;
   }
 
-  public AssertionClassifications classificationOverride(String classificationOverride) {
+  public AssertionClassifications classificationOverride(ClassificationOverrideEnum classificationOverride) {
     this.classificationOverride = classificationOverride;
     return this;
   }
@@ -82,11 +170,11 @@ public class AssertionClassifications {
    * @return classificationOverride
   **/
   @Schema(description = "")
-  public String getClassificationOverride() {
+  public ClassificationOverrideEnum getClassificationOverride() {
     return classificationOverride;
   }
 
-  public void setClassificationOverride(String classificationOverride) {
+  public void setClassificationOverride(ClassificationOverrideEnum classificationOverride) {
     this.classificationOverride = classificationOverride;
   }
 

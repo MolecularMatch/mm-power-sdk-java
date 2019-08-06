@@ -57,8 +57,49 @@ public class AssertionLocations {
   @SerializedName("strand")
   private String strand = null;
 
-  @SerializedName("referenceGenome")
-  private String referenceGenome = null;
+  /**
+   * Gets or Sets referenceGenome
+   */
+  @JsonAdapter(ReferenceGenomeEnum.Adapter.class)
+  public enum ReferenceGenomeEnum {
+    GRCH37_HG19("grch37_hg19"),
+    GRCH38_HG38("grch38_hg38");
+
+    private String value;
+
+    ReferenceGenomeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static ReferenceGenomeEnum fromValue(String text) {
+      for (ReferenceGenomeEnum b : ReferenceGenomeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<ReferenceGenomeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ReferenceGenomeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ReferenceGenomeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ReferenceGenomeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("referenceGenome")
+  private ReferenceGenomeEnum referenceGenome = null;
 
   public AssertionLocations cdna(String cdna) {
     this.cdna = cdna;
@@ -256,7 +297,7 @@ public class AssertionLocations {
     this.strand = strand;
   }
 
-  public AssertionLocations referenceGenome(String referenceGenome) {
+  public AssertionLocations referenceGenome(ReferenceGenomeEnum referenceGenome) {
     this.referenceGenome = referenceGenome;
     return this;
   }
@@ -266,11 +307,11 @@ public class AssertionLocations {
    * @return referenceGenome
   **/
   @Schema(description = "")
-  public String getReferenceGenome() {
+  public ReferenceGenomeEnum getReferenceGenome() {
     return referenceGenome;
   }
 
-  public void setReferenceGenome(String referenceGenome) {
+  public void setReferenceGenome(ReferenceGenomeEnum referenceGenome) {
     this.referenceGenome = referenceGenome;
   }
 

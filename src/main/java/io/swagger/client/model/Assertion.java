@@ -52,8 +52,51 @@ public class Assertion {
   @SerializedName("narrative")
   private String narrative = null;
 
-  @SerializedName("regulatoryBody")
-  private String regulatoryBody = null;
+  /**
+   * The regulatory body that has governance over this assertion.
+   */
+  @JsonAdapter(RegulatoryBodyEnum.Adapter.class)
+  public enum RegulatoryBodyEnum {
+    FDA("FDA"),
+    EMA("EMA"),
+    HCA("HCA"),
+    TGA("TGA");
+
+    private String value;
+
+    RegulatoryBodyEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static RegulatoryBodyEnum fromValue(String text) {
+      for (RegulatoryBodyEnum b : RegulatoryBodyEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<RegulatoryBodyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RegulatoryBodyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RegulatoryBodyEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return RegulatoryBodyEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("regulatoryBody")
+  private RegulatoryBodyEnum regulatoryBody = null;
 
   @SerializedName("customer")
   private String customer = null;
@@ -67,20 +110,197 @@ public class Assertion {
   @SerializedName("regulatoryBodyApprovedBy")
   private String regulatoryBodyApprovedBy = null;
 
-  @SerializedName("direction")
-  private String direction = null;
+  /**
+   * Gets or Sets direction
+   */
+  @JsonAdapter(DirectionEnum.Adapter.class)
+  public enum DirectionEnum {
+    SUPPORTS("supports"),
+    DOES_NOT_SUPPORT("does_not_support");
 
-  @SerializedName("guidelineBody")
-  private String guidelineBody = null;
+    private String value;
+
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static DirectionEnum fromValue(String text) {
+      for (DirectionEnum b : DirectionEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<DirectionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DirectionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DirectionEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return DirectionEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("direction")
+  private DirectionEnum direction = null;
+
+  /**
+   * Gets or Sets guidelineBody
+   */
+  @JsonAdapter(GuidelineBodyEnum.Adapter.class)
+  public enum GuidelineBodyEnum {
+    NCCN("NCCN"),
+    ASCO("ASCO"),
+    ESMO("ESMO"),
+    AJCC("AJCC"),
+    AMP("AMP"),
+    CAP("CAP");
+
+    private String value;
+
+    GuidelineBodyEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static GuidelineBodyEnum fromValue(String text) {
+      for (GuidelineBodyEnum b : GuidelineBodyEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<GuidelineBodyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final GuidelineBodyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public GuidelineBodyEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return GuidelineBodyEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("guidelineBody")
+  private GuidelineBodyEnum guidelineBody = null;
 
   @SerializedName("guidelineVersion")
   private String guidelineVersion = null;
 
-  @SerializedName("clinicalSignificance")
-  private String clinicalSignificance = null;
+  /**
+   * Gets or Sets clinicalSignificance
+   */
+  @JsonAdapter(ClinicalSignificanceEnum.Adapter.class)
+  public enum ClinicalSignificanceEnum {
+    NO_RESPONSE("no_response"),
+    SENSITIVE("sensitive"),
+    FAVORABLE("favorable"),
+    UNFAVORABLE("unfavorable"),
+    UNKNOWN("unknown"),
+    RESISTANT("resistant"),
+    INTERMEDIATE("intermediate"),
+    ADVERSE_RESPONSE("adverse_response");
 
-  @SerializedName("biomarkerClass")
-  private String biomarkerClass = null;
+    private String value;
+
+    ClinicalSignificanceEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static ClinicalSignificanceEnum fromValue(String text) {
+      for (ClinicalSignificanceEnum b : ClinicalSignificanceEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<ClinicalSignificanceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ClinicalSignificanceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ClinicalSignificanceEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ClinicalSignificanceEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("clinicalSignificance")
+  private ClinicalSignificanceEnum clinicalSignificance = null;
+
+  /**
+   * Gets or Sets biomarkerClass
+   */
+  @JsonAdapter(BiomarkerClassEnum.Adapter.class)
+  public enum BiomarkerClassEnum {
+    PREDICTIVE("predictive"),
+    DIAGNOSTIC("diagnostic"),
+    PROGNOSTIC("prognostic"),
+    UNKNOWN("unknown"),
+    PREDISPOSING("predisposing");
+
+    private String value;
+
+    BiomarkerClassEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static BiomarkerClassEnum fromValue(String text) {
+      for (BiomarkerClassEnum b : BiomarkerClassEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<BiomarkerClassEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final BiomarkerClassEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public BiomarkerClassEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return BiomarkerClassEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("biomarkerClass")
+  private BiomarkerClassEnum biomarkerClass = null;
 
   @SerializedName("expression")
   private String expression = null;
@@ -228,7 +448,7 @@ public class Assertion {
     this.narrative = narrative;
   }
 
-  public Assertion regulatoryBody(String regulatoryBody) {
+  public Assertion regulatoryBody(RegulatoryBodyEnum regulatoryBody) {
     this.regulatoryBody = regulatoryBody;
     return this;
   }
@@ -238,11 +458,11 @@ public class Assertion {
    * @return regulatoryBody
   **/
   @Schema(required = true, description = "The regulatory body that has governance over this assertion.")
-  public String getRegulatoryBody() {
+  public RegulatoryBodyEnum getRegulatoryBody() {
     return regulatoryBody;
   }
 
-  public void setRegulatoryBody(String regulatoryBody) {
+  public void setRegulatoryBody(RegulatoryBodyEnum regulatoryBody) {
     this.regulatoryBody = regulatoryBody;
   }
 
@@ -318,7 +538,7 @@ public class Assertion {
     this.regulatoryBodyApprovedBy = regulatoryBodyApprovedBy;
   }
 
-  public Assertion direction(String direction) {
+  public Assertion direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
@@ -328,15 +548,15 @@ public class Assertion {
    * @return direction
   **/
   @Schema(description = "")
-  public String getDirection() {
+  public DirectionEnum getDirection() {
     return direction;
   }
 
-  public void setDirection(String direction) {
+  public void setDirection(DirectionEnum direction) {
     this.direction = direction;
   }
 
-  public Assertion guidelineBody(String guidelineBody) {
+  public Assertion guidelineBody(GuidelineBodyEnum guidelineBody) {
     this.guidelineBody = guidelineBody;
     return this;
   }
@@ -346,11 +566,11 @@ public class Assertion {
    * @return guidelineBody
   **/
   @Schema(description = "")
-  public String getGuidelineBody() {
+  public GuidelineBodyEnum getGuidelineBody() {
     return guidelineBody;
   }
 
-  public void setGuidelineBody(String guidelineBody) {
+  public void setGuidelineBody(GuidelineBodyEnum guidelineBody) {
     this.guidelineBody = guidelineBody;
   }
 
@@ -372,7 +592,7 @@ public class Assertion {
     this.guidelineVersion = guidelineVersion;
   }
 
-  public Assertion clinicalSignificance(String clinicalSignificance) {
+  public Assertion clinicalSignificance(ClinicalSignificanceEnum clinicalSignificance) {
     this.clinicalSignificance = clinicalSignificance;
     return this;
   }
@@ -382,15 +602,15 @@ public class Assertion {
    * @return clinicalSignificance
   **/
   @Schema(description = "")
-  public String getClinicalSignificance() {
+  public ClinicalSignificanceEnum getClinicalSignificance() {
     return clinicalSignificance;
   }
 
-  public void setClinicalSignificance(String clinicalSignificance) {
+  public void setClinicalSignificance(ClinicalSignificanceEnum clinicalSignificance) {
     this.clinicalSignificance = clinicalSignificance;
   }
 
-  public Assertion biomarkerClass(String biomarkerClass) {
+  public Assertion biomarkerClass(BiomarkerClassEnum biomarkerClass) {
     this.biomarkerClass = biomarkerClass;
     return this;
   }
@@ -400,11 +620,11 @@ public class Assertion {
    * @return biomarkerClass
   **/
   @Schema(description = "")
-  public String getBiomarkerClass() {
+  public BiomarkerClassEnum getBiomarkerClass() {
     return biomarkerClass;
   }
 
-  public void setBiomarkerClass(String biomarkerClass) {
+  public void setBiomarkerClass(BiomarkerClassEnum biomarkerClass) {
     this.biomarkerClass = biomarkerClass;
   }
 

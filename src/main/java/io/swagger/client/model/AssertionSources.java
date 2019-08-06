@@ -30,11 +30,107 @@ public class AssertionSources {
   @SerializedName("id")
   private String id = null;
 
-  @SerializedName("type")
-  private String type = null;
+  /**
+   * Gets or Sets type
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    TRIAL("trial"),
+    CASE_STUDY("case_study"),
+    PRECLINICAL("preclinical"),
+    EXPERT("expert"),
+    PATHWAY_INFERRED("pathway_inferred"),
+    INSTITUTIONAL_STUDY("institutional_study"),
+    REGULATORY("regulatory"),
+    SEQUENCING("sequencing"),
+    EMPTY("");
 
-  @SerializedName("subType")
-  private String subType = null;
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static TypeEnum fromValue(String text) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return TypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("type")
+  private TypeEnum type = null;
+
+  /**
+   * Gets or Sets subType
+   */
+  @JsonAdapter(SubTypeEnum.Adapter.class)
+  public enum SubTypeEnum {
+    PROSPECTIVE("prospective"),
+    RETROSPECTIVE("retrospective"),
+    META_ANALYSIS("meta_analysis"),
+    CLINICAL("clinical"),
+    RESEARCHER("researcher"),
+    CELL_LINE("cell_line"),
+    PDX("pdx"),
+    BIOCHEMICAL_ASSAY("biochemical_assay"),
+    MOUSE_MODEL("mouse_model");
+
+    private String value;
+
+    SubTypeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static SubTypeEnum fromValue(String text) {
+      for (SubTypeEnum b : SubTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<SubTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SubTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SubTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return SubTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("subType")
+  private SubTypeEnum subType = null;
 
   @SerializedName("pubId")
   private String pubId = null;
@@ -45,11 +141,97 @@ public class AssertionSources {
   @SerializedName("trialPhase")
   private String trialPhase = null;
 
-  @SerializedName("functionalConsequence")
-  private String functionalConsequence = null;
+  /**
+   * Gets or Sets functionalConsequence
+   */
+  @JsonAdapter(FunctionalConsequenceEnum.Adapter.class)
+  public enum FunctionalConsequenceEnum {
+    LOSS_OF_FUNCTION("loss_of_function"),
+    GAIN_OF_FUNCTION("gain_of_function"),
+    UNCHARACTERIZED("uncharacterized"),
+    INCONCLUSIVE("inconclusive");
 
-  @SerializedName("name")
-  private String name = null;
+    private String value;
+
+    FunctionalConsequenceEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static FunctionalConsequenceEnum fromValue(String text) {
+      for (FunctionalConsequenceEnum b : FunctionalConsequenceEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<FunctionalConsequenceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FunctionalConsequenceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FunctionalConsequenceEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return FunctionalConsequenceEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("functionalConsequence")
+  private FunctionalConsequenceEnum functionalConsequence = null;
+
+  /**
+   * Gets or Sets name
+   */
+  @JsonAdapter(NameEnum.Adapter.class)
+  public enum NameEnum {
+    PUBMED("PUBMED"),
+    AACR("AACR"),
+    ASCO("ASCO"),
+    ESMO("ESMO");
+
+    private String value;
+
+    NameEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static NameEnum fromValue(String text) {
+      for (NameEnum b : NameEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<NameEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final NameEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public NameEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return NameEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("name")
+  private NameEnum name = null;
 
   @SerializedName("link")
   private String link = null;
@@ -81,7 +263,7 @@ public class AssertionSources {
     this.id = id;
   }
 
-  public AssertionSources type(String type) {
+  public AssertionSources type(TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -91,15 +273,15 @@ public class AssertionSources {
    * @return type
   **/
   @Schema(description = "")
-  public String getType() {
+  public TypeEnum getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
-  public AssertionSources subType(String subType) {
+  public AssertionSources subType(SubTypeEnum subType) {
     this.subType = subType;
     return this;
   }
@@ -109,11 +291,11 @@ public class AssertionSources {
    * @return subType
   **/
   @Schema(description = "")
-  public String getSubType() {
+  public SubTypeEnum getSubType() {
     return subType;
   }
 
-  public void setSubType(String subType) {
+  public void setSubType(SubTypeEnum subType) {
     this.subType = subType;
   }
 
@@ -171,7 +353,7 @@ public class AssertionSources {
     this.trialPhase = trialPhase;
   }
 
-  public AssertionSources functionalConsequence(String functionalConsequence) {
+  public AssertionSources functionalConsequence(FunctionalConsequenceEnum functionalConsequence) {
     this.functionalConsequence = functionalConsequence;
     return this;
   }
@@ -181,15 +363,15 @@ public class AssertionSources {
    * @return functionalConsequence
   **/
   @Schema(description = "")
-  public String getFunctionalConsequence() {
+  public FunctionalConsequenceEnum getFunctionalConsequence() {
     return functionalConsequence;
   }
 
-  public void setFunctionalConsequence(String functionalConsequence) {
+  public void setFunctionalConsequence(FunctionalConsequenceEnum functionalConsequence) {
     this.functionalConsequence = functionalConsequence;
   }
 
-  public AssertionSources name(String name) {
+  public AssertionSources name(NameEnum name) {
     this.name = name;
     return this;
   }
@@ -199,11 +381,11 @@ public class AssertionSources {
    * @return name
   **/
   @Schema(description = "")
-  public String getName() {
+  public NameEnum getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(NameEnum name) {
     this.name = name;
   }
 

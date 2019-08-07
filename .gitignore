@@ -24,3 +24,4 @@ target/
 .vscode/
 .swagger-codegen/
 site/
+docs/css/

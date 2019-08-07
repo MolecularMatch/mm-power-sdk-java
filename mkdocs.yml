@@ -1,3 +1,5 @@
 site_name: MMPower Java SDK
 theme:
     name: readthedocs
+extra_css:
+  - css/extra.css

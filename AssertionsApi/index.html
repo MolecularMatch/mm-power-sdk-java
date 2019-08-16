@@ -162,22 +162,12 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../ClinicalTrialGeo/">ClinicalTrialGeo</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../ClinicalTrialLocationSummary/">ClinicalTrialLocationSummary</a>
 	    </li>
           
             <li class="toctree-l1">
 		
     <a class="" href="../ClinicalTrialLocationSummaryCountries/">ClinicalTrialLocationSummaryCountries</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ClinicalTrialLocations/">ClinicalTrialLocations</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -242,12 +232,27 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../DrugsApi/">DrugsApi</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../Eligibility/">Eligibility</a>
 	    </li>
           
             <li class="toctree-l1">
 		
     <a class="" href="../ExternalId/">ExternalId</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Facility/">Facility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../FacilityGeo/">FacilityGeo</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -303,6 +308,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../SearchRequestMinShouldMatch/">SearchRequestMinShouldMatch</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../SearchResponseAssertion/">SearchResponseAssertion</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -463,7 +473,7 @@ try {
 <p><a name="searchAssertions"></a></p>
 <h1 id="searchassertions"><strong>searchAssertions</strong></h1>
 <blockquote>
-<p>SearchResponseDrug searchAssertions(body)</p>
+<p>SearchResponseAssertion searchAssertions(body)</p>
 </blockquote>
 <p>Search for assertions</p>
 <p>Search for evidence backed assertions</p>
@@ -481,7 +491,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 AssertionsApi apiInstance = new AssertionsApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponseDrug result = apiInstance.searchAssertions(body);
+    SearchResponseAssertion result = apiInstance.searchAssertions(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println(&quot;Exception when calling AssertionsApi#searchAssertions&quot;);
@@ -509,7 +519,7 @@ try {
 </tbody>
 </table>
 <h3 id="return-type_1">Return type</h3>
-<p><a href="../SearchResponseDrug/"><strong>SearchResponseDrug</strong></a></p>
+<p><a href="../SearchResponseAssertion/"><strong>SearchResponseAssertion</strong></a></p>
 <h3 id="http-request-headers_1">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: application/json</li>

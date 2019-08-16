@@ -126,22 +126,12 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../ClinicalTrialGeo/">ClinicalTrialGeo</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../ClinicalTrialLocationSummary/">ClinicalTrialLocationSummary</a>
 	    </li>
           
             <li class="toctree-l1">
 		
     <a class="" href="../ClinicalTrialLocationSummaryCountries/">ClinicalTrialLocationSummaryCountries</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ClinicalTrialLocations/">ClinicalTrialLocations</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -206,12 +196,27 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../DrugsApi/">DrugsApi</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../Eligibility/">Eligibility</a>
 	    </li>
           
             <li class="toctree-l1">
 		
     <a class="" href="../ExternalId/">ExternalId</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Facility/">Facility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../FacilityGeo/">FacilityGeo</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -271,6 +276,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../SearchResponseAssertion/">SearchResponseAssertion</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../SearchResponseClinicalTrial/">SearchResponseClinicalTrial</a>
 	    </li>
           
@@ -284,6 +294,8 @@
         <ul>
         
             <li><a class="toctree-l3" href="#properties">Properties</a></li>
+        
+            <li><a class="toctree-l3" href="#enum-modeenum">Enum: ModeEnum</a></li>
         
         </ul>
     
@@ -389,6 +401,24 @@
 <td>[optional]</td>
 </tr>
 <tr>
+<td><strong>mode</strong></td>
+<td><a href="#ModeEnum"><strong>ModeEnum</strong></a></td>
+<td>Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>tieringTemplate</strong></td>
+<td><strong>String</strong></td>
+<td>The tiering template used to assess the quality of evidence.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>tieringTemplateLegend</strong></td>
+<td><strong>Object</strong></td>
+<td>The tiering template legend explains the tiers pertaining to the template.</td>
+<td>[optional]</td>
+</tr>
+<tr>
 <td><strong>total</strong></td>
 <td><strong>Integer</strong></td>
 <td>The total number of records that match this search.</td>
@@ -425,10 +455,36 @@
 <td>[optional]</td>
 </tr>
 <tr>
+<td><strong>filterNarrative</strong></td>
+<td><strong>String</strong></td>
+<td>A human readable narrative describing the search conducted. Can be used to provide \&quot;Showing results for\&quot; functionality.</td>
+<td>[optional]</td>
+</tr>
+<tr>
 <td><strong>ambiguousNarrative</strong></td>
 <td><strong>java.util.List&lt;String&gt;</strong></td>
 <td>if true include a human readable ambiguous narrative.  This enables the consumer to activate \&quot;did you mean\&quot; search capability.</td>
 <td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<p><a name="ModeEnum"></a></p>
+<h2 id="enum-modeenum">Enum: ModeEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRITERIAUNMET</td>
+<td>&quot;criteriaunmet&quot;</td>
+</tr>
+<tr>
+<td>DISCOVERY</td>
+<td>&quot;discovery&quot;</td>
 </tr>
 </tbody>
 </table>

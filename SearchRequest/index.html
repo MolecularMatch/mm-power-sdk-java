@@ -126,22 +126,12 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../ClinicalTrialGeo/">ClinicalTrialGeo</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../ClinicalTrialLocationSummary/">ClinicalTrialLocationSummary</a>
 	    </li>
           
             <li class="toctree-l1">
 		
     <a class="" href="../ClinicalTrialLocationSummaryCountries/">ClinicalTrialLocationSummaryCountries</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ClinicalTrialLocations/">ClinicalTrialLocations</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -206,12 +196,27 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../DrugsApi/">DrugsApi</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../Eligibility/">Eligibility</a>
 	    </li>
           
             <li class="toctree-l1">
 		
     <a class="" href="../ExternalId/">ExternalId</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Facility/">Facility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../FacilityGeo/">FacilityGeo</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -260,6 +265,8 @@
         
             <li><a class="toctree-l3" href="#properties">Properties</a></li>
         
+            <li><a class="toctree-l3" href="#enum-modeenum">Enum: ModeEnum</a></li>
+        
         </ul>
     
 
@@ -279,6 +286,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../SearchRequestMinShouldMatch/">SearchRequestMinShouldMatch</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../SearchResponseAssertion/">SearchResponseAssertion</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -389,6 +401,12 @@
 <td>[optional]</td>
 </tr>
 <tr>
+<td><strong>mode</strong></td>
+<td><a href="#ModeEnum"><strong>ModeEnum</strong></a></td>
+<td>Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.</td>
+<td>[optional]</td>
+</tr>
+<tr>
 <td><strong>start</strong></td>
 <td><strong>Integer</strong></td>
 <td>Starting record index for paging results.</td>
@@ -398,18 +416,6 @@
 <td><strong>limit</strong></td>
 <td><strong>Integer</strong></td>
 <td>Number of records per page.</td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>locationSummary</strong></td>
-<td><strong>Boolean</strong></td>
-<td>If true, returns a summary location structure instead of the full array of trial locations.</td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>filterNarrative</strong></td>
-<td><strong>Boolean</strong></td>
-<td>If true, include a human readable filter narrative.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -441,6 +447,26 @@
 <td><a href="../SearchRequestMinShouldMatch/"><strong>SearchRequestMinShouldMatch</strong></a></td>
 <td></td>
 <td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<p><a name="ModeEnum"></a></p>
+<h2 id="enum-modeenum">Enum: ModeEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRITERIAUNMET</td>
+<td>&quot;criteriaunmet&quot;</td>
+</tr>
+<tr>
+<td>DISCOVERY</td>
+<td>&quot;discovery&quot;</td>
 </tr>
 </tbody>
 </table>

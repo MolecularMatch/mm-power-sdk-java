@@ -113,7 +113,7 @@ public class AssertionsApiExample {
         AssertionsApi apiInstance = new AssertionsApi();
         SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
         try {
-            SearchResponseDrug result = apiInstance.searchAssertions(body);
+            SearchResponseAssertion result = apiInstance.searchAssertions(body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AssertionsApi#searchAssertions");
@@ -134,6 +134,8 @@ Class | Method | HTTP request | Description
 *ClinicalTrialsApi* | [**countTrials**](docs/ClinicalTrialsApi.md#countTrials) | **POST** /trial/count | Get the count of Clinical Trials matching a searchRequest
 *ClinicalTrialsApi* | [**getTrial**](docs/ClinicalTrialsApi.md#getTrial) | **GET** /trial/{id} | Get a Clinical Trial
 *ClinicalTrialsApi* | [**searchTrials**](docs/ClinicalTrialsApi.md#searchTrials) | **POST** /trial/search | Search for clinical trials
+*DrugsApi* | [**getDrug**](docs/DrugsApi.md#getDrug) | **GET** /drug/{id} | Get a Drug
+*DrugsApi* | [**searchDrugs**](docs/DrugsApi.md#searchDrugs) | **POST** /drug/search | Search for drugs
 *PublicationApi* | [**countPublications**](docs/PublicationApi.md#countPublications) | **POST** /publication/count | Get the count of Publications matching a searchRequest
 *PublicationApi* | [**getPublication**](docs/PublicationApi.md#getPublication) | **GET** /publication/{id} | Get a Publication
 *PublicationApi* | [**searchPublications**](docs/PublicationApi.md#searchPublications) | **POST** /publication/search | Search for Publications
@@ -153,10 +155,8 @@ Class | Method | HTTP request | Description
  - [AssertionVariantInfo](docs/AssertionVariantInfo.md)
  - [ClinicalTrial](docs/ClinicalTrial.md)
  - [ClinicalTrialCountries](docs/ClinicalTrialCountries.md)
- - [ClinicalTrialGeo](docs/ClinicalTrialGeo.md)
  - [ClinicalTrialLocationSummary](docs/ClinicalTrialLocationSummary.md)
  - [ClinicalTrialLocationSummaryCountries](docs/ClinicalTrialLocationSummaryCountries.md)
- - [ClinicalTrialLocations](docs/ClinicalTrialLocations.md)
  - [ClinicalTrialSponsors](docs/ClinicalTrialSponsors.md)
  - [Contact](docs/Contact.md)
  - [Drug](docs/Drug.md)
@@ -170,6 +170,8 @@ Class | Method | HTTP request | Description
  - [DrugPrices](docs/DrugPrices.md)
  - [Eligibility](docs/Eligibility.md)
  - [ExternalId](docs/ExternalId.md)
+ - [Facility](docs/Facility.md)
+ - [FacilityGeo](docs/FacilityGeo.md)
  - [Filter](docs/Filter.md)
  - [Intervention](docs/Intervention.md)
  - [MolecularAlteration](docs/MolecularAlteration.md)
@@ -180,6 +182,7 @@ Class | Method | HTTP request | Description
  - [SearchRequestGeopoint](docs/SearchRequestGeopoint.md)
  - [SearchRequestLocation](docs/SearchRequestLocation.md)
  - [SearchRequestMinShouldMatch](docs/SearchRequestMinShouldMatch.md)
+ - [SearchResponseAssertion](docs/SearchResponseAssertion.md)
  - [SearchResponseClinicalTrial](docs/SearchResponseClinicalTrial.md)
  - [SearchResponseDrug](docs/SearchResponseDrug.md)
  - [SearchResponsePublication](docs/SearchResponsePublication.md)

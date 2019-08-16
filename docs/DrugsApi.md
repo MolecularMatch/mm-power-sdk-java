@@ -1,19 +1,19 @@
-# AssertionsApi
+# DrugsApi
 
 All URIs are relative to *https://api.molecularmatch.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAssertion**](AssertionsApi.md#getAssertion) | **GET** /assertion/{id} | Get an Assertion
-[**searchAssertions**](AssertionsApi.md#searchAssertions) | **POST** /assertion/search | Search for assertions
+[**getDrug**](DrugsApi.md#getDrug) | **GET** /drug/{id} | Get a Drug
+[**searchDrugs**](DrugsApi.md#searchDrugs) | **POST** /drug/search | Search for drugs
 
-<a name="getAssertion"></a>
-# **getAssertion**
-> Assertion getAssertion(id)
+<a name="getDrug"></a>
+# **getDrug**
+> Drug getDrug(id)
 
-Get an Assertion
+Get a Drug
 
-Get an evidence backed assertion
+Get a drug
 
 ### Example
 ```java
@@ -22,18 +22,18 @@ Get an evidence backed assertion
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.AssertionsApi;
+//import io.swagger.client.api.DrugsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
-AssertionsApi apiInstance = new AssertionsApi();
-String id = "id_example"; // String | ID of the Assertion to return
+DrugsApi apiInstance = new DrugsApi();
+String id = "id_example"; // String | ID of the Drug to return
 try {
-    Assertion result = apiInstance.getAssertion(id);
+    Drug result = apiInstance.getDrug(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AssertionsApi#getAssertion");
+    System.err.println("Exception when calling DrugsApi#getDrug");
     e.printStackTrace();
 }
 ```
@@ -42,11 +42,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the Assertion to return |
+ **id** | **String**| ID of the Drug to return |
 
 ### Return type
 
-[**Assertion**](Assertion.md)
+[**Drug**](Drug.md)
 
 
 
@@ -57,13 +57,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="searchAssertions"></a>
-# **searchAssertions**
-> SearchResponseAssertion searchAssertions(body)
+<a name="searchDrugs"></a>
+# **searchDrugs**
+> SearchResponseDrug searchDrugs(body)
 
-Search for assertions
+Search for drugs
 
-Search for evidence backed assertions
+Search for drugs
 
 ### Example
 ```java
@@ -72,18 +72,18 @@ Search for evidence backed assertions
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.AssertionsApi;
+//import io.swagger.client.api.DrugsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
-AssertionsApi apiInstance = new AssertionsApi();
+DrugsApi apiInstance = new DrugsApi();
 SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing
 try {
-    SearchResponseAssertion result = apiInstance.searchAssertions(body);
+    SearchResponseDrug result = apiInstance.searchDrugs(body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AssertionsApi#searchAssertions");
+    System.err.println("Exception when calling DrugsApi#searchDrugs");
     e.printStackTrace();
 }
 ```
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchResponseAssertion**](SearchResponseAssertion.md)
+[**SearchResponseDrug**](SearchResponseDrug.md)
 
 
 

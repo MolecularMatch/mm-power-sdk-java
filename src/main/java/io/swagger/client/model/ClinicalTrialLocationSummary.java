@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.ClinicalTrialLocationSummaryCountries;
+import io.swagger.client.model.Facility;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -42,6 +43,12 @@ public class ClinicalTrialLocationSummary {
 
   @SerializedName("countries")
   private java.util.List<ClinicalTrialLocationSummaryCountries> countries = null;
+
+  @SerializedName("nearestDistance")
+  private Float nearestDistance = null;
+
+  @SerializedName("nearestLocation")
+  private Facility nearestLocation = null;
 
   public ClinicalTrialLocationSummary us(Boolean us) {
     this.us = us;
@@ -141,6 +148,42 @@ public class ClinicalTrialLocationSummary {
     this.countries = countries;
   }
 
+  public ClinicalTrialLocationSummary nearestDistance(Float nearestDistance) {
+    this.nearestDistance = nearestDistance;
+    return this;
+  }
+
+   /**
+   * The distance to the nearest trial location based on the distance unit of measure specified (miles if unspecified) from the search location (either geopoint, location object, or inferred search point bsaed on filters provided.
+   * @return nearestDistance
+  **/
+  @Schema(description = "The distance to the nearest trial location based on the distance unit of measure specified (miles if unspecified) from the search location (either geopoint, location object, or inferred search point bsaed on filters provided.")
+  public Float getNearestDistance() {
+    return nearestDistance;
+  }
+
+  public void setNearestDistance(Float nearestDistance) {
+    this.nearestDistance = nearestDistance;
+  }
+
+  public ClinicalTrialLocationSummary nearestLocation(Facility nearestLocation) {
+    this.nearestLocation = nearestLocation;
+    return this;
+  }
+
+   /**
+   * Get nearestLocation
+   * @return nearestLocation
+  **/
+  @Schema(description = "")
+  public Facility getNearestLocation() {
+    return nearestLocation;
+  }
+
+  public void setNearestLocation(Facility nearestLocation) {
+    this.nearestLocation = nearestLocation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,12 +198,14 @@ public class ClinicalTrialLocationSummary {
         Objects.equals(this.intl, clinicalTrialLocationSummary.intl) &&
         Objects.equals(this.count, clinicalTrialLocationSummary.count) &&
         Objects.equals(this.recruitingCount, clinicalTrialLocationSummary.recruitingCount) &&
-        Objects.equals(this.countries, clinicalTrialLocationSummary.countries);
+        Objects.equals(this.countries, clinicalTrialLocationSummary.countries) &&
+        Objects.equals(this.nearestDistance, clinicalTrialLocationSummary.nearestDistance) &&
+        Objects.equals(this.nearestLocation, clinicalTrialLocationSummary.nearestLocation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(us, intl, count, recruitingCount, countries);
+    return Objects.hash(us, intl, count, recruitingCount, countries, nearestDistance, nearestLocation);
   }
 
 
@@ -174,6 +219,8 @@ public class ClinicalTrialLocationSummary {
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    recruitingCount: ").append(toIndentedString(recruitingCount)).append("\n");
     sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
+    sb.append("    nearestDistance: ").append(toIndentedString(nearestDistance)).append("\n");
+    sb.append("    nearestLocation: ").append(toIndentedString(nearestLocation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

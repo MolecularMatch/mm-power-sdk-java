@@ -26,20 +26,20 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.Assertion;
+import io.swagger.client.model.Drug;
 import io.swagger.client.model.SearchRequest;
-import io.swagger.client.model.SearchResponseAssertion;
+import io.swagger.client.model.SearchResponseDrug;
 
 import java.lang.reflect.Type;
 
-public class AssertionsApi {
+public class DrugsApi {
     private ApiClient apiClient;
 
-    public AssertionsApi() {
+    public DrugsApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public AssertionsApi(ApiClient apiClient) {
+    public DrugsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -52,18 +52,18 @@ public class AssertionsApi {
     }
 
     /**
-     * Build call for getAssertion
-     * @param id ID of the Assertion to return (required)
+     * Build call for getDrug
+     * @param id ID of the Drug to return (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAssertionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDrugCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/assertion/{id}"
+        String localVarPath = "/drug/{id}"
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
@@ -102,13 +102,13 @@ public class AssertionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAssertionValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDrugValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getAssertion(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling getDrug(Async)");
         }
         
-        com.squareup.okhttp.Call call = getAssertionCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDrugCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -118,39 +118,39 @@ public class AssertionsApi {
     }
 
     /**
-     * Get an Assertion
-     * Get an evidence backed assertion
-     * @param id ID of the Assertion to return (required)
-     * @return Assertion
+     * Get a Drug
+     * Get a drug
+     * @param id ID of the Drug to return (required)
+     * @return Drug
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Assertion getAssertion(String id) throws ApiException {
-        ApiResponse<Assertion> resp = getAssertionWithHttpInfo(id);
+    public Drug getDrug(String id) throws ApiException {
+        ApiResponse<Drug> resp = getDrugWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
-     * Get an Assertion
-     * Get an evidence backed assertion
-     * @param id ID of the Assertion to return (required)
-     * @return ApiResponse&lt;Assertion&gt;
+     * Get a Drug
+     * Get a drug
+     * @param id ID of the Drug to return (required)
+     * @return ApiResponse&lt;Drug&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Assertion> getAssertionWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getAssertionValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<Assertion>(){}.getType();
+    public ApiResponse<Drug> getDrugWithHttpInfo(String id) throws ApiException {
+        com.squareup.okhttp.Call call = getDrugValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<Drug>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get an Assertion (asynchronously)
-     * Get an evidence backed assertion
-     * @param id ID of the Assertion to return (required)
+     * Get a Drug (asynchronously)
+     * Get a drug
+     * @param id ID of the Drug to return (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAssertionAsync(String id, final ApiCallback<Assertion> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDrugAsync(String id, final ApiCallback<Drug> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -171,24 +171,24 @@ public class AssertionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAssertionValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Assertion>(){}.getType();
+        com.squareup.okhttp.Call call = getDrugValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Drug>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for searchAssertions
+     * Build call for searchDrugs
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call searchAssertionsCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call searchDrugsCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/assertion/search";
+        String localVarPath = "/drug/search";
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
@@ -226,13 +226,13 @@ public class AssertionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchAssertionsValidateBeforeCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call searchDrugsValidateBeforeCall(SearchRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling searchAssertions(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling searchDrugs(Async)");
         }
         
-        com.squareup.okhttp.Call call = searchAssertionsCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchDrugsCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -242,39 +242,39 @@ public class AssertionsApi {
     }
 
     /**
-     * Search for assertions
-     * Search for evidence backed assertions
+     * Search for drugs
+     * Search for drugs
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
-     * @return SearchResponseAssertion
+     * @return SearchResponseDrug
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchResponseAssertion searchAssertions(SearchRequest body) throws ApiException {
-        ApiResponse<SearchResponseAssertion> resp = searchAssertionsWithHttpInfo(body);
+    public SearchResponseDrug searchDrugs(SearchRequest body) throws ApiException {
+        ApiResponse<SearchResponseDrug> resp = searchDrugsWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
-     * Search for assertions
-     * Search for evidence backed assertions
+     * Search for drugs
+     * Search for drugs
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
-     * @return ApiResponse&lt;SearchResponseAssertion&gt;
+     * @return ApiResponse&lt;SearchResponseDrug&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchResponseAssertion> searchAssertionsWithHttpInfo(SearchRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = searchAssertionsValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<SearchResponseAssertion>(){}.getType();
+    public ApiResponse<SearchResponseDrug> searchDrugsWithHttpInfo(SearchRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = searchDrugsValidateBeforeCall(body, null, null);
+        Type localVarReturnType = new TypeToken<SearchResponseDrug>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Search for assertions (asynchronously)
-     * Search for evidence backed assertions
+     * Search for drugs (asynchronously)
+     * Search for drugs
      * @param body SearchRequest object to send to MolecularMatch for processing (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchAssertionsAsync(SearchRequest body, final ApiCallback<SearchResponseAssertion> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchDrugsAsync(SearchRequest body, final ApiCallback<SearchResponseDrug> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -295,8 +295,8 @@ public class AssertionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = searchAssertionsValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchResponseAssertion>(){}.getType();
+        com.squareup.okhttp.Call call = searchDrugsValidateBeforeCall(body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SearchResponseDrug>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

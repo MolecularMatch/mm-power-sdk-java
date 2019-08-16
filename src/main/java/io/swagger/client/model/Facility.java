@@ -19,15 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.ClinicalTrialGeo;
+import io.swagger.client.model.FacilityGeo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * ClinicalTrialLocations
+ * Facility
  */
 
 
-public class ClinicalTrialLocations {
+public class Facility {
   @SerializedName("id")
   private String id = null;
 
@@ -52,8 +52,14 @@ public class ClinicalTrialLocations {
   @SerializedName("zip")
   private String zip = null;
 
+  @SerializedName("lat")
+  private Float lat = null;
+
+  @SerializedName("lon")
+  private Float lon = null;
+
   @SerializedName("geo")
-  private ClinicalTrialGeo geo = null;
+  private FacilityGeo geo = null;
 
   @SerializedName("status")
   private String status = null;
@@ -100,10 +106,13 @@ public class ClinicalTrialLocations {
   @SerializedName("email_backup")
   private String emailBackup = null;
 
+  @SerializedName("distance")
+  private Float distance = null;
+
   @SerializedName("isInInstitution")
   private Boolean isInInstitution = null;
 
-  public ClinicalTrialLocations id(String id) {
+  public Facility id(String id) {
     this.id = id;
     return this;
   }
@@ -121,7 +130,7 @@ public class ClinicalTrialLocations {
     this.id = id;
   }
 
-  public ClinicalTrialLocations street(String street) {
+  public Facility street(String street) {
     this.street = street;
     return this;
   }
@@ -139,7 +148,7 @@ public class ClinicalTrialLocations {
     this.street = street;
   }
 
-  public ClinicalTrialLocations country(String country) {
+  public Facility country(String country) {
     this.country = country;
     return this;
   }
@@ -157,7 +166,7 @@ public class ClinicalTrialLocations {
     this.country = country;
   }
 
-  public ClinicalTrialLocations name(String name) {
+  public Facility name(String name) {
     this.name = name;
     return this;
   }
@@ -175,7 +184,7 @@ public class ClinicalTrialLocations {
     this.name = name;
   }
 
-  public ClinicalTrialLocations poBox(String poBox) {
+  public Facility poBox(String poBox) {
     this.poBox = poBox;
     return this;
   }
@@ -193,7 +202,7 @@ public class ClinicalTrialLocations {
     this.poBox = poBox;
   }
 
-  public ClinicalTrialLocations city(String city) {
+  public Facility city(String city) {
     this.city = city;
     return this;
   }
@@ -211,7 +220,7 @@ public class ClinicalTrialLocations {
     this.city = city;
   }
 
-  public ClinicalTrialLocations state(String state) {
+  public Facility state(String state) {
     this.state = state;
     return this;
   }
@@ -229,7 +238,7 @@ public class ClinicalTrialLocations {
     this.state = state;
   }
 
-  public ClinicalTrialLocations zip(String zip) {
+  public Facility zip(String zip) {
     this.zip = zip;
     return this;
   }
@@ -247,7 +256,43 @@ public class ClinicalTrialLocations {
     this.zip = zip;
   }
 
-  public ClinicalTrialLocations geo(ClinicalTrialGeo geo) {
+  public Facility lat(Float lat) {
+    this.lat = lat;
+    return this;
+  }
+
+   /**
+   * Get lat
+   * @return lat
+  **/
+  @Schema(description = "")
+  public Float getLat() {
+    return lat;
+  }
+
+  public void setLat(Float lat) {
+    this.lat = lat;
+  }
+
+  public Facility lon(Float lon) {
+    this.lon = lon;
+    return this;
+  }
+
+   /**
+   * Get lon
+   * @return lon
+  **/
+  @Schema(description = "")
+  public Float getLon() {
+    return lon;
+  }
+
+  public void setLon(Float lon) {
+    this.lon = lon;
+  }
+
+  public Facility geo(FacilityGeo geo) {
     this.geo = geo;
     return this;
   }
@@ -257,15 +302,15 @@ public class ClinicalTrialLocations {
    * @return geo
   **/
   @Schema(description = "")
-  public ClinicalTrialGeo getGeo() {
+  public FacilityGeo getGeo() {
     return geo;
   }
 
-  public void setGeo(ClinicalTrialGeo geo) {
+  public void setGeo(FacilityGeo geo) {
     this.geo = geo;
   }
 
-  public ClinicalTrialLocations status(String status) {
+  public Facility status(String status) {
     this.status = status;
     return this;
   }
@@ -283,7 +328,7 @@ public class ClinicalTrialLocations {
     this.status = status;
   }
 
-  public ClinicalTrialLocations firstName(String firstName) {
+  public Facility firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -301,7 +346,7 @@ public class ClinicalTrialLocations {
     this.firstName = firstName;
   }
 
-  public ClinicalTrialLocations middleName(String middleName) {
+  public Facility middleName(String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -319,7 +364,7 @@ public class ClinicalTrialLocations {
     this.middleName = middleName;
   }
 
-  public ClinicalTrialLocations lastName(String lastName) {
+  public Facility lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -337,7 +382,7 @@ public class ClinicalTrialLocations {
     this.lastName = lastName;
   }
 
-  public ClinicalTrialLocations degrees(String degrees) {
+  public Facility degrees(String degrees) {
     this.degrees = degrees;
     return this;
   }
@@ -355,7 +400,7 @@ public class ClinicalTrialLocations {
     this.degrees = degrees;
   }
 
-  public ClinicalTrialLocations phone(String phone) {
+  public Facility phone(String phone) {
     this.phone = phone;
     return this;
   }
@@ -373,7 +418,7 @@ public class ClinicalTrialLocations {
     this.phone = phone;
   }
 
-  public ClinicalTrialLocations phoneExt(String phoneExt) {
+  public Facility phoneExt(String phoneExt) {
     this.phoneExt = phoneExt;
     return this;
   }
@@ -391,7 +436,7 @@ public class ClinicalTrialLocations {
     this.phoneExt = phoneExt;
   }
 
-  public ClinicalTrialLocations email(String email) {
+  public Facility email(String email) {
     this.email = email;
     return this;
   }
@@ -409,7 +454,7 @@ public class ClinicalTrialLocations {
     this.email = email;
   }
 
-  public ClinicalTrialLocations firstNameBackup(String firstNameBackup) {
+  public Facility firstNameBackup(String firstNameBackup) {
     this.firstNameBackup = firstNameBackup;
     return this;
   }
@@ -427,7 +472,7 @@ public class ClinicalTrialLocations {
     this.firstNameBackup = firstNameBackup;
   }
 
-  public ClinicalTrialLocations middleNameBackup(String middleNameBackup) {
+  public Facility middleNameBackup(String middleNameBackup) {
     this.middleNameBackup = middleNameBackup;
     return this;
   }
@@ -445,7 +490,7 @@ public class ClinicalTrialLocations {
     this.middleNameBackup = middleNameBackup;
   }
 
-  public ClinicalTrialLocations lastNameBackup(String lastNameBackup) {
+  public Facility lastNameBackup(String lastNameBackup) {
     this.lastNameBackup = lastNameBackup;
     return this;
   }
@@ -463,7 +508,7 @@ public class ClinicalTrialLocations {
     this.lastNameBackup = lastNameBackup;
   }
 
-  public ClinicalTrialLocations degreesBackup(String degreesBackup) {
+  public Facility degreesBackup(String degreesBackup) {
     this.degreesBackup = degreesBackup;
     return this;
   }
@@ -481,7 +526,7 @@ public class ClinicalTrialLocations {
     this.degreesBackup = degreesBackup;
   }
 
-  public ClinicalTrialLocations phoneBackup(String phoneBackup) {
+  public Facility phoneBackup(String phoneBackup) {
     this.phoneBackup = phoneBackup;
     return this;
   }
@@ -499,7 +544,7 @@ public class ClinicalTrialLocations {
     this.phoneBackup = phoneBackup;
   }
 
-  public ClinicalTrialLocations phoneExtBackup(String phoneExtBackup) {
+  public Facility phoneExtBackup(String phoneExtBackup) {
     this.phoneExtBackup = phoneExtBackup;
     return this;
   }
@@ -517,7 +562,7 @@ public class ClinicalTrialLocations {
     this.phoneExtBackup = phoneExtBackup;
   }
 
-  public ClinicalTrialLocations emailBackup(String emailBackup) {
+  public Facility emailBackup(String emailBackup) {
     this.emailBackup = emailBackup;
     return this;
   }
@@ -535,7 +580,25 @@ public class ClinicalTrialLocations {
     this.emailBackup = emailBackup;
   }
 
-  public ClinicalTrialLocations isInInstitution(Boolean isInInstitution) {
+  public Facility distance(Float distance) {
+    this.distance = distance;
+    return this;
+  }
+
+   /**
+   * Distance based on the distance unit of measure specified (miles if unspecified) from the search location (either geopoint, location object, or inferred search point bsaed on filters provided.
+   * @return distance
+  **/
+  @Schema(description = "Distance based on the distance unit of measure specified (miles if unspecified) from the search location (either geopoint, location object, or inferred search point bsaed on filters provided.")
+  public Float getDistance() {
+    return distance;
+  }
+
+  public void setDistance(Float distance) {
+    this.distance = distance;
+  }
+
+  public Facility isInInstitution(Boolean isInInstitution) {
     this.isInInstitution = isInInstitution;
     return this;
   }
@@ -562,44 +625,47 @@ public class ClinicalTrialLocations {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ClinicalTrialLocations clinicalTrialLocations = (ClinicalTrialLocations) o;
-    return Objects.equals(this.id, clinicalTrialLocations.id) &&
-        Objects.equals(this.street, clinicalTrialLocations.street) &&
-        Objects.equals(this.country, clinicalTrialLocations.country) &&
-        Objects.equals(this.name, clinicalTrialLocations.name) &&
-        Objects.equals(this.poBox, clinicalTrialLocations.poBox) &&
-        Objects.equals(this.city, clinicalTrialLocations.city) &&
-        Objects.equals(this.state, clinicalTrialLocations.state) &&
-        Objects.equals(this.zip, clinicalTrialLocations.zip) &&
-        Objects.equals(this.geo, clinicalTrialLocations.geo) &&
-        Objects.equals(this.status, clinicalTrialLocations.status) &&
-        Objects.equals(this.firstName, clinicalTrialLocations.firstName) &&
-        Objects.equals(this.middleName, clinicalTrialLocations.middleName) &&
-        Objects.equals(this.lastName, clinicalTrialLocations.lastName) &&
-        Objects.equals(this.degrees, clinicalTrialLocations.degrees) &&
-        Objects.equals(this.phone, clinicalTrialLocations.phone) &&
-        Objects.equals(this.phoneExt, clinicalTrialLocations.phoneExt) &&
-        Objects.equals(this.email, clinicalTrialLocations.email) &&
-        Objects.equals(this.firstNameBackup, clinicalTrialLocations.firstNameBackup) &&
-        Objects.equals(this.middleNameBackup, clinicalTrialLocations.middleNameBackup) &&
-        Objects.equals(this.lastNameBackup, clinicalTrialLocations.lastNameBackup) &&
-        Objects.equals(this.degreesBackup, clinicalTrialLocations.degreesBackup) &&
-        Objects.equals(this.phoneBackup, clinicalTrialLocations.phoneBackup) &&
-        Objects.equals(this.phoneExtBackup, clinicalTrialLocations.phoneExtBackup) &&
-        Objects.equals(this.emailBackup, clinicalTrialLocations.emailBackup) &&
-        Objects.equals(this.isInInstitution, clinicalTrialLocations.isInInstitution);
+    Facility facility = (Facility) o;
+    return Objects.equals(this.id, facility.id) &&
+        Objects.equals(this.street, facility.street) &&
+        Objects.equals(this.country, facility.country) &&
+        Objects.equals(this.name, facility.name) &&
+        Objects.equals(this.poBox, facility.poBox) &&
+        Objects.equals(this.city, facility.city) &&
+        Objects.equals(this.state, facility.state) &&
+        Objects.equals(this.zip, facility.zip) &&
+        Objects.equals(this.lat, facility.lat) &&
+        Objects.equals(this.lon, facility.lon) &&
+        Objects.equals(this.geo, facility.geo) &&
+        Objects.equals(this.status, facility.status) &&
+        Objects.equals(this.firstName, facility.firstName) &&
+        Objects.equals(this.middleName, facility.middleName) &&
+        Objects.equals(this.lastName, facility.lastName) &&
+        Objects.equals(this.degrees, facility.degrees) &&
+        Objects.equals(this.phone, facility.phone) &&
+        Objects.equals(this.phoneExt, facility.phoneExt) &&
+        Objects.equals(this.email, facility.email) &&
+        Objects.equals(this.firstNameBackup, facility.firstNameBackup) &&
+        Objects.equals(this.middleNameBackup, facility.middleNameBackup) &&
+        Objects.equals(this.lastNameBackup, facility.lastNameBackup) &&
+        Objects.equals(this.degreesBackup, facility.degreesBackup) &&
+        Objects.equals(this.phoneBackup, facility.phoneBackup) &&
+        Objects.equals(this.phoneExtBackup, facility.phoneExtBackup) &&
+        Objects.equals(this.emailBackup, facility.emailBackup) &&
+        Objects.equals(this.distance, facility.distance) &&
+        Objects.equals(this.isInInstitution, facility.isInInstitution);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, street, country, name, poBox, city, state, zip, geo, status, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, isInInstitution);
+    return Objects.hash(id, street, country, name, poBox, city, state, zip, lat, lon, geo, status, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, distance, isInInstitution);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ClinicalTrialLocations {\n");
+    sb.append("class Facility {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
@@ -609,6 +675,8 @@ public class ClinicalTrialLocations {
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    zip: ").append(toIndentedString(zip)).append("\n");
+    sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
+    sb.append("    lon: ").append(toIndentedString(lon)).append("\n");
     sb.append("    geo: ").append(toIndentedString(geo)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
@@ -625,6 +693,7 @@ public class ClinicalTrialLocations {
     sb.append("    phoneBackup: ").append(toIndentedString(phoneBackup)).append("\n");
     sb.append("    phoneExtBackup: ").append(toIndentedString(phoneExtBackup)).append("\n");
     sb.append("    emailBackup: ").append(toIndentedString(emailBackup)).append("\n");
+    sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
     sb.append("    isInInstitution: ").append(toIndentedString(isInInstitution)).append("\n");
     sb.append("}");
     return sb.toString();

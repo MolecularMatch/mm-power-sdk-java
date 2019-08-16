@@ -12,4 +12,5 @@ Name | Type | Description | Notes
 **rows** | [**java.util.List&lt;ClinicalTrial&gt;**](ClinicalTrial.md) | The array of clinical trials that match the search criteria. |  [optional]
 **rationalized** | [**java.util.List&lt;Filter&gt;**](Filter.md) | The array of filters and how they were interpreted by the MolecularMatch search engine. |  [optional]
 **unrecognized** | [**java.util.List&lt;Filter&gt;**](Filter.md) | The array of filters that were not recognized by the MolecularMatch search engine. |  [optional]
+**filterNarrative** | **String** | A human readable narrative describing the search conducted. Can be used to provide \&quot;Showing results for\&quot; functionality. |  [optional]
 **ambiguousNarrative** | **java.util.List&lt;String&gt;** | if true include a human readable ambiguous narrative.  This enables the consumer to activate \&quot;did you mean\&quot; search capability. |  [optional]

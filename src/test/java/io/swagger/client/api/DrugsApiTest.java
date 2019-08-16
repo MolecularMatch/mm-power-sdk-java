@@ -13,48 +13,48 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.Assertion;
+import io.swagger.client.model.Drug;
 import io.swagger.client.model.SearchRequest;
-import io.swagger.client.model.SearchResponseAssertion;
+import io.swagger.client.model.SearchResponseDrug;
 import org.junit.Test;
 import org.junit.Ignore;
 
 
 /**
- * API tests for AssertionsApi
+ * API tests for DrugsApi
  */
 @Ignore
-public class AssertionsApiTest {
+public class DrugsApiTest {
 
-    private final AssertionsApi api = new AssertionsApi();
+    private final DrugsApi api = new DrugsApi();
 
     /**
-     * Get an Assertion
+     * Get a Drug
      *
-     * Get an evidence backed assertion
+     * Get a drug
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getAssertionTest() throws ApiException {
+    public void getDrugTest() throws ApiException {
         String id = null;
-        Assertion response = api.getAssertion(id);
+        Drug response = api.getDrug(id);
 
         // TODO: test validations
     }
     /**
-     * Search for assertions
+     * Search for drugs
      *
-     * Search for evidence backed assertions
+     * Search for drugs
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void searchAssertionsTest() throws ApiException {
+    public void searchDrugsTest() throws ApiException {
         SearchRequest body = null;
-        SearchResponseAssertion response = api.searchAssertions(body);
+        SearchResponseDrug response = api.searchDrugs(body);
 
         // TODO: test validations
     }

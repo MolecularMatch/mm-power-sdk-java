@@ -22,10 +22,10 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.ArmGroup;
 import io.swagger.client.model.ClinicalTrialCountries;
 import io.swagger.client.model.ClinicalTrialLocationSummary;
-import io.swagger.client.model.ClinicalTrialLocations;
 import io.swagger.client.model.ClinicalTrialSponsors;
 import io.swagger.client.model.Contact;
 import io.swagger.client.model.Eligibility;
+import io.swagger.client.model.Facility;
 import io.swagger.client.model.Intervention;
 import io.swagger.client.model.MolecularAlteration;
 import io.swagger.client.model.Outcome;
@@ -78,7 +78,7 @@ public class ClinicalTrial {
   private String status = null;
 
   @SerializedName("phase")
-  private String phase = null;
+  private String phase = "N/A";
 
   @SerializedName("studyType")
   private String studyType = null;
@@ -153,7 +153,7 @@ public class ClinicalTrial {
   private ClinicalTrialLocationSummary locationSummary = null;
 
   @SerializedName("locations")
-  private java.util.List<ClinicalTrialLocations> locations = null;
+  private java.util.List<Facility> locations = null;
 
   @SerializedName("countries")
   private java.util.List<ClinicalTrialCountries> countries = null;
@@ -184,6 +184,9 @@ public class ClinicalTrial {
 
   @SerializedName("molecularAlterations")
   private java.util.List<MolecularAlteration> molecularAlterations = null;
+
+  @SerializedName("_stats")
+  private Object _stats = null;
 
   public ClinicalTrial mboost(Float mboost) {
     this.mboost = mboost;
@@ -931,12 +934,12 @@ public class ClinicalTrial {
     this.locationSummary = locationSummary;
   }
 
-  public ClinicalTrial locations(java.util.List<ClinicalTrialLocations> locations) {
+  public ClinicalTrial locations(java.util.List<Facility> locations) {
     this.locations = locations;
     return this;
   }
 
-  public ClinicalTrial addLocationsItem(ClinicalTrialLocations locationsItem) {
+  public ClinicalTrial addLocationsItem(Facility locationsItem) {
     if (this.locations == null) {
       this.locations = new java.util.ArrayList<>();
     }
@@ -949,11 +952,11 @@ public class ClinicalTrial {
    * @return locations
   **/
   @Schema(description = "Information about the sites offering this trial.")
-  public java.util.List<ClinicalTrialLocations> getLocations() {
+  public java.util.List<Facility> getLocations() {
     return locations;
   }
 
-  public void setLocations(java.util.List<ClinicalTrialLocations> locations) {
+  public void setLocations(java.util.List<Facility> locations) {
     this.locations = locations;
   }
 
@@ -1169,6 +1172,24 @@ public class ClinicalTrial {
     this.molecularAlterations = molecularAlterations;
   }
 
+  public ClinicalTrial _stats(Object _stats) {
+    this._stats = _stats;
+    return this;
+  }
+
+   /**
+   * Get _stats
+   * @return _stats
+  **/
+  @Schema(description = "")
+  public Object getStats() {
+    return _stats;
+  }
+
+  public void setStats(Object _stats) {
+    this._stats = _stats;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1226,12 +1247,13 @@ public class ClinicalTrial {
         Objects.equals(this.acronym, clinicalTrial.acronym) &&
         Objects.equals(this.link, clinicalTrial.link) &&
         Objects.equals(this.tags, clinicalTrial.tags) &&
-        Objects.equals(this.molecularAlterations, clinicalTrial.molecularAlterations);
+        Objects.equals(this.molecularAlterations, clinicalTrial.molecularAlterations) &&
+        Objects.equals(this._stats, clinicalTrial._stats);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mboost, importDate, id, source, briefTitle, patientTitle, title, briefSummary, briefSummaryPreserved, summary, summaryPreserved, status, phase, studyType, studyDesign, startDate, completionDate, firstReceivedDate, lastChangedDate, verificationDate, sponsors, conditions, interventions, keywords, armGroups, primaryOutcomes, secondaryOutcomes, otherOutcomes, eligibility, enrollment, minAge, maxAge, gender, overallOfficial, overallContact, overallContactBackup, locationSummary, locations, countries, inclusionCriteria, inclusionCriteriaPreserved, exclusionCriteria, exclusionCriteriaPreserved, synonyms, acronym, link, tags, molecularAlterations);
+    return Objects.hash(mboost, importDate, id, source, briefTitle, patientTitle, title, briefSummary, briefSummaryPreserved, summary, summaryPreserved, status, phase, studyType, studyDesign, startDate, completionDate, firstReceivedDate, lastChangedDate, verificationDate, sponsors, conditions, interventions, keywords, armGroups, primaryOutcomes, secondaryOutcomes, otherOutcomes, eligibility, enrollment, minAge, maxAge, gender, overallOfficial, overallContact, overallContactBackup, locationSummary, locations, countries, inclusionCriteria, inclusionCriteriaPreserved, exclusionCriteria, exclusionCriteriaPreserved, synonyms, acronym, link, tags, molecularAlterations, _stats);
   }
 
 
@@ -1288,6 +1310,7 @@ public class ClinicalTrial {
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    molecularAlterations: ").append(toIndentedString(molecularAlterations)).append("\n");
+    sb.append("    _stats: ").append(toIndentedString(_stats)).append("\n");
     sb.append("}");
     return sb.toString();
   }

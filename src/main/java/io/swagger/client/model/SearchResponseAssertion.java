@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.Drug;
+import io.swagger.client.model.Assertion;
 import io.swagger.client.model.Filter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
@@ -28,7 +28,7 @@ import java.io.IOException;
  */
 @Schema(description = "The search response schema.")
 
-public class SearchResponseDrug {
+public class SearchResponseAssertion {
   @SerializedName("searchKey")
   private String searchKey = null;
 
@@ -37,50 +37,6 @@ public class SearchResponseDrug {
 
   @SerializedName("caseId")
   private String caseId = null;
-
-  /**
-   * Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.
-   */
-  @JsonAdapter(ModeEnum.Adapter.class)
-  public enum ModeEnum {
-    CRITERIAUNMET("criteriaunmet"),
-    DISCOVERY("discovery");
-
-    private String value;
-
-    ModeEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static ModeEnum fromValue(String text) {
-      for (ModeEnum b : ModeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<ModeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ModeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ModeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ModeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }  @SerializedName("mode")
-  private ModeEnum mode = null;
 
   @SerializedName("tieringTemplate")
   private String tieringTemplate = null;
@@ -98,7 +54,7 @@ public class SearchResponseDrug {
   private Integer page = null;
 
   @SerializedName("rows")
-  private java.util.List<Drug> rows = null;
+  private java.util.List<Assertion> rows = null;
 
   @SerializedName("rationalized")
   private java.util.List<Filter> rationalized = null;
@@ -112,7 +68,7 @@ public class SearchResponseDrug {
   @SerializedName("ambiguousNarrative")
   private java.util.List<String> ambiguousNarrative = null;
 
-  public SearchResponseDrug searchKey(String searchKey) {
+  public SearchResponseAssertion searchKey(String searchKey) {
     this.searchKey = searchKey;
     return this;
   }
@@ -130,7 +86,7 @@ public class SearchResponseDrug {
     this.searchKey = searchKey;
   }
 
-  public SearchResponseDrug institutionId(String institutionId) {
+  public SearchResponseAssertion institutionId(String institutionId) {
     this.institutionId = institutionId;
     return this;
   }
@@ -148,7 +104,7 @@ public class SearchResponseDrug {
     this.institutionId = institutionId;
   }
 
-  public SearchResponseDrug caseId(String caseId) {
+  public SearchResponseAssertion caseId(String caseId) {
     this.caseId = caseId;
     return this;
   }
@@ -166,25 +122,7 @@ public class SearchResponseDrug {
     this.caseId = caseId;
   }
 
-  public SearchResponseDrug mode(ModeEnum mode) {
-    this.mode = mode;
-    return this;
-  }
-
-   /**
-   * Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.
-   * @return mode
-  **/
-  @Schema(description = "Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.")
-  public ModeEnum getMode() {
-    return mode;
-  }
-
-  public void setMode(ModeEnum mode) {
-    this.mode = mode;
-  }
-
-  public SearchResponseDrug tieringTemplate(String tieringTemplate) {
+  public SearchResponseAssertion tieringTemplate(String tieringTemplate) {
     this.tieringTemplate = tieringTemplate;
     return this;
   }
@@ -202,7 +140,7 @@ public class SearchResponseDrug {
     this.tieringTemplate = tieringTemplate;
   }
 
-  public SearchResponseDrug tieringTemplateLegend(Object tieringTemplateLegend) {
+  public SearchResponseAssertion tieringTemplateLegend(Object tieringTemplateLegend) {
     this.tieringTemplateLegend = tieringTemplateLegend;
     return this;
   }
@@ -220,7 +158,7 @@ public class SearchResponseDrug {
     this.tieringTemplateLegend = tieringTemplateLegend;
   }
 
-  public SearchResponseDrug total(Integer total) {
+  public SearchResponseAssertion total(Integer total) {
     this.total = total;
     return this;
   }
@@ -238,7 +176,7 @@ public class SearchResponseDrug {
     this.total = total;
   }
 
-  public SearchResponseDrug totalPages(Integer totalPages) {
+  public SearchResponseAssertion totalPages(Integer totalPages) {
     this.totalPages = totalPages;
     return this;
   }
@@ -256,7 +194,7 @@ public class SearchResponseDrug {
     this.totalPages = totalPages;
   }
 
-  public SearchResponseDrug page(Integer page) {
+  public SearchResponseAssertion page(Integer page) {
     this.page = page;
     return this;
   }
@@ -274,12 +212,12 @@ public class SearchResponseDrug {
     this.page = page;
   }
 
-  public SearchResponseDrug rows(java.util.List<Drug> rows) {
+  public SearchResponseAssertion rows(java.util.List<Assertion> rows) {
     this.rows = rows;
     return this;
   }
 
-  public SearchResponseDrug addRowsItem(Drug rowsItem) {
+  public SearchResponseAssertion addRowsItem(Assertion rowsItem) {
     if (this.rows == null) {
       this.rows = new java.util.ArrayList<>();
     }
@@ -288,24 +226,24 @@ public class SearchResponseDrug {
   }
 
    /**
-   * The array of drugs that match the search criteria.
+   * The array of assertions that match the search criteria.
    * @return rows
   **/
-  @Schema(description = "The array of drugs that match the search criteria.")
-  public java.util.List<Drug> getRows() {
+  @Schema(description = "The array of assertions that match the search criteria.")
+  public java.util.List<Assertion> getRows() {
     return rows;
   }
 
-  public void setRows(java.util.List<Drug> rows) {
+  public void setRows(java.util.List<Assertion> rows) {
     this.rows = rows;
   }
 
-  public SearchResponseDrug rationalized(java.util.List<Filter> rationalized) {
+  public SearchResponseAssertion rationalized(java.util.List<Filter> rationalized) {
     this.rationalized = rationalized;
     return this;
   }
 
-  public SearchResponseDrug addRationalizedItem(Filter rationalizedItem) {
+  public SearchResponseAssertion addRationalizedItem(Filter rationalizedItem) {
     if (this.rationalized == null) {
       this.rationalized = new java.util.ArrayList<>();
     }
@@ -326,12 +264,12 @@ public class SearchResponseDrug {
     this.rationalized = rationalized;
   }
 
-  public SearchResponseDrug unrecognized(java.util.List<Filter> unrecognized) {
+  public SearchResponseAssertion unrecognized(java.util.List<Filter> unrecognized) {
     this.unrecognized = unrecognized;
     return this;
   }
 
-  public SearchResponseDrug addUnrecognizedItem(Filter unrecognizedItem) {
+  public SearchResponseAssertion addUnrecognizedItem(Filter unrecognizedItem) {
     if (this.unrecognized == null) {
       this.unrecognized = new java.util.ArrayList<>();
     }
@@ -352,7 +290,7 @@ public class SearchResponseDrug {
     this.unrecognized = unrecognized;
   }
 
-  public SearchResponseDrug filterNarrative(String filterNarrative) {
+  public SearchResponseAssertion filterNarrative(String filterNarrative) {
     this.filterNarrative = filterNarrative;
     return this;
   }
@@ -370,12 +308,12 @@ public class SearchResponseDrug {
     this.filterNarrative = filterNarrative;
   }
 
-  public SearchResponseDrug ambiguousNarrative(java.util.List<String> ambiguousNarrative) {
+  public SearchResponseAssertion ambiguousNarrative(java.util.List<String> ambiguousNarrative) {
     this.ambiguousNarrative = ambiguousNarrative;
     return this;
   }
 
-  public SearchResponseDrug addAmbiguousNarrativeItem(String ambiguousNarrativeItem) {
+  public SearchResponseAssertion addAmbiguousNarrativeItem(String ambiguousNarrativeItem) {
     if (this.ambiguousNarrative == null) {
       this.ambiguousNarrative = new java.util.ArrayList<>();
     }
@@ -405,38 +343,36 @@ public class SearchResponseDrug {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SearchResponseDrug searchResponseDrug = (SearchResponseDrug) o;
-    return Objects.equals(this.searchKey, searchResponseDrug.searchKey) &&
-        Objects.equals(this.institutionId, searchResponseDrug.institutionId) &&
-        Objects.equals(this.caseId, searchResponseDrug.caseId) &&
-        Objects.equals(this.mode, searchResponseDrug.mode) &&
-        Objects.equals(this.tieringTemplate, searchResponseDrug.tieringTemplate) &&
-        Objects.equals(this.tieringTemplateLegend, searchResponseDrug.tieringTemplateLegend) &&
-        Objects.equals(this.total, searchResponseDrug.total) &&
-        Objects.equals(this.totalPages, searchResponseDrug.totalPages) &&
-        Objects.equals(this.page, searchResponseDrug.page) &&
-        Objects.equals(this.rows, searchResponseDrug.rows) &&
-        Objects.equals(this.rationalized, searchResponseDrug.rationalized) &&
-        Objects.equals(this.unrecognized, searchResponseDrug.unrecognized) &&
-        Objects.equals(this.filterNarrative, searchResponseDrug.filterNarrative) &&
-        Objects.equals(this.ambiguousNarrative, searchResponseDrug.ambiguousNarrative);
+    SearchResponseAssertion searchResponseAssertion = (SearchResponseAssertion) o;
+    return Objects.equals(this.searchKey, searchResponseAssertion.searchKey) &&
+        Objects.equals(this.institutionId, searchResponseAssertion.institutionId) &&
+        Objects.equals(this.caseId, searchResponseAssertion.caseId) &&
+        Objects.equals(this.tieringTemplate, searchResponseAssertion.tieringTemplate) &&
+        Objects.equals(this.tieringTemplateLegend, searchResponseAssertion.tieringTemplateLegend) &&
+        Objects.equals(this.total, searchResponseAssertion.total) &&
+        Objects.equals(this.totalPages, searchResponseAssertion.totalPages) &&
+        Objects.equals(this.page, searchResponseAssertion.page) &&
+        Objects.equals(this.rows, searchResponseAssertion.rows) &&
+        Objects.equals(this.rationalized, searchResponseAssertion.rationalized) &&
+        Objects.equals(this.unrecognized, searchResponseAssertion.unrecognized) &&
+        Objects.equals(this.filterNarrative, searchResponseAssertion.filterNarrative) &&
+        Objects.equals(this.ambiguousNarrative, searchResponseAssertion.ambiguousNarrative);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(searchKey, institutionId, caseId, mode, tieringTemplate, tieringTemplateLegend, total, totalPages, page, rows, rationalized, unrecognized, filterNarrative, ambiguousNarrative);
+    return Objects.hash(searchKey, institutionId, caseId, tieringTemplate, tieringTemplateLegend, total, totalPages, page, rows, rationalized, unrecognized, filterNarrative, ambiguousNarrative);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SearchResponseDrug {\n");
+    sb.append("class SearchResponseAssertion {\n");
     
     sb.append("    searchKey: ").append(toIndentedString(searchKey)).append("\n");
     sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
     sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    tieringTemplate: ").append(toIndentedString(tieringTemplate)).append("\n");
     sb.append("    tieringTemplateLegend: ").append(toIndentedString(tieringTemplateLegend)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");

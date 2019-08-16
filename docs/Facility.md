@@ -1,4 +1,4 @@
-# ClinicalTrialLocations
+# Facility
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,7 +11,9 @@ Name | Type | Description | Notes
 **city** | **String** | Site city. |  [optional]
 **state** | **String** | Site state or sub division. |  [optional]
 **zip** | **String** | Site postal code. |  [optional]
-**geo** | [**ClinicalTrialGeo**](ClinicalTrialGeo.md) |  |  [optional]
+**lat** | **Float** |  |  [optional]
+**lon** | **Float** |  |  [optional]
+**geo** | [**FacilityGeo**](FacilityGeo.md) |  |  [optional]
 **status** | **String** | Site specific recruiting status. |  [optional]
 **firstName** | **String** | Site primary contact first name. |  [optional]
 **middleName** | **String** | Site primary contact middle name. |  [optional]
@@ -27,4 +29,5 @@ Name | Type | Description | Notes
 **phoneBackup** | **String** | Site backup contact phone number. |  [optional]
 **phoneExtBackup** | **String** | Site backup contact phone number extension. |  [optional]
 **emailBackup** | **String** | Site backup contact email address. |  [optional]
+**distance** | **Float** | Distance based on the distance unit of measure specified (miles if unspecified) from the search location (either geopoint, location object, or inferred search point bsaed on filters provided. |  [optional]
 **isInInstitution** | **Boolean** | If an institutionId was provided for search, indicates if this site is associated with the institution. |  [optional]

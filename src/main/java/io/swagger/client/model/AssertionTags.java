@@ -80,9 +80,6 @@ public class AssertionTags {
   @SerializedName("priority")
   private Integer priority = null;
 
-  @SerializedName("suppress")
-  private Boolean suppress = null;
-
   @SerializedName("compositeKey")
   private String compositeKey = null;
 
@@ -92,17 +89,11 @@ public class AssertionTags {
   @SerializedName("generatedByTerm")
   private String generatedByTerm = null;
 
-  @SerializedName("manualSuppress")
-  private Integer manualSuppress = null;
-
   @SerializedName("transcript")
   private String transcript = null;
 
   @SerializedName("primary")
   private Boolean primary = null;
-
-  @SerializedName("valid")
-  private Boolean valid = null;
 
   public AssertionTags term(String term) {
     this.term = term;
@@ -176,24 +167,6 @@ public class AssertionTags {
     this.priority = priority;
   }
 
-  public AssertionTags suppress(Boolean suppress) {
-    this.suppress = suppress;
-    return this;
-  }
-
-   /**
-   * If true the association is removed.
-   * @return suppress
-  **/
-  @Schema(description = "If true the association is removed.")
-  public Boolean isSuppress() {
-    return suppress;
-  }
-
-  public void setSuppress(Boolean suppress) {
-    this.suppress = suppress;
-  }
-
   public AssertionTags compositeKey(String compositeKey) {
     this.compositeKey = compositeKey;
     return this;
@@ -248,24 +221,6 @@ public class AssertionTags {
     this.generatedByTerm = generatedByTerm;
   }
 
-  public AssertionTags manualSuppress(Integer manualSuppress) {
-    this.manualSuppress = manualSuppress;
-    return this;
-  }
-
-   /**
-   * Indication of whether the tag was suppressed or unsuppressed from the UI.
-   * @return manualSuppress
-  **/
-  @Schema(description = "Indication of whether the tag was suppressed or unsuppressed from the UI.")
-  public Integer getManualSuppress() {
-    return manualSuppress;
-  }
-
-  public void setManualSuppress(Integer manualSuppress) {
-    this.manualSuppress = manualSuppress;
-  }
-
   public AssertionTags transcript(String transcript) {
     this.transcript = transcript;
     return this;
@@ -302,24 +257,6 @@ public class AssertionTags {
     this.primary = primary;
   }
 
-  public AssertionTags valid(Boolean valid) {
-    this.valid = valid;
-    return this;
-  }
-
-   /**
-   * Get valid
-   * @return valid
-  **/
-  @Schema(description = "")
-  public Boolean isValid() {
-    return valid;
-  }
-
-  public void setValid(Boolean valid) {
-    this.valid = valid;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -334,19 +271,16 @@ public class AssertionTags {
         Objects.equals(this.facet, assertionTags.facet) &&
         Objects.equals(this.filterType, assertionTags.filterType) &&
         Objects.equals(this.priority, assertionTags.priority) &&
-        Objects.equals(this.suppress, assertionTags.suppress) &&
         Objects.equals(this.compositeKey, assertionTags.compositeKey) &&
         Objects.equals(this.generatedBy, assertionTags.generatedBy) &&
         Objects.equals(this.generatedByTerm, assertionTags.generatedByTerm) &&
-        Objects.equals(this.manualSuppress, assertionTags.manualSuppress) &&
         Objects.equals(this.transcript, assertionTags.transcript) &&
-        Objects.equals(this.primary, assertionTags.primary) &&
-        Objects.equals(this.valid, assertionTags.valid);
+        Objects.equals(this.primary, assertionTags.primary);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(term, facet, filterType, priority, suppress, compositeKey, generatedBy, generatedByTerm, manualSuppress, transcript, primary, valid);
+    return Objects.hash(term, facet, filterType, priority, compositeKey, generatedBy, generatedByTerm, transcript, primary);
   }
 
 
@@ -359,14 +293,11 @@ public class AssertionTags {
     sb.append("    facet: ").append(toIndentedString(facet)).append("\n");
     sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
-    sb.append("    suppress: ").append(toIndentedString(suppress)).append("\n");
     sb.append("    compositeKey: ").append(toIndentedString(compositeKey)).append("\n");
     sb.append("    generatedBy: ").append(toIndentedString(generatedBy)).append("\n");
     sb.append("    generatedByTerm: ").append(toIndentedString(generatedByTerm)).append("\n");
-    sb.append("    manualSuppress: ").append(toIndentedString(manualSuppress)).append("\n");
     sb.append("    transcript: ").append(toIndentedString(transcript)).append("\n");
     sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
-    sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

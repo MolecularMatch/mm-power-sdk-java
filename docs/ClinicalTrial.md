@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **overallContact** | [**Contact**](Contact.md) |  |  [optional]
 **overallContactBackup** | [**Contact**](Contact.md) |  |  [optional]
 **locationSummary** | [**ClinicalTrialLocationSummary**](ClinicalTrialLocationSummary.md) |  |  [optional]
-**locations** | [**java.util.List&lt;ClinicalTrialLocations&gt;**](ClinicalTrialLocations.md) | Information about the sites offering this trial. |  [optional]
+**locations** | [**java.util.List&lt;Facility&gt;**](Facility.md) | Information about the sites offering this trial. |  [optional]
 **countries** | [**java.util.List&lt;ClinicalTrialCountries&gt;**](ClinicalTrialCountries.md) | Countries with sites offering this trial. |  [optional]
 **inclusionCriteria** | **String** | A limited list of criteria for selection of participants in the clinical study, provided in terms of inclusion criteria and suitable for assisting potential participants in identifying clinical studies of interest. |  [optional]
 **inclusionCriteriaPreserved** | **String** | Formatted rendition of the inclusionCriteria. |  [optional]
@@ -51,3 +51,4 @@ Name | Type | Description | Notes
 **link** | **String** | URL to registry listing of this trial. |  [optional]
 **tags** | [**java.util.List&lt;Tag&gt;**](Tag.md) | Concept associations established for this trial. |  [optional]
 **molecularAlterations** | [**java.util.List&lt;MolecularAlteration&gt;**](MolecularAlteration.md) | Molecular concept associations established for this trial. |  [optional]
+**_stats** | **Object** |  |  [optional]

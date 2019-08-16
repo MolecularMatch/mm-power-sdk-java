@@ -56,6 +56,9 @@ public class SearchResponsePublication {
   @SerializedName("unrecognized")
   private java.util.List<Filter> unrecognized = null;
 
+  @SerializedName("filterNarrative")
+  private String filterNarrative = null;
+
   @SerializedName("ambiguousNarrative")
   private java.util.List<String> ambiguousNarrative = null;
 
@@ -245,6 +248,24 @@ public class SearchResponsePublication {
     this.unrecognized = unrecognized;
   }
 
+  public SearchResponsePublication filterNarrative(String filterNarrative) {
+    this.filterNarrative = filterNarrative;
+    return this;
+  }
+
+   /**
+   * A human readable narrative describing the search conducted. Can be used to provide \&quot;Showing results for\&quot; functionality.
+   * @return filterNarrative
+  **/
+  @Schema(description = "A human readable narrative describing the search conducted. Can be used to provide \"Showing results for\" functionality.")
+  public String getFilterNarrative() {
+    return filterNarrative;
+  }
+
+  public void setFilterNarrative(String filterNarrative) {
+    this.filterNarrative = filterNarrative;
+  }
+
   public SearchResponsePublication ambiguousNarrative(java.util.List<String> ambiguousNarrative) {
     this.ambiguousNarrative = ambiguousNarrative;
     return this;
@@ -290,12 +311,13 @@ public class SearchResponsePublication {
         Objects.equals(this.rows, searchResponsePublication.rows) &&
         Objects.equals(this.rationalized, searchResponsePublication.rationalized) &&
         Objects.equals(this.unrecognized, searchResponsePublication.unrecognized) &&
+        Objects.equals(this.filterNarrative, searchResponsePublication.filterNarrative) &&
         Objects.equals(this.ambiguousNarrative, searchResponsePublication.ambiguousNarrative);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(searchKey, institutionId, caseId, total, totalPages, page, rows, rationalized, unrecognized, ambiguousNarrative);
+    return Objects.hash(searchKey, institutionId, caseId, total, totalPages, page, rows, rationalized, unrecognized, filterNarrative, ambiguousNarrative);
   }
 
 
@@ -313,6 +335,7 @@ public class SearchResponsePublication {
     sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("    rationalized: ").append(toIndentedString(rationalized)).append("\n");
     sb.append("    unrecognized: ").append(toIndentedString(unrecognized)).append("\n");
+    sb.append("    filterNarrative: ").append(toIndentedString(filterNarrative)).append("\n");
     sb.append("    ambiguousNarrative: ").append(toIndentedString(ambiguousNarrative)).append("\n");
     sb.append("}");
     return sb.toString();

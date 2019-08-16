@@ -26,14 +26,14 @@ import java.io.IOException;
  */
 @Schema(description = "Site geopoint.")
 
-public class ClinicalTrialGeo {
+public class FacilityGeo {
   @SerializedName("lat")
   private Float lat = null;
 
   @SerializedName("lon")
   private Float lon = null;
 
-  public ClinicalTrialGeo lat(Float lat) {
+  public FacilityGeo lat(Float lat) {
     this.lat = lat;
     return this;
   }
@@ -51,7 +51,7 @@ public class ClinicalTrialGeo {
     this.lat = lat;
   }
 
-  public ClinicalTrialGeo lon(Float lon) {
+  public FacilityGeo lon(Float lon) {
     this.lon = lon;
     return this;
   }
@@ -78,9 +78,9 @@ public class ClinicalTrialGeo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ClinicalTrialGeo clinicalTrialGeo = (ClinicalTrialGeo) o;
-    return Objects.equals(this.lat, clinicalTrialGeo.lat) &&
-        Objects.equals(this.lon, clinicalTrialGeo.lon);
+    FacilityGeo facilityGeo = (FacilityGeo) o;
+    return Objects.equals(this.lat, facilityGeo.lat) &&
+        Objects.equals(this.lon, facilityGeo.lon);
   }
 
   @Override
@@ -92,7 +92,7 @@ public class ClinicalTrialGeo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ClinicalTrialGeo {\n");
+    sb.append("class FacilityGeo {\n");
     
     sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
     sb.append("    lon: ").append(toIndentedString(lon)).append("\n");

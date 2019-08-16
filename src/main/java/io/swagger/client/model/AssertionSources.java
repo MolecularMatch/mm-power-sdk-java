@@ -242,9 +242,6 @@ public class AssertionSources {
   @SerializedName("trustRating")
   private Float trustRating = null;
 
-  @SerializedName("valid")
-  private Boolean valid = null;
-
   public AssertionSources id(String id) {
     this.id = id;
     return this;
@@ -443,24 +440,6 @@ public class AssertionSources {
     this.trustRating = trustRating;
   }
 
-  public AssertionSources valid(Boolean valid) {
-    this.valid = valid;
-    return this;
-  }
-
-   /**
-   * Get valid
-   * @return valid
-  **/
-  @Schema(description = "")
-  public Boolean isValid() {
-    return valid;
-  }
-
-  public void setValid(Boolean valid) {
-    this.valid = valid;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -481,13 +460,12 @@ public class AssertionSources {
         Objects.equals(this.name, assertionSources.name) &&
         Objects.equals(this.link, assertionSources.link) &&
         Objects.equals(this.year, assertionSources.year) &&
-        Objects.equals(this.trustRating, assertionSources.trustRating) &&
-        Objects.equals(this.valid, assertionSources.valid);
+        Objects.equals(this.trustRating, assertionSources.trustRating);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, subType, pubId, trialId, trialPhase, functionalConsequence, name, link, year, trustRating, valid);
+    return Objects.hash(id, type, subType, pubId, trialId, trialPhase, functionalConsequence, name, link, year, trustRating);
   }
 
 
@@ -507,7 +485,6 @@ public class AssertionSources {
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    year: ").append(toIndentedString(year)).append("\n");
     sb.append("    trustRating: ").append(toIndentedString(trustRating)).append("\n");
-    sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

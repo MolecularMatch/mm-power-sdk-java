@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.Filter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -138,6 +139,9 @@ public class Filter {
 
   @SerializedName("error")
   private String error = null;
+
+  @SerializedName("ambiguous")
+  private Filter ambiguous = null;
 
   public Filter term(String term) {
     this.term = term;
@@ -319,6 +323,24 @@ public class Filter {
     this.error = error;
   }
 
+  public Filter ambiguous(Filter ambiguous) {
+    this.ambiguous = ambiguous;
+    return this;
+  }
+
+   /**
+   * Get ambiguous
+   * @return ambiguous
+  **/
+  @Schema(description = "")
+  public Filter getAmbiguous() {
+    return ambiguous;
+  }
+
+  public void setAmbiguous(Filter ambiguous) {
+    this.ambiguous = ambiguous;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -338,12 +360,13 @@ public class Filter {
         Objects.equals(this.countryCode, filter.countryCode) &&
         Objects.equals(this.geneExpand, filter.geneExpand) &&
         Objects.equals(this.excludeFilterOnly, filter.excludeFilterOnly) &&
-        Objects.equals(this.error, filter.error);
+        Objects.equals(this.error, filter.error) &&
+        Objects.equals(this.ambiguous, filter.ambiguous);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(term, rootTerm, facet, filterType, distanceUOM, postalCode, countryCode, geneExpand, excludeFilterOnly, error);
+    return Objects.hash(term, rootTerm, facet, filterType, distanceUOM, postalCode, countryCode, geneExpand, excludeFilterOnly, error, ambiguous);
   }
 
 
@@ -362,6 +385,7 @@ public class Filter {
     sb.append("    geneExpand: ").append(toIndentedString(geneExpand)).append("\n");
     sb.append("    excludeFilterOnly: ").append(toIndentedString(excludeFilterOnly)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    ambiguous: ").append(toIndentedString(ambiguous)).append("\n");
     sb.append("}");
     return sb.toString();
   }

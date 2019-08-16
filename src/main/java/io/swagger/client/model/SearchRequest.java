@@ -40,17 +40,55 @@ public class SearchRequest {
   @SerializedName("caseId")
   private String caseId = null;
 
+  /**
+   * Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.
+   */
+  @JsonAdapter(ModeEnum.Adapter.class)
+  public enum ModeEnum {
+    CRITERIAUNMET("criteriaunmet"),
+    DISCOVERY("discovery");
+
+    private String value;
+
+    ModeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static ModeEnum fromValue(String text) {
+      for (ModeEnum b : ModeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<ModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ModeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("mode")
+  private ModeEnum mode = ModeEnum.DISCOVERY;
+
   @SerializedName("start")
   private Integer start = null;
 
   @SerializedName("limit")
   private Integer limit = 20;
-
-  @SerializedName("locationSummary")
-  private Boolean locationSummary = null;
-
-  @SerializedName("filterNarrative")
-  private Boolean filterNarrative = null;
 
   @SerializedName("fields")
   private java.util.List<String> fields = null;
@@ -121,6 +159,24 @@ public class SearchRequest {
     this.caseId = caseId;
   }
 
+  public SearchRequest mode(ModeEnum mode) {
+    this.mode = mode;
+    return this;
+  }
+
+   /**
+   * Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.
+   * @return mode
+  **/
+  @Schema(description = "Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.")
+  public ModeEnum getMode() {
+    return mode;
+  }
+
+  public void setMode(ModeEnum mode) {
+    this.mode = mode;
+  }
+
   public SearchRequest start(Integer start) {
     this.start = start;
     return this;
@@ -155,42 +211,6 @@ public class SearchRequest {
 
   public void setLimit(Integer limit) {
     this.limit = limit;
-  }
-
-  public SearchRequest locationSummary(Boolean locationSummary) {
-    this.locationSummary = locationSummary;
-    return this;
-  }
-
-   /**
-   * If true, returns a summary location structure instead of the full array of trial locations.
-   * @return locationSummary
-  **/
-  @Schema(description = "If true, returns a summary location structure instead of the full array of trial locations.")
-  public Boolean isLocationSummary() {
-    return locationSummary;
-  }
-
-  public void setLocationSummary(Boolean locationSummary) {
-    this.locationSummary = locationSummary;
-  }
-
-  public SearchRequest filterNarrative(Boolean filterNarrative) {
-    this.filterNarrative = filterNarrative;
-    return this;
-  }
-
-   /**
-   * If true, include a human readable filter narrative.
-   * @return filterNarrative
-  **/
-  @Schema(description = "If true, include a human readable filter narrative.")
-  public Boolean isFilterNarrative() {
-    return filterNarrative;
-  }
-
-  public void setFilterNarrative(Boolean filterNarrative) {
-    this.filterNarrative = filterNarrative;
   }
 
   public SearchRequest fields(java.util.List<String> fields) {
@@ -312,10 +332,9 @@ public class SearchRequest {
     return Objects.equals(this.searchKey, searchRequest.searchKey) &&
         Objects.equals(this.institutionId, searchRequest.institutionId) &&
         Objects.equals(this.caseId, searchRequest.caseId) &&
+        Objects.equals(this.mode, searchRequest.mode) &&
         Objects.equals(this.start, searchRequest.start) &&
         Objects.equals(this.limit, searchRequest.limit) &&
-        Objects.equals(this.locationSummary, searchRequest.locationSummary) &&
-        Objects.equals(this.filterNarrative, searchRequest.filterNarrative) &&
         Objects.equals(this.fields, searchRequest.fields) &&
         Objects.equals(this.filters, searchRequest.filters) &&
         Objects.equals(this.geopoint, searchRequest.geopoint) &&
@@ -325,7 +344,7 @@ public class SearchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(searchKey, institutionId, caseId, start, limit, locationSummary, filterNarrative, fields, filters, geopoint, location, minShouldMatch);
+    return Objects.hash(searchKey, institutionId, caseId, mode, start, limit, fields, filters, geopoint, location, minShouldMatch);
   }
 
 
@@ -337,10 +356,9 @@ public class SearchRequest {
     sb.append("    searchKey: ").append(toIndentedString(searchKey)).append("\n");
     sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
     sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    locationSummary: ").append(toIndentedString(locationSummary)).append("\n");
-    sb.append("    filterNarrative: ").append(toIndentedString(filterNarrative)).append("\n");
     sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("    geopoint: ").append(toIndentedString(geopoint)).append("\n");

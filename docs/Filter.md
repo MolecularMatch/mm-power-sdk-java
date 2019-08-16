@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **geneExpand** | **Boolean** | Used by MUTATION filters only.  If true, expand the search to include results maching the mutation gene. |  [optional]
 **excludeFilterOnly** | **Boolean** | To create a soft include filter, add excludeFilterOnly&#x3D;true (and specify filterType of include. |  [optional]
 **error** | **String** |  |  [optional]
+**ambiguous** | [**Filter**](Filter.md) |  |  [optional]
 
 <a name="FilterTypeEnum"></a>
 ## Enum: FilterTypeEnum

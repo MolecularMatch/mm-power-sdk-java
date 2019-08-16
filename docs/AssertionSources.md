@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **link** | **String** |  |  [optional]
 **year** | **Integer** |  |  [optional]
 **trustRating** | **Float** |  |  [optional]
-**valid** | **Boolean** |  |  [optional]
 
 <a name="TypeEnum"></a>
 ## Enum: TypeEnum

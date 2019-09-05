@@ -74,7 +74,7 @@ public class AssertionsApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-
+        defaultClient.setAccessToken("<insert your api key here>");
 
         AssertionsApi apiInstance = new AssertionsApi();
         SearchRequest body = new SearchRequest(); // SearchRequest | SearchRequest object to send to MolecularMatch for processing

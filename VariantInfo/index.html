@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>AssertionLocations - MMPower Java SDK</title>
+  <title>VariantInfo - MMPower Java SDK</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "AssertionLocations";
-    var mkdocs_page_input_path = "AssertionLocations.md";
+    var mkdocs_page_name = "VariantInfo";
+    var mkdocs_page_input_path = "VariantInfo.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -76,30 +76,6 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../AssertionFusions/">AssertionFusions</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">AssertionLocations</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#assertionlocations">AssertionLocations</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#properties">Properties</a></li>
-        
-            <li><a class="toctree-l3" href="#enum-referencegenomeenum">Enum: ReferenceGenomeEnum</a></li>
-        
-        </ul>
-    
-
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../AssertionPrevalence/">AssertionPrevalence</a>
 	    </li>
           
@@ -110,17 +86,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../AssertionTags/">AssertionTags</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../AssertionTherapeuticContext/">AssertionTherapeuticContext</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../AssertionVariantInfo/">AssertionVariantInfo</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -156,6 +122,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../ClinicalTrialsApi/">ClinicalTrialsApi</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ConceptAssociation/">ConceptAssociation</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -245,11 +216,6 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../MolecularAlteration/">MolecularAlteration</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../Outcome/">Outcome</a>
 	    </li>
           
@@ -320,11 +286,6 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../StandardizedTierTierExplanation/">StandardizedTierTierExplanation</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../StudyDesign/">StudyDesign</a>
 	    </li>
           
@@ -336,6 +297,38 @@
             <li class="toctree-l1">
 		
     <a class="" href="../Tag/">Tag</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../TierExplanation/">TierExplanation</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">VariantInfo</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#variantinfo">VariantInfo</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#properties">Properties</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../VariantInfoFusions/">VariantInfoFusions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../VariantInfoLocations/">VariantInfoLocations</a>
 	    </li>
           
         </ul>
@@ -360,7 +353,7 @@
     
       
     
-    <li>AssertionLocations</li>
+    <li>VariantInfo</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -370,7 +363,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="assertionlocations">AssertionLocations</h1>
+                <h1 id="variantinfo">VariantInfo</h1>
 <h2 id="properties">Properties</h2>
 <table>
 <thead>
@@ -383,90 +376,64 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>cdna</strong></td>
+<td><strong>name</strong></td>
+<td><strong>String</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>transcript</strong></td>
 <td><strong>String</strong></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>aminoAcidChange</strong></td>
+<td><strong>classification</strong></td>
 <td><strong>String</strong></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>exonNumber</strong></td>
-<td><strong>java.util.List&lt;Integer&gt;</strong></td>
+<td><strong>consequences</strong></td>
+<td><strong>java.util.List&lt;String&gt;</strong></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>intronNumber</strong></td>
-<td><strong>java.util.List&lt;Integer&gt;</strong></td>
+<td><strong>popFreqMax</strong></td>
+<td><strong>Float</strong></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>chr</strong></td>
+<td><strong>COSMIC_ID</strong></td>
 <td><strong>String</strong></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>start</strong></td>
-<td><strong>Integer</strong></td>
-<td></td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>stop</strong></td>
-<td><strong>Integer</strong></td>
-<td></td>
-<td>[optional]</td>
-</tr>
-<tr>
-<td><strong>ref</strong></td>
+<td><strong>gene</strong></td>
 <td><strong>String</strong></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>alt</strong></td>
+<td><strong>geneFusionPartner</strong></td>
 <td><strong>String</strong></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>strand</strong></td>
-<td><strong>String</strong></td>
+<td><strong>locations</strong></td>
+<td><a href="../VariantInfoLocations/"><strong>java.util.List&lt;VariantInfoLocations&gt;</strong></a></td>
 <td></td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>referenceGenome</strong></td>
-<td><a href="#ReferenceGenomeEnum"><strong>ReferenceGenomeEnum</strong></a></td>
+<td><strong>fusions</strong></td>
+<td><a href="../VariantInfoFusions/"><strong>java.util.List&lt;VariantInfoFusions&gt;</strong></a></td>
 <td></td>
 <td>[optional]</td>
-</tr>
-</tbody>
-</table>
-<p><a name="ReferenceGenomeEnum"></a></p>
-<h2 id="enum-referencegenomeenum">Enum: ReferenceGenomeEnum</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GRCH37_HG19</td>
-<td>&quot;grch37_hg19&quot;</td>
-</tr>
-<tr>
-<td>GRCH38_HG38</td>
-<td>&quot;grch38_hg38&quot;</td>
 </tr>
 </tbody>
 </table>
@@ -477,10 +444,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../AssertionPrevalence/" class="btn btn-neutral float-right" title="AssertionPrevalence">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../VariantInfoFusions/" class="btn btn-neutral float-right" title="VariantInfoFusions">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../AssertionFusions/" class="btn btn-neutral" title="AssertionFusions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../TierExplanation/" class="btn btn-neutral" title="TierExplanation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -506,10 +473,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../AssertionFusions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../TierExplanation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../AssertionPrevalence/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../VariantInfoFusions/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

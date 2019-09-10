@@ -57,10 +57,10 @@ public class Eligibility {
   }
 
    /**
-   * Get gender
+   * Indicates male, femail or no limit on eligibility based on the sex of participants.
    * @return gender
   **/
-  @Schema(description = "")
+  @Schema(description = "Indicates male, femail or no limit on eligibility based on the sex of participants.")
   public String getGender() {
     return gender;
   }
@@ -75,10 +75,10 @@ public class Eligibility {
   }
 
    /**
-   * Get genderBased
+   * Indicates whether participant eligibility is based on gender.
    * @return genderBased
   **/
-  @Schema(description = "")
+  @Schema(description = "Indicates whether participant eligibility is based on gender.")
   public String getGenderBased() {
     return genderBased;
   }
@@ -93,10 +93,10 @@ public class Eligibility {
   }
 
    /**
-   * Get genderDescription
+   * Descriptive information about Gender criteria.
    * @return genderDescription
   **/
-  @Schema(description = "")
+  @Schema(description = "Descriptive information about Gender criteria.")
   public String getGenderDescription() {
     return genderDescription;
   }
@@ -111,10 +111,10 @@ public class Eligibility {
   }
 
    /**
-   * Get minimumAge
+   * The numerical value, if any, for the minimum age a potential participant must meet to be eligible for the clinical study.
    * @return minimumAge
   **/
-  @Schema(description = "")
+  @Schema(description = "The numerical value, if any, for the minimum age a potential participant must meet to be eligible for the clinical study.")
   public String getMinimumAge() {
     return minimumAge;
   }
@@ -129,10 +129,10 @@ public class Eligibility {
   }
 
    /**
-   * Get maximumAge
+   * The numerical value, if any, for the maximum age a potential participant can be to be eligible for the clinical study.
    * @return maximumAge
   **/
-  @Schema(description = "")
+  @Schema(description = "The numerical value, if any, for the maximum age a potential participant can be to be eligible for the clinical study.")
   public String getMaximumAge() {
     return maximumAge;
   }
@@ -147,10 +147,10 @@ public class Eligibility {
   }
 
    /**
-   * Get healthyVolunteers
+   * Indication that participants who do not have a disease or condition, or related conditions or symptoms, under study in the clinical study are permitted to participate in the clinical study.
    * @return healthyVolunteers
   **/
-  @Schema(description = "")
+  @Schema(description = "Indication that participants who do not have a disease or condition, or related conditions or symptoms, under study in the clinical study are permitted to participate in the clinical study.")
   public String getHealthyVolunteers() {
     return healthyVolunteers;
   }
@@ -165,10 +165,10 @@ public class Eligibility {
   }
 
    /**
-   * Get criteria
+   * A limited list of criteria for selection of participants in the clinical study, provided in terms of inclusion and exclusion criteria and suitable for assisting potential participants in identifying clinical studies of interest.
    * @return criteria
   **/
-  @Schema(description = "")
+  @Schema(description = "A limited list of criteria for selection of participants in the clinical study, provided in terms of inclusion and exclusion criteria and suitable for assisting potential participants in identifying clinical studies of interest.")
   public String getCriteria() {
     return criteria;
   }
@@ -183,10 +183,10 @@ public class Eligibility {
   }
 
    /**
-   * Get studyPop
+   * A description of the population from which the groups or cohorts will be selected (for example, primary care clinic, community sample, residents of a certain town).
    * @return studyPop
   **/
-  @Schema(description = "")
+  @Schema(description = "A description of the population from which the groups or cohorts will be selected (for example, primary care clinic, community sample, residents of a certain town).")
   public String getStudyPop() {
     return studyPop;
   }

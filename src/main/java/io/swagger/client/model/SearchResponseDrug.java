@@ -38,50 +38,6 @@ public class SearchResponseDrug {
   @SerializedName("caseId")
   private String caseId = null;
 
-  /**
-   * Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.
-   */
-  @JsonAdapter(ModeEnum.Adapter.class)
-  public enum ModeEnum {
-    CRITERIAUNMET("criteriaunmet"),
-    DISCOVERY("discovery");
-
-    private String value;
-
-    ModeEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static ModeEnum fromValue(String text) {
-      for (ModeEnum b : ModeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<ModeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ModeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ModeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ModeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }  @SerializedName("mode")
-  private ModeEnum mode = null;
-
   @SerializedName("tieringTemplate")
   private String tieringTemplate = null;
 
@@ -164,24 +120,6 @@ public class SearchResponseDrug {
 
   public void setCaseId(String caseId) {
     this.caseId = caseId;
-  }
-
-  public SearchResponseDrug mode(ModeEnum mode) {
-    this.mode = mode;
-    return this;
-  }
-
-   /**
-   * Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.
-   * @return mode
-  **/
-  @Schema(description = "Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.")
-  public ModeEnum getMode() {
-    return mode;
-  }
-
-  public void setMode(ModeEnum mode) {
-    this.mode = mode;
   }
 
   public SearchResponseDrug tieringTemplate(String tieringTemplate) {
@@ -409,7 +347,6 @@ public class SearchResponseDrug {
     return Objects.equals(this.searchKey, searchResponseDrug.searchKey) &&
         Objects.equals(this.institutionId, searchResponseDrug.institutionId) &&
         Objects.equals(this.caseId, searchResponseDrug.caseId) &&
-        Objects.equals(this.mode, searchResponseDrug.mode) &&
         Objects.equals(this.tieringTemplate, searchResponseDrug.tieringTemplate) &&
         Objects.equals(this.tieringTemplateLegend, searchResponseDrug.tieringTemplateLegend) &&
         Objects.equals(this.total, searchResponseDrug.total) &&
@@ -424,7 +361,7 @@ public class SearchResponseDrug {
 
   @Override
   public int hashCode() {
-    return Objects.hash(searchKey, institutionId, caseId, mode, tieringTemplate, tieringTemplateLegend, total, totalPages, page, rows, rationalized, unrecognized, filterNarrative, ambiguousNarrative);
+    return Objects.hash(searchKey, institutionId, caseId, tieringTemplate, tieringTemplateLegend, total, totalPages, page, rows, rationalized, unrecognized, filterNarrative, ambiguousNarrative);
   }
 
 
@@ -436,7 +373,6 @@ public class SearchResponseDrug {
     sb.append("    searchKey: ").append(toIndentedString(searchKey)).append("\n");
     sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
     sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    tieringTemplate: ").append(toIndentedString(tieringTemplate)).append("\n");
     sb.append("    tieringTemplateLegend: ").append(toIndentedString(tieringTemplateLegend)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");

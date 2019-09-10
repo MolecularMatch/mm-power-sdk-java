@@ -22,18 +22,21 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * MolecularAlteration
+ * ConceptAssociation
  */
 
 
-public class MolecularAlteration {
+public class ConceptAssociation {
   @SerializedName("term")
   private String term = null;
+
+  @SerializedName("facet")
+  private String facet = null;
 
   @SerializedName("alias")
   private String alias = null;
 
-  public MolecularAlteration term(String term) {
+  public ConceptAssociation term(String term) {
     this.term = term;
     return this;
   }
@@ -51,7 +54,25 @@ public class MolecularAlteration {
     this.term = term;
   }
 
-  public MolecularAlteration alias(String alias) {
+  public ConceptAssociation facet(String facet) {
+    this.facet = facet;
+    return this;
+  }
+
+   /**
+   * The associated facet.
+   * @return facet
+  **/
+  @Schema(required = true, description = "The associated facet.")
+  public String getFacet() {
+    return facet;
+  }
+
+  public void setFacet(String facet) {
+    this.facet = facet;
+  }
+
+  public ConceptAssociation alias(String alias) {
     this.alias = alias;
     return this;
   }
@@ -78,23 +99,25 @@ public class MolecularAlteration {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MolecularAlteration molecularAlteration = (MolecularAlteration) o;
-    return Objects.equals(this.term, molecularAlteration.term) &&
-        Objects.equals(this.alias, molecularAlteration.alias);
+    ConceptAssociation conceptAssociation = (ConceptAssociation) o;
+    return Objects.equals(this.term, conceptAssociation.term) &&
+        Objects.equals(this.facet, conceptAssociation.facet) &&
+        Objects.equals(this.alias, conceptAssociation.alias);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(term, alias);
+    return Objects.hash(term, facet, alias);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MolecularAlteration {\n");
+    sb.append("class ConceptAssociation {\n");
     
     sb.append("    term: ").append(toIndentedString(term)).append("\n");
+    sb.append("    facet: ").append(toIndentedString(facet)).append("\n");
     sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
     sb.append("}");
     return sb.toString();

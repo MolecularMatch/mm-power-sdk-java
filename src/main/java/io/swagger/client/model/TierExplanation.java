@@ -22,11 +22,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * StandardizedTierTierExplanation
+ * TierExplanation
  */
 
 
-public class StandardizedTierTierExplanation {
+public class TierExplanation {
   @SerializedName("tier")
   private String tier = null;
 
@@ -39,7 +39,7 @@ public class StandardizedTierTierExplanation {
   @SerializedName("success")
   private Boolean success = null;
 
-  public StandardizedTierTierExplanation tier(String tier) {
+  public TierExplanation tier(String tier) {
     this.tier = tier;
     return this;
   }
@@ -57,7 +57,7 @@ public class StandardizedTierTierExplanation {
     this.tier = tier;
   }
 
-  public StandardizedTierTierExplanation step(Integer step) {
+  public TierExplanation step(Integer step) {
     this.step = step;
     return this;
   }
@@ -75,7 +75,7 @@ public class StandardizedTierTierExplanation {
     this.step = step;
   }
 
-  public StandardizedTierTierExplanation message(String message) {
+  public TierExplanation message(String message) {
     this.message = message;
     return this;
   }
@@ -93,7 +93,7 @@ public class StandardizedTierTierExplanation {
     this.message = message;
   }
 
-  public StandardizedTierTierExplanation success(Boolean success) {
+  public TierExplanation success(Boolean success) {
     this.success = success;
     return this;
   }
@@ -120,11 +120,11 @@ public class StandardizedTierTierExplanation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StandardizedTierTierExplanation standardizedTierTierExplanation = (StandardizedTierTierExplanation) o;
-    return Objects.equals(this.tier, standardizedTierTierExplanation.tier) &&
-        Objects.equals(this.step, standardizedTierTierExplanation.step) &&
-        Objects.equals(this.message, standardizedTierTierExplanation.message) &&
-        Objects.equals(this.success, standardizedTierTierExplanation.success);
+    TierExplanation tierExplanation = (TierExplanation) o;
+    return Objects.equals(this.tier, tierExplanation.tier) &&
+        Objects.equals(this.step, tierExplanation.step) &&
+        Objects.equals(this.message, tierExplanation.message) &&
+        Objects.equals(this.success, tierExplanation.success);
   }
 
   @Override
@@ -136,7 +136,7 @@ public class StandardizedTierTierExplanation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StandardizedTierTierExplanation {\n");
+    sb.append("class TierExplanation {\n");
     
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    step: ").append(toIndentedString(step)).append("\n");

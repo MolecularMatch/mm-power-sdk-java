@@ -22,11 +22,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * AssertionLocations
+ * VariantInfoLocations
  */
 
 
-public class AssertionLocations {
+public class VariantInfoLocations {
   @SerializedName("cdna")
   private String cdna = null;
 
@@ -101,7 +101,7 @@ public class AssertionLocations {
   }  @SerializedName("referenceGenome")
   private ReferenceGenomeEnum referenceGenome = null;
 
-  public AssertionLocations cdna(String cdna) {
+  public VariantInfoLocations cdna(String cdna) {
     this.cdna = cdna;
     return this;
   }
@@ -119,7 +119,7 @@ public class AssertionLocations {
     this.cdna = cdna;
   }
 
-  public AssertionLocations aminoAcidChange(String aminoAcidChange) {
+  public VariantInfoLocations aminoAcidChange(String aminoAcidChange) {
     this.aminoAcidChange = aminoAcidChange;
     return this;
   }
@@ -137,12 +137,12 @@ public class AssertionLocations {
     this.aminoAcidChange = aminoAcidChange;
   }
 
-  public AssertionLocations exonNumber(java.util.List<Integer> exonNumber) {
+  public VariantInfoLocations exonNumber(java.util.List<Integer> exonNumber) {
     this.exonNumber = exonNumber;
     return this;
   }
 
-  public AssertionLocations addExonNumberItem(Integer exonNumberItem) {
+  public VariantInfoLocations addExonNumberItem(Integer exonNumberItem) {
     if (this.exonNumber == null) {
       this.exonNumber = new java.util.ArrayList<>();
     }
@@ -163,12 +163,12 @@ public class AssertionLocations {
     this.exonNumber = exonNumber;
   }
 
-  public AssertionLocations intronNumber(java.util.List<Integer> intronNumber) {
+  public VariantInfoLocations intronNumber(java.util.List<Integer> intronNumber) {
     this.intronNumber = intronNumber;
     return this;
   }
 
-  public AssertionLocations addIntronNumberItem(Integer intronNumberItem) {
+  public VariantInfoLocations addIntronNumberItem(Integer intronNumberItem) {
     if (this.intronNumber == null) {
       this.intronNumber = new java.util.ArrayList<>();
     }
@@ -189,7 +189,7 @@ public class AssertionLocations {
     this.intronNumber = intronNumber;
   }
 
-  public AssertionLocations chr(String chr) {
+  public VariantInfoLocations chr(String chr) {
     this.chr = chr;
     return this;
   }
@@ -207,7 +207,7 @@ public class AssertionLocations {
     this.chr = chr;
   }
 
-  public AssertionLocations start(Integer start) {
+  public VariantInfoLocations start(Integer start) {
     this.start = start;
     return this;
   }
@@ -225,7 +225,7 @@ public class AssertionLocations {
     this.start = start;
   }
 
-  public AssertionLocations stop(Integer stop) {
+  public VariantInfoLocations stop(Integer stop) {
     this.stop = stop;
     return this;
   }
@@ -243,7 +243,7 @@ public class AssertionLocations {
     this.stop = stop;
   }
 
-  public AssertionLocations ref(String ref) {
+  public VariantInfoLocations ref(String ref) {
     this.ref = ref;
     return this;
   }
@@ -261,7 +261,7 @@ public class AssertionLocations {
     this.ref = ref;
   }
 
-  public AssertionLocations alt(String alt) {
+  public VariantInfoLocations alt(String alt) {
     this.alt = alt;
     return this;
   }
@@ -279,7 +279,7 @@ public class AssertionLocations {
     this.alt = alt;
   }
 
-  public AssertionLocations strand(String strand) {
+  public VariantInfoLocations strand(String strand) {
     this.strand = strand;
     return this;
   }
@@ -297,7 +297,7 @@ public class AssertionLocations {
     this.strand = strand;
   }
 
-  public AssertionLocations referenceGenome(ReferenceGenomeEnum referenceGenome) {
+  public VariantInfoLocations referenceGenome(ReferenceGenomeEnum referenceGenome) {
     this.referenceGenome = referenceGenome;
     return this;
   }
@@ -324,18 +324,18 @@ public class AssertionLocations {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AssertionLocations assertionLocations = (AssertionLocations) o;
-    return Objects.equals(this.cdna, assertionLocations.cdna) &&
-        Objects.equals(this.aminoAcidChange, assertionLocations.aminoAcidChange) &&
-        Objects.equals(this.exonNumber, assertionLocations.exonNumber) &&
-        Objects.equals(this.intronNumber, assertionLocations.intronNumber) &&
-        Objects.equals(this.chr, assertionLocations.chr) &&
-        Objects.equals(this.start, assertionLocations.start) &&
-        Objects.equals(this.stop, assertionLocations.stop) &&
-        Objects.equals(this.ref, assertionLocations.ref) &&
-        Objects.equals(this.alt, assertionLocations.alt) &&
-        Objects.equals(this.strand, assertionLocations.strand) &&
-        Objects.equals(this.referenceGenome, assertionLocations.referenceGenome);
+    VariantInfoLocations variantInfoLocations = (VariantInfoLocations) o;
+    return Objects.equals(this.cdna, variantInfoLocations.cdna) &&
+        Objects.equals(this.aminoAcidChange, variantInfoLocations.aminoAcidChange) &&
+        Objects.equals(this.exonNumber, variantInfoLocations.exonNumber) &&
+        Objects.equals(this.intronNumber, variantInfoLocations.intronNumber) &&
+        Objects.equals(this.chr, variantInfoLocations.chr) &&
+        Objects.equals(this.start, variantInfoLocations.start) &&
+        Objects.equals(this.stop, variantInfoLocations.stop) &&
+        Objects.equals(this.ref, variantInfoLocations.ref) &&
+        Objects.equals(this.alt, variantInfoLocations.alt) &&
+        Objects.equals(this.strand, variantInfoLocations.strand) &&
+        Objects.equals(this.referenceGenome, variantInfoLocations.referenceGenome);
   }
 
   @Override
@@ -347,7 +347,7 @@ public class AssertionLocations {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AssertionLocations {\n");
+    sb.append("class VariantInfoLocations {\n");
     
     sb.append("    cdna: ").append(toIndentedString(cdna)).append("\n");
     sb.append("    aminoAcidChange: ").append(toIndentedString(aminoAcidChange)).append("\n");

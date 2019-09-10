@@ -60,10 +60,10 @@ public class Contact {
   }
 
    /**
-   * Get firstName
+   * First name of the contact person.
    * @return firstName
   **/
-  @Schema(description = "")
+  @Schema(description = "First name of the contact person.")
   public String getFirstName() {
     return firstName;
   }
@@ -78,10 +78,10 @@ public class Contact {
   }
 
    /**
-   * Get middleName
+   * Middle name of the contact person.
    * @return middleName
   **/
-  @Schema(description = "")
+  @Schema(description = "Middle name of the contact person.")
   public String getMiddleName() {
     return middleName;
   }
@@ -96,10 +96,10 @@ public class Contact {
   }
 
    /**
-   * Get lastName
+   * Last name of the contact person.
    * @return lastName
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Last name of the contact person.")
   public String getLastName() {
     return lastName;
   }
@@ -132,10 +132,10 @@ public class Contact {
   }
 
    /**
-   * Get role
+   * Position or function of the official.
    * @return role
   **/
-  @Schema(description = "")
+  @Schema(description = "Position or function of the official.")
   public String getRole() {
     return role;
   }
@@ -150,10 +150,10 @@ public class Contact {
   }
 
    /**
-   * Get affiliation
+   * Full name of the official&#x27;s organization.
    * @return affiliation
   **/
-  @Schema(description = "")
+  @Schema(description = "Full name of the official's organization.")
   public String getAffiliation() {
     return affiliation;
   }
@@ -168,10 +168,10 @@ public class Contact {
   }
 
    /**
-   * Get phone
+   * Phone number of the contact person.
    * @return phone
   **/
-  @Schema(description = "")
+  @Schema(description = "Phone number of the contact person.")
   public String getPhone() {
     return phone;
   }
@@ -186,10 +186,10 @@ public class Contact {
   }
 
    /**
-   * Get phoneExt
+   * Phone number extension of the contact person.
    * @return phoneExt
   **/
-  @Schema(description = "")
+  @Schema(description = "Phone number extension of the contact person.")
   public String getPhoneExt() {
     return phoneExt;
   }
@@ -204,10 +204,10 @@ public class Contact {
   }
 
    /**
-   * Get email
+   * Electronic mail address of the contact person.
    * @return email
   **/
-  @Schema(description = "")
+  @Schema(description = "Electronic mail address of the contact person.")
   public String getEmail() {
     return email;
   }

@@ -22,9 +22,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Site geopoint.
+ * Site geo-point.
  */
-@Schema(description = "Site geopoint.")
+@Schema(description = "Site geo-point.")
 
 public class FacilityGeo {
   @SerializedName("lat")

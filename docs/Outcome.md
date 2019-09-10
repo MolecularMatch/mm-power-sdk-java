@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**measure** | **String** |  | 
-**timeFrame** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
+**measure** | **String** | The physiological or reported measurement used for the outcome. | 
+**timeFrame** | **String** | Time point(s) at which the measurement is assessed for the specific metric used. The description of the time point(s) of assessment must be specific to the outcome measure and is generally the specific duration of time over which each participant is assessed (not the overall duration of the study). |  [optional]
+**description** | **String** | Description of the metric used to characterize the specific primary outcome measure. |  [optional]

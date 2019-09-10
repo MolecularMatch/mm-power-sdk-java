@@ -19,16 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.AssertionFusions;
-import io.swagger.client.model.AssertionLocations;
+import io.swagger.client.model.VariantInfoFusions;
+import io.swagger.client.model.VariantInfoLocations;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * AssertionVariantInfo
+ * VariantInfo
  */
 
 
-public class AssertionVariantInfo {
+public class VariantInfo {
   @SerializedName("name")
   private String name = null;
 
@@ -54,12 +54,12 @@ public class AssertionVariantInfo {
   private String geneFusionPartner = null;
 
   @SerializedName("locations")
-  private java.util.List<AssertionLocations> locations = null;
+  private java.util.List<VariantInfoLocations> locations = null;
 
   @SerializedName("fusions")
-  private java.util.List<AssertionFusions> fusions = null;
+  private java.util.List<VariantInfoFusions> fusions = null;
 
-  public AssertionVariantInfo name(String name) {
+  public VariantInfo name(String name) {
     this.name = name;
     return this;
   }
@@ -77,7 +77,7 @@ public class AssertionVariantInfo {
     this.name = name;
   }
 
-  public AssertionVariantInfo transcript(String transcript) {
+  public VariantInfo transcript(String transcript) {
     this.transcript = transcript;
     return this;
   }
@@ -95,7 +95,7 @@ public class AssertionVariantInfo {
     this.transcript = transcript;
   }
 
-  public AssertionVariantInfo classification(String classification) {
+  public VariantInfo classification(String classification) {
     this.classification = classification;
     return this;
   }
@@ -113,12 +113,12 @@ public class AssertionVariantInfo {
     this.classification = classification;
   }
 
-  public AssertionVariantInfo consequences(java.util.List<String> consequences) {
+  public VariantInfo consequences(java.util.List<String> consequences) {
     this.consequences = consequences;
     return this;
   }
 
-  public AssertionVariantInfo addConsequencesItem(String consequencesItem) {
+  public VariantInfo addConsequencesItem(String consequencesItem) {
     if (this.consequences == null) {
       this.consequences = new java.util.ArrayList<>();
     }
@@ -139,7 +139,7 @@ public class AssertionVariantInfo {
     this.consequences = consequences;
   }
 
-  public AssertionVariantInfo popFreqMax(Float popFreqMax) {
+  public VariantInfo popFreqMax(Float popFreqMax) {
     this.popFreqMax = popFreqMax;
     return this;
   }
@@ -157,7 +157,7 @@ public class AssertionVariantInfo {
     this.popFreqMax = popFreqMax;
   }
 
-  public AssertionVariantInfo COSMIC_ID(String COSMIC_ID) {
+  public VariantInfo COSMIC_ID(String COSMIC_ID) {
     this.COSMIC_ID = COSMIC_ID;
     return this;
   }
@@ -175,7 +175,7 @@ public class AssertionVariantInfo {
     this.COSMIC_ID = COSMIC_ID;
   }
 
-  public AssertionVariantInfo gene(String gene) {
+  public VariantInfo gene(String gene) {
     this.gene = gene;
     return this;
   }
@@ -193,7 +193,7 @@ public class AssertionVariantInfo {
     this.gene = gene;
   }
 
-  public AssertionVariantInfo geneFusionPartner(String geneFusionPartner) {
+  public VariantInfo geneFusionPartner(String geneFusionPartner) {
     this.geneFusionPartner = geneFusionPartner;
     return this;
   }
@@ -211,12 +211,12 @@ public class AssertionVariantInfo {
     this.geneFusionPartner = geneFusionPartner;
   }
 
-  public AssertionVariantInfo locations(java.util.List<AssertionLocations> locations) {
+  public VariantInfo locations(java.util.List<VariantInfoLocations> locations) {
     this.locations = locations;
     return this;
   }
 
-  public AssertionVariantInfo addLocationsItem(AssertionLocations locationsItem) {
+  public VariantInfo addLocationsItem(VariantInfoLocations locationsItem) {
     if (this.locations == null) {
       this.locations = new java.util.ArrayList<>();
     }
@@ -229,20 +229,20 @@ public class AssertionVariantInfo {
    * @return locations
   **/
   @Schema(description = "")
-  public java.util.List<AssertionLocations> getLocations() {
+  public java.util.List<VariantInfoLocations> getLocations() {
     return locations;
   }
 
-  public void setLocations(java.util.List<AssertionLocations> locations) {
+  public void setLocations(java.util.List<VariantInfoLocations> locations) {
     this.locations = locations;
   }
 
-  public AssertionVariantInfo fusions(java.util.List<AssertionFusions> fusions) {
+  public VariantInfo fusions(java.util.List<VariantInfoFusions> fusions) {
     this.fusions = fusions;
     return this;
   }
 
-  public AssertionVariantInfo addFusionsItem(AssertionFusions fusionsItem) {
+  public VariantInfo addFusionsItem(VariantInfoFusions fusionsItem) {
     if (this.fusions == null) {
       this.fusions = new java.util.ArrayList<>();
     }
@@ -255,11 +255,11 @@ public class AssertionVariantInfo {
    * @return fusions
   **/
   @Schema(description = "")
-  public java.util.List<AssertionFusions> getFusions() {
+  public java.util.List<VariantInfoFusions> getFusions() {
     return fusions;
   }
 
-  public void setFusions(java.util.List<AssertionFusions> fusions) {
+  public void setFusions(java.util.List<VariantInfoFusions> fusions) {
     this.fusions = fusions;
   }
 
@@ -272,17 +272,17 @@ public class AssertionVariantInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AssertionVariantInfo assertionVariantInfo = (AssertionVariantInfo) o;
-    return Objects.equals(this.name, assertionVariantInfo.name) &&
-        Objects.equals(this.transcript, assertionVariantInfo.transcript) &&
-        Objects.equals(this.classification, assertionVariantInfo.classification) &&
-        Objects.equals(this.consequences, assertionVariantInfo.consequences) &&
-        Objects.equals(this.popFreqMax, assertionVariantInfo.popFreqMax) &&
-        Objects.equals(this.COSMIC_ID, assertionVariantInfo.COSMIC_ID) &&
-        Objects.equals(this.gene, assertionVariantInfo.gene) &&
-        Objects.equals(this.geneFusionPartner, assertionVariantInfo.geneFusionPartner) &&
-        Objects.equals(this.locations, assertionVariantInfo.locations) &&
-        Objects.equals(this.fusions, assertionVariantInfo.fusions);
+    VariantInfo variantInfo = (VariantInfo) o;
+    return Objects.equals(this.name, variantInfo.name) &&
+        Objects.equals(this.transcript, variantInfo.transcript) &&
+        Objects.equals(this.classification, variantInfo.classification) &&
+        Objects.equals(this.consequences, variantInfo.consequences) &&
+        Objects.equals(this.popFreqMax, variantInfo.popFreqMax) &&
+        Objects.equals(this.COSMIC_ID, variantInfo.COSMIC_ID) &&
+        Objects.equals(this.gene, variantInfo.gene) &&
+        Objects.equals(this.geneFusionPartner, variantInfo.geneFusionPartner) &&
+        Objects.equals(this.locations, variantInfo.locations) &&
+        Objects.equals(this.fusions, variantInfo.fusions);
   }
 
   @Override
@@ -294,7 +294,7 @@ public class AssertionVariantInfo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AssertionVariantInfo {\n");
+    sb.append("class VariantInfo {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    transcript: ").append(toIndentedString(transcript)).append("\n");

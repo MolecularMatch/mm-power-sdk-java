@@ -23,11 +23,11 @@ import io.swagger.client.model.ArmGroup;
 import io.swagger.client.model.ClinicalTrialCountries;
 import io.swagger.client.model.ClinicalTrialLocationSummary;
 import io.swagger.client.model.ClinicalTrialSponsors;
+import io.swagger.client.model.ConceptAssociation;
 import io.swagger.client.model.Contact;
 import io.swagger.client.model.Eligibility;
 import io.swagger.client.model.Facility;
 import io.swagger.client.model.Intervention;
-import io.swagger.client.model.MolecularAlteration;
 import io.swagger.client.model.Outcome;
 import io.swagger.client.model.StudyDesign;
 import io.swagger.client.model.Synonym;
@@ -41,6 +41,9 @@ import java.time.OffsetDateTime;
 
 
 public class ClinicalTrial {
+  @SerializedName("_score")
+  private Float _score = null;
+
   @SerializedName("mboost")
   private Float mboost = null;
 
@@ -183,10 +186,28 @@ public class ClinicalTrial {
   private java.util.List<Tag> tags = null;
 
   @SerializedName("molecularAlterations")
-  private java.util.List<MolecularAlteration> molecularAlterations = null;
+  private java.util.List<ConceptAssociation> molecularAlterations = null;
 
   @SerializedName("_stats")
   private Object _stats = null;
+
+  public ClinicalTrial _score(Float _score) {
+    this._score = _score;
+    return this;
+  }
+
+   /**
+   * indicator of the quality of the match.
+   * @return _score
+  **/
+  @Schema(description = "indicator of the quality of the match.")
+  public Float getScore() {
+    return _score;
+  }
+
+  public void setScore(Float _score) {
+    this._score = _score;
+  }
 
   public ClinicalTrial mboost(Float mboost) {
     this.mboost = mboost;
@@ -692,10 +713,10 @@ public class ClinicalTrial {
   }
 
    /**
-   * Get primaryOutcomes
+   * The outcome that an investigator considers to be the most important among the many outcomes that are to be examined in the study.
    * @return primaryOutcomes
   **/
-  @Schema(description = "")
+  @Schema(description = "The outcome that an investigator considers to be the most important among the many outcomes that are to be examined in the study.")
   public java.util.List<Outcome> getPrimaryOutcomes() {
     return primaryOutcomes;
   }
@@ -1146,12 +1167,12 @@ public class ClinicalTrial {
     this.tags = tags;
   }
 
-  public ClinicalTrial molecularAlterations(java.util.List<MolecularAlteration> molecularAlterations) {
+  public ClinicalTrial molecularAlterations(java.util.List<ConceptAssociation> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
     return this;
   }
 
-  public ClinicalTrial addMolecularAlterationsItem(MolecularAlteration molecularAlterationsItem) {
+  public ClinicalTrial addMolecularAlterationsItem(ConceptAssociation molecularAlterationsItem) {
     if (this.molecularAlterations == null) {
       this.molecularAlterations = new java.util.ArrayList<>();
     }
@@ -1164,11 +1185,11 @@ public class ClinicalTrial {
    * @return molecularAlterations
   **/
   @Schema(description = "Molecular concept associations established for this trial.")
-  public java.util.List<MolecularAlteration> getMolecularAlterations() {
+  public java.util.List<ConceptAssociation> getMolecularAlterations() {
     return molecularAlterations;
   }
 
-  public void setMolecularAlterations(java.util.List<MolecularAlteration> molecularAlterations) {
+  public void setMolecularAlterations(java.util.List<ConceptAssociation> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
   }
 
@@ -1200,7 +1221,8 @@ public class ClinicalTrial {
       return false;
     }
     ClinicalTrial clinicalTrial = (ClinicalTrial) o;
-    return Objects.equals(this.mboost, clinicalTrial.mboost) &&
+    return Objects.equals(this._score, clinicalTrial._score) &&
+        Objects.equals(this.mboost, clinicalTrial.mboost) &&
         Objects.equals(this.importDate, clinicalTrial.importDate) &&
         Objects.equals(this.id, clinicalTrial.id) &&
         Objects.equals(this.source, clinicalTrial.source) &&
@@ -1253,7 +1275,7 @@ public class ClinicalTrial {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mboost, importDate, id, source, briefTitle, patientTitle, title, briefSummary, briefSummaryPreserved, summary, summaryPreserved, status, phase, studyType, studyDesign, startDate, completionDate, firstReceivedDate, lastChangedDate, verificationDate, sponsors, conditions, interventions, keywords, armGroups, primaryOutcomes, secondaryOutcomes, otherOutcomes, eligibility, enrollment, minAge, maxAge, gender, overallOfficial, overallContact, overallContactBackup, locationSummary, locations, countries, inclusionCriteria, inclusionCriteriaPreserved, exclusionCriteria, exclusionCriteriaPreserved, synonyms, acronym, link, tags, molecularAlterations, _stats);
+    return Objects.hash(_score, mboost, importDate, id, source, briefTitle, patientTitle, title, briefSummary, briefSummaryPreserved, summary, summaryPreserved, status, phase, studyType, studyDesign, startDate, completionDate, firstReceivedDate, lastChangedDate, verificationDate, sponsors, conditions, interventions, keywords, armGroups, primaryOutcomes, secondaryOutcomes, otherOutcomes, eligibility, enrollment, minAge, maxAge, gender, overallOfficial, overallContact, overallContactBackup, locationSummary, locations, countries, inclusionCriteria, inclusionCriteriaPreserved, exclusionCriteria, exclusionCriteriaPreserved, synonyms, acronym, link, tags, molecularAlterations, _stats);
   }
 
 
@@ -1262,6 +1284,7 @@ public class ClinicalTrial {
     StringBuilder sb = new StringBuilder();
     sb.append("class ClinicalTrial {\n");
     
+    sb.append("    _score: ").append(toIndentedString(_score)).append("\n");
     sb.append("    mboost: ").append(toIndentedString(mboost)).append("\n");
     sb.append("    importDate: ").append(toIndentedString(importDate)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");

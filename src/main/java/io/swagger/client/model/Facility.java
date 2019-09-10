@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.FacilityGeo;
+import io.swagger.client.model.Tag;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -33,6 +34,9 @@ public class Facility {
 
   @SerializedName("street")
   private String street = null;
+
+  @SerializedName("number")
+  private String number = null;
 
   @SerializedName("country")
   private String country = null;
@@ -112,6 +116,9 @@ public class Facility {
   @SerializedName("isInInstitution")
   private Boolean isInInstitution = null;
 
+  @SerializedName("tags")
+  private java.util.List<Tag> tags = null;
+
   public Facility id(String id) {
     this.id = id;
     return this;
@@ -136,16 +143,34 @@ public class Facility {
   }
 
    /**
-   * Site street address.
+   * Site street name.
    * @return street
   **/
-  @Schema(description = "Site street address.")
+  @Schema(description = "Site street name.")
   public String getStreet() {
     return street;
   }
 
   public void setStreet(String street) {
     this.street = street;
+  }
+
+  public Facility number(String number) {
+    this.number = number;
+    return this;
+  }
+
+   /**
+   * Site street number.
+   * @return number
+  **/
+  @Schema(description = "Site street number.")
+  public String getNumber() {
+    return number;
+  }
+
+  public void setNumber(String number) {
+    this.number = number;
   }
 
   public Facility country(String country) {
@@ -262,10 +287,10 @@ public class Facility {
   }
 
    /**
-   * Get lat
+   * Latitude
    * @return lat
   **/
-  @Schema(description = "")
+  @Schema(description = "Latitude")
   public Float getLat() {
     return lat;
   }
@@ -280,10 +305,10 @@ public class Facility {
   }
 
    /**
-   * Get lon
+   * Longitude
    * @return lon
   **/
-  @Schema(description = "")
+  @Schema(description = "Longitude")
   public Float getLon() {
     return lon;
   }
@@ -616,6 +641,32 @@ public class Facility {
     this.isInInstitution = isInInstitution;
   }
 
+  public Facility tags(java.util.List<Tag> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public Facility addTagsItem(Tag tagsItem) {
+    if (this.tags == null) {
+      this.tags = new java.util.ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Concept associations established for this site.
+   * @return tags
+  **/
+  @Schema(description = "Concept associations established for this site.")
+  public java.util.List<Tag> getTags() {
+    return tags;
+  }
+
+  public void setTags(java.util.List<Tag> tags) {
+    this.tags = tags;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -628,6 +679,7 @@ public class Facility {
     Facility facility = (Facility) o;
     return Objects.equals(this.id, facility.id) &&
         Objects.equals(this.street, facility.street) &&
+        Objects.equals(this.number, facility.number) &&
         Objects.equals(this.country, facility.country) &&
         Objects.equals(this.name, facility.name) &&
         Objects.equals(this.poBox, facility.poBox) &&
@@ -653,12 +705,13 @@ public class Facility {
         Objects.equals(this.phoneExtBackup, facility.phoneExtBackup) &&
         Objects.equals(this.emailBackup, facility.emailBackup) &&
         Objects.equals(this.distance, facility.distance) &&
-        Objects.equals(this.isInInstitution, facility.isInInstitution);
+        Objects.equals(this.isInInstitution, facility.isInInstitution) &&
+        Objects.equals(this.tags, facility.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, street, country, name, poBox, city, state, zip, lat, lon, geo, status, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, distance, isInInstitution);
+    return Objects.hash(id, street, number, country, name, poBox, city, state, zip, lat, lon, geo, status, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, distance, isInInstitution, tags);
   }
 
 
@@ -669,6 +722,7 @@ public class Facility {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
+    sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    poBox: ").append(toIndentedString(poBox)).append("\n");
@@ -695,6 +749,7 @@ public class Facility {
     sb.append("    emailBackup: ").append(toIndentedString(emailBackup)).append("\n");
     sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
     sb.append("    isInInstitution: ").append(toIndentedString(isInInstitution)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");
     return sb.toString();
   }

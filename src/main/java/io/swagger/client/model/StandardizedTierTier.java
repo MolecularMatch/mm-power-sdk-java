@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.StandardizedTierTierExplanation;
+import io.swagger.client.model.TierExplanation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -36,7 +36,7 @@ public class StandardizedTierTier {
   private OffsetDateTime calculatedAt = null;
 
   @SerializedName("explanation")
-  private java.util.List<StandardizedTierTierExplanation> explanation = null;
+  private java.util.List<TierExplanation> explanation = null;
 
   public StandardizedTierTier value(String value) {
     this.value = value;
@@ -74,12 +74,12 @@ public class StandardizedTierTier {
     this.calculatedAt = calculatedAt;
   }
 
-  public StandardizedTierTier explanation(java.util.List<StandardizedTierTierExplanation> explanation) {
+  public StandardizedTierTier explanation(java.util.List<TierExplanation> explanation) {
     this.explanation = explanation;
     return this;
   }
 
-  public StandardizedTierTier addExplanationItem(StandardizedTierTierExplanation explanationItem) {
+  public StandardizedTierTier addExplanationItem(TierExplanation explanationItem) {
     if (this.explanation == null) {
       this.explanation = new java.util.ArrayList<>();
     }
@@ -92,11 +92,11 @@ public class StandardizedTierTier {
    * @return explanation
   **/
   @Schema(description = "")
-  public java.util.List<StandardizedTierTierExplanation> getExplanation() {
+  public java.util.List<TierExplanation> getExplanation() {
     return explanation;
   }
 
-  public void setExplanation(java.util.List<StandardizedTierTierExplanation> explanation) {
+  public void setExplanation(java.util.List<TierExplanation> explanation) {
     this.explanation = explanation;
   }
 

@@ -36,10 +36,10 @@ public class DrugParents {
   }
 
    /**
-   * Get name
+   * Other drugs considered a parent of this drug in an ontology
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Other drugs considered a parent of this drug in an ontology")
   public String getName() {
     return name;
   }

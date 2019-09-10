@@ -1,4 +1,4 @@
-# AssertionVariantInfo
+# VariantInfo
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,5 +11,5 @@ Name | Type | Description | Notes
 **COSMIC_ID** | **String** |  |  [optional]
 **gene** | **String** |  |  [optional]
 **geneFusionPartner** | **String** |  |  [optional]
-**locations** | [**java.util.List&lt;AssertionLocations&gt;**](AssertionLocations.md) |  |  [optional]
-**fusions** | [**java.util.List&lt;AssertionFusions&gt;**](AssertionFusions.md) |  |  [optional]
+**locations** | [**java.util.List&lt;VariantInfoLocations&gt;**](VariantInfoLocations.md) |  |  [optional]
+**fusions** | [**java.util.List&lt;VariantInfoFusions&gt;**](VariantInfoFusions.md) |  |  [optional]

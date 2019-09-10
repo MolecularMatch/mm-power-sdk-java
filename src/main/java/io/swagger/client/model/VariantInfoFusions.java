@@ -22,11 +22,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * AssertionFusions
+ * VariantInfoFusions
  */
 
 
-public class AssertionFusions {
+public class VariantInfoFusions {
   @SerializedName("chr")
   private String chr = null;
 
@@ -92,7 +92,7 @@ public class AssertionFusions {
   }  @SerializedName("referenceGenome")
   private ReferenceGenomeEnum referenceGenome = null;
 
-  public AssertionFusions chr(String chr) {
+  public VariantInfoFusions chr(String chr) {
     this.chr = chr;
     return this;
   }
@@ -110,7 +110,7 @@ public class AssertionFusions {
     this.chr = chr;
   }
 
-  public AssertionFusions exonNumber(String exonNumber) {
+  public VariantInfoFusions exonNumber(String exonNumber) {
     this.exonNumber = exonNumber;
     return this;
   }
@@ -128,7 +128,7 @@ public class AssertionFusions {
     this.exonNumber = exonNumber;
   }
 
-  public AssertionFusions intronNumber(String intronNumber) {
+  public VariantInfoFusions intronNumber(String intronNumber) {
     this.intronNumber = intronNumber;
     return this;
   }
@@ -146,7 +146,7 @@ public class AssertionFusions {
     this.intronNumber = intronNumber;
   }
 
-  public AssertionFusions LBPWLEP(Integer LBPWLEP) {
+  public VariantInfoFusions LBPWLEP(Integer LBPWLEP) {
     this.LBPWLEP = LBPWLEP;
     return this;
   }
@@ -164,7 +164,7 @@ public class AssertionFusions {
     this.LBPWLEP = LBPWLEP;
   }
 
-  public AssertionFusions LBPWREP(Integer LBPWREP) {
+  public VariantInfoFusions LBPWREP(Integer LBPWREP) {
     this.LBPWREP = LBPWREP;
     return this;
   }
@@ -182,7 +182,7 @@ public class AssertionFusions {
     this.LBPWREP = LBPWREP;
   }
 
-  public AssertionFusions RBPWLEP(Integer RBPWLEP) {
+  public VariantInfoFusions RBPWLEP(Integer RBPWLEP) {
     this.RBPWLEP = RBPWLEP;
     return this;
   }
@@ -200,7 +200,7 @@ public class AssertionFusions {
     this.RBPWLEP = RBPWLEP;
   }
 
-  public AssertionFusions RBPWREP(Integer RBPWREP) {
+  public VariantInfoFusions RBPWREP(Integer RBPWREP) {
     this.RBPWREP = RBPWREP;
     return this;
   }
@@ -218,7 +218,7 @@ public class AssertionFusions {
     this.RBPWREP = RBPWREP;
   }
 
-  public AssertionFusions referenceGenome(ReferenceGenomeEnum referenceGenome) {
+  public VariantInfoFusions referenceGenome(ReferenceGenomeEnum referenceGenome) {
     this.referenceGenome = referenceGenome;
     return this;
   }
@@ -245,15 +245,15 @@ public class AssertionFusions {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AssertionFusions assertionFusions = (AssertionFusions) o;
-    return Objects.equals(this.chr, assertionFusions.chr) &&
-        Objects.equals(this.exonNumber, assertionFusions.exonNumber) &&
-        Objects.equals(this.intronNumber, assertionFusions.intronNumber) &&
-        Objects.equals(this.LBPWLEP, assertionFusions.LBPWLEP) &&
-        Objects.equals(this.LBPWREP, assertionFusions.LBPWREP) &&
-        Objects.equals(this.RBPWLEP, assertionFusions.RBPWLEP) &&
-        Objects.equals(this.RBPWREP, assertionFusions.RBPWREP) &&
-        Objects.equals(this.referenceGenome, assertionFusions.referenceGenome);
+    VariantInfoFusions variantInfoFusions = (VariantInfoFusions) o;
+    return Objects.equals(this.chr, variantInfoFusions.chr) &&
+        Objects.equals(this.exonNumber, variantInfoFusions.exonNumber) &&
+        Objects.equals(this.intronNumber, variantInfoFusions.intronNumber) &&
+        Objects.equals(this.LBPWLEP, variantInfoFusions.LBPWLEP) &&
+        Objects.equals(this.LBPWREP, variantInfoFusions.LBPWREP) &&
+        Objects.equals(this.RBPWLEP, variantInfoFusions.RBPWLEP) &&
+        Objects.equals(this.RBPWREP, variantInfoFusions.RBPWREP) &&
+        Objects.equals(this.referenceGenome, variantInfoFusions.referenceGenome);
   }
 
   @Override
@@ -265,7 +265,7 @@ public class AssertionFusions {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AssertionFusions {\n");
+    sb.append("class VariantInfoFusions {\n");
     
     sb.append("    chr: ").append(toIndentedString(chr)).append("\n");
     sb.append("    exonNumber: ").append(toIndentedString(exonNumber)).append("\n");

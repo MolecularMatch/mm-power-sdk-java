@@ -30,6 +30,9 @@ public class DrugPharmacology {
   @SerializedName("indication")
   private String indication = null;
 
+  @SerializedName("contraindication")
+  private String contraindication = null;
+
   @SerializedName("pharmacodynamics")
   private String pharmacodynamics = null;
 
@@ -76,6 +79,24 @@ public class DrugPharmacology {
 
   public void setIndication(String indication) {
     this.indication = indication;
+  }
+
+  public DrugPharmacology contraindication(String contraindication) {
+    this.contraindication = contraindication;
+    return this;
+  }
+
+   /**
+   * The contraindications section from the FDA label.
+   * @return contraindication
+  **/
+  @Schema(description = "The contraindications section from the FDA label.")
+  public String getContraindication() {
+    return contraindication;
+  }
+
+  public void setContraindication(String contraindication) {
+    this.contraindication = contraindication;
   }
 
   public DrugPharmacology pharmacodynamics(String pharmacodynamics) {
@@ -269,6 +290,7 @@ public class DrugPharmacology {
     }
     DrugPharmacology drugPharmacology = (DrugPharmacology) o;
     return Objects.equals(this.indication, drugPharmacology.indication) &&
+        Objects.equals(this.contraindication, drugPharmacology.contraindication) &&
         Objects.equals(this.pharmacodynamics, drugPharmacology.pharmacodynamics) &&
         Objects.equals(this.mechanismOfAction, drugPharmacology.mechanismOfAction) &&
         Objects.equals(this.absorption, drugPharmacology.absorption) &&
@@ -283,7 +305,7 @@ public class DrugPharmacology {
 
   @Override
   public int hashCode() {
-    return Objects.hash(indication, pharmacodynamics, mechanismOfAction, absorption, toxicity, proteinBinding, metabolism, halfLife, routeOfElimination, volumeOfDistribution, clearance);
+    return Objects.hash(indication, contraindication, pharmacodynamics, mechanismOfAction, absorption, toxicity, proteinBinding, metabolism, halfLife, routeOfElimination, volumeOfDistribution, clearance);
   }
 
 
@@ -293,6 +315,7 @@ public class DrugPharmacology {
     sb.append("class DrugPharmacology {\n");
     
     sb.append("    indication: ").append(toIndentedString(indication)).append("\n");
+    sb.append("    contraindication: ").append(toIndentedString(contraindication)).append("\n");
     sb.append("    pharmacodynamics: ").append(toIndentedString(pharmacodynamics)).append("\n");
     sb.append("    mechanismOfAction: ").append(toIndentedString(mechanismOfAction)).append("\n");
     sb.append("    absorption: ").append(toIndentedString(absorption)).append("\n");

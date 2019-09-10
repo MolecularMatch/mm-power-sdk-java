@@ -42,10 +42,10 @@ public class Outcome {
   }
 
    /**
-   * Get measure
+   * The physiological or reported measurement used for the outcome.
    * @return measure
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "The physiological or reported measurement used for the outcome.")
   public String getMeasure() {
     return measure;
   }
@@ -60,10 +60,10 @@ public class Outcome {
   }
 
    /**
-   * Get timeFrame
+   * Time point(s) at which the measurement is assessed for the specific metric used. The description of the time point(s) of assessment must be specific to the outcome measure and is generally the specific duration of time over which each participant is assessed (not the overall duration of the study).
    * @return timeFrame
   **/
-  @Schema(description = "")
+  @Schema(description = "Time point(s) at which the measurement is assessed for the specific metric used. The description of the time point(s) of assessment must be specific to the outcome measure and is generally the specific duration of time over which each participant is assessed (not the overall duration of the study).")
   public String getTimeFrame() {
     return timeFrame;
   }
@@ -78,10 +78,10 @@ public class Outcome {
   }
 
    /**
-   * Get description
+   * Description of the metric used to characterize the specific primary outcome measure.
    * @return description
   **/
-  @Schema(description = "")
+  @Schema(description = "Description of the metric used to characterize the specific primary outcome measure.")
   public String getDescription() {
     return description;
   }

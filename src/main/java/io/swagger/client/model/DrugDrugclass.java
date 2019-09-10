@@ -39,10 +39,10 @@ public class DrugDrugclass {
   }
 
    /**
-   * Get name
+   * The classes (pharmacological, treatment, chemical, etc.) of the drug inferred from the source or manually added
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "The classes (pharmacological, treatment, chemical, etc.) of the drug inferred from the source or manually added")
   public String getName() {
     return name;
   }

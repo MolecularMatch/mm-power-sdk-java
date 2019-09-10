@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstName** | **String** |  |  [optional]
-**middleName** | **String** |  |  [optional]
-**lastName** | **String** |  | 
+**firstName** | **String** | First name of the contact person. |  [optional]
+**middleName** | **String** | Middle name of the contact person. |  [optional]
+**lastName** | **String** | Last name of the contact person. | 
 **degrees** | **String** |  |  [optional]
-**role** | **String** |  |  [optional]
-**affiliation** | **String** |  |  [optional]
-**phone** | **String** |  |  [optional]
-**phoneExt** | **String** |  |  [optional]
-**email** | **String** |  |  [optional]
+**role** | **String** | Position or function of the official. |  [optional]
+**affiliation** | **String** | Full name of the official&#x27;s organization. |  [optional]
+**phone** | **String** | Phone number of the contact person. |  [optional]
+**phoneExt** | **String** | Phone number extension of the contact person. |  [optional]
+**email** | **String** | Electronic mail address of the contact person. |  [optional]

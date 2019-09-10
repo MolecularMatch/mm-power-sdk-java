@@ -19,6 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.Assertion;
+import io.swagger.client.model.ConceptAssociation;
 import io.swagger.client.model.DrugAvailability;
 import io.swagger.client.model.DrugBrands;
 import io.swagger.client.model.DrugCompositeTags;
@@ -37,6 +39,9 @@ import java.io.IOException;
 
 
 public class Drug {
+  @SerializedName("_score")
+  private Float _score = null;
+
   @SerializedName("mboost")
   private Float mboost = null;
 
@@ -58,12 +63,6 @@ public class Drug {
   @SerializedName("approved")
   private Boolean approved = null;
 
-  @SerializedName("suppressResistance")
-  private Boolean suppressResistance = null;
-
-  @SerializedName("suppressSynonymResistance")
-  private Boolean suppressSynonymResistance = null;
-
   @SerializedName("availability")
   private java.util.List<DrugAvailability> availability = null;
 
@@ -82,21 +81,6 @@ public class Drug {
   @SerializedName("brands")
   private java.util.List<DrugBrands> brands = null;
 
-  @SerializedName("indicationText")
-  private String indicationText = null;
-
-  @SerializedName("contraindicationText")
-  private String contraindicationText = null;
-
-  @SerializedName("mechanismText")
-  private String mechanismText = null;
-
-  @SerializedName("rxcui")
-  private java.util.List<String> rxcui = null;
-
-  @SerializedName("drugclassCausedSuppress")
-  private java.util.List<String> drugclassCausedSuppress = null;
-
   @SerializedName("externalIds")
   private java.util.List<ExternalId> externalIds = null;
 
@@ -112,8 +96,38 @@ public class Drug {
   @SerializedName("pharmacology")
   private DrugPharmacology pharmacology = null;
 
-  @SerializedName("phaseAndTrialsScore")
-  private Float phaseAndTrialsScore = null;
+  @SerializedName("molecularAlterations")
+  private java.util.List<ConceptAssociation> molecularAlterations = null;
+
+  @SerializedName("contraindicatedAlterations")
+  private java.util.List<ConceptAssociation> contraindicatedAlterations = null;
+
+  @SerializedName("assertions")
+  private java.util.List<Assertion> assertions = null;
+
+  @SerializedName("bestTier")
+  private String bestTier = null;
+
+  @SerializedName("metTier")
+  private String metTier = null;
+
+  public Drug _score(Float _score) {
+    this._score = _score;
+    return this;
+  }
+
+   /**
+   * indicator of the quality of the match.  Assertion based therapies will not contain a _score.
+   * @return _score
+  **/
+  @Schema(description = "indicator of the quality of the match.  Assertion based therapies will not contain a _score.")
+  public Float getScore() {
+    return _score;
+  }
+
+  public void setScore(Float _score) {
+    this._score = _score;
+  }
 
   public Drug mboost(Float mboost) {
     this.mboost = mboost;
@@ -193,10 +207,10 @@ public class Drug {
   }
 
    /**
-   * Descriptions of drug chemical properties, history and regulatory status.
+   * Descriptions of drug properties, treatments, history and regulatory status.
    * @return description
   **/
-  @Schema(description = "Descriptions of drug chemical properties, history and regulatory status.")
+  @Schema(description = "Descriptions of drug properties, treatments, history and regulatory status.")
   public String getDescription() {
     return description;
   }
@@ -211,10 +225,10 @@ public class Drug {
   }
 
    /**
-   * Get composite
+   * Indicates whether this drug is a composite of multiple drugs (combination therapy).
    * @return composite
   **/
-  @Schema(description = "")
+  @Schema(description = "Indicates whether this drug is a composite of multiple drugs (combination therapy).")
   public Boolean isComposite() {
     return composite;
   }
@@ -239,42 +253,6 @@ public class Drug {
 
   public void setApproved(Boolean approved) {
     this.approved = approved;
-  }
-
-  public Drug suppressResistance(Boolean suppressResistance) {
-    this.suppressResistance = suppressResistance;
-    return this;
-  }
-
-   /**
-   * Get suppressResistance
-   * @return suppressResistance
-  **/
-  @Schema(description = "")
-  public Boolean isSuppressResistance() {
-    return suppressResistance;
-  }
-
-  public void setSuppressResistance(Boolean suppressResistance) {
-    this.suppressResistance = suppressResistance;
-  }
-
-  public Drug suppressSynonymResistance(Boolean suppressSynonymResistance) {
-    this.suppressSynonymResistance = suppressSynonymResistance;
-    return this;
-  }
-
-   /**
-   * Get suppressSynonymResistance
-   * @return suppressSynonymResistance
-  **/
-  @Schema(description = "")
-  public Boolean isSuppressSynonymResistance() {
-    return suppressSynonymResistance;
-  }
-
-  public void setSuppressSynonymResistance(Boolean suppressSynonymResistance) {
-    this.suppressSynonymResistance = suppressSynonymResistance;
   }
 
   public Drug availability(java.util.List<DrugAvailability> availability) {
@@ -395,10 +373,10 @@ public class Drug {
   }
 
    /**
-   * Get compositeTags
+   * The individual drugs making up this composite drug
    * @return compositeTags
   **/
-  @Schema(description = "")
+  @Schema(description = "The individual drugs making up this composite drug")
   public java.util.List<DrugCompositeTags> getCompositeTags() {
     return compositeTags;
   }
@@ -433,112 +411,6 @@ public class Drug {
     this.brands = brands;
   }
 
-  public Drug indicationText(String indicationText) {
-    this.indicationText = indicationText;
-    return this;
-  }
-
-   /**
-   * Get indicationText
-   * @return indicationText
-  **/
-  @Schema(description = "")
-  public String getIndicationText() {
-    return indicationText;
-  }
-
-  public void setIndicationText(String indicationText) {
-    this.indicationText = indicationText;
-  }
-
-  public Drug contraindicationText(String contraindicationText) {
-    this.contraindicationText = contraindicationText;
-    return this;
-  }
-
-   /**
-   * Get contraindicationText
-   * @return contraindicationText
-  **/
-  @Schema(description = "")
-  public String getContraindicationText() {
-    return contraindicationText;
-  }
-
-  public void setContraindicationText(String contraindicationText) {
-    this.contraindicationText = contraindicationText;
-  }
-
-  public Drug mechanismText(String mechanismText) {
-    this.mechanismText = mechanismText;
-    return this;
-  }
-
-   /**
-   * Get mechanismText
-   * @return mechanismText
-  **/
-  @Schema(description = "")
-  public String getMechanismText() {
-    return mechanismText;
-  }
-
-  public void setMechanismText(String mechanismText) {
-    this.mechanismText = mechanismText;
-  }
-
-  public Drug rxcui(java.util.List<String> rxcui) {
-    this.rxcui = rxcui;
-    return this;
-  }
-
-  public Drug addRxcuiItem(String rxcuiItem) {
-    if (this.rxcui == null) {
-      this.rxcui = new java.util.ArrayList<>();
-    }
-    this.rxcui.add(rxcuiItem);
-    return this;
-  }
-
-   /**
-   * Get rxcui
-   * @return rxcui
-  **/
-  @Schema(description = "")
-  public java.util.List<String> getRxcui() {
-    return rxcui;
-  }
-
-  public void setRxcui(java.util.List<String> rxcui) {
-    this.rxcui = rxcui;
-  }
-
-  public Drug drugclassCausedSuppress(java.util.List<String> drugclassCausedSuppress) {
-    this.drugclassCausedSuppress = drugclassCausedSuppress;
-    return this;
-  }
-
-  public Drug addDrugclassCausedSuppressItem(String drugclassCausedSuppressItem) {
-    if (this.drugclassCausedSuppress == null) {
-      this.drugclassCausedSuppress = new java.util.ArrayList<>();
-    }
-    this.drugclassCausedSuppress.add(drugclassCausedSuppressItem);
-    return this;
-  }
-
-   /**
-   * Get drugclassCausedSuppress
-   * @return drugclassCausedSuppress
-  **/
-  @Schema(description = "")
-  public java.util.List<String> getDrugclassCausedSuppress() {
-    return drugclassCausedSuppress;
-  }
-
-  public void setDrugclassCausedSuppress(java.util.List<String> drugclassCausedSuppress) {
-    this.drugclassCausedSuppress = drugclassCausedSuppress;
-  }
-
   public Drug externalIds(java.util.List<ExternalId> externalIds) {
     this.externalIds = externalIds;
     return this;
@@ -571,10 +443,10 @@ public class Drug {
   }
 
    /**
-   * Get link
+   * DailyMed link for prescription label details.
    * @return link
   **/
-  @Schema(description = "")
+  @Schema(description = "DailyMed link for prescription label details.")
   public String getLink() {
     return link;
   }
@@ -653,22 +525,118 @@ public class Drug {
     this.pharmacology = pharmacology;
   }
 
-  public Drug phaseAndTrialsScore(Float phaseAndTrialsScore) {
-    this.phaseAndTrialsScore = phaseAndTrialsScore;
+  public Drug molecularAlterations(java.util.List<ConceptAssociation> molecularAlterations) {
+    this.molecularAlterations = molecularAlterations;
+    return this;
+  }
+
+  public Drug addMolecularAlterationsItem(ConceptAssociation molecularAlterationsItem) {
+    if (this.molecularAlterations == null) {
+      this.molecularAlterations = new java.util.ArrayList<>();
+    }
+    this.molecularAlterations.add(molecularAlterationsItem);
     return this;
   }
 
    /**
-   * Get phaseAndTrialsScore
-   * @return phaseAndTrialsScore
+   * Molecular concept associations established for this drug.
+   * @return molecularAlterations
   **/
-  @Schema(description = "")
-  public Float getPhaseAndTrialsScore() {
-    return phaseAndTrialsScore;
+  @Schema(description = "Molecular concept associations established for this drug.")
+  public java.util.List<ConceptAssociation> getMolecularAlterations() {
+    return molecularAlterations;
   }
 
-  public void setPhaseAndTrialsScore(Float phaseAndTrialsScore) {
-    this.phaseAndTrialsScore = phaseAndTrialsScore;
+  public void setMolecularAlterations(java.util.List<ConceptAssociation> molecularAlterations) {
+    this.molecularAlterations = molecularAlterations;
+  }
+
+  public Drug contraindicatedAlterations(java.util.List<ConceptAssociation> contraindicatedAlterations) {
+    this.contraindicatedAlterations = contraindicatedAlterations;
+    return this;
+  }
+
+  public Drug addContraindicatedAlterationsItem(ConceptAssociation contraindicatedAlterationsItem) {
+    if (this.contraindicatedAlterations == null) {
+      this.contraindicatedAlterations = new java.util.ArrayList<>();
+    }
+    this.contraindicatedAlterations.add(contraindicatedAlterationsItem);
+    return this;
+  }
+
+   /**
+   * Contraindicated Molecular concept associations established for this drug.
+   * @return contraindicatedAlterations
+  **/
+  @Schema(description = "Contraindicated Molecular concept associations established for this drug.")
+  public java.util.List<ConceptAssociation> getContraindicatedAlterations() {
+    return contraindicatedAlterations;
+  }
+
+  public void setContraindicatedAlterations(java.util.List<ConceptAssociation> contraindicatedAlterations) {
+    this.contraindicatedAlterations = contraindicatedAlterations;
+  }
+
+  public Drug assertions(java.util.List<Assertion> assertions) {
+    this.assertions = assertions;
+    return this;
+  }
+
+  public Drug addAssertionsItem(Assertion assertionsItem) {
+    if (this.assertions == null) {
+      this.assertions = new java.util.ArrayList<>();
+    }
+    this.assertions.add(assertionsItem);
+    return this;
+  }
+
+   /**
+   * Evidence in support of this drug.
+   * @return assertions
+  **/
+  @Schema(description = "Evidence in support of this drug.")
+  public java.util.List<Assertion> getAssertions() {
+    return assertions;
+  }
+
+  public void setAssertions(java.util.List<Assertion> assertions) {
+    this.assertions = assertions;
+  }
+
+  public Drug bestTier(String bestTier) {
+    this.bestTier = bestTier;
+    return this;
+  }
+
+   /**
+   * The highest tier evidence associated with this drug.
+   * @return bestTier
+  **/
+  @Schema(description = "The highest tier evidence associated with this drug.")
+  public String getBestTier() {
+    return bestTier;
+  }
+
+  public void setBestTier(String bestTier) {
+    this.bestTier = bestTier;
+  }
+
+  public Drug metTier(String metTier) {
+    this.metTier = metTier;
+    return this;
+  }
+
+   /**
+   * The highest tier evidence associated with this drug where the criteria is fully met based on the search inputs.
+   * @return metTier
+  **/
+  @Schema(description = "The highest tier evidence associated with this drug where the criteria is fully met based on the search inputs.")
+  public String getMetTier() {
+    return metTier;
+  }
+
+  public void setMetTier(String metTier) {
+    this.metTier = metTier;
   }
 
 
@@ -681,37 +649,35 @@ public class Drug {
       return false;
     }
     Drug drug = (Drug) o;
-    return Objects.equals(this.mboost, drug.mboost) &&
+    return Objects.equals(this._score, drug._score) &&
+        Objects.equals(this.mboost, drug.mboost) &&
         Objects.equals(this.id, drug.id) &&
         Objects.equals(this.name, drug.name) &&
         Objects.equals(this.alias, drug.alias) &&
         Objects.equals(this.description, drug.description) &&
         Objects.equals(this.composite, drug.composite) &&
         Objects.equals(this.approved, drug.approved) &&
-        Objects.equals(this.suppressResistance, drug.suppressResistance) &&
-        Objects.equals(this.suppressSynonymResistance, drug.suppressSynonymResistance) &&
         Objects.equals(this.availability, drug.availability) &&
         Objects.equals(this.synonyms, drug.synonyms) &&
         Objects.equals(this.parents, drug.parents) &&
         Objects.equals(this.drugclass, drug.drugclass) &&
         Objects.equals(this.compositeTags, drug.compositeTags) &&
         Objects.equals(this.brands, drug.brands) &&
-        Objects.equals(this.indicationText, drug.indicationText) &&
-        Objects.equals(this.contraindicationText, drug.contraindicationText) &&
-        Objects.equals(this.mechanismText, drug.mechanismText) &&
-        Objects.equals(this.rxcui, drug.rxcui) &&
-        Objects.equals(this.drugclassCausedSuppress, drug.drugclassCausedSuppress) &&
         Objects.equals(this.externalIds, drug.externalIds) &&
         Objects.equals(this.link, drug.link) &&
         Objects.equals(this.prices, drug.prices) &&
         Objects.equals(this.dosages, drug.dosages) &&
         Objects.equals(this.pharmacology, drug.pharmacology) &&
-        Objects.equals(this.phaseAndTrialsScore, drug.phaseAndTrialsScore);
+        Objects.equals(this.molecularAlterations, drug.molecularAlterations) &&
+        Objects.equals(this.contraindicatedAlterations, drug.contraindicatedAlterations) &&
+        Objects.equals(this.assertions, drug.assertions) &&
+        Objects.equals(this.bestTier, drug.bestTier) &&
+        Objects.equals(this.metTier, drug.metTier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mboost, id, name, alias, description, composite, approved, suppressResistance, suppressSynonymResistance, availability, synonyms, parents, drugclass, compositeTags, brands, indicationText, contraindicationText, mechanismText, rxcui, drugclassCausedSuppress, externalIds, link, prices, dosages, pharmacology, phaseAndTrialsScore);
+    return Objects.hash(_score, mboost, id, name, alias, description, composite, approved, availability, synonyms, parents, drugclass, compositeTags, brands, externalIds, link, prices, dosages, pharmacology, molecularAlterations, contraindicatedAlterations, assertions, bestTier, metTier);
   }
 
 
@@ -720,6 +686,7 @@ public class Drug {
     StringBuilder sb = new StringBuilder();
     sb.append("class Drug {\n");
     
+    sb.append("    _score: ").append(toIndentedString(_score)).append("\n");
     sb.append("    mboost: ").append(toIndentedString(mboost)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -727,25 +694,22 @@ public class Drug {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    composite: ").append(toIndentedString(composite)).append("\n");
     sb.append("    approved: ").append(toIndentedString(approved)).append("\n");
-    sb.append("    suppressResistance: ").append(toIndentedString(suppressResistance)).append("\n");
-    sb.append("    suppressSynonymResistance: ").append(toIndentedString(suppressSynonymResistance)).append("\n");
     sb.append("    availability: ").append(toIndentedString(availability)).append("\n");
     sb.append("    synonyms: ").append(toIndentedString(synonyms)).append("\n");
     sb.append("    parents: ").append(toIndentedString(parents)).append("\n");
     sb.append("    drugclass: ").append(toIndentedString(drugclass)).append("\n");
     sb.append("    compositeTags: ").append(toIndentedString(compositeTags)).append("\n");
     sb.append("    brands: ").append(toIndentedString(brands)).append("\n");
-    sb.append("    indicationText: ").append(toIndentedString(indicationText)).append("\n");
-    sb.append("    contraindicationText: ").append(toIndentedString(contraindicationText)).append("\n");
-    sb.append("    mechanismText: ").append(toIndentedString(mechanismText)).append("\n");
-    sb.append("    rxcui: ").append(toIndentedString(rxcui)).append("\n");
-    sb.append("    drugclassCausedSuppress: ").append(toIndentedString(drugclassCausedSuppress)).append("\n");
     sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    prices: ").append(toIndentedString(prices)).append("\n");
     sb.append("    dosages: ").append(toIndentedString(dosages)).append("\n");
     sb.append("    pharmacology: ").append(toIndentedString(pharmacology)).append("\n");
-    sb.append("    phaseAndTrialsScore: ").append(toIndentedString(phaseAndTrialsScore)).append("\n");
+    sb.append("    molecularAlterations: ").append(toIndentedString(molecularAlterations)).append("\n");
+    sb.append("    contraindicatedAlterations: ").append(toIndentedString(contraindicatedAlterations)).append("\n");
+    sb.append("    assertions: ").append(toIndentedString(assertions)).append("\n");
+    sb.append("    bestTier: ").append(toIndentedString(bestTier)).append("\n");
+    sb.append("    metTier: ").append(toIndentedString(metTier)).append("\n");
     sb.append("}");
     return sb.toString();
   }

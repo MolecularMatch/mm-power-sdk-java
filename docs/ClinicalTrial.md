@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**_score** | **Float** | indicator of the quality of the match. |  [optional]
 **mboost** | **Float** | intrinsic boost to the record. |  [optional]
 **importDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | date this record was imported into the MolecularMatch database. |  [optional]
 **id** | **String** | unique identifier. | 
@@ -28,7 +29,7 @@ Name | Type | Description | Notes
 **interventions** | [**java.util.List&lt;Intervention&gt;**](Intervention.md) | Specifies the intervention(s) associated with each arm or group. |  [optional]
 **keywords** | **java.util.List&lt;String&gt;** | Words or phrases that best describe the protocol. Keywords help users find studies in the database. Use NLM&#x27;s Medical Subject Heading (MeSH)-controlled vocabulary terms where appropriate. Be as specific and precise as possible. |  [optional]
 **armGroups** | [**java.util.List&lt;ArmGroup&gt;**](ArmGroup.md) | Pre-specified groups of participants in a clinical trial assigned to receive specific interventions (or no intervention) according to a protocol. |  [optional]
-**primaryOutcomes** | [**java.util.List&lt;Outcome&gt;**](Outcome.md) |  |  [optional]
+**primaryOutcomes** | [**java.util.List&lt;Outcome&gt;**](Outcome.md) | The outcome that an investigator considers to be the most important among the many outcomes that are to be examined in the study. |  [optional]
 **secondaryOutcomes** | [**java.util.List&lt;Outcome&gt;**](Outcome.md) |  |  [optional]
 **otherOutcomes** | [**java.util.List&lt;Outcome&gt;**](Outcome.md) |  |  [optional]
 **eligibility** | [**Eligibility**](Eligibility.md) |  |  [optional]
@@ -50,5 +51,5 @@ Name | Type | Description | Notes
 **acronym** | **String** | An acronym or abbreviation used publicly to identify the clinical study. |  [optional]
 **link** | **String** | URL to registry listing of this trial. |  [optional]
 **tags** | [**java.util.List&lt;Tag&gt;**](Tag.md) | Concept associations established for this trial. |  [optional]
-**molecularAlterations** | [**java.util.List&lt;MolecularAlteration&gt;**](MolecularAlteration.md) | Molecular concept associations established for this trial. |  [optional]
+**molecularAlterations** | [**java.util.List&lt;ConceptAssociation&gt;**](ConceptAssociation.md) | Molecular concept associations established for this trial. |  [optional]
 **_stats** | **Object** |  |  [optional]

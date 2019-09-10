@@ -57,10 +57,10 @@ public class StudyDesign {
   }
 
    /**
-   * Get allocation
+   * The method by which participants are assigned to arms in a clinical trial.
    * @return allocation
   **/
-  @Schema(description = "")
+  @Schema(description = "The method by which participants are assigned to arms in a clinical trial.")
   public String getAllocation() {
     return allocation;
   }
@@ -75,10 +75,10 @@ public class StudyDesign {
   }
 
    /**
-   * Get interventionModel
+   * The strategy for assigning interventions to participants.
    * @return interventionModel
   **/
-  @Schema(description = "")
+  @Schema(description = "The strategy for assigning interventions to participants.")
   public String getInterventionModel() {
     return interventionModel;
   }
@@ -93,10 +93,10 @@ public class StudyDesign {
   }
 
    /**
-   * Get interventionModelDescription
+   * Details about the Interventional Study Model.
    * @return interventionModelDescription
   **/
-  @Schema(description = "")
+  @Schema(description = "Details about the Interventional Study Model.")
   public String getInterventionModelDescription() {
     return interventionModelDescription;
   }
@@ -111,10 +111,10 @@ public class StudyDesign {
   }
 
    /**
-   * Get primaryPurpose
+   * The main objective of the intervention(s) being evaluated by the clinical trial.
    * @return primaryPurpose
   **/
-  @Schema(description = "")
+  @Schema(description = "The main objective of the intervention(s) being evaluated by the clinical trial.")
   public String getPrimaryPurpose() {
     return primaryPurpose;
   }
@@ -129,10 +129,10 @@ public class StudyDesign {
   }
 
    /**
-   * Get observationalModel
+   * Primary strategy for participant identification and follow-up.
    * @return observationalModel
   **/
-  @Schema(description = "")
+  @Schema(description = "Primary strategy for participant identification and follow-up.")
   public String getObservationalModel() {
     return observationalModel;
   }
@@ -147,10 +147,10 @@ public class StudyDesign {
   }
 
    /**
-   * Get timePerspective
+   * Temporal relationship of observation period to time of participant enrollment.
    * @return timePerspective
   **/
-  @Schema(description = "")
+  @Schema(description = "Temporal relationship of observation period to time of participant enrollment.")
   public String getTimePerspective() {
     return timePerspective;
   }
@@ -165,10 +165,10 @@ public class StudyDesign {
   }
 
    /**
-   * Get masking
+   * The party or parties involved in the clinical trial who are prevented from having knowledge of the interventions assigned to individual participants.
    * @return masking
   **/
-  @Schema(description = "")
+  @Schema(description = "The party or parties involved in the clinical trial who are prevented from having knowledge of the interventions assigned to individual participants.")
   public String getMasking() {
     return masking;
   }
@@ -183,10 +183,10 @@ public class StudyDesign {
   }
 
    /**
-   * Get maskingDescription
+   * Information about other parties who may be masked in the clinical trial, if any.
    * @return maskingDescription
   **/
-  @Schema(description = "")
+  @Schema(description = "Information about other parties who may be masked in the clinical trial, if any.")
   public String getMaskingDescription() {
     return maskingDescription;
   }

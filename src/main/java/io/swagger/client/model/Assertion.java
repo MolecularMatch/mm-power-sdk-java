@@ -22,10 +22,10 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.AssertionClassifications;
 import io.swagger.client.model.AssertionPrevalence;
 import io.swagger.client.model.AssertionSources;
-import io.swagger.client.model.AssertionTags;
 import io.swagger.client.model.AssertionTherapeuticContext;
-import io.swagger.client.model.AssertionVariantInfo;
-import io.swagger.client.model.StandardizedTier;
+import io.swagger.client.model.ConceptAssociation;
+import io.swagger.client.model.TierExplanation;
+import io.swagger.client.model.VariantInfo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
@@ -34,6 +34,9 @@ import java.io.IOException;
 
 
 public class Assertion {
+  @SerializedName("_score")
+  private Float _score = null;
+
   @SerializedName("id")
   private String id = null;
 
@@ -217,7 +220,8 @@ public class Assertion {
     UNKNOWN("unknown"),
     RESISTANT("resistant"),
     INTERMEDIATE("intermediate"),
-    ADVERSE_RESPONSE("adverse_response");
+    ADVERSE_RESPONSE("adverse_response"),
+    PATHOGENIC("pathogenic");
 
     private String value;
 
@@ -305,9 +309,6 @@ public class Assertion {
   @SerializedName("expression")
   private String expression = null;
 
-  @SerializedName("tags")
-  private java.util.List<AssertionTags> tags = null;
-
   @SerializedName("sources")
   private java.util.List<AssertionSources> sources = null;
 
@@ -317,11 +318,17 @@ public class Assertion {
   @SerializedName("therapeuticContext")
   private java.util.List<AssertionTherapeuticContext> therapeuticContext = null;
 
-  @SerializedName("tiers")
-  private java.util.List<StandardizedTier> tiers = null;
+  @SerializedName("tier")
+  private String tier = null;
 
-  @SerializedName("releasedTiers")
-  private java.util.List<StandardizedTier> releasedTiers = null;
+  @SerializedName("tierExplanation")
+  private java.util.List<TierExplanation> tierExplanation = null;
+
+  @SerializedName("criteriaUnmet")
+  private java.util.List<ConceptAssociation> criteriaUnmet = null;
+
+  @SerializedName("criteriaMet")
+  private java.util.List<ConceptAssociation> criteriaMet = null;
 
   @SerializedName("classifications")
   private java.util.List<AssertionClassifications> classifications = null;
@@ -330,7 +337,25 @@ public class Assertion {
   private java.util.List<AssertionPrevalence> prevalence = null;
 
   @SerializedName("variantInfo")
-  private java.util.List<AssertionVariantInfo> variantInfo = null;
+  private java.util.List<VariantInfo> variantInfo = null;
+
+  public Assertion _score(Float _score) {
+    this._score = _score;
+    return this;
+  }
+
+   /**
+   * indicator of the quality of the match.
+   * @return _score
+  **/
+  @Schema(description = "indicator of the quality of the match.")
+  public Float getScore() {
+    return _score;
+  }
+
+  public void setScore(Float _score) {
+    this._score = _score;
+  }
 
   public Assertion id(String id) {
     this.id = id;
@@ -646,32 +671,6 @@ public class Assertion {
     this.expression = expression;
   }
 
-  public Assertion tags(java.util.List<AssertionTags> tags) {
-    this.tags = tags;
-    return this;
-  }
-
-  public Assertion addTagsItem(AssertionTags tagsItem) {
-    if (this.tags == null) {
-      this.tags = new java.util.ArrayList<>();
-    }
-    this.tags.add(tagsItem);
-    return this;
-  }
-
-   /**
-   * Get tags
-   * @return tags
-  **/
-  @Schema(description = "")
-  public java.util.List<AssertionTags> getTags() {
-    return tags;
-  }
-
-  public void setTags(java.util.List<AssertionTags> tags) {
-    this.tags = tags;
-  }
-
   public Assertion sources(java.util.List<AssertionSources> sources) {
     this.sources = sources;
     return this;
@@ -742,56 +741,100 @@ public class Assertion {
     this.therapeuticContext = therapeuticContext;
   }
 
-  public Assertion tiers(java.util.List<StandardizedTier> tiers) {
-    this.tiers = tiers;
-    return this;
-  }
-
-  public Assertion addTiersItem(StandardizedTier tiersItem) {
-    if (this.tiers == null) {
-      this.tiers = new java.util.ArrayList<>();
-    }
-    this.tiers.add(tiersItem);
+  public Assertion tier(String tier) {
+    this.tier = tier;
     return this;
   }
 
    /**
-   * Get tiers
-   * @return tiers
+   * The tiering template specific tier associated with the therapy.
+   * @return tier
   **/
-  @Schema(description = "")
-  public java.util.List<StandardizedTier> getTiers() {
-    return tiers;
+  @Schema(description = "The tiering template specific tier associated with the therapy.")
+  public String getTier() {
+    return tier;
   }
 
-  public void setTiers(java.util.List<StandardizedTier> tiers) {
-    this.tiers = tiers;
+  public void setTier(String tier) {
+    this.tier = tier;
   }
 
-  public Assertion releasedTiers(java.util.List<StandardizedTier> releasedTiers) {
-    this.releasedTiers = releasedTiers;
+  public Assertion tierExplanation(java.util.List<TierExplanation> tierExplanation) {
+    this.tierExplanation = tierExplanation;
     return this;
   }
 
-  public Assertion addReleasedTiersItem(StandardizedTier releasedTiersItem) {
-    if (this.releasedTiers == null) {
-      this.releasedTiers = new java.util.ArrayList<>();
+  public Assertion addTierExplanationItem(TierExplanation tierExplanationItem) {
+    if (this.tierExplanation == null) {
+      this.tierExplanation = new java.util.ArrayList<>();
     }
-    this.releasedTiers.add(releasedTiersItem);
+    this.tierExplanation.add(tierExplanationItem);
     return this;
   }
 
    /**
-   * Get releasedTiers
-   * @return releasedTiers
+   * The explanation of how the tier was calculated.
+   * @return tierExplanation
   **/
-  @Schema(description = "")
-  public java.util.List<StandardizedTier> getReleasedTiers() {
-    return releasedTiers;
+  @Schema(description = "The explanation of how the tier was calculated.")
+  public java.util.List<TierExplanation> getTierExplanation() {
+    return tierExplanation;
   }
 
-  public void setReleasedTiers(java.util.List<StandardizedTier> releasedTiers) {
-    this.releasedTiers = releasedTiers;
+  public void setTierExplanation(java.util.List<TierExplanation> tierExplanation) {
+    this.tierExplanation = tierExplanation;
+  }
+
+  public Assertion criteriaUnmet(java.util.List<ConceptAssociation> criteriaUnmet) {
+    this.criteriaUnmet = criteriaUnmet;
+    return this;
+  }
+
+  public Assertion addCriteriaUnmetItem(ConceptAssociation criteriaUnmetItem) {
+    if (this.criteriaUnmet == null) {
+      this.criteriaUnmet = new java.util.ArrayList<>();
+    }
+    this.criteriaUnmet.add(criteriaUnmetItem);
+    return this;
+  }
+
+   /**
+   * Get criteriaUnmet
+   * @return criteriaUnmet
+  **/
+  @Schema(description = "")
+  public java.util.List<ConceptAssociation> getCriteriaUnmet() {
+    return criteriaUnmet;
+  }
+
+  public void setCriteriaUnmet(java.util.List<ConceptAssociation> criteriaUnmet) {
+    this.criteriaUnmet = criteriaUnmet;
+  }
+
+  public Assertion criteriaMet(java.util.List<ConceptAssociation> criteriaMet) {
+    this.criteriaMet = criteriaMet;
+    return this;
+  }
+
+  public Assertion addCriteriaMetItem(ConceptAssociation criteriaMetItem) {
+    if (this.criteriaMet == null) {
+      this.criteriaMet = new java.util.ArrayList<>();
+    }
+    this.criteriaMet.add(criteriaMetItem);
+    return this;
+  }
+
+   /**
+   * Get criteriaMet
+   * @return criteriaMet
+  **/
+  @Schema(description = "")
+  public java.util.List<ConceptAssociation> getCriteriaMet() {
+    return criteriaMet;
+  }
+
+  public void setCriteriaMet(java.util.List<ConceptAssociation> criteriaMet) {
+    this.criteriaMet = criteriaMet;
   }
 
   public Assertion classifications(java.util.List<AssertionClassifications> classifications) {
@@ -846,12 +889,12 @@ public class Assertion {
     this.prevalence = prevalence;
   }
 
-  public Assertion variantInfo(java.util.List<AssertionVariantInfo> variantInfo) {
+  public Assertion variantInfo(java.util.List<VariantInfo> variantInfo) {
     this.variantInfo = variantInfo;
     return this;
   }
 
-  public Assertion addVariantInfoItem(AssertionVariantInfo variantInfoItem) {
+  public Assertion addVariantInfoItem(VariantInfo variantInfoItem) {
     if (this.variantInfo == null) {
       this.variantInfo = new java.util.ArrayList<>();
     }
@@ -864,11 +907,11 @@ public class Assertion {
    * @return variantInfo
   **/
   @Schema(description = "")
-  public java.util.List<AssertionVariantInfo> getVariantInfo() {
+  public java.util.List<VariantInfo> getVariantInfo() {
     return variantInfo;
   }
 
-  public void setVariantInfo(java.util.List<AssertionVariantInfo> variantInfo) {
+  public void setVariantInfo(java.util.List<VariantInfo> variantInfo) {
     this.variantInfo = variantInfo;
   }
 
@@ -882,7 +925,8 @@ public class Assertion {
       return false;
     }
     Assertion assertion = (Assertion) o;
-    return Objects.equals(this.id, assertion.id) &&
+    return Objects.equals(this._score, assertion._score) &&
+        Objects.equals(this.id, assertion.id) &&
         Objects.equals(this.externalId, assertion.externalId) &&
         Objects.equals(this.uniqueKey, assertion.uniqueKey) &&
         Objects.equals(this.hashKey, assertion.hashKey) &&
@@ -899,12 +943,13 @@ public class Assertion {
         Objects.equals(this.clinicalSignificance, assertion.clinicalSignificance) &&
         Objects.equals(this.biomarkerClass, assertion.biomarkerClass) &&
         Objects.equals(this.expression, assertion.expression) &&
-        Objects.equals(this.tags, assertion.tags) &&
         Objects.equals(this.sources, assertion.sources) &&
         Objects.equals(this.noTherapyAvailable, assertion.noTherapyAvailable) &&
         Objects.equals(this.therapeuticContext, assertion.therapeuticContext) &&
-        Objects.equals(this.tiers, assertion.tiers) &&
-        Objects.equals(this.releasedTiers, assertion.releasedTiers) &&
+        Objects.equals(this.tier, assertion.tier) &&
+        Objects.equals(this.tierExplanation, assertion.tierExplanation) &&
+        Objects.equals(this.criteriaUnmet, assertion.criteriaUnmet) &&
+        Objects.equals(this.criteriaMet, assertion.criteriaMet) &&
         Objects.equals(this.classifications, assertion.classifications) &&
         Objects.equals(this.prevalence, assertion.prevalence) &&
         Objects.equals(this.variantInfo, assertion.variantInfo);
@@ -912,7 +957,7 @@ public class Assertion {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalId, uniqueKey, hashKey, description, narrative, regulatoryBody, customer, version, regulatoryBodyApproved, regulatoryBodyApprovedBy, direction, guidelineBody, guidelineVersion, clinicalSignificance, biomarkerClass, expression, tags, sources, noTherapyAvailable, therapeuticContext, tiers, releasedTiers, classifications, prevalence, variantInfo);
+    return Objects.hash(_score, id, externalId, uniqueKey, hashKey, description, narrative, regulatoryBody, customer, version, regulatoryBodyApproved, regulatoryBodyApprovedBy, direction, guidelineBody, guidelineVersion, clinicalSignificance, biomarkerClass, expression, sources, noTherapyAvailable, therapeuticContext, tier, tierExplanation, criteriaUnmet, criteriaMet, classifications, prevalence, variantInfo);
   }
 
 
@@ -921,6 +966,7 @@ public class Assertion {
     StringBuilder sb = new StringBuilder();
     sb.append("class Assertion {\n");
     
+    sb.append("    _score: ").append(toIndentedString(_score)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    uniqueKey: ").append(toIndentedString(uniqueKey)).append("\n");
@@ -938,12 +984,13 @@ public class Assertion {
     sb.append("    clinicalSignificance: ").append(toIndentedString(clinicalSignificance)).append("\n");
     sb.append("    biomarkerClass: ").append(toIndentedString(biomarkerClass)).append("\n");
     sb.append("    expression: ").append(toIndentedString(expression)).append("\n");
-    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
     sb.append("    noTherapyAvailable: ").append(toIndentedString(noTherapyAvailable)).append("\n");
     sb.append("    therapeuticContext: ").append(toIndentedString(therapeuticContext)).append("\n");
-    sb.append("    tiers: ").append(toIndentedString(tiers)).append("\n");
-    sb.append("    releasedTiers: ").append(toIndentedString(releasedTiers)).append("\n");
+    sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
+    sb.append("    tierExplanation: ").append(toIndentedString(tierExplanation)).append("\n");
+    sb.append("    criteriaUnmet: ").append(toIndentedString(criteriaUnmet)).append("\n");
+    sb.append("    criteriaMet: ").append(toIndentedString(criteriaMet)).append("\n");
     sb.append("    classifications: ").append(toIndentedString(classifications)).append("\n");
     sb.append("    prevalence: ").append(toIndentedString(prevalence)).append("\n");
     sb.append("    variantInfo: ").append(toIndentedString(variantInfo)).append("\n");

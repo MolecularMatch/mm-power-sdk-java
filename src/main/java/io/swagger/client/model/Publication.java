@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.MolecularAlteration;
+import io.swagger.client.model.ConceptAssociation;
 import io.swagger.client.model.PublicationAuthors;
 import io.swagger.client.model.Tag;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -31,6 +31,9 @@ import java.time.OffsetDateTime;
 
 
 public class Publication {
+  @SerializedName("_score")
+  private Float _score = null;
+
   @SerializedName("mboost")
   private Float mboost = null;
 
@@ -104,7 +107,25 @@ public class Publication {
   private java.util.List<Tag> tags = null;
 
   @SerializedName("molecularAlterations")
-  private java.util.List<MolecularAlteration> molecularAlterations = null;
+  private java.util.List<ConceptAssociation> molecularAlterations = null;
+
+  public Publication _score(Float _score) {
+    this._score = _score;
+    return this;
+  }
+
+   /**
+   * indicator of the quality of the match.
+   * @return _score
+  **/
+  @Schema(description = "indicator of the quality of the match.")
+  public Float getScore() {
+    return _score;
+  }
+
+  public void setScore(Float _score) {
+    this._score = _score;
+  }
 
   public Publication mboost(Float mboost) {
     this.mboost = mboost;
@@ -148,10 +169,10 @@ public class Publication {
   }
 
    /**
-   * PubMed identifier.
+   * PubMed ID.
    * @return pmid
   **/
-  @Schema(description = "PubMed identifier.")
+  @Schema(description = "PubMed ID.")
   public String getPmid() {
     return pmid;
   }
@@ -166,10 +187,10 @@ public class Publication {
   }
 
    /**
-   * digital object identifier.
+   * Digital Object Identifier (permanent link at doi.org/[doi]).
    * @return doi
   **/
-  @Schema(description = "digital object identifier.")
+  @Schema(description = "Digital Object Identifier (permanent link at doi.org/[doi]).")
   public String getDoi() {
     return doi;
   }
@@ -184,10 +205,10 @@ public class Publication {
   }
 
    /**
-   * native data source of this record
+   * data source of this record
    * @return source
   **/
-  @Schema(required = true, description = "native data source of this record")
+  @Schema(required = true, description = "data source of this record")
   public String getSource() {
     return source;
   }
@@ -202,10 +223,10 @@ public class Publication {
   }
 
    /**
-   * Get journalName
+   * Journal name.
    * @return journalName
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Journal name.")
   public String getJournalName() {
     return journalName;
   }
@@ -256,10 +277,10 @@ public class Publication {
   }
 
    /**
-   * Get purpose
+   * Abstract&#x27;s purpose section.
    * @return purpose
   **/
-  @Schema(description = "")
+  @Schema(description = "Abstract's purpose section.")
   public String getPurpose() {
     return purpose;
   }
@@ -274,10 +295,10 @@ public class Publication {
   }
 
    /**
-   * Get background
+   * Abstract&#x27;s background section.
    * @return background
   **/
-  @Schema(description = "")
+  @Schema(description = "Abstract's background section.")
   public String getBackground() {
     return background;
   }
@@ -292,10 +313,10 @@ public class Publication {
   }
 
    /**
-   * Get methods
+   * Abstract&#x27;s methods section.
    * @return methods
   **/
-  @Schema(description = "")
+  @Schema(description = "Abstract's methods section.")
   public String getMethods() {
     return methods;
   }
@@ -310,10 +331,10 @@ public class Publication {
   }
 
    /**
-   * Get results
+   * Abstract&#x27;s results section.
    * @return results
   **/
-  @Schema(description = "")
+  @Schema(description = "Abstract's results section.")
   public String getResults() {
     return results;
   }
@@ -328,10 +349,10 @@ public class Publication {
   }
 
    /**
-   * Get conclusion
+   * Abstract&#x27;s conclusion section.
    * @return conclusion
   **/
-  @Schema(description = "")
+  @Schema(description = "Abstract's conclusion section.")
   public String getConclusion() {
     return conclusion;
   }
@@ -346,10 +367,10 @@ public class Publication {
   }
 
    /**
-   * Get conflicts
+   * Author&#x27;s conflicts of interest section.
    * @return conflicts
   **/
-  @Schema(description = "")
+  @Schema(description = "Author's conflicts of interest section.")
   public String getConflicts() {
     return conflicts;
   }
@@ -364,10 +385,10 @@ public class Publication {
   }
 
    /**
-   * Get fulltext
+   * Full text (if available).
    * @return fulltext
   **/
-  @Schema(description = "")
+  @Schema(description = "Full text (if available).")
   public String getFulltext() {
     return fulltext;
   }
@@ -382,10 +403,10 @@ public class Publication {
   }
 
    /**
-   * Get citation
+   * MLA formatted citation.
    * @return citation
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "MLA formatted citation.")
   public String getCitation() {
     return citation;
   }
@@ -400,10 +421,10 @@ public class Publication {
   }
 
    /**
-   * Get citationDate
+   * Article date used for citation
    * @return citationDate
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Article date used for citation")
   public OffsetDateTime getCitationDate() {
     return citationDate;
   }
@@ -418,10 +439,10 @@ public class Publication {
   }
 
    /**
-   * Get link
+   * Link to original source.
    * @return link
   **/
-  @Schema(description = "")
+  @Schema(description = "Link to original source.")
   public String getLink() {
     return link;
   }
@@ -444,10 +465,10 @@ public class Publication {
   }
 
    /**
-   * Get chemicals
+   * Chemicals or drugs referenced in this publication.
    * @return chemicals
   **/
-  @Schema(description = "")
+  @Schema(description = "Chemicals or drugs referenced in this publication.")
   public java.util.List<String> getChemicals() {
     return chemicals;
   }
@@ -522,10 +543,10 @@ public class Publication {
   }
 
    /**
-   * Get publicationType
+   * Publication types infered by MM.
    * @return publicationType
   **/
-  @Schema(description = "")
+  @Schema(description = "Publication types infered by MM.")
   public java.util.List<String> getPublicationType() {
     return publicationType;
   }
@@ -586,12 +607,12 @@ public class Publication {
     this.tags = tags;
   }
 
-  public Publication molecularAlterations(java.util.List<MolecularAlteration> molecularAlterations) {
+  public Publication molecularAlterations(java.util.List<ConceptAssociation> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
     return this;
   }
 
-  public Publication addMolecularAlterationsItem(MolecularAlteration molecularAlterationsItem) {
+  public Publication addMolecularAlterationsItem(ConceptAssociation molecularAlterationsItem) {
     if (this.molecularAlterations == null) {
       this.molecularAlterations = new java.util.ArrayList<>();
     }
@@ -604,11 +625,11 @@ public class Publication {
    * @return molecularAlterations
   **/
   @Schema(description = "Molecular concept associations established for this publication.")
-  public java.util.List<MolecularAlteration> getMolecularAlterations() {
+  public java.util.List<ConceptAssociation> getMolecularAlterations() {
     return molecularAlterations;
   }
 
-  public void setMolecularAlterations(java.util.List<MolecularAlteration> molecularAlterations) {
+  public void setMolecularAlterations(java.util.List<ConceptAssociation> molecularAlterations) {
     this.molecularAlterations = molecularAlterations;
   }
 
@@ -622,7 +643,8 @@ public class Publication {
       return false;
     }
     Publication publication = (Publication) o;
-    return Objects.equals(this.mboost, publication.mboost) &&
+    return Objects.equals(this._score, publication._score) &&
+        Objects.equals(this.mboost, publication.mboost) &&
         Objects.equals(this.id, publication.id) &&
         Objects.equals(this.pmid, publication.pmid) &&
         Objects.equals(this.doi, publication.doi) &&
@@ -651,7 +673,7 @@ public class Publication {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mboost, id, pmid, doi, source, journalName, journalISOAbbreviation, title, purpose, background, methods, results, conclusion, conflicts, fulltext, citation, citationDate, link, chemicals, keywords, extendedKeywords, publicationType, authors, tags, molecularAlterations);
+    return Objects.hash(_score, mboost, id, pmid, doi, source, journalName, journalISOAbbreviation, title, purpose, background, methods, results, conclusion, conflicts, fulltext, citation, citationDate, link, chemicals, keywords, extendedKeywords, publicationType, authors, tags, molecularAlterations);
   }
 
 
@@ -660,6 +682,7 @@ public class Publication {
     StringBuilder sb = new StringBuilder();
     sb.append("class Publication {\n");
     
+    sb.append("    _score: ").append(toIndentedString(_score)).append("\n");
     sb.append("    mboost: ").append(toIndentedString(mboost)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    pmid: ").append(toIndentedString(pmid)).append("\n");

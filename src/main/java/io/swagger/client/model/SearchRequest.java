@@ -40,49 +40,8 @@ public class SearchRequest {
   @SerializedName("caseId")
   private String caseId = null;
 
-  /**
-   * Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.
-   */
-  @JsonAdapter(ModeEnum.Adapter.class)
-  public enum ModeEnum {
-    CRITERIAUNMET("criteriaunmet"),
-    DISCOVERY("discovery");
-
-    private String value;
-
-    ModeEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static ModeEnum fromValue(String text) {
-      for (ModeEnum b : ModeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<ModeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ModeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ModeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ModeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }  @SerializedName("mode")
-  private ModeEnum mode = ModeEnum.DISCOVERY;
+  @SerializedName("tieringTemplate")
+  private String tieringTemplate = null;
 
   @SerializedName("start")
   private Integer start = null;
@@ -159,22 +118,22 @@ public class SearchRequest {
     this.caseId = caseId;
   }
 
-  public SearchRequest mode(ModeEnum mode) {
-    this.mode = mode;
+  public SearchRequest tieringTemplate(String tieringTemplate) {
+    this.tieringTemplate = tieringTemplate;
     return this;
   }
 
    /**
-   * Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.
-   * @return mode
+   * Applies to drug and assertion search.  Optionally supply the tiering template.
+   * @return tieringTemplate
   **/
-  @Schema(description = "Currently applies to drug search.  Supplying the mode of discovery will perform an associative search. These are not treatment recommendations and have no tiering associated with them. Supplying criteriaunmet performs an assertion guided search and returns drugs based on assertion evidence.")
-  public ModeEnum getMode() {
-    return mode;
+  @Schema(description = "Applies to drug and assertion search.  Optionally supply the tiering template.")
+  public String getTieringTemplate() {
+    return tieringTemplate;
   }
 
-  public void setMode(ModeEnum mode) {
-    this.mode = mode;
+  public void setTieringTemplate(String tieringTemplate) {
+    this.tieringTemplate = tieringTemplate;
   }
 
   public SearchRequest start(Integer start) {
@@ -332,7 +291,7 @@ public class SearchRequest {
     return Objects.equals(this.searchKey, searchRequest.searchKey) &&
         Objects.equals(this.institutionId, searchRequest.institutionId) &&
         Objects.equals(this.caseId, searchRequest.caseId) &&
-        Objects.equals(this.mode, searchRequest.mode) &&
+        Objects.equals(this.tieringTemplate, searchRequest.tieringTemplate) &&
         Objects.equals(this.start, searchRequest.start) &&
         Objects.equals(this.limit, searchRequest.limit) &&
         Objects.equals(this.fields, searchRequest.fields) &&
@@ -344,7 +303,7 @@ public class SearchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(searchKey, institutionId, caseId, mode, start, limit, fields, filters, geopoint, location, minShouldMatch);
+    return Objects.hash(searchKey, institutionId, caseId, tieringTemplate, start, limit, fields, filters, geopoint, location, minShouldMatch);
   }
 
 
@@ -356,7 +315,7 @@ public class SearchRequest {
     sb.append("    searchKey: ").append(toIndentedString(searchKey)).append("\n");
     sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
     sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    sb.append("    tieringTemplate: ").append(toIndentedString(tieringTemplate)).append("\n");
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    fields: ").append(toIndentedString(fields)).append("\n");

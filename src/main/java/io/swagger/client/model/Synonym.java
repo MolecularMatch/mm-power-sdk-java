@@ -36,10 +36,10 @@ public class Synonym {
   }
 
    /**
-   * Get name
+   * synonymous name.
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "synonymous name.")
   public String getName() {
     return name;
   }

@@ -31,7 +31,7 @@ public class AssertionClassifications {
   private String name = null;
 
   /**
-   * Gets or Sets classification
+   * Clinical actionability of mutation.
    */
   @JsonAdapter(ClassificationEnum.Adapter.class)
   public enum ClassificationEnum {
@@ -78,7 +78,7 @@ public class AssertionClassifications {
   private ClassificationEnum classification = null;
 
   /**
-   * Gets or Sets classificationOverride
+   * Manual override of classification.
    */
   @JsonAdapter(ClassificationOverrideEnum.Adapter.class)
   public enum ClassificationOverrideEnum {
@@ -130,10 +130,10 @@ public class AssertionClassifications {
   }
 
    /**
-   * Get name
+   * Mutation name.
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Mutation name.")
   public String getName() {
     return name;
   }
@@ -148,10 +148,10 @@ public class AssertionClassifications {
   }
 
    /**
-   * Get classification
+   * Clinical actionability of mutation.
    * @return classification
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Clinical actionability of mutation.")
   public ClassificationEnum getClassification() {
     return classification;
   }
@@ -166,10 +166,10 @@ public class AssertionClassifications {
   }
 
    /**
-   * Get classificationOverride
+   * Manual override of classification.
    * @return classificationOverride
   **/
-  @Schema(description = "")
+  @Schema(description = "Manual override of classification.")
   public ClassificationOverrideEnum getClassificationOverride() {
     return classificationOverride;
   }

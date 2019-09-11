@@ -31,7 +31,7 @@ public class AssertionSources {
   private String id = null;
 
   /**
-   * Gets or Sets type
+   * Type of clinical evidence associated with publication.
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
@@ -82,7 +82,7 @@ public class AssertionSources {
   private TypeEnum type = null;
 
   /**
-   * Gets or Sets subType
+   * A more specific sub type of clinical evidence associated with publication.
    */
   @JsonAdapter(SubTypeEnum.Adapter.class)
   public enum SubTypeEnum {
@@ -142,7 +142,7 @@ public class AssertionSources {
   private String trialPhase = null;
 
   /**
-   * Gets or Sets functionalConsequence
+   * Change to function of biomarker.
    */
   @JsonAdapter(FunctionalConsequenceEnum.Adapter.class)
   public enum FunctionalConsequenceEnum {
@@ -188,7 +188,7 @@ public class AssertionSources {
   private FunctionalConsequenceEnum functionalConsequence = null;
 
   /**
-   * Gets or Sets name
+   * Name of publication index if applicable.
    */
   @JsonAdapter(NameEnum.Adapter.class)
   public enum NameEnum {
@@ -248,10 +248,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get id
+   * Unique source identifier for this assertion.
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Unique source identifier for this assertion.")
   public String getId() {
     return id;
   }
@@ -266,10 +266,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get type
+   * Type of clinical evidence associated with publication.
    * @return type
   **/
-  @Schema(description = "")
+  @Schema(description = "Type of clinical evidence associated with publication.")
   public TypeEnum getType() {
     return type;
   }
@@ -284,10 +284,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get subType
+   * A more specific sub type of clinical evidence associated with publication.
    * @return subType
   **/
-  @Schema(description = "")
+  @Schema(description = "A more specific sub type of clinical evidence associated with publication.")
   public SubTypeEnum getSubType() {
     return subType;
   }
@@ -302,10 +302,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get pubId
+   * A publication identifier.
    * @return pubId
   **/
-  @Schema(description = "")
+  @Schema(description = "A publication identifier.")
   public String getPubId() {
     return pubId;
   }
@@ -320,10 +320,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get trialId
+   * A clinical trial identifier.
    * @return trialId
   **/
-  @Schema(description = "")
+  @Schema(description = "A clinical trial identifier.")
   public String getTrialId() {
     return trialId;
   }
@@ -338,10 +338,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get trialPhase
+   * A clinical trial phase.
    * @return trialPhase
   **/
-  @Schema(description = "")
+  @Schema(description = "A clinical trial phase.")
   public String getTrialPhase() {
     return trialPhase;
   }
@@ -356,10 +356,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get functionalConsequence
+   * Change to function of biomarker.
    * @return functionalConsequence
   **/
-  @Schema(description = "")
+  @Schema(description = "Change to function of biomarker.")
   public FunctionalConsequenceEnum getFunctionalConsequence() {
     return functionalConsequence;
   }
@@ -374,10 +374,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get name
+   * Name of publication index if applicable.
    * @return name
   **/
-  @Schema(description = "")
+  @Schema(description = "Name of publication index if applicable.")
   public NameEnum getName() {
     return name;
   }
@@ -392,10 +392,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get link
+   * A URL to publication if available.
    * @return link
   **/
-  @Schema(description = "")
+  @Schema(description = "A URL to publication if available.")
   public String getLink() {
     return link;
   }
@@ -410,10 +410,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get year
+   * Year of publication.
    * @return year
   **/
-  @Schema(description = "")
+  @Schema(description = "Year of publication.")
   public Integer getYear() {
     return year;
   }
@@ -428,10 +428,10 @@ public class AssertionSources {
   }
 
    /**
-   * Get trustRating
+   * A subjective assessment of evidence quality.
    * @return trustRating
   **/
-  @Schema(description = "")
+  @Schema(description = "A subjective assessment of evidence quality.")
   public Float getTrustRating() {
     return trustRating;
   }

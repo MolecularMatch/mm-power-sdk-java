@@ -3,17 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
-**subType** | [**SubTypeEnum**](#SubTypeEnum) |  |  [optional]
-**pubId** | **String** |  |  [optional]
-**trialId** | **String** |  |  [optional]
-**trialPhase** | **String** |  |  [optional]
-**functionalConsequence** | [**FunctionalConsequenceEnum**](#FunctionalConsequenceEnum) |  |  [optional]
-**name** | [**NameEnum**](#NameEnum) |  |  [optional]
-**link** | **String** |  |  [optional]
-**year** | **Integer** |  |  [optional]
-**trustRating** | **Float** |  |  [optional]
+**id** | **String** | Unique source identifier for this assertion. | 
+**type** | [**TypeEnum**](#TypeEnum) | Type of clinical evidence associated with publication. |  [optional]
+**subType** | [**SubTypeEnum**](#SubTypeEnum) | A more specific sub type of clinical evidence associated with publication. |  [optional]
+**pubId** | **String** | A publication identifier. |  [optional]
+**trialId** | **String** | A clinical trial identifier. |  [optional]
+**trialPhase** | **String** | A clinical trial phase. |  [optional]
+**functionalConsequence** | [**FunctionalConsequenceEnum**](#FunctionalConsequenceEnum) | Change to function of biomarker. |  [optional]
+**name** | [**NameEnum**](#NameEnum) | Name of publication index if applicable. |  [optional]
+**link** | **String** | A URL to publication if available. |  [optional]
+**year** | **Integer** | Year of publication. |  [optional]
+**trustRating** | **Float** | A subjective assessment of evidence quality. |  [optional]
 
 <a name="TypeEnum"></a>
 ## Enum: TypeEnum

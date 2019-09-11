@@ -51,10 +51,10 @@ public class AssertionPrevalence {
   }
 
    /**
-   * Get studyId
+   * A study identifier.
    * @return studyId
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "A study identifier.")
   public String getStudyId() {
     return studyId;
   }
@@ -69,10 +69,10 @@ public class AssertionPrevalence {
   }
 
    /**
-   * Get percent
+   * Ratio of people with variant within study population.
    * @return percent
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Ratio of people with variant within study population.")
   public Float getPercent() {
     return percent;
   }
@@ -87,10 +87,10 @@ public class AssertionPrevalence {
   }
 
    /**
-   * Get samples
+   * Number of samples with mutation within study.
    * @return samples
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Number of samples with mutation within study.")
   public Integer getSamples() {
     return samples;
   }
@@ -105,10 +105,10 @@ public class AssertionPrevalence {
   }
 
    /**
-   * Get count
+   * Number of occurrances of variant within study.
    * @return count
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Number of occurrances of variant within study.")
   public Integer getCount() {
     return count;
   }
@@ -123,10 +123,10 @@ public class AssertionPrevalence {
   }
 
    /**
-   * Get condition
+   * The condition associated with the study.
    * @return condition
   **/
-  @Schema(description = "")
+  @Schema(description = "The condition associated with the study.")
   public String getCondition() {
     return condition;
   }
@@ -141,10 +141,10 @@ public class AssertionPrevalence {
   }
 
    /**
-   * Get molecular
+   * The variant associated with the study.
    * @return molecular
   **/
-  @Schema(description = "")
+  @Schema(description = "The variant associated with the study.")
   public String getMolecular() {
     return molecular;
   }

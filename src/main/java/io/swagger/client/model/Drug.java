@@ -117,10 +117,10 @@ public class Drug {
   }
 
    /**
-   * indicator of the quality of the match.  Assertion based therapies will not contain a _score.
+   * indicator of the quality of the match.
    * @return _score
   **/
-  @Schema(description = "indicator of the quality of the match.  Assertion based therapies will not contain a _score.")
+  @Schema(description = "indicator of the quality of the match.")
   public Float getScore() {
     return _score;
   }
@@ -156,7 +156,7 @@ public class Drug {
    * unique identifier.
    * @return id
   **/
-  @Schema(required = true, description = "unique identifier.")
+  @Schema(description = "unique identifier.")
   public String getId() {
     return id;
   }
@@ -174,7 +174,7 @@ public class Drug {
    * The name of the drug.
    * @return name
   **/
-  @Schema(required = true, description = "The name of the drug.")
+  @Schema(description = "The name of the drug.")
   public String getName() {
     return name;
   }
@@ -246,7 +246,7 @@ public class Drug {
    * Indicates whether this drug has been approved by any regulating government.
    * @return approved
   **/
-  @Schema(required = true, description = "Indicates whether this drug has been approved by any regulating government.")
+  @Schema(description = "Indicates whether this drug has been approved by any regulating government.")
   public Boolean isApproved() {
     return approved;
   }
@@ -347,10 +347,10 @@ public class Drug {
   }
 
    /**
-   * Get drugclass
+   * The classes (pharmacological, treatment, chemical, etc.) of the drug inferred from the source or manually added.
    * @return drugclass
   **/
-  @Schema(description = "")
+  @Schema(description = "The classes (pharmacological, treatment, chemical, etc.) of the drug inferred from the source or manually added.")
   public java.util.List<DrugDrugclass> getDrugclass() {
     return drugclass;
   }
@@ -399,10 +399,10 @@ public class Drug {
   }
 
    /**
-   * Get brands
+   * The manufacturer specific rendition of this drug.
    * @return brands
   **/
-  @Schema(description = "")
+  @Schema(description = "The manufacturer specific rendition of this drug.")
   public java.util.List<DrugBrands> getBrands() {
     return brands;
   }

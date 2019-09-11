@@ -5,13 +5,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_score** | **Float** | indicator of the quality of the match. |  [optional]
 **mboost** | **Float** | intrinsic boost to the record. |  [optional]
-**id** | **String** | unique identifier. | 
+**id** | **String** | unique identifier. |  [optional]
 **pmid** | **String** | PubMed ID. |  [optional]
 **doi** | **String** | Digital Object Identifier (permanent link at doi.org/[doi]). |  [optional]
-**source** | **String** | data source of this record | 
-**journalName** | **String** | Journal name. | 
+**source** | **String** | data source of this record |  [optional]
+**journalName** | **String** | Journal name. |  [optional]
 **journalISOAbbreviation** | **String** |  |  [optional]
-**title** | **String** | Official title for the publication. | 
+**title** | **String** | Official title for the publication. |  [optional]
 **purpose** | **String** | Abstract&#x27;s purpose section. |  [optional]
 **background** | **String** | Abstract&#x27;s background section. |  [optional]
 **methods** | **String** | Abstract&#x27;s methods section. |  [optional]
@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **conclusion** | **String** | Abstract&#x27;s conclusion section. |  [optional]
 **conflicts** | **String** | Author&#x27;s conflicts of interest section. |  [optional]
 **fulltext** | **String** | Full text (if available). |  [optional]
-**citation** | **String** | MLA formatted citation. | 
-**citationDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | Article date used for citation | 
+**citation** | **String** | MLA formatted citation. |  [optional]
+**citationDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | Article date used for citation |  [optional]
 **link** | **String** | Link to original source. |  [optional]
 **chemicals** | **java.util.List&lt;String&gt;** | Chemicals or drugs referenced in this publication. |  [optional]
 **keywords** | **java.util.List&lt;String&gt;** |  |  [optional]

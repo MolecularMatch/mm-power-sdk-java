@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | 
-**classification** | [**ClassificationEnum**](#ClassificationEnum) |  | 
-**classificationOverride** | [**ClassificationOverrideEnum**](#ClassificationOverrideEnum) |  |  [optional]
+**name** | **String** | Mutation name. | 
+**classification** | [**ClassificationEnum**](#ClassificationEnum) | Clinical actionability of mutation. | 
+**classificationOverride** | [**ClassificationOverrideEnum**](#ClassificationOverrideEnum) | Manual override of classification. |  [optional]
 
 <a name="ClassificationEnum"></a>
 ## Enum: ClassificationEnum

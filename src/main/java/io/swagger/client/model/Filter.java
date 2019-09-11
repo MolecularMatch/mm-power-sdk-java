@@ -123,7 +123,7 @@ public class Filter {
       }
     }
   }  @SerializedName("distanceUOM")
-  private DistanceUOMEnum distanceUOM = DistanceUOMEnum.MI;
+  private DistanceUOMEnum distanceUOM = null;
 
   @SerializedName("postalCode")
   private String postalCode = null;

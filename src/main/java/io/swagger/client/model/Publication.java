@@ -154,7 +154,7 @@ public class Publication {
    * unique identifier.
    * @return id
   **/
-  @Schema(required = true, description = "unique identifier.")
+  @Schema(description = "unique identifier.")
   public String getId() {
     return id;
   }
@@ -208,7 +208,7 @@ public class Publication {
    * data source of this record
    * @return source
   **/
-  @Schema(required = true, description = "data source of this record")
+  @Schema(description = "data source of this record")
   public String getSource() {
     return source;
   }
@@ -226,7 +226,7 @@ public class Publication {
    * Journal name.
    * @return journalName
   **/
-  @Schema(required = true, description = "Journal name.")
+  @Schema(description = "Journal name.")
   public String getJournalName() {
     return journalName;
   }
@@ -262,7 +262,7 @@ public class Publication {
    * Official title for the publication.
    * @return title
   **/
-  @Schema(required = true, description = "Official title for the publication.")
+  @Schema(description = "Official title for the publication.")
   public String getTitle() {
     return title;
   }
@@ -406,7 +406,7 @@ public class Publication {
    * MLA formatted citation.
    * @return citation
   **/
-  @Schema(required = true, description = "MLA formatted citation.")
+  @Schema(description = "MLA formatted citation.")
   public String getCitation() {
     return citation;
   }
@@ -424,7 +424,7 @@ public class Publication {
    * Article date used for citation
    * @return citationDate
   **/
-  @Schema(required = true, description = "Article date used for citation")
+  @Schema(description = "Article date used for citation")
   public OffsetDateTime getCitationDate() {
     return citationDate;
   }

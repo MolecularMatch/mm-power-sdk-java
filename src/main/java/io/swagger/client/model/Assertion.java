@@ -114,7 +114,7 @@ public class Assertion {
   private String regulatoryBodyApprovedBy = null;
 
   /**
-   * Gets or Sets direction
+   * Indicates whether assertion supports or does not support the therapy.
    */
   @JsonAdapter(DirectionEnum.Adapter.class)
   public enum DirectionEnum {
@@ -158,7 +158,7 @@ public class Assertion {
   private DirectionEnum direction = null;
 
   /**
-   * Gets or Sets guidelineBody
+   * A professional committee recommendation.
    */
   @JsonAdapter(GuidelineBodyEnum.Adapter.class)
   public enum GuidelineBodyEnum {
@@ -209,7 +209,7 @@ public class Assertion {
   private String guidelineVersion = null;
 
   /**
-   * Gets or Sets clinicalSignificance
+   * Utility of biomarker in clinical setting.
    */
   @JsonAdapter(ClinicalSignificanceEnum.Adapter.class)
   public enum ClinicalSignificanceEnum {
@@ -260,7 +260,7 @@ public class Assertion {
   private ClinicalSignificanceEnum clinicalSignificance = null;
 
   /**
-   * Gets or Sets biomarkerClass
+   * Indicator of response to therapy
    */
   @JsonAdapter(BiomarkerClassEnum.Adapter.class)
   public enum BiomarkerClassEnum {
@@ -366,7 +366,7 @@ public class Assertion {
    * Get id
    * @return id
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getId() {
     return id;
   }
@@ -389,10 +389,10 @@ public class Assertion {
   }
 
    /**
-   * Get externalId
+   * Optional institution specific identifier.
    * @return externalId
   **/
-  @Schema(description = "")
+  @Schema(description = "Optional institution specific identifier.")
   public java.util.List<String> getExternalId() {
     return externalId;
   }
@@ -407,10 +407,10 @@ public class Assertion {
   }
 
    /**
-   * Get uniqueKey
+   * Unique identifer inclusive of version.
    * @return uniqueKey
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "Unique identifer inclusive of version.")
   public String getUniqueKey() {
     return uniqueKey;
   }
@@ -425,10 +425,10 @@ public class Assertion {
   }
 
    /**
-   * Get hashKey
+   * Static identifier agnostic of version.
    * @return hashKey
   **/
-  @Schema(description = "")
+  @Schema(description = "Static identifier agnostic of version.")
   public String getHashKey() {
     return hashKey;
   }
@@ -443,10 +443,10 @@ public class Assertion {
   }
 
    /**
-   * Get description
+   * Detailed description of the assertion.
    * @return description
   **/
-  @Schema(description = "")
+  @Schema(description = "Detailed description of the assertion.")
   public String getDescription() {
     return description;
   }
@@ -551,10 +551,10 @@ public class Assertion {
   }
 
    /**
-   * Get regulatoryBodyApprovedBy
+   * Governing body granting approval.
    * @return regulatoryBodyApprovedBy
   **/
-  @Schema(description = "")
+  @Schema(description = "Governing body granting approval.")
   public String getRegulatoryBodyApprovedBy() {
     return regulatoryBodyApprovedBy;
   }
@@ -569,10 +569,10 @@ public class Assertion {
   }
 
    /**
-   * Get direction
+   * Indicates whether assertion supports or does not support the therapy.
    * @return direction
   **/
-  @Schema(description = "")
+  @Schema(description = "Indicates whether assertion supports or does not support the therapy.")
   public DirectionEnum getDirection() {
     return direction;
   }
@@ -587,10 +587,10 @@ public class Assertion {
   }
 
    /**
-   * Get guidelineBody
+   * A professional committee recommendation.
    * @return guidelineBody
   **/
-  @Schema(description = "")
+  @Schema(description = "A professional committee recommendation.")
   public GuidelineBodyEnum getGuidelineBody() {
     return guidelineBody;
   }
@@ -605,10 +605,10 @@ public class Assertion {
   }
 
    /**
-   * Get guidelineVersion
+   * Release version of professional committee recommendation.
    * @return guidelineVersion
   **/
-  @Schema(description = "")
+  @Schema(description = "Release version of professional committee recommendation.")
   public String getGuidelineVersion() {
     return guidelineVersion;
   }
@@ -623,10 +623,10 @@ public class Assertion {
   }
 
    /**
-   * Get clinicalSignificance
+   * Utility of biomarker in clinical setting.
    * @return clinicalSignificance
   **/
-  @Schema(description = "")
+  @Schema(description = "Utility of biomarker in clinical setting.")
   public ClinicalSignificanceEnum getClinicalSignificance() {
     return clinicalSignificance;
   }
@@ -641,10 +641,10 @@ public class Assertion {
   }
 
    /**
-   * Get biomarkerClass
+   * Indicator of response to therapy
    * @return biomarkerClass
   **/
-  @Schema(description = "")
+  @Schema(description = "Indicator of response to therapy")
   public BiomarkerClassEnum getBiomarkerClass() {
     return biomarkerClass;
   }
@@ -659,10 +659,10 @@ public class Assertion {
   }
 
    /**
-   * Get expression
+   * mathematical expression characterizing the clinical scope of the assertion.
    * @return expression
   **/
-  @Schema(description = "")
+  @Schema(description = "mathematical expression characterizing the clinical scope of the assertion.")
   public String getExpression() {
     return expression;
   }
@@ -903,10 +903,10 @@ public class Assertion {
   }
 
    /**
-   * Get variantInfo
+   * Genomic information pertaining to variant.
    * @return variantInfo
   **/
-  @Schema(description = "")
+  @Schema(description = "Genomic information pertaining to variant.")
   public java.util.List<VariantInfo> getVariantInfo() {
     return variantInfo;
   }

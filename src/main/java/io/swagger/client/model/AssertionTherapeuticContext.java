@@ -39,10 +39,10 @@ public class AssertionTherapeuticContext {
   }
 
    /**
-   * Get name
+   * Drug name.
    * @return name
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "Drug name.")
   public String getName() {
     return name;
   }

@@ -39,10 +39,10 @@ public class DrugDrugclass {
   }
 
    /**
-   * The classes (pharmacological, treatment, chemical, etc.) of the drug inferred from the source or manually added
+   * The target class of the drug.
    * @return name
   **/
-  @Schema(required = true, description = "The classes (pharmacological, treatment, chemical, etc.) of the drug inferred from the source or manually added")
+  @Schema(required = true, description = "The target class of the drug.")
   public String getName() {
     return name;
   }
@@ -57,10 +57,10 @@ public class DrugDrugclass {
   }
 
    /**
-   * Get source
+   * The data source where this information was obtained.
    * @return source
   **/
-  @Schema(required = true, description = "")
+  @Schema(required = true, description = "The data source where this information was obtained.")
   public String getSource() {
     return source;
   }

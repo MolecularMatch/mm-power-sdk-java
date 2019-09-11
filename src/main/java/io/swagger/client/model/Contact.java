@@ -114,10 +114,10 @@ public class Contact {
   }
 
    /**
-   * Get degrees
+   * Degress earned by the contact person.
    * @return degrees
   **/
-  @Schema(description = "")
+  @Schema(description = "Degress earned by the contact person.")
   public String getDegrees() {
     return degrees;
   }

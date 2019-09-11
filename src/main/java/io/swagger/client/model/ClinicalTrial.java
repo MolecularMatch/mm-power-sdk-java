@@ -254,7 +254,7 @@ public class ClinicalTrial {
    * unique identifier.
    * @return id
   **/
-  @Schema(required = true, description = "unique identifier.")
+  @Schema(description = "unique identifier.")
   public String getId() {
     return id;
   }
@@ -272,7 +272,7 @@ public class ClinicalTrial {
    * native data source of this record
    * @return source
   **/
-  @Schema(required = true, description = "native data source of this record")
+  @Schema(description = "native data source of this record")
   public String getSource() {
     return source;
   }
@@ -822,7 +822,7 @@ public class ClinicalTrial {
    * The numerical value, if any, for the minimum age a potential participant must meet to be eligible for the clinical study.
    * @return minAge
   **/
-  @Schema(required = true, description = "The numerical value, if any, for the minimum age a potential participant must meet to be eligible for the clinical study.")
+  @Schema(description = "The numerical value, if any, for the minimum age a potential participant must meet to be eligible for the clinical study.")
   public Float getMinAge() {
     return minAge;
   }
@@ -840,7 +840,7 @@ public class ClinicalTrial {
    * The numerical value, if any, for the maximum age a potential participant can be to be eligible for the clinical study.
    * @return maxAge
   **/
-  @Schema(required = true, description = "The numerical value, if any, for the maximum age a potential participant can be to be eligible for the clinical study.")
+  @Schema(description = "The numerical value, if any, for the maximum age a potential participant can be to be eligible for the clinical study.")
   public Float getMaxAge() {
     return maxAge;
   }

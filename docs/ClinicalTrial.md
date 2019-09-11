@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **_score** | **Float** | indicator of the quality of the match. |  [optional]
 **mboost** | **Float** | intrinsic boost to the record. |  [optional]
 **importDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | date this record was imported into the MolecularMatch database. |  [optional]
-**id** | **String** | unique identifier. | 
-**source** | **String** | native data source of this record | 
+**id** | **String** | unique identifier. |  [optional]
+**source** | **String** | native data source of this record |  [optional]
 **briefTitle** | **String** | A short title of the clinical study written in language intended for the lay public. The title should include, where possible, information on the participants, condition being evaluated, and intervention(s) studied. |  [optional]
 **patientTitle** | **String** | Patient friendly title for the clinical trial. |  [optional]
 **title** | **String** | Official title for the clinical trial. |  [optional]
@@ -34,8 +34,8 @@ Name | Type | Description | Notes
 **otherOutcomes** | [**java.util.List&lt;Outcome&gt;**](Outcome.md) |  |  [optional]
 **eligibility** | [**Eligibility**](Eligibility.md) |  |  [optional]
 **enrollment** | **Integer** | The estimated total number of participants to be enrolled (target number) or the actual total number of participants that are enrolled in the clinical study. |  [optional]
-**minAge** | **Float** | The numerical value, if any, for the minimum age a potential participant must meet to be eligible for the clinical study. | 
-**maxAge** | **Float** | The numerical value, if any, for the maximum age a potential participant can be to be eligible for the clinical study. | 
+**minAge** | **Float** | The numerical value, if any, for the minimum age a potential participant must meet to be eligible for the clinical study. |  [optional]
+**maxAge** | **Float** | The numerical value, if any, for the maximum age a potential participant can be to be eligible for the clinical study. |  [optional]
 **gender** | **java.util.List&lt;String&gt;** | The sex and, if applicable, gender of the participants eligible to participate in the clinical study. |  [optional]
 **overallOfficial** | [**java.util.List&lt;Contact&gt;**](Contact.md) | Person responsible for the overall scientific leadership of the protocol, including study principal investigator. |  [optional]
 **overallContact** | [**Contact**](Contact.md) |  |  [optional]

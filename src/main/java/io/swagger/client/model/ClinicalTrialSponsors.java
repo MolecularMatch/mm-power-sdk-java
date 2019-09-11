@@ -66,10 +66,10 @@ public class ClinicalTrialSponsors {
   }
 
    /**
-   * Get collaborator
+   * An organization other than the sponsor that provides support for a clinical study. This support may include activities related to funding, design, implementation, data analysis, or reporting.
    * @return collaborator
   **/
-  @Schema(description = "")
+  @Schema(description = "An organization other than the sponsor that provides support for a clinical study. This support may include activities related to funding, design, implementation, data analysis, or reporting.")
   public java.util.List<Agency> getCollaborator() {
     return collaborator;
   }

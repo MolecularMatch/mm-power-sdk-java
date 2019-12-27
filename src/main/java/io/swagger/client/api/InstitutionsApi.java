@@ -542,13 +542,14 @@ public class InstitutionsApi {
     }
     /**
      * Build call for postInstitution
+     * @param body Institution object to send to MolecularMatch for processing (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postInstitutionCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call postInstitutionCall(Institution body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
         
         // create path and map variables
         String localVarPath = "/institution";
@@ -567,7 +568,7 @@ public class InstitutionsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -589,9 +590,13 @@ public class InstitutionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postInstitutionValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postInstitutionValidateBeforeCall(Institution body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling postInstitution(Async)");
+        }
         
-        com.squareup.okhttp.Call call = postInstitutionCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postInstitutionCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -603,22 +608,24 @@ public class InstitutionsApi {
     /**
      * Create an institution
      * 
+     * @param body Institution object to send to MolecularMatch for processing (required)
      * @return Institution
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Institution postInstitution() throws ApiException {
-        ApiResponse<Institution> resp = postInstitutionWithHttpInfo();
+    public Institution postInstitution(Institution body) throws ApiException {
+        ApiResponse<Institution> resp = postInstitutionWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Create an institution
      * 
+     * @param body Institution object to send to MolecularMatch for processing (required)
      * @return ApiResponse&lt;Institution&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Institution> postInstitutionWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = postInstitutionValidateBeforeCall(null, null);
+    public ApiResponse<Institution> postInstitutionWithHttpInfo(Institution body) throws ApiException {
+        com.squareup.okhttp.Call call = postInstitutionValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<Institution>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -626,11 +633,12 @@ public class InstitutionsApi {
     /**
      * Create an institution (asynchronously)
      * 
+     * @param body Institution object to send to MolecularMatch for processing (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postInstitutionAsync(final ApiCallback<Institution> callback) throws ApiException {
+    public com.squareup.okhttp.Call postInstitutionAsync(Institution body, final ApiCallback<Institution> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -651,7 +659,7 @@ public class InstitutionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = postInstitutionValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postInstitutionValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Institution>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

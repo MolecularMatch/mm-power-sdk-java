@@ -95,7 +95,8 @@ public class InstitutionsApiTest {
      */
     @Test
     public void postInstitutionTest() throws ApiException {
-        Institution response = api.postInstitution();
+        Institution body = null;
+        Institution response = api.postInstitution(body);
 
         // TODO: test validations
     }

@@ -207,7 +207,7 @@ This endpoint does not need any parameter.
 
 <a name="postInstitution"></a>
 # **postInstitution**
-> Institution postInstitution()
+> Institution postInstitution(body)
 
 Create an institution
 
@@ -224,8 +224,9 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 InstitutionsApi apiInstance = new InstitutionsApi();
+Institution body = new Institution(); // Institution | Institution object to send to MolecularMatch for processing
 try {
-    Institution result = apiInstance.postInstitution();
+    Institution result = apiInstance.postInstitution(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstitutionsApi#postInstitution");
@@ -234,7 +235,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Institution**](Institution.md)| Institution object to send to MolecularMatch for processing |
 
 ### Return type
 
@@ -246,7 +250,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="putInstitution"></a>

@@ -267,7 +267,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#institutionpost">institutionPost</a></li>
+    <li class="toctree-l2"><a href="#getinstitutions">getInstitutions</a></li>
     
         <ul>
         
@@ -282,7 +282,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#institutionsget">institutionsGet</a></li>
+    <li class="toctree-l2"><a href="#postinstitution">postInstitution</a></li>
     
         <ul>
         
@@ -484,14 +484,14 @@
 <td>Get an institution record&#x27;s status</td>
 </tr>
 <tr>
-<td><a href="./#institutionPost"><strong>institutionPost</strong></a></td>
-<td><strong>POST</strong> /institution</td>
-<td>Create an institution</td>
-</tr>
-<tr>
-<td><a href="./#institutionsGet"><strong>institutionsGet</strong></a></td>
+<td><a href="./#getInstitutions"><strong>getInstitutions</strong></a></td>
 <td><strong>GET</strong> /institutions</td>
 <td>Get a paginated list of institutions</td>
+</tr>
+<tr>
+<td><a href="./#postInstitution"><strong>postInstitution</strong></a></td>
+<td><strong>POST</strong> /institution</td>
+<td>Create an institution</td>
 </tr>
 <tr>
 <td><a href="./#putInstitution"><strong>putInstitution</strong></a></td>
@@ -665,12 +665,12 @@ try {
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>
 </ul>
-<p><a name="institutionPost"></a></p>
-<h1 id="institutionpost"><strong>institutionPost</strong></h1>
+<p><a name="getInstitutions"></a></p>
+<h1 id="getinstitutions"><strong>getInstitutions</strong></h1>
 <blockquote>
-<p>Institution institutionPost()</p>
+<p>Institution getInstitutions()</p>
 </blockquote>
-<p>Create an institution</p>
+<p>Get a paginated list of institutions</p>
 <h3 id="example_3">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
@@ -684,10 +684,10 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 InstitutionsApi apiInstance = new InstitutionsApi();
 try {
-    Institution result = apiInstance.institutionPost();
+    Institution result = apiInstance.getInstitutions();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println(&quot;Exception when calling InstitutionsApi#institutionPost&quot;);
+    System.err.println(&quot;Exception when calling InstitutionsApi#getInstitutions&quot;);
     e.printStackTrace();
 }
 </code></pre>
@@ -701,12 +701,12 @@ try {
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>
 </ul>
-<p><a name="institutionsGet"></a></p>
-<h1 id="institutionsget"><strong>institutionsGet</strong></h1>
+<p><a name="postInstitution"></a></p>
+<h1 id="postinstitution"><strong>postInstitution</strong></h1>
 <blockquote>
-<p>Institution institutionsGet()</p>
+<p>Institution postInstitution()</p>
 </blockquote>
-<p>Get a paginated list of institutions</p>
+<p>Create an institution</p>
 <h3 id="example_4">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
@@ -720,10 +720,10 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 InstitutionsApi apiInstance = new InstitutionsApi();
 try {
-    Institution result = apiInstance.institutionsGet();
+    Institution result = apiInstance.postInstitution();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println(&quot;Exception when calling InstitutionsApi#institutionsGet&quot;);
+    System.err.println(&quot;Exception when calling InstitutionsApi#postInstitution&quot;);
     e.printStackTrace();
 }
 </code></pre>

@@ -68,6 +68,9 @@ public class Facility {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("link")
+  private String link = null;
+
   @SerializedName("first_name")
   private String firstName = null;
 
@@ -351,6 +354,24 @@ public class Facility {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public Facility link(String link) {
+    this.link = link;
+    return this;
+  }
+
+   /**
+   * Country (competent authority) specific link (available for EU trials only)
+   * @return link
+  **/
+  @Schema(description = "Country (competent authority) specific link (available for EU trials only)")
+  public String getLink() {
+    return link;
+  }
+
+  public void setLink(String link) {
+    this.link = link;
   }
 
   public Facility firstName(String firstName) {
@@ -690,6 +711,7 @@ public class Facility {
         Objects.equals(this.lon, facility.lon) &&
         Objects.equals(this.geo, facility.geo) &&
         Objects.equals(this.status, facility.status) &&
+        Objects.equals(this.link, facility.link) &&
         Objects.equals(this.firstName, facility.firstName) &&
         Objects.equals(this.middleName, facility.middleName) &&
         Objects.equals(this.lastName, facility.lastName) &&
@@ -711,7 +733,7 @@ public class Facility {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, street, number, country, name, poBox, city, state, zip, lat, lon, geo, status, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, distance, isInInstitution, tags);
+    return Objects.hash(id, street, number, country, name, poBox, city, state, zip, lat, lon, geo, status, link, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, distance, isInInstitution, tags);
   }
 
 
@@ -733,6 +755,7 @@ public class Facility {
     sb.append("    lon: ").append(toIndentedString(lon)).append("\n");
     sb.append("    geo: ").append(toIndentedString(geo)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");

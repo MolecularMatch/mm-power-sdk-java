@@ -221,7 +221,10 @@ public class Assertion {
     RESISTANT("resistant"),
     INTERMEDIATE("intermediate"),
     ADVERSE_RESPONSE("adverse_response"),
-    PATHOGENIC("pathogenic");
+    PATHOGENIC("pathogenic"),
+    NOT_IMPLICATED("not_implicated"),
+    GAIN_OF_FUNCTION("gain_of_function"),
+    LOSS_OF_FUNCTION("loss_of_function");
 
     private String value;
 
@@ -268,7 +271,8 @@ public class Assertion {
     DIAGNOSTIC("diagnostic"),
     PROGNOSTIC("prognostic"),
     UNKNOWN("unknown"),
-    PREDISPOSING("predisposing");
+    PREDISPOSING("predisposing"),
+    FUNCTIONAL("functional");
 
     private String value;
 

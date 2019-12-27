@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **results** | **String** | Abstract&#x27;s results section. |  [optional]
 **conclusion** | **String** | Abstract&#x27;s conclusion section. |  [optional]
 **conflicts** | **String** | Author&#x27;s conflicts of interest section. |  [optional]
-**fulltext** | **String** | Full text (if available). |  [optional]
 **citation** | **String** | MLA formatted citation. |  [optional]
 **citationDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | Article date used for citation |  [optional]
 **link** | **String** | Link to original source. |  [optional]

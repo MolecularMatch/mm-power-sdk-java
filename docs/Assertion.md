@@ -72,6 +72,9 @@ RESISTANT | &quot;resistant&quot;
 INTERMEDIATE | &quot;intermediate&quot;
 ADVERSE_RESPONSE | &quot;adverse_response&quot;
 PATHOGENIC | &quot;pathogenic&quot;
+NOT_IMPLICATED | &quot;not_implicated&quot;
+GAIN_OF_FUNCTION | &quot;gain_of_function&quot;
+LOSS_OF_FUNCTION | &quot;loss_of_function&quot;
 
 <a name="BiomarkerClassEnum"></a>
 ## Enum: BiomarkerClassEnum
@@ -82,3 +85,4 @@ DIAGNOSTIC | &quot;diagnostic&quot;
 PROGNOSTIC | &quot;prognostic&quot;
 UNKNOWN | &quot;unknown&quot;
 PREDISPOSING | &quot;predisposing&quot;
+FUNCTIONAL | &quot;functional&quot;

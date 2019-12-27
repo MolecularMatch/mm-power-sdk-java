@@ -76,9 +76,6 @@ public class Publication {
   @SerializedName("conflicts")
   private String conflicts = null;
 
-  @SerializedName("fulltext")
-  private String fulltext = null;
-
   @SerializedName("citation")
   private String citation = null;
 
@@ -379,24 +376,6 @@ public class Publication {
     this.conflicts = conflicts;
   }
 
-  public Publication fulltext(String fulltext) {
-    this.fulltext = fulltext;
-    return this;
-  }
-
-   /**
-   * Full text (if available).
-   * @return fulltext
-  **/
-  @Schema(description = "Full text (if available).")
-  public String getFulltext() {
-    return fulltext;
-  }
-
-  public void setFulltext(String fulltext) {
-    this.fulltext = fulltext;
-  }
-
   public Publication citation(String citation) {
     this.citation = citation;
     return this;
@@ -658,7 +637,6 @@ public class Publication {
         Objects.equals(this.results, publication.results) &&
         Objects.equals(this.conclusion, publication.conclusion) &&
         Objects.equals(this.conflicts, publication.conflicts) &&
-        Objects.equals(this.fulltext, publication.fulltext) &&
         Objects.equals(this.citation, publication.citation) &&
         Objects.equals(this.citationDate, publication.citationDate) &&
         Objects.equals(this.link, publication.link) &&
@@ -673,7 +651,7 @@ public class Publication {
 
   @Override
   public int hashCode() {
-    return Objects.hash(_score, mboost, id, pmid, doi, source, journalName, journalISOAbbreviation, title, purpose, background, methods, results, conclusion, conflicts, fulltext, citation, citationDate, link, chemicals, keywords, extendedKeywords, publicationType, authors, tags, molecularAlterations);
+    return Objects.hash(_score, mboost, id, pmid, doi, source, journalName, journalISOAbbreviation, title, purpose, background, methods, results, conclusion, conflicts, citation, citationDate, link, chemicals, keywords, extendedKeywords, publicationType, authors, tags, molecularAlterations);
   }
 
 
@@ -697,7 +675,6 @@ public class Publication {
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    conclusion: ").append(toIndentedString(conclusion)).append("\n");
     sb.append("    conflicts: ").append(toIndentedString(conflicts)).append("\n");
-    sb.append("    fulltext: ").append(toIndentedString(fulltext)).append("\n");
     sb.append("    citation: ").append(toIndentedString(citation)).append("\n");
     sb.append("    citationDate: ").append(toIndentedString(citationDate)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");

@@ -139,8 +139,8 @@ Class | Method | HTTP request | Description
 *InstitutionsApi* | [**deleteInstitution**](docs/InstitutionsApi.md#deleteInstitution) | **DELETE** /institution/{id} | Delete an institution
 *InstitutionsApi* | [**getInstitution**](docs/InstitutionsApi.md#getInstitution) | **GET** /institution/{id} | Get an institution
 *InstitutionsApi* | [**getInstitutionStatus**](docs/InstitutionsApi.md#getInstitutionStatus) | **GET** /institution/{id}/status | Get an institution record&#x27;s status
-*InstitutionsApi* | [**institutionPost**](docs/InstitutionsApi.md#institutionPost) | **POST** /institution | Create an institution
-*InstitutionsApi* | [**institutionsGet**](docs/InstitutionsApi.md#institutionsGet) | **GET** /institutions | Get a paginated list of institutions
+*InstitutionsApi* | [**getInstitutions**](docs/InstitutionsApi.md#getInstitutions) | **GET** /institutions | Get a paginated list of institutions
+*InstitutionsApi* | [**postInstitution**](docs/InstitutionsApi.md#postInstitution) | **POST** /institution | Create an institution
 *InstitutionsApi* | [**putInstitution**](docs/InstitutionsApi.md#putInstitution) | **PUT** /institution/{id} | Put/Update an institution
 *PublicationApi* | [**countPublications**](docs/PublicationApi.md#countPublications) | **POST** /publication/count | Get the count of Publications matching a searchRequest
 *PublicationApi* | [**getPublication**](docs/PublicationApi.md#getPublication) | **GET** /publication/{id} | Get a Publication

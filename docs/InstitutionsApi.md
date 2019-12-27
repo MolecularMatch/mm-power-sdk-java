@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**deleteInstitution**](InstitutionsApi.md#deleteInstitution) | **DELETE** /institution/{id} | Delete an institution
 [**getInstitution**](InstitutionsApi.md#getInstitution) | **GET** /institution/{id} | Get an institution
 [**getInstitutionStatus**](InstitutionsApi.md#getInstitutionStatus) | **GET** /institution/{id}/status | Get an institution record&#x27;s status
-[**institutionPost**](InstitutionsApi.md#institutionPost) | **POST** /institution | Create an institution
-[**institutionsGet**](InstitutionsApi.md#institutionsGet) | **GET** /institutions | Get a paginated list of institutions
+[**getInstitutions**](InstitutionsApi.md#getInstitutions) | **GET** /institutions | Get a paginated list of institutions
+[**postInstitution**](InstitutionsApi.md#postInstitution) | **POST** /institution | Create an institution
 [**putInstitution**](InstitutionsApi.md#putInstitution) | **PUT** /institution/{id} | Put/Update an institution
 
 <a name="deleteInstitution"></a>
@@ -161,11 +161,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="institutionPost"></a>
-# **institutionPost**
-> Institution institutionPost()
+<a name="getInstitutions"></a>
+# **getInstitutions**
+> Institution getInstitutions()
 
-Create an institution
+Get a paginated list of institutions
 
 ### Example
 ```java
@@ -181,10 +181,10 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 InstitutionsApi apiInstance = new InstitutionsApi();
 try {
-    Institution result = apiInstance.institutionPost();
+    Institution result = apiInstance.getInstitutions();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling InstitutionsApi#institutionPost");
+    System.err.println("Exception when calling InstitutionsApi#getInstitutions");
     e.printStackTrace();
 }
 ```
@@ -205,11 +205,11 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="institutionsGet"></a>
-# **institutionsGet**
-> Institution institutionsGet()
+<a name="postInstitution"></a>
+# **postInstitution**
+> Institution postInstitution()
 
-Get a paginated list of institutions
+Create an institution
 
 ### Example
 ```java
@@ -225,10 +225,10 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 InstitutionsApi apiInstance = new InstitutionsApi();
 try {
-    Institution result = apiInstance.institutionsGet();
+    Institution result = apiInstance.postInstitution();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling InstitutionsApi#institutionsGet");
+    System.err.println("Exception when calling InstitutionsApi#postInstitution");
     e.printStackTrace();
 }
 ```

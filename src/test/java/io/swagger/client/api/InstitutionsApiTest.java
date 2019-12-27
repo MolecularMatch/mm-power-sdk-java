@@ -72,20 +72,6 @@ public class InstitutionsApiTest {
         // TODO: test validations
     }
     /**
-     * Create an institution
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void institutionPostTest() throws ApiException {
-        Institution response = api.institutionPost();
-
-        // TODO: test validations
-    }
-    /**
      * Get a paginated list of institutions
      *
      * 
@@ -94,8 +80,22 @@ public class InstitutionsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void institutionsGetTest() throws ApiException {
-        Institution response = api.institutionsGet();
+    public void getInstitutionsTest() throws ApiException {
+        Institution response = api.getInstitutions();
+
+        // TODO: test validations
+    }
+    /**
+     * Create an institution
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postInstitutionTest() throws ApiException {
+        Institution response = api.postInstitution();
 
         // TODO: test validations
     }

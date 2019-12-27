@@ -704,7 +704,7 @@ try {
 <p><a name="postInstitution"></a></p>
 <h1 id="postinstitution"><strong>postInstitution</strong></h1>
 <blockquote>
-<p>Institution postInstitution()</p>
+<p>Institution postInstitution(body)</p>
 </blockquote>
 <p>Create an institution</p>
 <h3 id="example_4">Example</h3>
@@ -719,8 +719,9 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 InstitutionsApi apiInstance = new InstitutionsApi();
+Institution body = new Institution(); // Institution | Institution object to send to MolecularMatch for processing
 try {
-    Institution result = apiInstance.postInstitution();
+    Institution result = apiInstance.postInstitution(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println(&quot;Exception when calling InstitutionsApi#postInstitution&quot;);
@@ -729,12 +730,29 @@ try {
 </code></pre>
 
 <h3 id="parameters_4">Parameters</h3>
-<p>This endpoint does not need any parameter.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>body</strong></td>
+<td><a href="../Institution/"><strong>Institution</strong></a></td>
+<td>Institution object to send to MolecularMatch for processing</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="return-type_4">Return type</h3>
 <p><a href="../Institution/"><strong>Institution</strong></a></p>
 <h3 id="http-request-headers_4">HTTP request headers</h3>
 <ul>
-<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Content-Type</strong>: application/json</li>
 <li><strong>Accept</strong>: application/json</li>
 </ul>
 <p><a name="putInstitution"></a></p>

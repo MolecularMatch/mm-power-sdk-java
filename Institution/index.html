@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>VariantInfoFusions - MMPower Java SDK</title>
+  <title>Institution - MMPower Java SDK</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "VariantInfoFusions";
-    var mkdocs_page_input_path = "VariantInfoFusions.md";
+    var mkdocs_page_name = "Institution";
+    var mkdocs_page_input_path = "Institution.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -209,9 +209,21 @@
     <a class="" href="../Filter/">Filter</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../Institution/">Institution</a>
+    <a class="current" href="./">Institution</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#institution">Institution</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#properties">Properties</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -319,23 +331,9 @@
     <a class="" href="../VariantInfo/">VariantInfo</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">VariantInfoFusions</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#variantinfofusions">VariantInfoFusions</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#properties">Properties</a></li>
-        
-            <li><a class="toctree-l3" href="#enum-referencegenomeenum">Enum: ReferenceGenomeEnum</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../VariantInfoFusions/">VariantInfoFusions</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -365,7 +363,7 @@
     
       
     
-    <li>VariantInfoFusions</li>
+    <li>Institution</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -375,7 +373,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="variantinfofusions">VariantInfoFusions</h1>
+                <h1 id="institution">Institution</h1>
 <h2 id="properties">Properties</h2>
 <table>
 <thead>
@@ -388,72 +386,70 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>chr</strong></td>
+<td><strong>id</strong></td>
 <td><strong>String</strong></td>
-<td></td>
+<td>unique identifier.</td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>exonNumber</strong></td>
+<td><strong>name</strong></td>
 <td><strong>String</strong></td>
+<td>The name of the institution.</td>
 <td></td>
-<td>[optional]</td>
 </tr>
 <tr>
-<td><strong>intronNumber</strong></td>
+<td><strong>country</strong></td>
 <td><strong>String</strong></td>
+<td>The ISO-3166 2 character country code where the institution is located.</td>
 <td></td>
+</tr>
+<tr>
+<td><strong>address</strong></td>
+<td><strong>String</strong></td>
+<td>Number and street portion of the address of the institution.</td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>LBPWLEP</strong></td>
-<td><strong>Integer</strong></td>
-<td></td>
+<td><strong>subDivision</strong></td>
+<td><strong>String</strong></td>
+<td>State/Province portion of the address of the institution.</td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>LBPWREP</strong></td>
-<td><strong>Integer</strong></td>
-<td></td>
+<td><strong>city</strong></td>
+<td><strong>String</strong></td>
+<td>City portion of the address of the institution.</td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>RBPWLEP</strong></td>
-<td><strong>Integer</strong></td>
+<td><strong>postalCode</strong></td>
+<td><strong>String</strong></td>
+<td>Postal code portion of the address of the institution.</td>
 <td></td>
+</tr>
+<tr>
+<td><strong>idn</strong></td>
+<td><strong>String</strong></td>
+<td>The Integrated Delivery Network (IDN) for this institution.  Provide an id of another institution that is recognized by MoleculatMatch.</td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>RBPWREP</strong></td>
-<td><strong>Integer</strong></td>
-<td></td>
+<td><strong>synonyms</strong></td>
+<td><strong>java.util.List&lt;String&gt;</strong></td>
+<td>Alternative names the institution is referred by.</td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>referenceGenome</strong></td>
-<td><a href="#ReferenceGenomeEnum"><strong>ReferenceGenomeEnum</strong></a></td>
-<td></td>
+<td><strong>status</strong></td>
+<td><strong>String</strong></td>
+<td>Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base.</td>
 <td>[optional]</td>
 </tr>
-</tbody>
-</table>
-<p><a name="ReferenceGenomeEnum"></a></p>
-<h2 id="enum-referencegenomeenum">Enum: ReferenceGenomeEnum</h2>
-<table>
-<thead>
 <tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GRCH37_HG19</td>
-<td>&quot;grch37_hg19&quot;</td>
-</tr>
-<tr>
-<td>GRCH38_HG38</td>
-<td>&quot;grch38_hg38&quot;</td>
+<td><strong>test</strong></td>
+<td><strong>Boolean</strong></td>
+<td>A flag to mark test institutions.</td>
+<td>[optional]</td>
 </tr>
 </tbody>
 </table>
@@ -464,10 +460,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../VariantInfoLocations/" class="btn btn-neutral float-right" title="VariantInfoLocations">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../InstitutionsApi/" class="btn btn-neutral float-right" title="InstitutionsApi">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../VariantInfo/" class="btn btn-neutral" title="VariantInfo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Filter/" class="btn btn-neutral" title="Filter"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -493,10 +489,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../VariantInfo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Filter/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../VariantInfoLocations/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../InstitutionsApi/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

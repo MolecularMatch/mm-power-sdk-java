@@ -191,6 +191,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../ExpandedAccess/">ExpandedAccess</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../ExternalId/">ExternalId</a>
 	    </li>
           
@@ -237,7 +242,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#getinstitution">getInstitution</a></li>
+    <li class="toctree-l2"><a href="#deleteprivatetrial">deletePrivateTrial</a></li>
     
         <ul>
         
@@ -252,7 +257,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#getinstitutionstatus">getInstitutionStatus</a></li>
+    <li class="toctree-l2"><a href="#getinstitution">getInstitution</a></li>
     
         <ul>
         
@@ -267,7 +272,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#getinstitutions">getInstitutions</a></li>
+    <li class="toctree-l2"><a href="#getinstitutionstatus">getInstitutionStatus</a></li>
     
         <ul>
         
@@ -282,7 +287,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#postinstitution">postInstitution</a></li>
+    <li class="toctree-l2"><a href="#getinstitutions">getInstitutions</a></li>
     
         <ul>
         
@@ -297,7 +302,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#putinstitution">putInstitution</a></li>
+    <li class="toctree-l2"><a href="#getprivatetrial">getPrivateTrial</a></li>
     
         <ul>
         
@@ -308,6 +313,81 @@
             <li><a class="toctree-l3" href="#return-type_5">Return type</a></li>
         
             <li><a class="toctree-l3" href="#http-request-headers_5">HTTP request headers</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#getprivatetrialstatus">getPrivateTrialStatus</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#example_6">Example</a></li>
+        
+            <li><a class="toctree-l3" href="#parameters_6">Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#return-type_6">Return type</a></li>
+        
+            <li><a class="toctree-l3" href="#http-request-headers_6">HTTP request headers</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#postinstitution">postInstitution</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#example_7">Example</a></li>
+        
+            <li><a class="toctree-l3" href="#parameters_7">Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#return-type_7">Return type</a></li>
+        
+            <li><a class="toctree-l3" href="#http-request-headers_7">HTTP request headers</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#postprivatetrial">postPrivateTrial</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#example_8">Example</a></li>
+        
+            <li><a class="toctree-l3" href="#parameters_8">Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#return-type_8">Return type</a></li>
+        
+            <li><a class="toctree-l3" href="#http-request-headers_8">HTTP request headers</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#putinstitution">putInstitution</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#example_9">Example</a></li>
+        
+            <li><a class="toctree-l3" href="#parameters_9">Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#return-type_9">Return type</a></li>
+        
+            <li><a class="toctree-l3" href="#http-request-headers_9">HTTP request headers</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#putprivatetrial">putPrivateTrial</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#example_10">Example</a></li>
+        
+            <li><a class="toctree-l3" href="#parameters_10">Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#return-type_10">Return type</a></li>
+        
+            <li><a class="toctree-l3" href="#http-request-headers_10">HTTP request headers</a></li>
         
         </ul>
     
@@ -327,6 +407,16 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../Oversight/">Oversight</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../PrivateTrial/">PrivateTrial</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../Publication/">Publication</a>
 	    </li>
           
@@ -338,6 +428,16 @@
             <li class="toctree-l1">
 		
     <a class="" href="../PublicationAuthors/">PublicationAuthors</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Reference/">Reference</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ResponsibleParty/">ResponsibleParty</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -474,6 +574,11 @@
 <td>Delete an institution</td>
 </tr>
 <tr>
+<td><a href="./#deletePrivateTrial"><strong>deletePrivateTrial</strong></a></td>
+<td><strong>DELETE</strong> /institution/{id}/trial/{trialId}</td>
+<td>Delete a private trial</td>
+</tr>
+<tr>
 <td><a href="./#getInstitution"><strong>getInstitution</strong></a></td>
 <td><strong>GET</strong> /institution/{id}</td>
 <td>Get an institution</td>
@@ -489,14 +594,34 @@
 <td>Get a paginated list of institutions</td>
 </tr>
 <tr>
+<td><a href="./#getPrivateTrial"><strong>getPrivateTrial</strong></a></td>
+<td><strong>GET</strong> /institution/{id}/trial/{trialId}</td>
+<td>Get a private trial</td>
+</tr>
+<tr>
+<td><a href="./#getPrivateTrialStatus"><strong>getPrivateTrialStatus</strong></a></td>
+<td><strong>GET</strong> /institution/{id}/trial/{trialId}/status</td>
+<td>Get a private trial record&#x27;s status</td>
+</tr>
+<tr>
 <td><a href="./#postInstitution"><strong>postInstitution</strong></a></td>
 <td><strong>POST</strong> /institution</td>
 <td>Create an institution</td>
 </tr>
 <tr>
+<td><a href="./#postPrivateTrial"><strong>postPrivateTrial</strong></a></td>
+<td><strong>POST</strong> /institution/{id}/trial</td>
+<td>Create a private trial</td>
+</tr>
+<tr>
 <td><a href="./#putInstitution"><strong>putInstitution</strong></a></td>
 <td><strong>PUT</strong> /institution/{id}</td>
 <td>Put/Update an institution</td>
+</tr>
+<tr>
+<td><a href="./#putPrivateTrial"><strong>putPrivateTrial</strong></a></td>
+<td><strong>PUT</strong> /institution/{id}/trial/{trialId}</td>
+<td>Put/Update a private trial</td>
 </tr>
 </tbody>
 </table>
@@ -555,6 +680,68 @@ try {
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>
 </ul>
+<p><a name="deletePrivateTrial"></a></p>
+<h1 id="deleteprivatetrial"><strong>deletePrivateTrial</strong></h1>
+<blockquote>
+<p>PrivateTrial deletePrivateTrial(id, trialId)</p>
+</blockquote>
+<p>Delete a private trial</p>
+<p>Delete a private trial</p>
+<h3 id="example_1">Example</h3>
+<pre><code class="java">// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.InstitutionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+InstitutionsApi apiInstance = new InstitutionsApi();
+String id = &quot;id_example&quot;; // String | ID of the Institution governing the private trial
+String trialId = &quot;trialId_example&quot;; // String | ID of the private trial to delete
+try {
+    PrivateTrial result = apiInstance.deletePrivateTrial(id, trialId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println(&quot;Exception when calling InstitutionsApi#deletePrivateTrial&quot;);
+    e.printStackTrace();
+}
+</code></pre>
+
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the Institution governing the private trial</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>trialId</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the private trial to delete</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_1">Return type</h3>
+<p><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></p>
+<h3 id="http-request-headers_1">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
 <p><a name="getInstitution"></a></p>
 <h1 id="getinstitution"><strong>getInstitution</strong></h1>
 <blockquote>
@@ -562,7 +749,7 @@ try {
 </blockquote>
 <p>Get an institution</p>
 <p>Get an institution</p>
-<h3 id="example_1">Example</h3>
+<h3 id="example_2">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -584,7 +771,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_1">Parameters</h3>
+<h3 id="parameters_2">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -603,9 +790,9 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_1">Return type</h3>
+<h3 id="return-type_2">Return type</h3>
 <p><a href="../Institution/"><strong>Institution</strong></a></p>
-<h3 id="http-request-headers_1">HTTP request headers</h3>
+<h3 id="http-request-headers_2">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>
@@ -617,7 +804,7 @@ try {
 </blockquote>
 <p>Get an institution record&#x27;s status</p>
 <p>Get an institution status</p>
-<h3 id="example_2">Example</h3>
+<h3 id="example_3">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -639,7 +826,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_2">Parameters</h3>
+<h3 id="parameters_3">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -658,9 +845,9 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_2">Return type</h3>
+<h3 id="return-type_3">Return type</h3>
 <p><a href="../Institution/"><strong>Institution</strong></a></p>
-<h3 id="http-request-headers_2">HTTP request headers</h3>
+<h3 id="http-request-headers_3">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>
@@ -671,7 +858,7 @@ try {
 <p>Institution getInstitutions()</p>
 </blockquote>
 <p>Get a paginated list of institutions</p>
-<h3 id="example_3">Example</h3>
+<h3 id="example_4">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -692,11 +879,135 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_3">Parameters</h3>
+<h3 id="parameters_4">Parameters</h3>
 <p>This endpoint does not need any parameter.</p>
-<h3 id="return-type_3">Return type</h3>
+<h3 id="return-type_4">Return type</h3>
 <p><a href="../Institution/"><strong>Institution</strong></a></p>
-<h3 id="http-request-headers_3">HTTP request headers</h3>
+<h3 id="http-request-headers_4">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a name="getPrivateTrial"></a></p>
+<h1 id="getprivatetrial"><strong>getPrivateTrial</strong></h1>
+<blockquote>
+<p>PrivateTrial getPrivateTrial(id, trialId)</p>
+</blockquote>
+<p>Get a private trial</p>
+<p>Get a private trial</p>
+<h3 id="example_5">Example</h3>
+<pre><code class="java">// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.InstitutionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+InstitutionsApi apiInstance = new InstitutionsApi();
+String id = &quot;id_example&quot;; // String | ID of the Institution governing the private trial
+String trialId = &quot;trialId_example&quot;; // String | ID of the private trial to return
+try {
+    PrivateTrial result = apiInstance.getPrivateTrial(id, trialId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println(&quot;Exception when calling InstitutionsApi#getPrivateTrial&quot;);
+    e.printStackTrace();
+}
+</code></pre>
+
+<h3 id="parameters_5">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the Institution governing the private trial</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>trialId</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the private trial to return</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_5">Return type</h3>
+<p><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></p>
+<h3 id="http-request-headers_5">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a name="getPrivateTrialStatus"></a></p>
+<h1 id="getprivatetrialstatus"><strong>getPrivateTrialStatus</strong></h1>
+<blockquote>
+<p>PrivateTrial getPrivateTrialStatus(id, trialId)</p>
+</blockquote>
+<p>Get a private trial record&#x27;s status</p>
+<p>Get a private trial&#x27;s status</p>
+<h3 id="example_6">Example</h3>
+<pre><code class="java">// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.InstitutionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+InstitutionsApi apiInstance = new InstitutionsApi();
+String id = &quot;id_example&quot;; // String | ID of the Institution governing the private trial
+String trialId = &quot;trialId_example&quot;; // String | ID of the private trial to return status for
+try {
+    PrivateTrial result = apiInstance.getPrivateTrialStatus(id, trialId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println(&quot;Exception when calling InstitutionsApi#getPrivateTrialStatus&quot;);
+    e.printStackTrace();
+}
+</code></pre>
+
+<h3 id="parameters_6">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the Institution governing the private trial</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>trialId</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the private trial to return status for</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_6">Return type</h3>
+<p><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></p>
+<h3 id="http-request-headers_6">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>
@@ -707,7 +1018,7 @@ try {
 <p>Institution postInstitution(body)</p>
 </blockquote>
 <p>Create an institution</p>
-<h3 id="example_4">Example</h3>
+<h3 id="example_7">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -729,7 +1040,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_4">Parameters</h3>
+<h3 id="parameters_7">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -748,9 +1059,63 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_4">Return type</h3>
+<h3 id="return-type_7">Return type</h3>
 <p><a href="../Institution/"><strong>Institution</strong></a></p>
-<h3 id="http-request-headers_4">HTTP request headers</h3>
+<h3 id="http-request-headers_7">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a name="postPrivateTrial"></a></p>
+<h1 id="postprivatetrial"><strong>postPrivateTrial</strong></h1>
+<blockquote>
+<p>PrivateTrial postPrivateTrial(body)</p>
+</blockquote>
+<p>Create a private trial</p>
+<h3 id="example_8">Example</h3>
+<pre><code class="java">// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.InstitutionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+InstitutionsApi apiInstance = new InstitutionsApi();
+PrivateTrial body = new PrivateTrial(); // PrivateTrial | Private Trial object to send to MolecularMatch for processing
+try {
+    PrivateTrial result = apiInstance.postPrivateTrial(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println(&quot;Exception when calling InstitutionsApi#postPrivateTrial&quot;);
+    e.printStackTrace();
+}
+</code></pre>
+
+<h3 id="parameters_8">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>body</strong></td>
+<td><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></td>
+<td>Private Trial object to send to MolecularMatch for processing</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_8">Return type</h3>
+<p><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></p>
+<h3 id="http-request-headers_8">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: application/json</li>
 <li><strong>Accept</strong>: application/json</li>
@@ -762,7 +1127,7 @@ try {
 </blockquote>
 <p>Put/Update an institution</p>
 <p>Put an institution</p>
-<h3 id="example_5">Example</h3>
+<h3 id="example_9">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -784,7 +1149,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_5">Parameters</h3>
+<h3 id="parameters_9">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -803,9 +1168,71 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_5">Return type</h3>
+<h3 id="return-type_9">Return type</h3>
 <p><a href="../Institution/"><strong>Institution</strong></a></p>
-<h3 id="http-request-headers_5">HTTP request headers</h3>
+<h3 id="http-request-headers_9">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a name="putPrivateTrial"></a></p>
+<h1 id="putprivatetrial"><strong>putPrivateTrial</strong></h1>
+<blockquote>
+<p>PrivateTrial putPrivateTrial(id, trialId)</p>
+</blockquote>
+<p>Put/Update a private trial</p>
+<p>Put a private trial</p>
+<h3 id="example_10">Example</h3>
+<pre><code class="java">// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.InstitutionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+InstitutionsApi apiInstance = new InstitutionsApi();
+String id = &quot;id_example&quot;; // String | ID of the Institution governing the private trial
+String trialId = &quot;trialId_example&quot;; // String | ID of the private trial
+try {
+    PrivateTrial result = apiInstance.putPrivateTrial(id, trialId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println(&quot;Exception when calling InstitutionsApi#putPrivateTrial&quot;);
+    e.printStackTrace();
+}
+</code></pre>
+
+<h3 id="parameters_10">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the Institution governing the private trial</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>trialId</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the private trial</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_10">Return type</h3>
+<p><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></p>
+<h3 id="http-request-headers_10">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>

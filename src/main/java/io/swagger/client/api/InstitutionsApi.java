@@ -27,6 +27,7 @@ import java.io.IOException;
 
 
 import io.swagger.client.model.Institution;
+import io.swagger.client.model.PrivateTrial;
 
 import java.lang.reflect.Type;
 
@@ -171,6 +172,140 @@ public class InstitutionsApi {
 
         com.squareup.okhttp.Call call = deleteInstitutionValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Institution>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for deletePrivateTrial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to delete (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call deletePrivateTrialCall(String id, String trialId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/institution/{id}/trial/{trialId}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{" + "trialId" + "\\}", apiClient.escapeString(trialId.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deletePrivateTrialValidateBeforeCall(String id, String trialId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deletePrivateTrial(Async)");
+        }
+        // verify the required parameter 'trialId' is set
+        if (trialId == null) {
+            throw new ApiException("Missing the required parameter 'trialId' when calling deletePrivateTrial(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = deletePrivateTrialCall(id, trialId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Delete a private trial
+     * Delete a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to delete (required)
+     * @return PrivateTrial
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PrivateTrial deletePrivateTrial(String id, String trialId) throws ApiException {
+        ApiResponse<PrivateTrial> resp = deletePrivateTrialWithHttpInfo(id, trialId);
+        return resp.getData();
+    }
+
+    /**
+     * Delete a private trial
+     * Delete a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to delete (required)
+     * @return ApiResponse&lt;PrivateTrial&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PrivateTrial> deletePrivateTrialWithHttpInfo(String id, String trialId) throws ApiException {
+        com.squareup.okhttp.Call call = deletePrivateTrialValidateBeforeCall(id, trialId, null, null);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Delete a private trial (asynchronously)
+     * Delete a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to delete (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call deletePrivateTrialAsync(String id, String trialId, final ApiCallback<PrivateTrial> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deletePrivateTrialValidateBeforeCall(id, trialId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -541,6 +676,274 @@ public class InstitutionsApi {
         return call;
     }
     /**
+     * Build call for getPrivateTrial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to return (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getPrivateTrialCall(String id, String trialId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/institution/{id}/trial/{trialId}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{" + "trialId" + "\\}", apiClient.escapeString(trialId.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getPrivateTrialValidateBeforeCall(String id, String trialId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getPrivateTrial(Async)");
+        }
+        // verify the required parameter 'trialId' is set
+        if (trialId == null) {
+            throw new ApiException("Missing the required parameter 'trialId' when calling getPrivateTrial(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = getPrivateTrialCall(id, trialId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get a private trial
+     * Get a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to return (required)
+     * @return PrivateTrial
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PrivateTrial getPrivateTrial(String id, String trialId) throws ApiException {
+        ApiResponse<PrivateTrial> resp = getPrivateTrialWithHttpInfo(id, trialId);
+        return resp.getData();
+    }
+
+    /**
+     * Get a private trial
+     * Get a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to return (required)
+     * @return ApiResponse&lt;PrivateTrial&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PrivateTrial> getPrivateTrialWithHttpInfo(String id, String trialId) throws ApiException {
+        com.squareup.okhttp.Call call = getPrivateTrialValidateBeforeCall(id, trialId, null, null);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get a private trial (asynchronously)
+     * Get a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to return (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getPrivateTrialAsync(String id, String trialId, final ApiCallback<PrivateTrial> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getPrivateTrialValidateBeforeCall(id, trialId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getPrivateTrialStatus
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to return status for (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getPrivateTrialStatusCall(String id, String trialId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/institution/{id}/trial/{trialId}/status"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{" + "trialId" + "\\}", apiClient.escapeString(trialId.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getPrivateTrialStatusValidateBeforeCall(String id, String trialId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getPrivateTrialStatus(Async)");
+        }
+        // verify the required parameter 'trialId' is set
+        if (trialId == null) {
+            throw new ApiException("Missing the required parameter 'trialId' when calling getPrivateTrialStatus(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = getPrivateTrialStatusCall(id, trialId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get a private trial record&#x27;s status
+     * Get a private trial&#x27;s status
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to return status for (required)
+     * @return PrivateTrial
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PrivateTrial getPrivateTrialStatus(String id, String trialId) throws ApiException {
+        ApiResponse<PrivateTrial> resp = getPrivateTrialStatusWithHttpInfo(id, trialId);
+        return resp.getData();
+    }
+
+    /**
+     * Get a private trial record&#x27;s status
+     * Get a private trial&#x27;s status
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to return status for (required)
+     * @return ApiResponse&lt;PrivateTrial&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PrivateTrial> getPrivateTrialStatusWithHttpInfo(String id, String trialId) throws ApiException {
+        com.squareup.okhttp.Call call = getPrivateTrialStatusValidateBeforeCall(id, trialId, null, null);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get a private trial record&#x27;s status (asynchronously)
+     * Get a private trial&#x27;s status
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial to return status for (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getPrivateTrialStatusAsync(String id, String trialId, final ApiCallback<PrivateTrial> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getPrivateTrialStatusValidateBeforeCall(id, trialId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for postInstitution
      * @param body Institution object to send to MolecularMatch for processing (required)
      * @param progressListener Progress listener
@@ -661,6 +1064,130 @@ public class InstitutionsApi {
 
         com.squareup.okhttp.Call call = postInstitutionValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Institution>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postPrivateTrial
+     * @param body Private Trial object to send to MolecularMatch for processing (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call postPrivateTrialCall(PrivateTrial body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/institution/{id}/trial";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postPrivateTrialValidateBeforeCall(PrivateTrial body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling postPrivateTrial(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = postPrivateTrialCall(body, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create a private trial
+     * 
+     * @param body Private Trial object to send to MolecularMatch for processing (required)
+     * @return PrivateTrial
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PrivateTrial postPrivateTrial(PrivateTrial body) throws ApiException {
+        ApiResponse<PrivateTrial> resp = postPrivateTrialWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * Create a private trial
+     * 
+     * @param body Private Trial object to send to MolecularMatch for processing (required)
+     * @return ApiResponse&lt;PrivateTrial&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PrivateTrial> postPrivateTrialWithHttpInfo(PrivateTrial body) throws ApiException {
+        com.squareup.okhttp.Call call = postPrivateTrialValidateBeforeCall(body, null, null);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a private trial (asynchronously)
+     * 
+     * @param body Private Trial object to send to MolecularMatch for processing (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call postPrivateTrialAsync(PrivateTrial body, final ApiCallback<PrivateTrial> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postPrivateTrialValidateBeforeCall(body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -786,6 +1313,140 @@ public class InstitutionsApi {
 
         com.squareup.okhttp.Call call = putInstitutionValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Institution>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for putPrivateTrial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call putPrivateTrialCall(String id, String trialId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/institution/{id}/trial/{trialId}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{" + "trialId" + "\\}", apiClient.escapeString(trialId.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "bearerAuth" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call putPrivateTrialValidateBeforeCall(String id, String trialId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling putPrivateTrial(Async)");
+        }
+        // verify the required parameter 'trialId' is set
+        if (trialId == null) {
+            throw new ApiException("Missing the required parameter 'trialId' when calling putPrivateTrial(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = putPrivateTrialCall(id, trialId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Put/Update a private trial
+     * Put a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial (required)
+     * @return PrivateTrial
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PrivateTrial putPrivateTrial(String id, String trialId) throws ApiException {
+        ApiResponse<PrivateTrial> resp = putPrivateTrialWithHttpInfo(id, trialId);
+        return resp.getData();
+    }
+
+    /**
+     * Put/Update a private trial
+     * Put a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial (required)
+     * @return ApiResponse&lt;PrivateTrial&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PrivateTrial> putPrivateTrialWithHttpInfo(String id, String trialId) throws ApiException {
+        com.squareup.okhttp.Call call = putPrivateTrialValidateBeforeCall(id, trialId, null, null);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Put/Update a private trial (asynchronously)
+     * Put a private trial
+     * @param id ID of the Institution governing the private trial (required)
+     * @param trialId ID of the private trial (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call putPrivateTrialAsync(String id, String trialId, final ApiCallback<PrivateTrial> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = putPrivateTrialValidateBeforeCall(id, trialId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PrivateTrial>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -14,6 +14,7 @@ package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
 import io.swagger.client.model.Institution;
+import io.swagger.client.model.PrivateTrial;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -38,6 +39,22 @@ public class InstitutionsApiTest {
     public void deleteInstitutionTest() throws ApiException {
         String id = null;
         Institution response = api.deleteInstitution(id);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete a private trial
+     *
+     * Delete a private trial
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deletePrivateTrialTest() throws ApiException {
+        String id = null;
+        String trialId = null;
+        PrivateTrial response = api.deletePrivateTrial(id, trialId);
 
         // TODO: test validations
     }
@@ -86,6 +103,38 @@ public class InstitutionsApiTest {
         // TODO: test validations
     }
     /**
+     * Get a private trial
+     *
+     * Get a private trial
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getPrivateTrialTest() throws ApiException {
+        String id = null;
+        String trialId = null;
+        PrivateTrial response = api.getPrivateTrial(id, trialId);
+
+        // TODO: test validations
+    }
+    /**
+     * Get a private trial record&#x27;s status
+     *
+     * Get a private trial&#x27;s status
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getPrivateTrialStatusTest() throws ApiException {
+        String id = null;
+        String trialId = null;
+        PrivateTrial response = api.getPrivateTrialStatus(id, trialId);
+
+        // TODO: test validations
+    }
+    /**
      * Create an institution
      *
      * 
@@ -101,6 +150,21 @@ public class InstitutionsApiTest {
         // TODO: test validations
     }
     /**
+     * Create a private trial
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postPrivateTrialTest() throws ApiException {
+        PrivateTrial body = null;
+        PrivateTrial response = api.postPrivateTrial(body);
+
+        // TODO: test validations
+    }
+    /**
      * Put/Update an institution
      *
      * Put an institution
@@ -112,6 +176,22 @@ public class InstitutionsApiTest {
     public void putInstitutionTest() throws ApiException {
         String id = null;
         Institution response = api.putInstitution(id);
+
+        // TODO: test validations
+    }
+    /**
+     * Put/Update a private trial
+     *
+     * Put a private trial
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void putPrivateTrialTest() throws ApiException {
+        String id = null;
+        String trialId = null;
+        PrivateTrial response = api.putPrivateTrial(id, trialId);
 
         // TODO: test validations
     }

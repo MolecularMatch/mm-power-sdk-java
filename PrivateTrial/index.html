@@ -250,6 +250,12 @@
         
             <li><a class="toctree-l3" href="#properties">Properties</a></li>
         
+            <li><a class="toctree-l3" href="#enum-statusenum">Enum: StatusEnum</a></li>
+        
+            <li><a class="toctree-l3" href="#enum-phaseenum">Enum: PhaseEnum</a></li>
+        
+            <li><a class="toctree-l3" href="#enum-studytypeenum">Enum: StudyTypeEnum</a></li>
+        
             <li><a class="toctree-l3" href="#enum-biospecretentionenum">Enum: BiospecRetentionEnum</a></li>
         
         </ul>
@@ -431,6 +437,12 @@
 <td>[optional]</td>
 </tr>
 <tr>
+<td><strong>visibleToIDN</strong></td>
+<td><strong>Boolean</strong></td>
+<td>If true, then this trial will be visible to the entire IDN, else it is visible only to the owning institution.</td>
+<td>[optional]</td>
+</tr>
+<tr>
 <td><strong>briefTitle</strong></td>
 <td><strong>String</strong></td>
 <td>A short title of the clinical study written in language intended for the lay public. The title should include, where possible, information on the participants, condition being evaluated, and intervention(s) studied.</td>
@@ -480,7 +492,7 @@
 </tr>
 <tr>
 <td><strong>status</strong></td>
-<td><strong>String</strong></td>
+<td><a href="#StatusEnum"><strong>StatusEnum</strong></a></td>
 <td>Trial recruiting status.</td>
 <td>[optional]</td>
 </tr>
@@ -498,13 +510,13 @@
 </tr>
 <tr>
 <td><strong>phase</strong></td>
-<td><strong>String</strong></td>
+<td><a href="#PhaseEnum"><strong>PhaseEnum</strong></a></td>
 <td>For a clinical trial of a drug product (including a biological product), the numerical phase of such clinical trial, consistent with terminology in 21 CFR 312.21 and in 21 CFR 312.85 for phase 4 studies.</td>
 <td>[optional]</td>
 </tr>
 <tr>
 <td><strong>studyType</strong></td>
-<td><strong>String</strong></td>
+<td><a href="#StudyTypeEnum"><strong>StudyTypeEnum</strong></a></td>
 <td>The nature of the investigation or investigational use for which clinical study information is being submitted.</td>
 <td>[optional]</td>
 </tr>
@@ -675,6 +687,150 @@
 <td><a href="../ResponsibleParty/"><strong>java.util.List&lt;ResponsibleParty&gt;</strong></a></td>
 <td>The entities and individuals responsible for this trial.</td>
 <td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<p><a name="StatusEnum"></a></p>
+<h2 id="enum-statusenum">Enum: StatusEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACTIVE_NOT_RECRUITING</td>
+<td>&quot;Active, not recruiting&quot;</td>
+</tr>
+<tr>
+<td>APPROVED_FOR_MARKETING</td>
+<td>&quot;Approved for marketing&quot;</td>
+</tr>
+<tr>
+<td>AVAILABLE</td>
+<td>&quot;Available&quot;</td>
+</tr>
+<tr>
+<td>COMPLETED</td>
+<td>&quot;Completed&quot;</td>
+</tr>
+<tr>
+<td>ENROLLING_BY_INVITATION</td>
+<td>&quot;Enrolling by invitation&quot;</td>
+</tr>
+<tr>
+<td>NO_LONGER_AVAILABLE</td>
+<td>&quot;No longer available&quot;</td>
+</tr>
+<tr>
+<td>NOT_YET_RECRUITING</td>
+<td>&quot;Not yet recruiting&quot;</td>
+</tr>
+<tr>
+<td>RECRUITING</td>
+<td>&quot;Recruiting&quot;</td>
+</tr>
+<tr>
+<td>SUSPENDED</td>
+<td>&quot;Suspended&quot;</td>
+</tr>
+<tr>
+<td>TEMPORARILY_NOT_AVAILABLE</td>
+<td>&quot;Temporarily not available&quot;</td>
+</tr>
+<tr>
+<td>TERMINATED</td>
+<td>&quot;Terminated&quot;</td>
+</tr>
+<tr>
+<td>WITHDRAWN</td>
+<td>&quot;Withdrawn&quot;</td>
+</tr>
+<tr>
+<td>WITHHELD</td>
+<td>&quot;Withheld&quot;</td>
+</tr>
+<tr>
+<td>UNKNOWN_STATUS</td>
+<td>&quot;Unknown status&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><a name="PhaseEnum"></a></p>
+<h2 id="enum-phaseenum">Enum: PhaseEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N_A</td>
+<td>&quot;N/A&quot;</td>
+</tr>
+<tr>
+<td>EARLY_PHASE_1</td>
+<td>&quot;Early Phase 1&quot;</td>
+</tr>
+<tr>
+<td>PHASE_1</td>
+<td>&quot;Phase 1&quot;</td>
+</tr>
+<tr>
+<td>PHASE_1_PHASE_2</td>
+<td>&quot;Phase 1/Phase 2&quot;</td>
+</tr>
+<tr>
+<td>PHASE_2</td>
+<td>&quot;Phase 2&quot;</td>
+</tr>
+<tr>
+<td>PHASE_2_PHASE_3</td>
+<td>&quot;Phase 2/Phase 3&quot;</td>
+</tr>
+<tr>
+<td>PHASE_3</td>
+<td>&quot;Phase 3&quot;</td>
+</tr>
+<tr>
+<td>PHASE_4</td>
+<td>&quot;Phase 4&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><a name="StudyTypeEnum"></a></p>
+<h2 id="enum-studytypeenum">Enum: StudyTypeEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EXPANDED_ACCESS</td>
+<td>&quot;Expanded Access&quot;</td>
+</tr>
+<tr>
+<td>INTERVENTIONAL</td>
+<td>&quot;Interventional&quot;</td>
+</tr>
+<tr>
+<td>N_A</td>
+<td>&quot;N/A&quot;</td>
+</tr>
+<tr>
+<td>OBSERVATIONAL</td>
+<td>&quot;Observational&quot;</td>
+</tr>
+<tr>
+<td>OBSERVATIONAL_PATIENT_REGISTRY_</td>
+<td>&quot;Observational [Patient Registry]&quot;</td>
 </tr>
 </tbody>
 </table>

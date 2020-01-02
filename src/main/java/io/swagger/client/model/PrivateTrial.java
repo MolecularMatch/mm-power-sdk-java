@@ -49,6 +49,9 @@ public class PrivateTrial {
   @SerializedName("registry_id")
   private String registryId = null;
 
+  @SerializedName("visible_to_IDN")
+  private Boolean visibleToIDN = true;
+
   @SerializedName("brief_title")
   private String briefTitle = null;
 
@@ -73,8 +76,61 @@ public class PrivateTrial {
   @SerializedName("detailed_description")
   private String detailedDescription = null;
 
-  @SerializedName("status")
-  private String status = null;
+  /**
+   * Trial recruiting status.
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    ACTIVE_NOT_RECRUITING("Active, not recruiting"),
+    APPROVED_FOR_MARKETING("Approved for marketing"),
+    AVAILABLE("Available"),
+    COMPLETED("Completed"),
+    ENROLLING_BY_INVITATION("Enrolling by invitation"),
+    NO_LONGER_AVAILABLE("No longer available"),
+    NOT_YET_RECRUITING("Not yet recruiting"),
+    RECRUITING("Recruiting"),
+    SUSPENDED("Suspended"),
+    TEMPORARILY_NOT_AVAILABLE("Temporarily not available"),
+    TERMINATED("Terminated"),
+    WITHDRAWN("Withdrawn"),
+    WITHHELD("Withheld"),
+    UNKNOWN_STATUS("Unknown status");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return StatusEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("status")
+  private StatusEnum status = null;
 
   @SerializedName("start_date")
   private OffsetDateTime startDate = null;
@@ -82,11 +138,102 @@ public class PrivateTrial {
   @SerializedName("completion_date")
   private OffsetDateTime completionDate = null;
 
-  @SerializedName("phase")
-  private String phase = "N/A";
+  /**
+   * For a clinical trial of a drug product (including a biological product), the numerical phase of such clinical trial, consistent with terminology in 21 CFR 312.21 and in 21 CFR 312.85 for phase 4 studies.
+   */
+  @JsonAdapter(PhaseEnum.Adapter.class)
+  public enum PhaseEnum {
+    N_A("N/A"),
+    EARLY_PHASE_1("Early Phase 1"),
+    PHASE_1("Phase 1"),
+    PHASE_1_PHASE_2("Phase 1/Phase 2"),
+    PHASE_2("Phase 2"),
+    PHASE_2_PHASE_3("Phase 2/Phase 3"),
+    PHASE_3("Phase 3"),
+    PHASE_4("Phase 4");
 
-  @SerializedName("study_type")
-  private String studyType = null;
+    private String value;
+
+    PhaseEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static PhaseEnum fromValue(String text) {
+      for (PhaseEnum b : PhaseEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<PhaseEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PhaseEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PhaseEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return PhaseEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("phase")
+  private PhaseEnum phase = PhaseEnum.N_A;
+
+  /**
+   * The nature of the investigation or investigational use for which clinical study information is being submitted.
+   */
+  @JsonAdapter(StudyTypeEnum.Adapter.class)
+  public enum StudyTypeEnum {
+    EXPANDED_ACCESS("Expanded Access"),
+    INTERVENTIONAL("Interventional"),
+    N_A("N/A"),
+    OBSERVATIONAL("Observational"),
+    OBSERVATIONAL_PATIENT_REGISTRY_("Observational [Patient Registry]");
+
+    private String value;
+
+    StudyTypeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static StudyTypeEnum fromValue(String text) {
+      for (StudyTypeEnum b : StudyTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<StudyTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StudyTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StudyTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return StudyTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("study_type")
+  private StudyTypeEnum studyType = null;
 
   @SerializedName("has_expanded_access")
   private Boolean hasExpandedAccess = null;
@@ -268,6 +415,24 @@ public class PrivateTrial {
     this.registryId = registryId;
   }
 
+  public PrivateTrial visibleToIDN(Boolean visibleToIDN) {
+    this.visibleToIDN = visibleToIDN;
+    return this;
+  }
+
+   /**
+   * If true, then this trial will be visible to the entire IDN, else it is visible only to the owning institution.
+   * @return visibleToIDN
+  **/
+  @Schema(description = "If true, then this trial will be visible to the entire IDN, else it is visible only to the owning institution.")
+  public Boolean isVisibleToIDN() {
+    return visibleToIDN;
+  }
+
+  public void setVisibleToIDN(Boolean visibleToIDN) {
+    this.visibleToIDN = visibleToIDN;
+  }
+
   public PrivateTrial briefTitle(String briefTitle) {
     this.briefTitle = briefTitle;
     return this;
@@ -428,7 +593,7 @@ public class PrivateTrial {
     this.detailedDescription = detailedDescription;
   }
 
-  public PrivateTrial status(String status) {
+  public PrivateTrial status(StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -438,11 +603,11 @@ public class PrivateTrial {
    * @return status
   **/
   @Schema(description = "Trial recruiting status.")
-  public String getStatus() {
+  public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(StatusEnum status) {
     this.status = status;
   }
 
@@ -482,7 +647,7 @@ public class PrivateTrial {
     this.completionDate = completionDate;
   }
 
-  public PrivateTrial phase(String phase) {
+  public PrivateTrial phase(PhaseEnum phase) {
     this.phase = phase;
     return this;
   }
@@ -492,15 +657,15 @@ public class PrivateTrial {
    * @return phase
   **/
   @Schema(description = "For a clinical trial of a drug product (including a biological product), the numerical phase of such clinical trial, consistent with terminology in 21 CFR 312.21 and in 21 CFR 312.85 for phase 4 studies.")
-  public String getPhase() {
+  public PhaseEnum getPhase() {
     return phase;
   }
 
-  public void setPhase(String phase) {
+  public void setPhase(PhaseEnum phase) {
     this.phase = phase;
   }
 
-  public PrivateTrial studyType(String studyType) {
+  public PrivateTrial studyType(StudyTypeEnum studyType) {
     this.studyType = studyType;
     return this;
   }
@@ -510,11 +675,11 @@ public class PrivateTrial {
    * @return studyType
   **/
   @Schema(description = "The nature of the investigation or investigational use for which clinical study information is being submitted.")
-  public String getStudyType() {
+  public StudyTypeEnum getStudyType() {
     return studyType;
   }
 
-  public void setStudyType(String studyType) {
+  public void setStudyType(StudyTypeEnum studyType) {
     this.studyType = studyType;
   }
 
@@ -1131,6 +1296,7 @@ public class PrivateTrial {
     return Objects.equals(this.institutionId, privateTrial.institutionId) &&
         Objects.equals(this.institutionStudyId, privateTrial.institutionStudyId) &&
         Objects.equals(this.registryId, privateTrial.registryId) &&
+        Objects.equals(this.visibleToIDN, privateTrial.visibleToIDN) &&
         Objects.equals(this.briefTitle, privateTrial.briefTitle) &&
         Objects.equals(this.acronym, privateTrial.acronym) &&
         Objects.equals(this.officialTitle, privateTrial.officialTitle) &&
@@ -1176,7 +1342,7 @@ public class PrivateTrial {
 
   @Override
   public int hashCode() {
-    return Objects.hash(institutionId, institutionStudyId, registryId, briefTitle, acronym, officialTitle, sponsors, source, oversight, briefSummary, detailedDescription, status, startDate, completionDate, phase, studyType, hasExpandedAccess, expandedAccess, studyDesign, primaryOutcome, secondaryOutcome, otherOutcome, numberOfArms, numberOfGroups, enrollment, condition, armGroup, intervention, biospecRetention, biospecDescr, eligibility, overallOfficial, overallContact, overallContactBackup, location, locationCountries, link, reference, verificationDate, studyFirstSubmitted, studyFirstPosted, lastUpdatePosted, keyword, responsibleParty);
+    return Objects.hash(institutionId, institutionStudyId, registryId, visibleToIDN, briefTitle, acronym, officialTitle, sponsors, source, oversight, briefSummary, detailedDescription, status, startDate, completionDate, phase, studyType, hasExpandedAccess, expandedAccess, studyDesign, primaryOutcome, secondaryOutcome, otherOutcome, numberOfArms, numberOfGroups, enrollment, condition, armGroup, intervention, biospecRetention, biospecDescr, eligibility, overallOfficial, overallContact, overallContactBackup, location, locationCountries, link, reference, verificationDate, studyFirstSubmitted, studyFirstPosted, lastUpdatePosted, keyword, responsibleParty);
   }
 
 
@@ -1188,6 +1354,7 @@ public class PrivateTrial {
     sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
     sb.append("    institutionStudyId: ").append(toIndentedString(institutionStudyId)).append("\n");
     sb.append("    registryId: ").append(toIndentedString(registryId)).append("\n");
+    sb.append("    visibleToIDN: ").append(toIndentedString(visibleToIDN)).append("\n");
     sb.append("    briefTitle: ").append(toIndentedString(briefTitle)).append("\n");
     sb.append("    acronym: ").append(toIndentedString(acronym)).append("\n");
     sb.append("    officialTitle: ").append(toIndentedString(officialTitle)).append("\n");

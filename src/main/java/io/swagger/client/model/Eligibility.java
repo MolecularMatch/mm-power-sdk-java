@@ -27,8 +27,50 @@ import java.io.IOException;
 
 
 public class Eligibility {
-  @SerializedName("gender")
-  private String gender = null;
+  /**
+   * Indicates male, female or no limit on eligibility based on the sex of participants.
+   */
+  @JsonAdapter(GenderEnum.Adapter.class)
+  public enum GenderEnum {
+    FEMALE("Female"),
+    MALE("Male"),
+    ALL("All");
+
+    private String value;
+
+    GenderEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static GenderEnum fromValue(String text) {
+      for (GenderEnum b : GenderEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<GenderEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final GenderEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public GenderEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return GenderEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("gender")
+  private GenderEnum gender = null;
 
   @SerializedName("gender_based")
   private String genderBased = null;
@@ -51,21 +93,21 @@ public class Eligibility {
   @SerializedName("study_pop")
   private String studyPop = null;
 
-  public Eligibility gender(String gender) {
+  public Eligibility gender(GenderEnum gender) {
     this.gender = gender;
     return this;
   }
 
    /**
-   * Indicates male, femail or no limit on eligibility based on the sex of participants.
+   * Indicates male, female or no limit on eligibility based on the sex of participants.
    * @return gender
   **/
-  @Schema(description = "Indicates male, femail or no limit on eligibility based on the sex of participants.")
-  public String getGender() {
+  @Schema(description = "Indicates male, female or no limit on eligibility based on the sex of participants.")
+  public GenderEnum getGender() {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(GenderEnum gender) {
     this.gender = gender;
   }
 

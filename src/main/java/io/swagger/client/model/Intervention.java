@@ -27,8 +27,58 @@ import java.io.IOException;
 
 
 public class Intervention {
-  @SerializedName("intervention_type")
-  private String interventionType = "Other";
+  /**
+   * For each intervention studied in the clinical study, the general type of intervention.
+   */
+  @JsonAdapter(InterventionTypeEnum.Adapter.class)
+  public enum InterventionTypeEnum {
+    BEHAVIORAL("Behavioral"),
+    BIOLOGICAL("Biological"),
+    COMBINATION_PRODUCT("Combination Product"),
+    DEVICE("Device"),
+    DIAGNOSTIC_TEST("Diagnostic Test"),
+    DIETARY_SUPPLEMENT("Dietary Supplement"),
+    DRUG("Drug"),
+    GENETIC("Genetic"),
+    PROCEDURE("Procedure"),
+    RADIATION("Radiation"),
+    OTHER("Other");
+
+    private String value;
+
+    InterventionTypeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static InterventionTypeEnum fromValue(String text) {
+      for (InterventionTypeEnum b : InterventionTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<InterventionTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final InterventionTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public InterventionTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return InterventionTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("intervention_type")
+  private InterventionTypeEnum interventionType = InterventionTypeEnum.OTHER;
 
   @SerializedName("intervention_name")
   private String interventionName = null;
@@ -42,7 +92,7 @@ public class Intervention {
   @SerializedName("other_name")
   private java.util.List<String> otherName = null;
 
-  public Intervention interventionType(String interventionType) {
+  public Intervention interventionType(InterventionTypeEnum interventionType) {
     this.interventionType = interventionType;
     return this;
   }
@@ -52,11 +102,11 @@ public class Intervention {
    * @return interventionType
   **/
   @Schema(description = "For each intervention studied in the clinical study, the general type of intervention.")
-  public String getInterventionType() {
+  public InterventionTypeEnum getInterventionType() {
     return interventionType;
   }
 
-  public void setInterventionType(String interventionType) {
+  public void setInterventionType(InterventionTypeEnum interventionType) {
     this.interventionType = interventionType;
   }
 

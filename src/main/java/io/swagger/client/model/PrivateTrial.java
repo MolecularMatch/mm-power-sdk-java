@@ -24,8 +24,9 @@ import io.swagger.client.model.ClinicalTrialSponsors;
 import io.swagger.client.model.Contact;
 import io.swagger.client.model.Eligibility;
 import io.swagger.client.model.ExpandedAccess;
-import io.swagger.client.model.Facility;
 import io.swagger.client.model.Intervention;
+import io.swagger.client.model.Investigator;
+import io.swagger.client.model.Location;
 import io.swagger.client.model.Outcome;
 import io.swagger.client.model.Oversight;
 import io.swagger.client.model.Reference;
@@ -40,6 +41,9 @@ import java.time.OffsetDateTime;
 
 
 public class PrivateTrial {
+  @SerializedName("id")
+  private String id = null;
+
   @SerializedName("institution_id")
   private String institutionId = null;
 
@@ -323,7 +327,7 @@ public class PrivateTrial {
   private Eligibility eligibility = null;
 
   @SerializedName("overall_official")
-  private java.util.List<Contact> overallOfficial = null;
+  private java.util.List<Investigator> overallOfficial = null;
 
   @SerializedName("overall_contact")
   private Contact overallContact = null;
@@ -332,7 +336,7 @@ public class PrivateTrial {
   private Contact overallContactBackup = null;
 
   @SerializedName("location")
-  private java.util.List<Facility> location = null;
+  private java.util.List<Location> location = new java.util.ArrayList<>();
 
   @SerializedName("location_countries")
   private java.util.List<String> locationCountries = null;
@@ -361,6 +365,72 @@ public class PrivateTrial {
   @SerializedName("responsible_party")
   private java.util.List<ResponsibleParty> responsibleParty = null;
 
+  /**
+   * Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base.
+   */
+  @JsonAdapter(ProcessingStatusEnum.Adapter.class)
+  public enum ProcessingStatusEnum {
+    RECEIVED("received"),
+    IN_PROCESS("in-process"),
+    REGISTERED("registered");
+
+    private String value;
+
+    ProcessingStatusEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static ProcessingStatusEnum fromValue(String text) {
+      for (ProcessingStatusEnum b : ProcessingStatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<ProcessingStatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ProcessingStatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ProcessingStatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ProcessingStatusEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("processing_status")
+  private ProcessingStatusEnum processingStatus = ProcessingStatusEnum.RECEIVED;
+
+  @SerializedName("test")
+  private Boolean test = null;
+
+  public PrivateTrial id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * unique study identifier.
+   * @return id
+  **/
+  @Schema(description = "unique study identifier.")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
   public PrivateTrial institutionId(String institutionId) {
     this.institutionId = institutionId;
     return this;
@@ -370,7 +440,7 @@ public class PrivateTrial {
    * Unique institution identifier.
    * @return institutionId
   **/
-  @Schema(description = "Unique institution identifier.")
+  @Schema(required = true, description = "Unique institution identifier.")
   public String getInstitutionId() {
     return institutionId;
   }
@@ -385,10 +455,10 @@ public class PrivateTrial {
   }
 
    /**
-   * Unique study identifier.
+   * Unique study identifier (for the institution).
    * @return institutionStudyId
   **/
-  @Schema(description = "Unique study identifier.")
+  @Schema(required = true, description = "Unique study identifier (for the institution).")
   public String getInstitutionStudyId() {
     return institutionStudyId;
   }
@@ -486,7 +556,7 @@ public class PrivateTrial {
    * Official title for the clinical trial.
    * @return officialTitle
   **/
-  @Schema(description = "Official title for the clinical trial.")
+  @Schema(required = true, description = "Official title for the clinical trial.")
   public String getOfficialTitle() {
     return officialTitle;
   }
@@ -602,7 +672,7 @@ public class PrivateTrial {
    * Trial recruiting status.
    * @return status
   **/
-  @Schema(description = "Trial recruiting status.")
+  @Schema(required = true, description = "Trial recruiting status.")
   public StatusEnum getStatus() {
     return status;
   }
@@ -620,7 +690,7 @@ public class PrivateTrial {
    * The estimated date on which the clinical study will be open for recruitment of participants, or the actual date on which the first participant was enrolled.
    * @return startDate
   **/
-  @Schema(description = "The estimated date on which the clinical study will be open for recruitment of participants, or the actual date on which the first participant was enrolled.")
+  @Schema(required = true, description = "The estimated date on which the clinical study will be open for recruitment of participants, or the actual date on which the first participant was enrolled.")
   public OffsetDateTime getStartDate() {
     return startDate;
   }
@@ -674,7 +744,7 @@ public class PrivateTrial {
    * The nature of the investigation or investigational use for which clinical study information is being submitted.
    * @return studyType
   **/
-  @Schema(description = "The nature of the investigation or investigational use for which clinical study information is being submitted.")
+  @Schema(required = true, description = "The nature of the investigation or investigational use for which clinical study information is being submitted.")
   public StudyTypeEnum getStudyType() {
     return studyType;
   }
@@ -1001,12 +1071,12 @@ public class PrivateTrial {
     this.eligibility = eligibility;
   }
 
-  public PrivateTrial overallOfficial(java.util.List<Contact> overallOfficial) {
+  public PrivateTrial overallOfficial(java.util.List<Investigator> overallOfficial) {
     this.overallOfficial = overallOfficial;
     return this;
   }
 
-  public PrivateTrial addOverallOfficialItem(Contact overallOfficialItem) {
+  public PrivateTrial addOverallOfficialItem(Investigator overallOfficialItem) {
     if (this.overallOfficial == null) {
       this.overallOfficial = new java.util.ArrayList<>();
     }
@@ -1019,11 +1089,11 @@ public class PrivateTrial {
    * @return overallOfficial
   **/
   @Schema(description = "Person responsible for the overall scientific leadership of the protocol, including study principal investigator.")
-  public java.util.List<Contact> getOverallOfficial() {
+  public java.util.List<Investigator> getOverallOfficial() {
     return overallOfficial;
   }
 
-  public void setOverallOfficial(java.util.List<Contact> overallOfficial) {
+  public void setOverallOfficial(java.util.List<Investigator> overallOfficial) {
     this.overallOfficial = overallOfficial;
   }
 
@@ -1063,29 +1133,26 @@ public class PrivateTrial {
     this.overallContactBackup = overallContactBackup;
   }
 
-  public PrivateTrial location(java.util.List<Facility> location) {
+  public PrivateTrial location(java.util.List<Location> location) {
     this.location = location;
     return this;
   }
 
-  public PrivateTrial addLocationItem(Facility locationItem) {
-    if (this.location == null) {
-      this.location = new java.util.ArrayList<>();
-    }
+  public PrivateTrial addLocationItem(Location locationItem) {
     this.location.add(locationItem);
     return this;
   }
 
    /**
-   * Information about the sites offering this trial.
+   * Information about the locations offering this trial.
    * @return location
   **/
-  @Schema(description = "Information about the sites offering this trial.")
-  public java.util.List<Facility> getLocation() {
+  @Schema(required = true, description = "Information about the locations offering this trial.")
+  public java.util.List<Location> getLocation() {
     return location;
   }
 
-  public void setLocation(java.util.List<Facility> location) {
+  public void setLocation(java.util.List<Location> location) {
     this.location = location;
   }
 
@@ -1103,10 +1170,10 @@ public class PrivateTrial {
   }
 
    /**
-   * Countries with sites offering this trial.
+   * Countries with locations offering this trial.
    * @return locationCountries
   **/
-  @Schema(description = "Countries with sites offering this trial.")
+  @Schema(description = "Countries with locations offering this trial.")
   public java.util.List<String> getLocationCountries() {
     return locationCountries;
   }
@@ -1283,6 +1350,42 @@ public class PrivateTrial {
     this.responsibleParty = responsibleParty;
   }
 
+  public PrivateTrial processingStatus(ProcessingStatusEnum processingStatus) {
+    this.processingStatus = processingStatus;
+    return this;
+  }
+
+   /**
+   * Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base.
+   * @return processingStatus
+  **/
+  @Schema(description = "Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base.")
+  public ProcessingStatusEnum getProcessingStatus() {
+    return processingStatus;
+  }
+
+  public void setProcessingStatus(ProcessingStatusEnum processingStatus) {
+    this.processingStatus = processingStatus;
+  }
+
+  public PrivateTrial test(Boolean test) {
+    this.test = test;
+    return this;
+  }
+
+   /**
+   * A flag to mark test private trials.
+   * @return test
+  **/
+  @Schema(description = "A flag to mark test private trials.")
+  public Boolean isTest() {
+    return test;
+  }
+
+  public void setTest(Boolean test) {
+    this.test = test;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1293,7 +1396,8 @@ public class PrivateTrial {
       return false;
     }
     PrivateTrial privateTrial = (PrivateTrial) o;
-    return Objects.equals(this.institutionId, privateTrial.institutionId) &&
+    return Objects.equals(this.id, privateTrial.id) &&
+        Objects.equals(this.institutionId, privateTrial.institutionId) &&
         Objects.equals(this.institutionStudyId, privateTrial.institutionStudyId) &&
         Objects.equals(this.registryId, privateTrial.registryId) &&
         Objects.equals(this.visibleToIDN, privateTrial.visibleToIDN) &&
@@ -1337,12 +1441,14 @@ public class PrivateTrial {
         Objects.equals(this.studyFirstPosted, privateTrial.studyFirstPosted) &&
         Objects.equals(this.lastUpdatePosted, privateTrial.lastUpdatePosted) &&
         Objects.equals(this.keyword, privateTrial.keyword) &&
-        Objects.equals(this.responsibleParty, privateTrial.responsibleParty);
+        Objects.equals(this.responsibleParty, privateTrial.responsibleParty) &&
+        Objects.equals(this.processingStatus, privateTrial.processingStatus) &&
+        Objects.equals(this.test, privateTrial.test);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(institutionId, institutionStudyId, registryId, visibleToIDN, briefTitle, acronym, officialTitle, sponsors, source, oversight, briefSummary, detailedDescription, status, startDate, completionDate, phase, studyType, hasExpandedAccess, expandedAccess, studyDesign, primaryOutcome, secondaryOutcome, otherOutcome, numberOfArms, numberOfGroups, enrollment, condition, armGroup, intervention, biospecRetention, biospecDescr, eligibility, overallOfficial, overallContact, overallContactBackup, location, locationCountries, link, reference, verificationDate, studyFirstSubmitted, studyFirstPosted, lastUpdatePosted, keyword, responsibleParty);
+    return Objects.hash(id, institutionId, institutionStudyId, registryId, visibleToIDN, briefTitle, acronym, officialTitle, sponsors, source, oversight, briefSummary, detailedDescription, status, startDate, completionDate, phase, studyType, hasExpandedAccess, expandedAccess, studyDesign, primaryOutcome, secondaryOutcome, otherOutcome, numberOfArms, numberOfGroups, enrollment, condition, armGroup, intervention, biospecRetention, biospecDescr, eligibility, overallOfficial, overallContact, overallContactBackup, location, locationCountries, link, reference, verificationDate, studyFirstSubmitted, studyFirstPosted, lastUpdatePosted, keyword, responsibleParty, processingStatus, test);
   }
 
 
@@ -1351,6 +1457,7 @@ public class PrivateTrial {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrivateTrial {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
     sb.append("    institutionStudyId: ").append(toIndentedString(institutionStudyId)).append("\n");
     sb.append("    registryId: ").append(toIndentedString(registryId)).append("\n");
@@ -1396,6 +1503,8 @@ public class PrivateTrial {
     sb.append("    lastUpdatePosted: ").append(toIndentedString(lastUpdatePosted)).append("\n");
     sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
     sb.append("    responsibleParty: ").append(toIndentedString(responsibleParty)).append("\n");
+    sb.append("    processingStatus: ").append(toIndentedString(processingStatus)).append("\n");
+    sb.append("    test: ").append(toIndentedString(test)).append("\n");
     sb.append("}");
     return sb.toString();
   }

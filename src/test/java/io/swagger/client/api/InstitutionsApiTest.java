@@ -135,6 +135,21 @@ public class InstitutionsApiTest {
         // TODO: test validations
     }
     /**
+     * Get a paginated list of private 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getPrivateTrialsTest() throws ApiException {
+        String id = null;
+        PrivateTrial response = api.getPrivateTrials(id);
+
+        // TODO: test validations
+    }
+    /**
      * Create an institution
      *
      * 

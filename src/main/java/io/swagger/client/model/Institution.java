@@ -54,8 +54,50 @@ public class Institution {
   @SerializedName("synonyms")
   private java.util.List<String> synonyms = null;
 
-  @SerializedName("status")
-  private String status = null;
+  /**
+   * Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base.
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    RECEIVED("received"),
+    IN_PROCESS("in-process"),
+    REGISTERED("registered");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return StatusEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }  @SerializedName("status")
+  private StatusEnum status = null;
 
   @SerializedName("test")
   private Boolean test = null;
@@ -230,7 +272,7 @@ public class Institution {
     this.synonyms = synonyms;
   }
 
-  public Institution status(String status) {
+  public Institution status(StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -240,11 +282,11 @@ public class Institution {
    * @return status
   **/
   @Schema(description = "Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base.")
-  public String getStatus() {
+  public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(StatusEnum status) {
     this.status = status;
   }
 

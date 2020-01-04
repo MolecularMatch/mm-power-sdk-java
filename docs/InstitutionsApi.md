@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**getInstitutions**](InstitutionsApi.md#getInstitutions) | **GET** /institutions | Get a paginated list of institutions
 [**getPrivateTrial**](InstitutionsApi.md#getPrivateTrial) | **GET** /institution/{id}/trial/{trialId} | Get a private trial
 [**getPrivateTrialStatus**](InstitutionsApi.md#getPrivateTrialStatus) | **GET** /institution/{id}/trial/{trialId}/status | Get a private trial record&#x27;s status
+[**getPrivateTrials**](InstitutionsApi.md#getPrivateTrials) | **GET** /institution/{id}/trials | Get a paginated list of private 
 [**postInstitution**](InstitutionsApi.md#postInstitution) | **POST** /institution | Create an institution
 [**postPrivateTrial**](InstitutionsApi.md#postPrivateTrial) | **POST** /institution/{id}/trial | Create a private trial
 [**putInstitution**](InstitutionsApi.md#putInstitution) | **PUT** /institution/{id} | Put/Update an institution
@@ -352,6 +353,54 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the Institution governing the private trial |
  **trialId** | **String**| ID of the private trial to return status for |
+
+### Return type
+
+[**PrivateTrial**](PrivateTrial.md)
+
+
+
+
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getPrivateTrials"></a>
+# **getPrivateTrials**
+> PrivateTrial getPrivateTrials(id)
+
+Get a paginated list of private 
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.InstitutionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+InstitutionsApi apiInstance = new InstitutionsApi();
+String id = "id_example"; // String | ID of the Institution governing the private trial
+try {
+    PrivateTrial result = apiInstance.getPrivateTrials(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstitutionsApi#getPrivateTrials");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the Institution governing the private trial |
 
 ### Return type
 

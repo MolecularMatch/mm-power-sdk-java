@@ -3,23 +3,24 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**institutionId** | **String** | Unique institution identifier. |  [optional]
-**institutionStudyId** | **String** | Unique study identifier. |  [optional]
+**id** | **String** | unique study identifier. |  [optional]
+**institutionId** | **String** | Unique institution identifier. | 
+**institutionStudyId** | **String** | Unique study identifier (for the institution). | 
 **registryId** | **String** | The public registry study id.  This is only populated once the trial is no longer a private trial. |  [optional]
 **visibleToIDN** | **Boolean** | If true, then this trial will be visible to the entire IDN, else it is visible only to the owning institution. |  [optional]
 **briefTitle** | **String** | A short title of the clinical study written in language intended for the lay public. The title should include, where possible, information on the participants, condition being evaluated, and intervention(s) studied. |  [optional]
 **acronym** | **java.util.List&lt;String&gt;** | Acronyms or abbreviations used publicly to identify the clinical study. |  [optional]
-**officialTitle** | **String** | Official title for the clinical trial. |  [optional]
+**officialTitle** | **String** | Official title for the clinical trial. | 
 **sponsors** | [**java.util.List&lt;ClinicalTrialSponsors&gt;**](ClinicalTrialSponsors.md) | The list of organizations or persons who initiated the study and who have authority and control over the study. |  [optional]
 **source** | **String** | Native data source of this record |  [optional]
 **oversight** | [**Oversight**](Oversight.md) |  |  [optional]
 **briefSummary** | **String** | A short description of the clinical study, including a brief statement of the clinical study&#x27;s hypothesis, written in language intended for the lay public. |  [optional]
 **detailedDescription** | **String** | Extended description of the protocol, including more technical information (as compared to the Brief Summary), if desired. Do not include the entire protocol; do not duplicate information recorded in other data elements, such as Eligibility Criteria or outcome measures. |  [optional]
-**status** | [**StatusEnum**](#StatusEnum) | Trial recruiting status. |  [optional]
-**startDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | The estimated date on which the clinical study will be open for recruitment of participants, or the actual date on which the first participant was enrolled. |  [optional]
+**status** | [**StatusEnum**](#StatusEnum) | Trial recruiting status. | 
+**startDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | The estimated date on which the clinical study will be open for recruitment of participants, or the actual date on which the first participant was enrolled. | 
 **completionDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | The date the final participant was examined or received an intervention for purposes of final collection of data for the primary and secondary outcome measures and adverse events (for example, last participant’s last visit), whether the clinical study concluded according to the pre-specified protocol or was terminated |  [optional]
 **phase** | [**PhaseEnum**](#PhaseEnum) | For a clinical trial of a drug product (including a biological product), the numerical phase of such clinical trial, consistent with terminology in 21 CFR 312.21 and in 21 CFR 312.85 for phase 4 studies. |  [optional]
-**studyType** | [**StudyTypeEnum**](#StudyTypeEnum) | The nature of the investigation or investigational use for which clinical study information is being submitted. |  [optional]
+**studyType** | [**StudyTypeEnum**](#StudyTypeEnum) | The nature of the investigation or investigational use for which clinical study information is being submitted. | 
 **hasExpandedAccess** | **Boolean** | Whether there is expanded access to the investigational product for patients who do not qualify for enrollment in a clinical trial. Expanded Access for investigational drug products (including biological products) includes all expanded access types under section 561 of the Federal Food, Drug, and Cosmetic Act: (1) for individual participants, including emergency use; (2) for intermediate-size participant populations; and (3) under a treatment IND or treatment protocol. |  [optional]
 **expandedAccess** | [**ExpandedAccess**](ExpandedAccess.md) |  |  [optional]
 **studyDesign** | [**StudyDesign**](StudyDesign.md) |  |  [optional]
@@ -35,11 +36,11 @@ Name | Type | Description | Notes
 **biospecRetention** | [**BiospecRetentionEnum**](#BiospecRetentionEnum) |  |  [optional]
 **biospecDescr** | **String** |  |  [optional]
 **eligibility** | [**Eligibility**](Eligibility.md) |  |  [optional]
-**overallOfficial** | [**java.util.List&lt;Contact&gt;**](Contact.md) | Person responsible for the overall scientific leadership of the protocol, including study principal investigator. |  [optional]
+**overallOfficial** | [**java.util.List&lt;Investigator&gt;**](Investigator.md) | Person responsible for the overall scientific leadership of the protocol, including study principal investigator. |  [optional]
 **overallContact** | [**Contact**](Contact.md) |  |  [optional]
 **overallContactBackup** | [**Contact**](Contact.md) |  |  [optional]
-**location** | [**java.util.List&lt;Facility&gt;**](Facility.md) | Information about the sites offering this trial. |  [optional]
-**locationCountries** | **java.util.List&lt;String&gt;** | Countries with sites offering this trial. |  [optional]
+**location** | [**java.util.List&lt;Location&gt;**](Location.md) | Information about the locations offering this trial. | 
+**locationCountries** | **java.util.List&lt;String&gt;** | Countries with locations offering this trial. |  [optional]
 **link** | **String** | URL to institution (if private) or registry listing of this trial. |  [optional]
 **reference** | [**java.util.List&lt;Reference&gt;**](Reference.md) | Reference publications pertaining to this trial. |  [optional]
 **verificationDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | The date on which the responsible party last verified the clinical study information in the entire ClinicalTrials.gov record for the clinical study, even if no additional or updated information is being submitted. |  [optional]
@@ -48,6 +49,8 @@ Name | Type | Description | Notes
 **lastUpdatePosted** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | The most recent date that any information was updated for this trial. |  [optional]
 **keyword** | **java.util.List&lt;String&gt;** | Words or phrases that best describe the protocol. Keywords help users find studies in the database. Use NLM&#x27;s Medical Subject Heading (MeSH)-controlled vocabulary terms where appropriate. Be as specific and precise as possible. |  [optional]
 **responsibleParty** | [**java.util.List&lt;ResponsibleParty&gt;**](ResponsibleParty.md) | The entities and individuals responsible for this trial. |  [optional]
+**processingStatus** | [**ProcessingStatusEnum**](#ProcessingStatusEnum) | Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base. |  [optional]
+**test** | **Boolean** | A flag to mark test private trials. |  [optional]
 
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
@@ -98,3 +101,11 @@ Name | Value
 NONE_RETAINED | &quot;None Retained&quot;
 SAMPLES_WITH_DNA | &quot;Samples With DNA&quot;
 SAMPLES_WITHOUT_DNA | &quot;Samples Without DNA&quot;
+
+<a name="ProcessingStatusEnum"></a>
+## Enum: ProcessingStatusEnum
+Name | Value
+---- | -----
+RECEIVED | &quot;received&quot;
+IN_PROCESS | &quot;in-process&quot;
+REGISTERED | &quot;registered&quot;

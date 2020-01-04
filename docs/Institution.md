@@ -12,5 +12,13 @@ Name | Type | Description | Notes
 **postalCode** | **String** | Postal code portion of the address of the institution. | 
 **idn** | **String** | The Integrated Delivery Network (IDN) for this institution.  Provide an id of another institution that is recognized by MoleculatMatch. |  [optional]
 **synonyms** | **java.util.List&lt;String&gt;** | Alternative names the institution is referred by. |  [optional]
-**status** | **String** | Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base. |  [optional]
+**status** | [**StatusEnum**](#StatusEnum) | Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base. |  [optional]
 **test** | **Boolean** | A flag to mark test institutions. |  [optional]
+
+<a name="StatusEnum"></a>
+## Enum: StatusEnum
+Name | Value
+---- | -----
+RECEIVED | &quot;received&quot;
+IN_PROCESS | &quot;in-process&quot;
+REGISTERED | &quot;registered&quot;

@@ -56,6 +56,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../Address/">Address</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../Agency/">Agency</a>
 	    </li>
           
@@ -231,6 +236,16 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../Investigator/">Investigator</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Location/">Location</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../Outcome/">Outcome</a>
 	    </li>
           
@@ -257,6 +272,8 @@
             <li><a class="toctree-l3" href="#enum-studytypeenum">Enum: StudyTypeEnum</a></li>
         
             <li><a class="toctree-l3" href="#enum-biospecretentionenum">Enum: BiospecRetentionEnum</a></li>
+        
+            <li><a class="toctree-l3" href="#enum-processingstatusenum">Enum: ProcessingStatusEnum</a></li>
         
         </ul>
     
@@ -327,6 +344,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../SearchResponsePublication/">SearchResponsePublication</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Site/">Site</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -419,16 +441,22 @@
 </thead>
 <tbody>
 <tr>
+<td><strong>id</strong></td>
+<td><strong>String</strong></td>
+<td>unique study identifier.</td>
+<td>[optional]</td>
+</tr>
+<tr>
 <td><strong>institutionId</strong></td>
 <td><strong>String</strong></td>
 <td>Unique institution identifier.</td>
-<td>[optional]</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>institutionStudyId</strong></td>
 <td><strong>String</strong></td>
-<td>Unique study identifier.</td>
-<td>[optional]</td>
+<td>Unique study identifier (for the institution).</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>registryId</strong></td>
@@ -458,7 +486,7 @@
 <td><strong>officialTitle</strong></td>
 <td><strong>String</strong></td>
 <td>Official title for the clinical trial.</td>
-<td>[optional]</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>sponsors</strong></td>
@@ -494,13 +522,13 @@
 <td><strong>status</strong></td>
 <td><a href="#StatusEnum"><strong>StatusEnum</strong></a></td>
 <td>Trial recruiting status.</td>
-<td>[optional]</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>startDate</strong></td>
 <td><a href="https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html"><strong>OffsetDateTime</strong></a></td>
 <td>The estimated date on which the clinical study will be open for recruitment of participants, or the actual date on which the first participant was enrolled.</td>
-<td>[optional]</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>completionDate</strong></td>
@@ -518,7 +546,7 @@
 <td><strong>studyType</strong></td>
 <td><a href="#StudyTypeEnum"><strong>StudyTypeEnum</strong></a></td>
 <td>The nature of the investigation or investigational use for which clinical study information is being submitted.</td>
-<td>[optional]</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>hasExpandedAccess</strong></td>
@@ -612,7 +640,7 @@
 </tr>
 <tr>
 <td><strong>overallOfficial</strong></td>
-<td><a href="../Contact/"><strong>java.util.List&lt;Contact&gt;</strong></a></td>
+<td><a href="../Investigator/"><strong>java.util.List&lt;Investigator&gt;</strong></a></td>
 <td>Person responsible for the overall scientific leadership of the protocol, including study principal investigator.</td>
 <td>[optional]</td>
 </tr>
@@ -630,14 +658,14 @@
 </tr>
 <tr>
 <td><strong>location</strong></td>
-<td><a href="../Facility/"><strong>java.util.List&lt;Facility&gt;</strong></a></td>
-<td>Information about the sites offering this trial.</td>
-<td>[optional]</td>
+<td><a href="../Location/"><strong>java.util.List&lt;Location&gt;</strong></a></td>
+<td>Information about the locations offering this trial.</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>locationCountries</strong></td>
 <td><strong>java.util.List&lt;String&gt;</strong></td>
-<td>Countries with sites offering this trial.</td>
+<td>Countries with locations offering this trial.</td>
 <td>[optional]</td>
 </tr>
 <tr>
@@ -686,6 +714,18 @@
 <td><strong>responsibleParty</strong></td>
 <td><a href="../ResponsibleParty/"><strong>java.util.List&lt;ResponsibleParty&gt;</strong></a></td>
 <td>The entities and individuals responsible for this trial.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>processingStatus</strong></td>
+<td><a href="#ProcessingStatusEnum"><strong>ProcessingStatusEnum</strong></a></td>
+<td>Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>test</strong></td>
+<td><strong>Boolean</strong></td>
+<td>A flag to mark test private trials.</td>
 <td>[optional]</td>
 </tr>
 </tbody>
@@ -855,6 +895,30 @@
 <tr>
 <td>SAMPLES_WITHOUT_DNA</td>
 <td>&quot;Samples Without DNA&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><a name="ProcessingStatusEnum"></a></p>
+<h2 id="enum-processingstatusenum">Enum: ProcessingStatusEnum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RECEIVED</td>
+<td>&quot;received&quot;</td>
+</tr>
+<tr>
+<td>IN_PROCESS</td>
+<td>&quot;in-process&quot;</td>
+</tr>
+<tr>
+<td>REGISTERED</td>
+<td>&quot;registered&quot;</td>
 </tr>
 </tbody>
 </table>

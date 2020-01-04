@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>SearchRequestMinShouldMatch - MMPower Java SDK</title>
+  <title>Address - MMPower Java SDK</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "SearchRequestMinShouldMatch";
-    var mkdocs_page_input_path = "SearchRequestMinShouldMatch.md";
+    var mkdocs_page_name = "Address";
+    var mkdocs_page_input_path = "Address.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -54,9 +54,21 @@
     <a class="" href="..">Welcome to the MMPower Java SDK</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../Address/">Address</a>
+    <a class="current" href="./">Address</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#address">Address</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#properties">Properties</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -299,21 +311,9 @@
     <a class="" href="../SearchRequestLocation/">SearchRequestLocation</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">SearchRequestMinShouldMatch</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#searchrequestminshouldmatch">SearchRequestMinShouldMatch</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#properties">Properties</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../SearchRequestMinShouldMatch/">SearchRequestMinShouldMatch</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -408,7 +408,7 @@
     
       
     
-    <li>SearchRequestMinShouldMatch</li>
+    <li>Address</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -418,7 +418,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="searchrequestminshouldmatch">SearchRequestMinShouldMatch</h1>
+                <h1 id="address">Address</h1>
 <h2 id="properties">Properties</h2>
 <table>
 <thead>
@@ -431,15 +431,57 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>MUTATION</strong></td>
-<td><strong>Integer</strong></td>
-<td></td>
+<td><strong>streetName</strong></td>
+<td><strong>String</strong></td>
+<td>Address street name.</td>
 <td>[optional]</td>
 </tr>
 <tr>
-<td><strong>GENE</strong></td>
-<td><strong>Integer</strong></td>
+<td><strong>streetNumber</strong></td>
+<td><strong>String</strong></td>
+<td>Address street number.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>poBox</strong></td>
+<td><strong>String</strong></td>
+<td>Address P.O. Box.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>city</strong></td>
+<td><strong>String</strong></td>
+<td>Address city.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>subDivision</strong></td>
+<td><strong>String</strong></td>
+<td>Address sub division.  Could be a state, province, region, etc.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>country</strong></td>
+<td><strong>String</strong></td>
+<td>The ISO-3166 2 character country code.</td>
 <td></td>
+</tr>
+<tr>
+<td><strong>postalCode</strong></td>
+<td><strong>String</strong></td>
+<td>Address postal code.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>lat</strong></td>
+<td><strong>Float</strong></td>
+<td>Latitude</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>lon</strong></td>
+<td><strong>Float</strong></td>
+<td>Longitude</td>
 <td>[optional]</td>
 </tr>
 </tbody>
@@ -451,10 +493,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../SearchResponseAssertion/" class="btn btn-neutral float-right" title="SearchResponseAssertion">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Agency/" class="btn btn-neutral float-right" title="Agency">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../SearchRequestLocation/" class="btn btn-neutral" title="SearchRequestLocation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Welcome to the MMPower Java SDK"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -480,10 +522,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../SearchRequestLocation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../SearchResponseAssertion/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../Agency/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

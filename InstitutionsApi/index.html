@@ -56,6 +56,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../Address/">Address</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../Agency/">Agency</a>
 	    </li>
           
@@ -332,7 +337,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#postinstitution">postInstitution</a></li>
+    <li class="toctree-l2"><a href="#getprivatetrials">getPrivateTrials</a></li>
     
         <ul>
         
@@ -347,7 +352,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#postprivatetrial">postPrivateTrial</a></li>
+    <li class="toctree-l2"><a href="#postinstitution">postInstitution</a></li>
     
         <ul>
         
@@ -362,7 +367,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#putinstitution">putInstitution</a></li>
+    <li class="toctree-l2"><a href="#postprivatetrial">postPrivateTrial</a></li>
     
         <ul>
         
@@ -377,7 +382,7 @@
         </ul>
     
 
-    <li class="toctree-l2"><a href="#putprivatetrial">putPrivateTrial</a></li>
+    <li class="toctree-l2"><a href="#putinstitution">putInstitution</a></li>
     
         <ul>
         
@@ -392,12 +397,37 @@
         </ul>
     
 
+    <li class="toctree-l2"><a href="#putprivatetrial">putPrivateTrial</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#example_11">Example</a></li>
+        
+            <li><a class="toctree-l3" href="#parameters_11">Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#return-type_11">Return type</a></li>
+        
+            <li><a class="toctree-l3" href="#http-request-headers_11">HTTP request headers</a></li>
+        
+        </ul>
+    
+
     </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
     <a class="" href="../Intervention/">Intervention</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Investigator/">Investigator</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Location/">Location</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -478,6 +508,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../SearchResponsePublication/">SearchResponsePublication</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Site/">Site</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -602,6 +637,11 @@
 <td><a href="./#getPrivateTrialStatus"><strong>getPrivateTrialStatus</strong></a></td>
 <td><strong>GET</strong> /institution/{id}/trial/{trialId}/status</td>
 <td>Get a private trial record&#x27;s status</td>
+</tr>
+<tr>
+<td><a href="./#getPrivateTrials"><strong>getPrivateTrials</strong></a></td>
+<td><strong>GET</strong> /institution/{id}/trials</td>
+<td>Get a paginated list of private</td>
 </tr>
 <tr>
 <td><a href="./#postInstitution"><strong>postInstitution</strong></a></td>
@@ -1012,13 +1052,67 @@ try {
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>
 </ul>
+<p><a name="getPrivateTrials"></a></p>
+<h1 id="getprivatetrials"><strong>getPrivateTrials</strong></h1>
+<blockquote>
+<p>PrivateTrial getPrivateTrials(id)</p>
+</blockquote>
+<p>Get a paginated list of private </p>
+<h3 id="example_7">Example</h3>
+<pre><code class="java">// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.InstitutionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+
+InstitutionsApi apiInstance = new InstitutionsApi();
+String id = &quot;id_example&quot;; // String | ID of the Institution governing the private trial
+try {
+    PrivateTrial result = apiInstance.getPrivateTrials(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println(&quot;Exception when calling InstitutionsApi#getPrivateTrials&quot;);
+    e.printStackTrace();
+}
+</code></pre>
+
+<h3 id="parameters_7">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>String</strong></td>
+<td>ID of the Institution governing the private trial</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_7">Return type</h3>
+<p><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></p>
+<h3 id="http-request-headers_7">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
 <p><a name="postInstitution"></a></p>
 <h1 id="postinstitution"><strong>postInstitution</strong></h1>
 <blockquote>
 <p>Institution postInstitution(body)</p>
 </blockquote>
 <p>Create an institution</p>
-<h3 id="example_7">Example</h3>
+<h3 id="example_8">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -1040,7 +1134,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_7">Parameters</h3>
+<h3 id="parameters_8">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1059,9 +1153,9 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_7">Return type</h3>
+<h3 id="return-type_8">Return type</h3>
 <p><a href="../Institution/"><strong>Institution</strong></a></p>
-<h3 id="http-request-headers_7">HTTP request headers</h3>
+<h3 id="http-request-headers_8">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: application/json</li>
 <li><strong>Accept</strong>: application/json</li>
@@ -1072,7 +1166,7 @@ try {
 <p>PrivateTrial postPrivateTrial(body)</p>
 </blockquote>
 <p>Create a private trial</p>
-<h3 id="example_8">Example</h3>
+<h3 id="example_9">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -1094,7 +1188,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_8">Parameters</h3>
+<h3 id="parameters_9">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1113,9 +1207,9 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_8">Return type</h3>
+<h3 id="return-type_9">Return type</h3>
 <p><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></p>
-<h3 id="http-request-headers_8">HTTP request headers</h3>
+<h3 id="http-request-headers_9">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: application/json</li>
 <li><strong>Accept</strong>: application/json</li>
@@ -1127,7 +1221,7 @@ try {
 </blockquote>
 <p>Put/Update an institution</p>
 <p>Put an institution</p>
-<h3 id="example_9">Example</h3>
+<h3 id="example_10">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -1149,7 +1243,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_9">Parameters</h3>
+<h3 id="parameters_10">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1168,9 +1262,9 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_9">Return type</h3>
+<h3 id="return-type_10">Return type</h3>
 <p><a href="../Institution/"><strong>Institution</strong></a></p>
-<h3 id="http-request-headers_9">HTTP request headers</h3>
+<h3 id="http-request-headers_10">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>
@@ -1182,7 +1276,7 @@ try {
 </blockquote>
 <p>Put/Update a private trial</p>
 <p>Put a private trial</p>
-<h3 id="example_10">Example</h3>
+<h3 id="example_11">Example</h3>
 <pre><code class="java">// Import classes:
 //import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
@@ -1205,7 +1299,7 @@ try {
 }
 </code></pre>
 
-<h3 id="parameters_10">Parameters</h3>
+<h3 id="parameters_11">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1230,9 +1324,9 @@ try {
 </tr>
 </tbody>
 </table>
-<h3 id="return-type_10">Return type</h3>
+<h3 id="return-type_11">Return type</h3>
 <p><a href="../PrivateTrial/"><strong>PrivateTrial</strong></a></p>
-<h3 id="http-request-headers_10">HTTP request headers</h3>
+<h3 id="http-request-headers_11">HTTP request headers</h3>
 <ul>
 <li><strong>Content-Type</strong>: Not defined</li>
 <li><strong>Accept</strong>: application/json</li>

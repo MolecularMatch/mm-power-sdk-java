@@ -56,6 +56,12 @@ public class ClinicalTrial {
   @SerializedName("source")
   private String source = null;
 
+  @SerializedName("visibleTo")
+  private java.util.List<String> visibleTo = null;
+
+  @SerializedName("institutionId")
+  private String institutionId = null;
+
   @SerializedName("briefTitle")
   private String briefTitle = null;
 
@@ -279,6 +285,50 @@ public class ClinicalTrial {
 
   public void setSource(String source) {
     this.source = source;
+  }
+
+  public ClinicalTrial visibleTo(java.util.List<String> visibleTo) {
+    this.visibleTo = visibleTo;
+    return this;
+  }
+
+  public ClinicalTrial addVisibleToItem(String visibleToItem) {
+    if (this.visibleTo == null) {
+      this.visibleTo = new java.util.ArrayList<>();
+    }
+    this.visibleTo.add(visibleToItem);
+    return this;
+  }
+
+   /**
+   * Public trials (those listed in a public registry) will be visible to all, and private trials will indicate the institutions that this trial is visible to.
+   * @return visibleTo
+  **/
+  @Schema(description = "Public trials (those listed in a public registry) will be visible to all, and private trials will indicate the institutions that this trial is visible to.")
+  public java.util.List<String> getVisibleTo() {
+    return visibleTo;
+  }
+
+  public void setVisibleTo(java.util.List<String> visibleTo) {
+    this.visibleTo = visibleTo;
+  }
+
+  public ClinicalTrial institutionId(String institutionId) {
+    this.institutionId = institutionId;
+    return this;
+  }
+
+   /**
+   * If private trial, this is the governing institution.
+   * @return institutionId
+  **/
+  @Schema(description = "If private trial, this is the governing institution.")
+  public String getInstitutionId() {
+    return institutionId;
+  }
+
+  public void setInstitutionId(String institutionId) {
+    this.institutionId = institutionId;
   }
 
   public ClinicalTrial briefTitle(String briefTitle) {
@@ -1226,6 +1276,8 @@ public class ClinicalTrial {
         Objects.equals(this.importDate, clinicalTrial.importDate) &&
         Objects.equals(this.id, clinicalTrial.id) &&
         Objects.equals(this.source, clinicalTrial.source) &&
+        Objects.equals(this.visibleTo, clinicalTrial.visibleTo) &&
+        Objects.equals(this.institutionId, clinicalTrial.institutionId) &&
         Objects.equals(this.briefTitle, clinicalTrial.briefTitle) &&
         Objects.equals(this.patientTitle, clinicalTrial.patientTitle) &&
         Objects.equals(this.title, clinicalTrial.title) &&
@@ -1275,7 +1327,7 @@ public class ClinicalTrial {
 
   @Override
   public int hashCode() {
-    return Objects.hash(_score, mboost, importDate, id, source, briefTitle, patientTitle, title, briefSummary, briefSummaryPreserved, summary, summaryPreserved, status, phase, studyType, studyDesign, startDate, completionDate, firstReceivedDate, lastChangedDate, verificationDate, sponsors, conditions, interventions, keywords, armGroups, primaryOutcomes, secondaryOutcomes, otherOutcomes, eligibility, enrollment, minAge, maxAge, gender, overallOfficial, overallContact, overallContactBackup, locationSummary, locations, countries, inclusionCriteria, inclusionCriteriaPreserved, exclusionCriteria, exclusionCriteriaPreserved, synonyms, acronym, link, tags, molecularAlterations, _stats);
+    return Objects.hash(_score, mboost, importDate, id, source, visibleTo, institutionId, briefTitle, patientTitle, title, briefSummary, briefSummaryPreserved, summary, summaryPreserved, status, phase, studyType, studyDesign, startDate, completionDate, firstReceivedDate, lastChangedDate, verificationDate, sponsors, conditions, interventions, keywords, armGroups, primaryOutcomes, secondaryOutcomes, otherOutcomes, eligibility, enrollment, minAge, maxAge, gender, overallOfficial, overallContact, overallContactBackup, locationSummary, locations, countries, inclusionCriteria, inclusionCriteriaPreserved, exclusionCriteria, exclusionCriteriaPreserved, synonyms, acronym, link, tags, molecularAlterations, _stats);
   }
 
 
@@ -1289,6 +1341,8 @@ public class ClinicalTrial {
     sb.append("    importDate: ").append(toIndentedString(importDate)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    visibleTo: ").append(toIndentedString(visibleTo)).append("\n");
+    sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
     sb.append("    briefTitle: ").append(toIndentedString(briefTitle)).append("\n");
     sb.append("    patientTitle: ").append(toIndentedString(patientTitle)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");

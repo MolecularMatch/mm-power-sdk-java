@@ -33,4 +33,5 @@ Name | Type | Description | Notes
 **emailBackup** | **String** | Site backup contact email address. |  [optional]
 **distance** | **Float** | Distance based on the distance unit of measure specified (miles if unspecified) from the search location (either geopoint, location object, or inferred search point bsaed on filters provided. |  [optional]
 **isInInstitution** | **Boolean** | If an institutionId was provided for search, indicates if this site is associated with the institution. |  [optional]
+**isInIDN** | **Boolean** | If an institutionId was provided for search, indicates if this site is associated with the institution&#x27;s Integrated Delivery Network (IDN). |  [optional]
 **tags** | [**java.util.List&lt;Tag&gt;**](Tag.md) | Concept associations established for this site. |  [optional]

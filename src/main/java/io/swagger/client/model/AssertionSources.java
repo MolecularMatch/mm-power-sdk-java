@@ -195,7 +195,8 @@ public class AssertionSources {
     PUBMED("PUBMED"),
     AACR("AACR"),
     ASCO("ASCO"),
-    ESMO("ESMO");
+    ESMO("ESMO"),
+    ASCOMEETING("ASCOMEETING");
 
     private String value;
 

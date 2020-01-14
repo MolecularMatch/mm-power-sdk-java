@@ -119,6 +119,9 @@ public class Facility {
   @SerializedName("isInInstitution")
   private Boolean isInInstitution = null;
 
+  @SerializedName("isInIDN")
+  private Boolean isInIDN = null;
+
   @SerializedName("tags")
   private java.util.List<Tag> tags = null;
 
@@ -662,6 +665,24 @@ public class Facility {
     this.isInInstitution = isInInstitution;
   }
 
+  public Facility isInIDN(Boolean isInIDN) {
+    this.isInIDN = isInIDN;
+    return this;
+  }
+
+   /**
+   * If an institutionId was provided for search, indicates if this site is associated with the institution&#x27;s Integrated Delivery Network (IDN).
+   * @return isInIDN
+  **/
+  @Schema(description = "If an institutionId was provided for search, indicates if this site is associated with the institution's Integrated Delivery Network (IDN).")
+  public Boolean isIsInIDN() {
+    return isInIDN;
+  }
+
+  public void setIsInIDN(Boolean isInIDN) {
+    this.isInIDN = isInIDN;
+  }
+
   public Facility tags(java.util.List<Tag> tags) {
     this.tags = tags;
     return this;
@@ -728,12 +749,13 @@ public class Facility {
         Objects.equals(this.emailBackup, facility.emailBackup) &&
         Objects.equals(this.distance, facility.distance) &&
         Objects.equals(this.isInInstitution, facility.isInInstitution) &&
+        Objects.equals(this.isInIDN, facility.isInIDN) &&
         Objects.equals(this.tags, facility.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, street, number, country, name, poBox, city, state, zip, lat, lon, geo, status, link, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, distance, isInInstitution, tags);
+    return Objects.hash(id, street, number, country, name, poBox, city, state, zip, lat, lon, geo, status, link, firstName, middleName, lastName, degrees, phone, phoneExt, email, firstNameBackup, middleNameBackup, lastNameBackup, degreesBackup, phoneBackup, phoneExtBackup, emailBackup, distance, isInInstitution, isInIDN, tags);
   }
 
 
@@ -772,6 +794,7 @@ public class Facility {
     sb.append("    emailBackup: ").append(toIndentedString(emailBackup)).append("\n");
     sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
     sb.append("    isInInstitution: ").append(toIndentedString(isInInstitution)).append("\n");
+    sb.append("    isInIDN: ").append(toIndentedString(isInIDN)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");
     return sb.toString();

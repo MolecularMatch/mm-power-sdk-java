@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **importDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | date this record was imported into the MolecularMatch database. |  [optional]
 **id** | **String** | unique identifier. |  [optional]
 **source** | **String** | native data source of this record |  [optional]
+**visibleTo** | **java.util.List&lt;String&gt;** | Public trials (those listed in a public registry) will be visible to all, and private trials will indicate the institutions that this trial is visible to. |  [optional]
+**institutionId** | **String** | If private trial, this is the governing institution. |  [optional]
 **briefTitle** | **String** | A short title of the clinical study written in language intended for the lay public. The title should include, where possible, information on the participants, condition being evaluated, and intervention(s) studied. |  [optional]
 **patientTitle** | **String** | Patient friendly title for the clinical trial. |  [optional]
 **title** | **String** | Official title for the clinical trial. |  [optional]

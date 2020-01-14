@@ -19,3 +19,4 @@ Name | Value
 FEMALE | &quot;Female&quot;
 MALE | &quot;Male&quot;
 ALL | &quot;All&quot;
+BOTH | &quot;Both&quot;

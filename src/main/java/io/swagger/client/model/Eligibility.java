@@ -34,7 +34,8 @@ public class Eligibility {
   public enum GenderEnum {
     FEMALE("Female"),
     MALE("Male"),
-    ALL("All");
+    ALL("All"),
+    BOTH("Both");
 
     private String value;
 

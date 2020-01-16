@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 /**
  * Institution
  */
@@ -101,6 +102,9 @@ public class Institution {
 
   @SerializedName("test")
   private Boolean test = null;
+
+  @SerializedName("expirationDate")
+  private OffsetDateTime expirationDate = null;
 
   public Institution id(String id) {
     this.id = id;
@@ -308,6 +312,24 @@ public class Institution {
     this.test = test;
   }
 
+  public Institution expirationDate(OffsetDateTime expirationDate) {
+    this.expirationDate = expirationDate;
+    return this;
+  }
+
+   /**
+   * The institution will auto delete on this date.  Only used for institutions marked as test.
+   * @return expirationDate
+  **/
+  @Schema(description = "The institution will auto delete on this date.  Only used for institutions marked as test.")
+  public OffsetDateTime getExpirationDate() {
+    return expirationDate;
+  }
+
+  public void setExpirationDate(OffsetDateTime expirationDate) {
+    this.expirationDate = expirationDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -328,12 +350,13 @@ public class Institution {
         Objects.equals(this.idn, institution.idn) &&
         Objects.equals(this.synonyms, institution.synonyms) &&
         Objects.equals(this.status, institution.status) &&
-        Objects.equals(this.test, institution.test);
+        Objects.equals(this.test, institution.test) &&
+        Objects.equals(this.expirationDate, institution.expirationDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, country, address, subDivision, city, postalCode, idn, synonyms, status, test);
+    return Objects.hash(id, name, country, address, subDivision, city, postalCode, idn, synonyms, status, test, expirationDate);
   }
 
 
@@ -353,6 +376,7 @@ public class Institution {
     sb.append("    synonyms: ").append(toIndentedString(synonyms)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    test: ").append(toIndentedString(test)).append("\n");
+    sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

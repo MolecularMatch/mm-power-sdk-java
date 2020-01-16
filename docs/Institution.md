@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **synonyms** | **java.util.List&lt;String&gt;** | Alternative names the institution is referred by. |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) | Indication of its level of readiness and incorporation into the MolecularMatch Knowledge base. |  [optional]
 **test** | **Boolean** | A flag to mark test institutions. |  [optional]
+**expirationDate** | [**OffsetDateTime**](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) | The institution will auto delete on this date.  Only used for institutions marked as test. |  [optional]
 
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
